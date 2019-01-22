@@ -1,0 +1,1709 @@
+GCG version 3.0.0 [GitHash: 70e7382]
+Copyright (C) 2010-2018 Operations Research, RWTH Aachen University
+                        Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+SCIP version 6.0.0 [precision: 8 byte] [memory: block] [mode: optimized] [LP solver: SoPlex 4.0.0] [GitHash: 77d3bc8]
+Copyright (C) 2002-2018 Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+External codes: 
+  Readline 6.0         GNU library for command line editing (gnu.org/s/readline)
+  SoPlex 4.0.0         Linear Programming Solver developed at Zuse Institute Berlin (soplex.zib.de) [GitHash: 82cab95]
+  CppAD 20180000.0     Algorithmic Differentiation of C++ algorithms developed by B. Bell (www.coin-or.org/CppAD)
+  ZLIB 1.2.3           General purpose compression library by J. Gailly and M. Adler (zlib.net)
+  ZIMPL 3.3.6          Zuse Institute Mathematical Programming Language developed by T. Koch (zimpl.zib.de)
+  bliss 0.73           A Tool for Computing Automorphism Groups of Graphs by T. Junttila and P. Kaski (http://www.tcs.hut.fi/Software/bliss/)
+
+reading user parameter file </LOG_DATA/scripts/options_gcg.parm>
+
+read problem </ORDATA/miplib/dano3mip.mps>
+============
+
+original problem has 13873 variables (552 bin, 0 int, 0 impl, 13321 cont) and 3202 constraints
+presolving:
+(round 1, fast)       36 del vars, 36 del conss, 0 add conss, 1187 chg bounds, 0 chg sides, 0 chg coeffs, 0 upgd conss, 0 impls, 0 clqs
+(round 2, fast)       36 del vars, 36 del conss, 0 add conss, 13841 chg bounds, 0 chg sides, 0 chg coeffs, 0 upgd conss, 0 impls, 0 clqs
+(round 3, exhaustive) 36 del vars, 51 del conss, 0 add conss, 13842 chg bounds, 0 chg sides, 0 chg coeffs, 0 upgd conss, 0 impls, 0 clqs
+(round 4, exhaustive) 36 del vars, 51 del conss, 0 add conss, 13842 chg bounds, 0 chg sides, 0 chg coeffs, 621 upgd conss, 0 impls, 0 clqs
+   (0.6s) probing cycle finished: starting next cycle
+presolving (5 rounds: 5 fast, 3 medium, 3 exhaustive):
+ 36 deleted vars, 51 deleted constraints, 0 added constraints, 13842 tightened bounds, 0 added holes, 0 changed sides, 0 changed coefficients
+ 13838 implications, 0 cliques
+presolved problem has 13837 variables (552 bin, 0 int, 0 impl, 13285 cont) and 3151 constraints
+    621 constraints of type <varbound>
+   2530 constraints of type <linear>
+Presolving Time: 0.59
+start creating seeedpool for current problem 
+created seeedpool for current problem, n detectors: 26 
+ Consclassifier "nonzeros" yields a classification with 25  different constraint classes 
+ Consclassifier "constypes" yields a classification with 2 different constraint classes 
+ Consclassifier "constypes according to miplib" yields a classification with 3 different constraint classes 
+ Varclassifier "vartypes" yields a classification with 2 different variable classes
+ Varclassifier "varobjvals" yields a classification with 2 different variable classes
+ Varclassifier "varobjvalsigns" yields a classification with 2 different variable classes
+ Varclassifier "varobjvalsigns" is not considered since it offers the same structure as "varobjvals"
+ the current consclass distribution includes 25 classes but only 18 are allowed for calcCandidatesNBlocks()
+Begin of detection round 0 of 1 total rounds 
+Start to propagate seeed with id 1 (0 of 1 in round 0) 
+ in dec_consclass: there are 3 different constraint classes   
+ the current consclass distribution includes 25 classes but only 9 are allowed for propagateSeeed() of cons class detector
+  the current constraint classifier "constypes" consists of 2 different classes   
+  the current constraint classifier "constypes according to miplib" consists of 3 different classes   
+ dec_consclass found 10 new seeeds 
+dec_densemasterconss found 1 new seeed 
+Start finishing of partial decomposition 1.
+Measured running time per detector: 
+Detector consclass                 	 worked on 	 8 of 14	 and took a total time of 	0.41
+Detector densemasterconss          	 worked on 	 1 of 14	 and took a total time of 	0.01
+Detector hrgpartition              	 worked on 	 0 of 14	 and took a total time of 	0
+Detector varclass                  	 worked on 	 4 of 14	 and took a total time of 	0.27
+Started postprocessing of decompositions...
+...finished postprocessing of decompositions. Added 0 new decomps. 
+
+solve problem
+=============
+
+
+A Dantzig-Wolfe reformulation is applied to solve the original problem.
+
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+  39.6s|     1 |     0 |      0 |      0 |     - |  57M|   0 |   0 |3151 |   0 |   0 |  0 | 5.762316e+02 |      --      |   --   |    Inf 
+F 61.7s|     1 |     0 |      0 |      0 |     - |  59M|   0 |   0 |3151 |   0 |   0 |  0 | 5.762316e+02 | 7.683750e+02 |   --   |  33.34%
+  61.7s|     1 |     0 |      0 |      0 |     - |  58M|   0 |   0 |3151 |   0 |   0 |  0 | 5.762316e+02 | 7.683750e+02 |   --   |  33.34%
+  61.9s|     1 |     0 |      0 |      0 |     - |  58M|   0 |   0 |3151 |   0 |   0 |  0 | 5.762316e+02 | 7.683750e+02 |   --   |  33.34%
+Chosen structure has 553 blocks, 12628 master-only (static) variables, and 2495 linking constraints.
+This decomposition has a maxwhite score of 0.208127.
+Warning: Discretization with continuous variables is only an experimental feature.
+Matrix has 553 blocks, using 553 pricing problems.
+
+     
+  68.1s|     1 |     0 |    257 |    257 |     - | 264M|   0 |  13k|3152 |3049 |   0 |  0 | 5.762316e+02 | 7.683750e+02 |   0.00%|  33.34%
+  68.1s|     1 |     0 |    257 |    257 |     - | 264M|   0 |  13k|3152 |3049 |   0 |  0 | 5.762316e+02 | 7.683750e+02 |   0.00%|  33.34%
+Starting reduced cost pricing...
+   180s|     1 |     0 | 193468 | 192704 |     - | 286M|   0 |  13k|3152 |3049 |   0 |  0 | 5.762316e+02 | 7.683750e+02 |  37.01%|  33.34%
+   271s|     1 |     0 | 295435 | 291948 |     - | 290M|   0 |  14k|3152 |3049 |   0 |  0 | 5.762316e+02 | 7.683750e+02 |  33.40%|  33.34%
+   273s|     1 |     0 | 296021 | 292534 |     - | 294M|   0 |  14k|3152 |3049 |   1 |  2 | 5.762316e+02 | 7.683750e+02 |  33.40%|  33.34%
+   285s|     1 |     0 | 296734 | 292581 |     - | 294M|   0 |  14k|3152 |3049 |   1 |  2 | 5.762432e+02 | 7.683750e+02 |  33.25%|  33.34%
+   293s|     1 |     0 | 296734 | 292581 |     - | 294M|   0 |  14k|3152 |3049 |   1 |  4 | 5.762432e+02 | 7.683750e+02 |  33.25%|  33.34%
+   294s|     1 |     0 | 296734 | 292581 |     - | 294M|   0 |  14k|3152 |3049 |   1 |  4 | 5.762505e+02 | 7.683750e+02 |  33.25%|  33.34%
+   341s|     1 |     2 | 296734 | 292581 |     - | 294M|   0 |  14k|3152 |3049 |   1 |  4 | 5.762505e+02 | 7.683750e+02 |  33.25%|  33.34%
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 3600.33
+Solving Nodes      : 94
+Primal Bound       : +7.68375000000000e+02 (1 solutions)
+Dual Bound         : +5.76663655268109e+02
+Gap                : 33.24 %
+
+primal solution:
+================
+
+objective value:                              768.375
+x3                                                  1 	(obj:0)
+x7                                                  1 	(obj:0)
+x36                                                 1 	(obj:0)
+x40                                                 1 	(obj:0)
+x64                                                 1 	(obj:0)
+x65                                                 1 	(obj:0)
+x75                                                 1 	(obj:0)
+x93                                                 1 	(obj:0)
+x98                                                 1 	(obj:0)
+x99                                                 1 	(obj:0)
+x117                                                1 	(obj:0)
+x127                                                1 	(obj:0)
+x148                                                1 	(obj:0)
+x149                                                1 	(obj:0)
+x171                                                1 	(obj:0)
+x175                                                1 	(obj:0)
+x190                                                1 	(obj:0)
+x203                                                1 	(obj:0)
+x222                                                1 	(obj:0)
+x225                                                1 	(obj:0)
+x232                                                1 	(obj:0)
+x252                                                1 	(obj:0)
+x256                                                1 	(obj:0)
+x267                                                1 	(obj:0)
+x288                                                1 	(obj:0)
+x292                                                1 	(obj:0)
+x315                                                1 	(obj:0)
+x322                                                1 	(obj:0)
+x325                                                1 	(obj:0)
+x342                                                1 	(obj:0)
+x350                                                1 	(obj:0)
+x367                                                1 	(obj:0)
+x381                                                1 	(obj:0)
+x382                                                1 	(obj:0)
+x396                                                1 	(obj:0)
+x401                                                1 	(obj:0)
+x423                                                1 	(obj:0)
+x434                                                1 	(obj:0)
+x458                                                1 	(obj:0)
+x460                                                1 	(obj:0)
+x469                                                1 	(obj:0)
+x478                                                1 	(obj:0)
+x493                                                1 	(obj:0)
+x499                                                1 	(obj:0)
+x510                                                1 	(obj:0)
+x530                                                1 	(obj:0)
+x535                                                1 	(obj:0)
+x551                                                1 	(obj:0)
+x1                                            768.375 	(obj:1)
+x578                                              683 	(obj:0)
+x579                                              216 	(obj:0)
+x581                                               18 	(obj:0)
+x582                                               80 	(obj:0)
+x583                                              151 	(obj:0)
+x584                                              124 	(obj:0)
+x588                                               94 	(obj:0)
+x674                                           724.75 	(obj:0)
+x675                                              144 	(obj:0)
+x676                                               39 	(obj:0)
+x678                                              145 	(obj:0)
+x680                                              100 	(obj:0)
+x684                                               16 	(obj:0)
+x685                                          126.375 	(obj:0)
+x688                                           52.375 	(obj:0)
+x690                                               38 	(obj:0)
+x692                                               17 	(obj:0)
+x693                                               24 	(obj:0)
+x694                                               23 	(obj:0)
+x1370                                         768.375 	(obj:0)
+x1372                                             189 	(obj:0)
+x1376                                              60 	(obj:0)
+x1377                                              19 	(obj:0)
+x1380                                             100 	(obj:0)
+x1381                                              63 	(obj:0)
+x1382                                         190.375 	(obj:0)
+x1384                                              86 	(obj:0)
+x1387                                              21 	(obj:0)
+x1391                                              40 	(obj:0)
+x1466                                         721.375 	(obj:0)
+x1468                                             298 	(obj:0)
+x1471                                              40 	(obj:0)
+x1474                                           57.25 	(obj:0)
+x1475                                              19 	(obj:0)
+x1476                                              44 	(obj:0)
+x1477                                              61 	(obj:0)
+x1478                                              20 	(obj:0)
+x1480                                16.1249999999999 	(obj:0)
+x1481                                            99.5 	(obj:0)
+x1483                                27.5000000000001 	(obj:0)
+x1487                                              19 	(obj:0)
+x1489                                              20 	(obj:0)
+x2042                                         768.375 	(obj:0)
+x2043                                             105 	(obj:0)
+x2045                                             282 	(obj:0)
+x2048                                              94 	(obj:0)
+x2051                                              21 	(obj:0)
+x2053                                              57 	(obj:0)
+x2056                                              22 	(obj:0)
+x2057                                              36 	(obj:0)
+x2060                                          58.375 	(obj:0)
+x2063                                              17 	(obj:0)
+x2064                                              76 	(obj:0)
+x2066                                          718.75 	(obj:0)
+x2067                                              68 	(obj:0)
+x2068                                              23 	(obj:0)
+x2069                                             255 	(obj:0)
+x2071                                              80 	(obj:0)
+x2072                                              57 	(obj:0)
+x2073                                             124 	(obj:0)
+x2077                                              37 	(obj:0)
+x2083                                              19 	(obj:0)
+x2088                                           55.75 	(obj:0)
+x2306                                         664.375 	(obj:0)
+x2310                                         337.875 	(obj:0)
+x2313                                          15.375 	(obj:0)
+x2317                                              17 	(obj:0)
+x2318                                              23 	(obj:0)
+x2319                                              83 	(obj:0)
+x2321                                              44 	(obj:0)
+x2322                                              24 	(obj:0)
+x2323                                         101.125 	(obj:0)
+x2328                                              19 	(obj:0)
+x2738                                         768.375 	(obj:0)
+x2741                                              20 	(obj:0)
+x2742                                         204.125 	(obj:0)
+x2745                                              84 	(obj:0)
+x2746                                           85.75 	(obj:0)
+x2748                                              61 	(obj:0)
+x2749                                              39 	(obj:0)
+x2751                                              95 	(obj:0)
+x2754                                             124 	(obj:0)
+x2756                                55.4999999999999 	(obj:0)
+x2858                                         768.375 	(obj:0)
+x2859                                              41 	(obj:0)
+x2860                                              18 	(obj:0)
+x2861                                              39 	(obj:0)
+x2863                                         289.375 	(obj:0)
+x2865                                           4.625 	(obj:0)
+x2866                                             103 	(obj:0)
+x2875                                          50.375 	(obj:0)
+x2878                                              16 	(obj:0)
+x2879                                              63 	(obj:0)
+x2880                                              17 	(obj:0)
+x2881                                             127 	(obj:0)
+x2882                                         768.375 	(obj:0)
+x2885                                              42 	(obj:0)
+x2887                                         230.625 	(obj:0)
+x2889                                           63.75 	(obj:0)
+x2890                                              83 	(obj:0)
+x2895                                              39 	(obj:0)
+x2897                                              80 	(obj:0)
+x2899                                              56 	(obj:0)
+x2903                                              19 	(obj:0)
+x2904                                              79 	(obj:0)
+x2905                                              76 	(obj:0)
+x3314                                         768.375 	(obj:0)
+x3316                                              16 	(obj:0)
+x3317                                             205 	(obj:0)
+x3318                                          66.375 	(obj:0)
+x3319                                             311 	(obj:0)
+x3322                                              21 	(obj:0)
+x3327                                              44 	(obj:0)
+x3335                                              43 	(obj:0)
+x3336                                              18 	(obj:0)
+x3337                                              44 	(obj:0)
+x3554                                         768.375 	(obj:0)
+x3557                                              23 	(obj:0)
+x3558                                75.8749999999999 	(obj:0)
+x3559                                             140 	(obj:0)
+x3560                                             215 	(obj:0)
+x3563                                              62 	(obj:0)
+x3567                                              39 	(obj:0)
+x3569                                              20 	(obj:0)
+x3571                                           110.5 	(obj:0)
+x3577                                              83 	(obj:0)
+x4058                                         637.375 	(obj:0)
+x4059                                              64 	(obj:0)
+x4062                                              41 	(obj:0)
+x4063                                             103 	(obj:0)
+x4064                                              39 	(obj:0)
+x4065                                             243 	(obj:0)
+x4069                                          87.375 	(obj:0)
+x4080                                              19 	(obj:0)
+x4081                                              41 	(obj:0)
+x4082                                          741.75 	(obj:0)
+x4083                                              19 	(obj:0)
+x4086                                              61 	(obj:0)
+x4087                                          67.625 	(obj:0)
+x4088                                              40 	(obj:0)
+x4089                                             278 	(obj:0)
+x4090                                           23.75 	(obj:0)
+x4091                                              43 	(obj:0)
+x4096                                          52.375 	(obj:0)
+x4097                                              40 	(obj:0)
+x4099                                              39 	(obj:0)
+x4104                                              60 	(obj:0)
+x4105                                              18 	(obj:0)
+x4610                                         554.375 	(obj:0)
+x4613                                              40 	(obj:0)
+x4618                                          210.75 	(obj:0)
+x4619                                              55 	(obj:0)
+x4624                                              41 	(obj:0)
+x4628                                          43.625 	(obj:0)
+x4629                                              40 	(obj:0)
+x4630                                             124 	(obj:0)
+x4706                                         768.375 	(obj:0)
+x4709                                              58 	(obj:0)
+x4710                                40.1250000000001 	(obj:0)
+x4713                                              41 	(obj:0)
+x4714                                          212.25 	(obj:0)
+x4715                                              39 	(obj:0)
+x4721                                              43 	(obj:0)
+x4723                                              33 	(obj:0)
+x4724                                              46 	(obj:0)
+x4726                                             147 	(obj:0)
+x4727                                              16 	(obj:0)
+x4728                                              18 	(obj:0)
+x4729                                              75 	(obj:0)
+x5066                                         767.375 	(obj:0)
+x5067                                              62 	(obj:0)
+x5069                                             125 	(obj:0)
+x5071                                              18 	(obj:0)
+x5074                                             230 	(obj:0)
+x5075                                              20 	(obj:0)
+x5082                                              23 	(obj:0)
+x5083                                         129.375 	(obj:0)
+x5084                                              20 	(obj:0)
+x5086                                              58 	(obj:0)
+x5087                                              82 	(obj:0)
+x5378                                             521 	(obj:0)
+x5387                                             292 	(obj:0)
+x5388                                              44 	(obj:0)
+x5391                                              19 	(obj:0)
+x5394                                              43 	(obj:0)
+x5396                                             107 	(obj:0)
+x5399                                              16 	(obj:0)
+x5834                                         685.625 	(obj:0)
+x5835                                              64 	(obj:0)
+x5837                                              40 	(obj:0)
+x5841                                              79 	(obj:0)
+x5842                                           77.25 	(obj:0)
+x5843                                              19 	(obj:0)
+x5844                                             250 	(obj:0)
+x5846                                          52.375 	(obj:0)
+x5853                                              24 	(obj:0)
+x5854                                              20 	(obj:0)
+x5856                                              19 	(obj:0)
+x5857                                              41 	(obj:0)
+x5906                                         673.125 	(obj:0)
+x5910                                              41 	(obj:0)
+x5911                                             103 	(obj:0)
+x5913                                              84 	(obj:0)
+x5914                                            73.5 	(obj:0)
+x5916                                             206 	(obj:0)
+x5918                                              18 	(obj:0)
+x5924                                          43.625 	(obj:0)
+x5926                                             104 	(obj:0)
+x6074                                         768.375 	(obj:0)
+x6075                                              39 	(obj:0)
+x6078                                          13.625 	(obj:0)
+x6080                                             146 	(obj:0)
+x6084                                             170 	(obj:0)
+x6085                                         126.375 	(obj:0)
+x6086                                              23 	(obj:0)
+x6088                                          52.375 	(obj:0)
+x6090                                              38 	(obj:0)
+x6092                                              34 	(obj:0)
+x6093                                              66 	(obj:0)
+x6094                                              60 	(obj:0)
+x6554                                             599 	(obj:0)
+x6555                                              19 	(obj:0)
+x6558                                              42 	(obj:0)
+x6559                                              17 	(obj:0)
+x6560                                              40 	(obj:0)
+x6561                                              36 	(obj:0)
+x6563                                              21 	(obj:0)
+x6565                                             323 	(obj:0)
+x6572                                              39 	(obj:0)
+x6576                                              44 	(obj:0)
+x6577                                              18 	(obj:0)
+x6650                                         685.375 	(obj:0)
+x6653                                              20 	(obj:0)
+x6654                                              40 	(obj:0)
+x6655                                              78 	(obj:0)
+x6658                                              41 	(obj:0)
+x6661                                         254.375 	(obj:0)
+x6662                                              16 	(obj:0)
+x6664                                            41.5 	(obj:0)
+x6666                                              42 	(obj:0)
+x6667                                89.5000000000001 	(obj:0)
+x6670                                              23 	(obj:0)
+x6672                                              20 	(obj:0)
+x6673                                              20 	(obj:0)
+x6914                                         691.375 	(obj:0)
+x6916                                             124 	(obj:0)
+x6918                                38.8749999999999 	(obj:0)
+x6919                                              40 	(obj:0)
+x6920                                              74 	(obj:0)
+x6926                                         239.625 	(obj:0)
+x6928                                              24 	(obj:0)
+x6930                                         150.875 	(obj:0)
+x7418                                         653.625 	(obj:0)
+x7420                                              79 	(obj:0)
+x7426                                           37.25 	(obj:0)
+x7429                                         166.375 	(obj:0)
+x7430                                              66 	(obj:0)
+x7432                                              43 	(obj:0)
+x7434                                              58 	(obj:0)
+x7436                                              54 	(obj:0)
+x7437                                              90 	(obj:0)
+x7438                                              60 	(obj:0)
+x7514                                         595.125 	(obj:0)
+x7516                                             121 	(obj:0)
+x7524                                             100 	(obj:0)
+x7527                                             241 	(obj:0)
+x7530                                          95.125 	(obj:0)
+x7533                                              38 	(obj:0)
+x8066                                         730.625 	(obj:0)
+x8069                                              58 	(obj:0)
+x8072                                              19 	(obj:0)
+x8074                                          84.625 	(obj:0)
+x8078                                              41 	(obj:0)
+x8080                                         284.125 	(obj:0)
+x8082                                         108.875 	(obj:0)
+x8083                                              16 	(obj:0)
+x8084                                              22 	(obj:0)
+x8086                                              63 	(obj:0)
+x8087                                              16 	(obj:0)
+x8088                                              18 	(obj:0)
+x8234                                         659.125 	(obj:0)
+x8236                                             105 	(obj:0)
+x8238                                              40 	(obj:0)
+x8240                                              16 	(obj:0)
+x8242                                          65.625 	(obj:0)
+x8246                                         120.625 	(obj:0)
+x8248                                         188.875 	(obj:0)
+x8251                                              42 	(obj:0)
+x8255                                              43 	(obj:0)
+x8257                                              38 	(obj:0)
+x8306                                         768.375 	(obj:0)
+x8307                                              24 	(obj:0)
+x8312                                              19 	(obj:0)
+x8313                                           57.25 	(obj:0)
+x8315                                             168 	(obj:0)
+x8316                                             181 	(obj:0)
+x8319                                36.1249999999999 	(obj:0)
+x8320                                             204 	(obj:0)
+x8327                                              79 	(obj:0)
+x8714                                         663.375 	(obj:0)
+x8716                                              22 	(obj:0)
+x8721                                              44 	(obj:0)
+x8724                                              38 	(obj:0)
+x8725                                              24 	(obj:0)
+x8726                                          35.375 	(obj:0)
+x8727                                              20 	(obj:0)
+x8728                                              39 	(obj:0)
+x8729                                             256 	(obj:0)
+x8730                                              39 	(obj:0)
+x8731                                              58 	(obj:0)
+x8735                                              69 	(obj:0)
+x8737                                              19 	(obj:0)
+x8906                                         552.625 	(obj:0)
+x8913                                          84.625 	(obj:0)
+x8917                                              17 	(obj:0)
+x8918                                             118 	(obj:0)
+x8919                                             102 	(obj:0)
+x8921                                             207 	(obj:0)
+x8922                                              24 	(obj:0)
+x9314                                         750.125 	(obj:0)
+x9316                                              57 	(obj:0)
+x9317                                              37 	(obj:0)
+x9324                                              58 	(obj:0)
+x9327                                              63 	(obj:0)
+x9328                                         118.125 	(obj:0)
+x9330                                             178 	(obj:0)
+x9331                                             140 	(obj:0)
+x9333                                              22 	(obj:0)
+x9334                                              38 	(obj:0)
+x9335                                              39 	(obj:0)
+x9650                                         768.375 	(obj:0)
+x9652                                             143 	(obj:0)
+x9657                                              19 	(obj:0)
+x9660                                              22 	(obj:0)
+x9661                                              44 	(obj:0)
+x9662                                              74 	(obj:0)
+x9664                                            81.5 	(obj:0)
+x9666                                         252.875 	(obj:0)
+x9669                                              41 	(obj:0)
+x9670                                              47 	(obj:0)
+x9672                                              44 	(obj:0)
+x9674                                         768.375 	(obj:0)
+x9676                                              75 	(obj:0)
+x9677                                              21 	(obj:0)
+x9682                                           57.25 	(obj:0)
+x9683                                              19 	(obj:0)
+x9687                                              22 	(obj:0)
+x9689                                              44 	(obj:0)
+x9690                                         210.125 	(obj:0)
+x9692                                              71 	(obj:0)
+x9693                                             169 	(obj:0)
+x9694                                              80 	(obj:0)
+x10010                                        715.125 	(obj:0)
+x10011                                             23 	(obj:0)
+x10013                                             40 	(obj:0)
+x10014                                             40 	(obj:0)
+x10015                                             37 	(obj:0)
+x10016                                             84 	(obj:0)
+x10017                                           35.5 	(obj:0)
+x10019                                            100 	(obj:0)
+x10020                                             39 	(obj:0)
+x10024                                             18 	(obj:0)
+x10027                                        199.625 	(obj:0)
+x10028                                             23 	(obj:0)
+x10031                                             17 	(obj:0)
+x10032                                             59 	(obj:0)
+x10130                                        768.375 	(obj:0)
+x10131                                             82 	(obj:0)
+x10133                                            145 	(obj:0)
+x10135                                             44 	(obj:0)
+x10136                                             41 	(obj:0)
+x10139                                             64 	(obj:0)
+x10147                                        274.375 	(obj:0)
+x10148                                             37 	(obj:0)
+x10150                                             81 	(obj:0)
+x10658                                        768.375 	(obj:0)
+x10659                                             21 	(obj:0)
+x10660                                             23 	(obj:0)
+x10661                                            120 	(obj:0)
+x10664                                             41 	(obj:0)
+x10665                                            102 	(obj:0)
+x10666                                            133 	(obj:0)
+x10668                                             37 	(obj:0)
+x10673                                             43 	(obj:0)
+x10674                                             19 	(obj:0)
+x10675                                             33 	(obj:0)
+x10676                                        147.625 	(obj:0)
+x10679                                             16 	(obj:0)
+x10680                                          32.75 	(obj:0)
+x10922                                        719.375 	(obj:0)
+x10923                                             47 	(obj:0)
+x10925                                            113 	(obj:0)
+x10927                                             80 	(obj:0)
+x10931                                            135 	(obj:0)
+x10932                                             22 	(obj:0)
+x10940                                             52 	(obj:0)
+x10941                                        270.375 	(obj:0)
+x11498                                        768.375 	(obj:0)
+x11499                                             24 	(obj:0)
+x11501                                             79 	(obj:0)
+x11503                                             41 	(obj:0)
+x11507                                             23 	(obj:0)
+x11510                                         11.375 	(obj:0)
+x11513                                             81 	(obj:0)
+x11515                                             42 	(obj:0)
+x11517                                            107 	(obj:0)
+x11518                                            342 	(obj:0)
+x11519                                             18 	(obj:0)
+x11546                                        768.375 	(obj:0)
+x11547                                             23 	(obj:0)
+x11549                                             17 	(obj:0)
+x11553                                             44 	(obj:0)
+x11555                                             96 	(obj:0)
+x11556                                             41 	(obj:0)
+x11557                                             24 	(obj:0)
+x11559                                             20 	(obj:0)
+x11561                                            131 	(obj:0)
+x11562                                             23 	(obj:0)
+x11564                                             52 	(obj:0)
+x11565                                        105.375 	(obj:0)
+x11566                                            141 	(obj:0)
+x11568                                             51 	(obj:0)
+x11762                                        768.375 	(obj:0)
+x11766                               82.1250000000001 	(obj:0)
+x11771                                             41 	(obj:0)
+x11773                                             21 	(obj:0)
+x11775                                             19 	(obj:0)
+x11776                                             61 	(obj:0)
+x11781                                             76 	(obj:0)
+x11782                                            347 	(obj:0)
+x11784                                           5.25 	(obj:0)
+x11785                                            116 	(obj:0)
+x11978                                        768.375 	(obj:0)
+x11981                                             59 	(obj:0)
+x11982                                             22 	(obj:0)
+x11985                                             19 	(obj:0)
+x11991                                             74 	(obj:0)
+x11992                               29.8750000000001 	(obj:0)
+x11994                                             44 	(obj:0)
+x11995                               11.4999999999999 	(obj:0)
+x11996                                             88 	(obj:0)
+x11997                                            210 	(obj:0)
+x11998                                            167 	(obj:0)
+x12000                                             44 	(obj:0)
+x12338                                            372 	(obj:0)
+x12345                                             36 	(obj:0)
+x12350                                             19 	(obj:0)
+x12353                                             80 	(obj:0)
+x12354                                             59 	(obj:0)
+x12359                                            178 	(obj:0)
+x12482                                        705.125 	(obj:0)
+x12484                                             39 	(obj:0)
+x12493                                            223 	(obj:0)
+x12495                                             44 	(obj:0)
+x12496                               75.1249999999999 	(obj:0)
+x12497                                             39 	(obj:0)
+x12498                                             81 	(obj:0)
+x12499                                             16 	(obj:0)
+x12503                                            188 	(obj:0)
+x12746                                        672.125 	(obj:0)
+x12748                                             23 	(obj:0)
+x12753                                             20 	(obj:0)
+x12754                                             59 	(obj:0)
+x12755                                             23 	(obj:0)
+x12757                                             44 	(obj:0)
+x12759                                             22 	(obj:0)
+x12760                                             73 	(obj:0)
+x12761                                             23 	(obj:0)
+x12762                                             19 	(obj:0)
+x12763                                             36 	(obj:0)
+x12764                                         81.375 	(obj:0)
+x12765                                             16 	(obj:0)
+x12766                                             23 	(obj:0)
+x12767                                             34 	(obj:0)
+x12768                                         175.75 	(obj:0)
+x13226                                        636.375 	(obj:0)
+x13228                                             63 	(obj:0)
+x13232                                             16 	(obj:0)
+x13234                                         21.625 	(obj:0)
+x13238                                         56.625 	(obj:0)
+x13240                                        124.875 	(obj:0)
+x13241                                             37 	(obj:0)
+x13245                                             24 	(obj:0)
+x13246                                             62 	(obj:0)
+x13249                                         231.25 	(obj:0)
+x13346                                        768.375 	(obj:0)
+x13348                                             39 	(obj:0)
+x13350                                             40 	(obj:0)
+x13353                                         85.375 	(obj:0)
+x13356                                             16 	(obj:0)
+x13357                                             23 	(obj:0)
+x13359                                             60 	(obj:0)
+x13361                                             80 	(obj:0)
+x13365                                             43 	(obj:0)
+x13368                                            117 	(obj:0)
+x13369                                            265 	(obj:0)
+x13730                                        767.375 	(obj:0)
+x13732                                             24 	(obj:0)
+x13734                                        121.125 	(obj:0)
+x13737                                             62 	(obj:0)
+x13740                                             61 	(obj:0)
+x13742                                         33.625 	(obj:0)
+x13743                                             95 	(obj:0)
+x13744                               48.8750000000001 	(obj:0)
+x13746                                             44 	(obj:0)
+x13748                               32.4999999999999 	(obj:0)
+x13752                                          72.25 	(obj:0)
+x13753                                            173 	(obj:0)
+x13802                                           1046 	(obj:0)
+x13803                                           1543 	(obj:0)
+x13804                                           1629 	(obj:0)
+x13805                                       1575.125 	(obj:0)
+x13806                                       1515.625 	(obj:0)
+x13807                                           1447 	(obj:0)
+x13808                                           1687 	(obj:0)
+x13809                                       1373.375 	(obj:0)
+x13810                                           1514 	(obj:0)
+x13811                                           1463 	(obj:0)
+x13812                                           1448 	(obj:0)
+x13813                                       1701.875 	(obj:0)
+x13814                                           1010 	(obj:0)
+x13815                                       1413.125 	(obj:0)
+x13816                                       1470.625 	(obj:0)
+x13817                                           1238 	(obj:0)
+x13818                                       1543.875 	(obj:0)
+x13819                                       1581.875 	(obj:0)
+x13820                                       1315.375 	(obj:0)
+x13821                                           1420 	(obj:0)
+x13822                                           1525 	(obj:0)
+x13823                                            981 	(obj:0)
+x13824                                           1244 	(obj:0)
+x13825                                           1174 	(obj:0)
+x13826                                        1407.75 	(obj:0)
+x13827                                        1489.75 	(obj:0)
+x13828                                       1487.125 	(obj:0)
+x13829                                        1432.75 	(obj:0)
+x13830                                        1536.75 	(obj:0)
+x13831                                        1536.75 	(obj:0)
+x13832                                       1379.125 	(obj:0)
+x13833                                        1322.75 	(obj:0)
+x13834                                       1288.375 	(obj:0)
+x13835                                        1358.75 	(obj:0)
+x13836                                       1367.375 	(obj:0)
+x13837                                        1376.75 	(obj:0)
+x13838                                        1248.75 	(obj:0)
+x13839                                        1389.75 	(obj:0)
+x13840                                        1431.75 	(obj:0)
+x13841                                        1302.75 	(obj:0)
+x13842                                        1536.75 	(obj:0)
+x13843                                         1483.5 	(obj:0)
+x13844                                        1487.75 	(obj:0)
+x13845                                        1536.75 	(obj:0)
+x13846                                        1536.75 	(obj:0)
+x13847                                       1077.125 	(obj:0)
+x13848                                         1308.5 	(obj:0)
+x13849                                        1535.75 	(obj:0)
+x13850                                        1536.75 	(obj:0)
+x13851                                        1453.75 	(obj:0)
+x13852                                       1355.125 	(obj:0)
+x13853                                        1267.75 	(obj:0)
+x13854                                        1535.75 	(obj:0)
+x13855                                        1432.75 	(obj:0)
+x13856                                       1493.125 	(obj:0)
+x13857                                        1536.75 	(obj:0)
+x13858                                       1140.375 	(obj:0)
+x13859                                        1191.75 	(obj:0)
+x13860                                       1395.375 	(obj:0)
+x13861                                        1536.75 	(obj:0)
+x13862                                        1536.75 	(obj:0)
+x13863                                        1459.75 	(obj:0)
+x13864                                        1390.75 	(obj:0)
+x13865                                        1325.75 	(obj:0)
+x13866                                        1489.75 	(obj:0)
+x13867                                         1441.5 	(obj:0)
+x13868                                        1239.75 	(obj:0)
+x13869                                        1382.75 	(obj:0)
+x13870                                        1535.75 	(obj:0)
+x13871                                       1349.125 	(obj:0)
+x13872                                         1427.5 	(obj:0)
+x13873                                        1404.75 	(obj:0)
+
+Statistics
+==========
+
+Master Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    1592.24
+  solving          :    1592.24
+  presolving       :       0.01 (included in solving)
+  reading          :       0.00
+  copying          :       0.02 (1 #copies) (minimal 0.02, maximal 0.02, average 0.02)
+Original Problem   :
+  Problem name     : master_dano3mip
+  Variables        : 12628 (0 binary, 0 integer, 0 implicit integer, 12628 continuous)
+  Constraints      : 3048 initial, 3048 maximal
+  Objective        : minimize, 0 non-zeros (abs.min = 1e+20, abs.max = -1e+20)
+Presolved Problem  :
+  Problem name     : t_master_dano3mip
+  Variables        : 14286 (0 binary, 0 integer, 0 implicit integer, 14286 continuous)
+  Constraints      : 3048 initial, 3049 maximal
+  Objective        : minimize, 31 non-zeros (abs.min = 576.232, abs.max = 768.375)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  roundbound       :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  linear           :       0.01       0.01      2          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -          0          -          -      13666          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  masterbranch     :          0+       351          0       1368          0          0          0          0          0          0       7285          0          0          0          0
+  integralorig     :          0          0          0          0         93          0          0        498          0          0          0          0          0          0        186
+  integral         :          0          0          0          0          0          0          0          1          0          0          0          0          0          0          0
+  linear           :       3048       3048          2       2771          0          0          0          1          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  masterbranch     :      25.19       0.00       0.00      25.19       0.00       0.00       0.00       0.00       0.00       0.00
+  integralorig     :     114.14       0.00       0.00       0.00       0.01       0.00       0.00     114.13       0.00       0.00
+  integral         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       0.05       0.01       0.01       0.03       0.00       0.00       0.00       0.00       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          1          0          0          0
+  genvbounds       :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          0          0          0          0
+  redcost          :          0          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :       2864          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.00       0.00       0.00       0.00       0.00       0.00
+  redcost          :       0.00       0.00       0.00       0.00       0.00       0.00
+  rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
+  vbounds          :       0.00       0.00       0.00       0.00       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     0          -          -          0          -          -    (maximal pool size: 0)
+  basis            :       7.78       0.00          2          0          0          2          1          0
+  master           :       3.27       0.00         13          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       1.21          -        489     439343
+  gcg              :     236.93       0.00        313       2317
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  generic          :       0.00       0.00          0          0          0          0          0          0          0          0
+  orig             :       0.00       0.00          0          0          0          0          0          0          0          0
+  relpsprob        :       0.00       0.00          0          0          0          0          0          0          0          0
+  ryanfoster       :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.00       0.00          0          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  greedycolsel     :       0.01       0.00          3          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mastercoefdiving :       0.00       0.00          0          0          0
+  masterfracdiving :       0.00       0.00          0          0          0
+  masterlinesdiving:       0.00       0.00          0          0          0
+  mastervecldiving :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.00       0.00          0          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.00       0.00          0          0          0
+  relaxcolsel      :       0.01       0.00          1          0          0
+  rens             :       0.00       0.00          0          0          0
+  restmaster       :       0.09       0.00          1          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          0          0          0
+  setcover         :       0.00       0.00          0          0          0
+  shiftandpropagate:       0.00       0.00          0          0          0
+  shifting         :       0.00       0.00          0          0          0
+  simplerounding   :     114.57       0.00        497          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          0          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :     289.58        485     684872    1511.86    2365.05       0.24         32
+  dual LP          :     913.78       1153    1142715    8723.02    1250.54       7.41       1022
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:    1230.98       1278    1627496    1273.47    1322.11
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+B&B Tree           :
+  number of runs   :          1
+  nodes            :         94 (93 internal, 1 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          0
+  objective leaves :          0
+  nodes (total)    :         94 (93 internal, 1 leaves)
+  nodes left       :         94
+  max depth        :         13
+  max depth (total):         13
+  backtracks       :         13 (13.8%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :         36 (0 domain reductions, 0 cutoffs)
+  avg switch length:       3.87
+  switching time   :       0.51
+Root Node          :
+  First LP value   :          -
+  First LP Iters   :          0
+  First LP Time    :       0.08
+  Final Dual Bound : +5.76243162081980e+02
+  Final Root Iters :     292581
+  Root LP Estimate : +5.76243162081980e+02
+Solution           :
+  Solutions found  :          1 (1 improvements)
+  First Solution   : +7.68375000000000e+02   (in run 1, after 1 nodes, 0.12 seconds, depth 0, found by <relaxation>)
+  Gap First Sol.   :      33.34 %
+  Gap Last Sol.    :      33.34 %
+  Primal Bound     : +7.68375000000000e+02   (in run 1, after 1 nodes, 0.12 seconds, depth 0, found by <relaxation>)
+  Dual Bound       : +5.76663655268109e+02
+  Gap              :      33.24 %
+  Avg. Gap         :      24.99 % (39794.64 primal-dual integral)
+Pricing Solver     : #HeurFarkas  #OptFarkas  #HeurRedcost #OptRedcost Time: HeurFarkas  OptFarkas  HeurRedcost OptRedcost
+  knapsack         :           0           0             0           0             0.00       0.00         0.06       0.00 
+  mip              :           0           0        143227       63793             0.00       0.00       175.06      22.27 
+
+Original Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3600.45
+  solving          :    3600.33
+  presolving       :       0.59 (included in solving)
+  reading          :       0.12
+  copying          :       0.05 (2 #copies) (minimal 0.02, maximal 0.03, average 0.03)
+Original Problem   :
+  Problem name     : dano3mip
+  Variables        : 13873 (552 binary, 0 integer, 0 implicit integer, 13321 continuous)
+  Constraints      : 3202 initial, 3202 maximal
+  Objective        : minimize, 1 non-zeros (abs.min = 1, abs.max = 1)
+Presolved Problem  :
+  Problem name     : t_dano3mip
+  Variables        : 13837 (552 binary, 0 integer, 0 implicit integer, 13285 continuous)
+  Constraints      : 3151 initial, 3152 maximal
+  Objective        : minimize, 1 non-zeros (abs.min = 1, abs.max = 1)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  convertinttobin  :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  domcol           :       0.01       0.00      1          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      3          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  trivial          :       0.00       0.00      5          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      5          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.46       0.00      1          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  varbound         :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  linear           :       0.11       0.01      8          0         36          0      13842          0         51          0          0          0
+  root node        :          -          -      -          0          -          -      13232          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  origbranch       :          0+       351          0          0          0          0          0          0          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          1         92          0       1387          0          0          0          0          0          0        186
+  decomp           :          0          0          0          0          0          0          0         14          0          0          0          0          0          0          0
+  varbound         :        621        621          4       5077          0          0          0          9          0          0        310          0          0          0          0
+  linear           :       2530       2530          4       5078          0          0          0          4          0          0      19988          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  origbranch       :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.01       0.00       0.00       0.00       0.00       0.00       0.00       0.01       0.00       0.00
+  decomp           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  varbound         :       0.02       0.00       0.00       0.02       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       0.85       0.01       0.17       0.67       0.00       0.00       0.00       0.00       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          5          0          0          0
+  genvbounds       :          0          0          0          0
+  obbt             :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :        242          0          0          2
+  redcost          :          5          0          0          0
+  rootredcost      :          1          0          0          0
+  vbounds          :       3493          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  obbt             :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.46       0.00       0.46       0.00       0.00       0.00
+  pseudoobj        :       0.00       0.00       0.00       0.00       0.00       0.00
+  redcost          :       0.01       0.00       0.00       0.01       0.00       0.00
+  rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
+  vbounds          :       0.00       0.00       0.00       0.00       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     7          -          -          6          -          -    (maximal pool size: 4)
+  clique           :       0.00       0.00          1          0          0          0          0          0
+  closecuts        :       0.00       0.00          0          0          0          0          0          0
+  gomory           :       0.02       0.00          2          0          0          0          2          0
+  impliedbounds    :       0.00       0.00          4          0          0          0          0          0
+  intobj           :       0.00       0.00          0          0          0          0          0          0
+  mcf              :       0.00       0.00          1          0          0          0          0          0
+  oddcycle         :       0.00       0.00          4          0          0          0          0          0
+  rapidlearning    :       0.00       0.00          0          0          0          0          0          0
+  strongcg         :       0.02       0.00          2          0          0          0          0          0
+  zerohalf         :       0.04       0.00          4          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.00          -          0          0
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  empty            :       0.00       0.00          1         92          0          0          0          0          0        186
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :      21.89       0.00          1          1          1
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  gcgcoefdiving    :      77.59       0.00          3          0          0
+  gcgdins          :       0.00       0.00          0          0          0
+  gcgfeaspump      :       0.00       0.00          0          0          0
+  gcgfracdiving    :     532.42       0.00          1          0          0
+  gcgguideddiving  :     324.08       0.00          3          0          0
+  gcglinesdiving   :      87.57       0.00          3          0          0
+  gcgpscostdiving  :      44.71       0.00          2          0          0
+  gcgrens          :      37.44       0.00          1          0          0
+  gcgrins          :       0.00       0.00          0          0          0
+  gcgrounding      :       0.31       0.00         92          0          0
+  gcgshifting      :       0.04       0.00          6          0          0
+  gcgsimplerounding:       0.00       0.00          0          0          0
+  gcgveclendiving  :     447.69       0.00          1          0          0
+  gcgzirounding    :       0.00       0.00          0          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          1          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  nlpdiving        :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.00       0.00          1          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.12       0.00          4          0          0
+  rens             :      47.40       0.00          1          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          4          0          0
+  shiftandpropagate:       0.11       0.00          1          0          0
+  shifting         :       0.01       0.00          4          0          0
+  simplerounding   :       0.00       0.00          0          0          0
+  subnlp           :       0.00       0.00          0          0          0
+  trivial          :       0.02       0.00          2          0          0
+  trysol           :       0.00       0.00          0          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  undercover       :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  xpcrossover      :     163.17       0.00          1          0          0
+  xprins           :     176.91       0.00          1          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          1          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.00          0          0       0.00          -       0.00          0
+  dual LP          :      39.76          5      61732   30866.00    1552.62       0.36          3
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:      28.92          9      61914    6879.33    2140.87
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+Relaxators         :       Time      Calls
+  gcg              :    1598.33         93
+B&B Tree           :
+  number of runs   :          1
+  nodes            :         94 (93 internal, 1 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          0
+  objective leaves :          0
+  nodes (total)    :         94 (93 internal, 1 leaves)
+  nodes left       :         94
+  max depth        :         13
+  max depth (total):         13
+  backtracks       :         13 (13.8%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          0 (0 domain reductions, 0 cutoffs)
+  avg switch length:       2.26
+  switching time   :       0.01
+Root Node          :
+  First LP value   : +5.76231620274569e+02
+  First LP Iters   :      60941 (1567.41 Iter/sec)
+  First LP Time    :      38.88
+  Final Dual Bound : +5.76250456553738e+02
+  Final Root Iters :     109993
+  Root LP Estimate : +5.77363544315546e+02
+Solution           :
+  Solutions found  :          1 (1 improvements)
+  First Solution   : +7.68375000000000e+02   (in run 1, after 1 nodes, 61.69 seconds, depth 0, found by <feaspump>)
+  Gap First Sol.   :      33.34 %
+  Gap Last Sol.    :      33.34 %
+  Primal Bound     : +7.68375000000000e+02   (in run 1, after 1 nodes, 61.69 seconds, depth 0, found by <feaspump>)
+  Dual Bound       : +5.76663655268109e+02
+  Gap              :      33.24 %
+  Avg. Gap         :          - (not evaluated)
+
+Simplex iterations :       iter
+  Master LP        :    3455083
+  Pricing LP       :      12677
+  Original LP      :     123646
+
+Detector statistics:       time     number     blocks
+  connected        :       0.00          0    
+  constype         :       0.00          0    
+  postproces       :       0.00          0    
+  consclass        :       0.41          0    
+  consname         :       0.00          0    
+  densemaste       :       0.01          0    
+  stairheur        :       0.00          0    
+  staircase        :       0.00          0    
+  random           :       0.00          0    
+  staircase_       :       0.00          0    
+  colors           :       0.00          0    
+  cutpacking       :       0.00          0    
+  compgreedi       :       0.00          0    
+  mastersetc       :       0.00          0    
+  mastersetp       :       0.00          0    
+  mastersetp       :       0.00          0    
+  hcgpartiti       :       0.00          0    
+  hrgpartiti       :       0.00          0    
+  hrcgpartit       :       0.00          0    
+  connectedb       :       0.00          0    
+  connected_       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  varclass         :       0.27          0    
+  isomorph         :       0.00          0    
+
+Decomp statistics  :
+  type             :  arrowhead
+  detector         :         cC
+  blocks           :        553
+  aggr. blocks     :        553
+Master statistics  :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros    bnzeros bintnzeros  min(dens)  max(dens) medi(dens) mean(dens)
+  master           :      12628          0          0          0      12628       2495      78241       6048          0          0      0.000      0.236      0.002      0.002
+Pricing statistics :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros  min(dens)  max(dens) medi(dens) mean(dens)  identical
+          1        :         36          0          0          0         36         35         70          0      0.029      1.000      0.029      0.056          1
+          2        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+          3        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+          4        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+          5        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+          6        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+          7        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+          8        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+          9        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         10        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         11        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         12        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         13        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         14        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         15        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+         16        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         17        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         18        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         19        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         20        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         21        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         22        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         23        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+         24        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         25        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         26        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         27        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         28        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         29        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         30        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         31        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         32        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         33        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         34        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+         35        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         36        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         37        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         38        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         39        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+         40        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         41        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         42        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         43        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         44        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         45        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         46        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         47        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         48        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         49        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         50        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         51        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         52        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         53        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+         54        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         55        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         56        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         57        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         58        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         59        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         60        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         61        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         62        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         63        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+         64        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         65        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         66        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         67        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         68        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         69        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         70        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         71        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         72        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         73        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         74        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         75        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         76        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+         77        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         78        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         79        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         80        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         81        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         82        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         83        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+         84        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         85        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         86        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         87        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+         88        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         89        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         90        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         91        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         92        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+         93        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         94        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         95        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         96        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         97        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         98        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         99        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        100        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        101        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        102        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        103        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        104        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        105        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        106        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        107        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        108        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        109        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        110        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        111        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        112        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        113        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        114        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        115        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        116        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        117        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        118        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        119        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        120        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        121        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        122        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        123        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        124        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        125        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        126        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        127        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        128        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        129        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+        130        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        131        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        132        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        133        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        134        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        135        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        136        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        137        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        138        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        139        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        140        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        141        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        142        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        143        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        144        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        145        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        146        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        147        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        148        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        149        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        150        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        151        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        152        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        153        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        154        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        155        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        156        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        157        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        158        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        159        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        160        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        161        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        162        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        163        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        164        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        165        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        166        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        167        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        168        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        169        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        170        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        171        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        172        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        173        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        174        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        175        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        176        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        177        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        178        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        179        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        180        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        181        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        182        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        183        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        184        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        185        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        186        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        187        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        188        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        189        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        190        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        191        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        192        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        193        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+        194        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        195        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        196        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        197        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        198        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+        199        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        200        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        201        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        202        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        203        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        204        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        205        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        206        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        207        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        208        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        209        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        210        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        211        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        212        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+        213        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        214        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        215        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        216        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+        217        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        218        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        219        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        220        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        221        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        222        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        223        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        224        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        225        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        226        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+        227        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        228        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        229        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        230        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+        231        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        232        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        233        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        234        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        235        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        236        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        237        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        238        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        239        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        240        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        241        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        242        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+        243        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        244        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        245        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        246        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        247        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        248        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        249        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        250        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        251        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        252        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        253        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        254        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        255        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        256        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        257        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        258        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        259        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        260        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        261        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        262        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        263        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        264        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        265        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        266        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        267        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        268        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        269        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        270        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        271        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        272        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        273        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        274        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+        275        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        276        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        277        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        278        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        279        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        280        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        281        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        282        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        283        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        284        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        285        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        286        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        287        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        288        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        289        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        290        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        291        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        292        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        293        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        294        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        295        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        296        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        297        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        298        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        299        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        300        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        301        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        302        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        303        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        304        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        305        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        306        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        307        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        308        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        309        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        310        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        311        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        312        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        313        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        314        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        315        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        316        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        317        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        318        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        319        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        320        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        321        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        322        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        323        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        324        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        325        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        326        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        327        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        328        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        329        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        330        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        331        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        332        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        333        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        334        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        335        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        336        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        337        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        338        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        339        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        340        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        341        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        342        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        343        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        344        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        345        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        346        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        347        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        348        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        349        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        350        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        351        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        352        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        353        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        354        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        355        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        356        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        357        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+        358        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        359        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        360        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+        361        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        362        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        363        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        364        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        365        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        366        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        367        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        368        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        369        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        370        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        371        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        372        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        373        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        374        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        375        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        376        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        377        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        378        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        379        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        380        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        381        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        382        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        383        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        384        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        385        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        386        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        387        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        388        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        389        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        390        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        391        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        392        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        393        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        394        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        395        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+        396        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        397        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        398        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        399        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        400        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        401        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        402        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        403        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        404        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        405        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        406        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        407        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        408        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        409        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        410        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        411        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        412        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        413        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        414        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        415        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        416        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        417        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        418        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        419        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        420        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        421        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        422        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        423        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        424        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        425        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        426        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        427        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        428        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        429        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        430        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        431        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        432        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        433        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        434        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        435        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        436        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        437        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        438        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        439        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        440        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        441        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        442        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        443        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        444        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        445        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        446        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        447        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        448        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        449        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        450        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        451        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        452        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        453        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        454        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        455        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        456        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        457        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        458        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        459        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        460        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        461        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        462        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        463        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        464        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        465        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        466        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        467        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        468        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        469        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        470        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        471        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        472        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        473        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        474        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        475        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+        476        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        477        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        478        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        479        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        480        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        481        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        482        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        483        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        484        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        485        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        486        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        487        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        488        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        489        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        490        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        491        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        492        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        493        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        494        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        495        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        496        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        497        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        498        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        499        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        500        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        501        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        502        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        503        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        504        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        505        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        506        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        507        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        508        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        509        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        510        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        511        :          3          1          0          0          2          2          4          2      0.500      1.000      0.500      0.667          1
+        512        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        513        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        514        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        515        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        516        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        517        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        518        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        519        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        520        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        521        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        522        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        523        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        524        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        525        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        526        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        527        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        528        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        529        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        530        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        531        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        532        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        533        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        534        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        535        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        536        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        537        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        538        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        539        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        540        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        541        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        542        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+        543        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        544        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        545        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        546        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        547        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        548        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        549        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        550        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        551        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        552        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        553        :          4          1          0          0          3          3          6          3      0.333      1.000      0.333      0.500          1
+Decomp Scores      :
+  border area      :      0.982
+  avg. density     :      0.944
+  linking score    :      0.500
+Pricing time in colpool = 0.010000 sec

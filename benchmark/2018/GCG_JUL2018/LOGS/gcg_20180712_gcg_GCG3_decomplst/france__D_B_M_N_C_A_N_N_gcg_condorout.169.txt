@@ -1,0 +1,1116 @@
+GCG version 3.0.0 [GitHash: 70e7382]
+Copyright (C) 2010-2018 Operations Research, RWTH Aachen University
+                        Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+SCIP version 6.0.0 [precision: 8 byte] [memory: block] [mode: optimized] [LP solver: SoPlex 4.0.0] [GitHash: 77d3bc8]
+Copyright (C) 2002-2018 Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+External codes: 
+  Readline 6.0         GNU library for command line editing (gnu.org/s/readline)
+  SoPlex 4.0.0         Linear Programming Solver developed at Zuse Institute Berlin (soplex.zib.de) [GitHash: 82cab95]
+  CppAD 20180000.0     Algorithmic Differentiation of C++ algorithms developed by B. Bell (www.coin-or.org/CppAD)
+  ZLIB 1.2.3           General purpose compression library by J. Gailly and M. Adler (zlib.net)
+  ZIMPL 3.3.6          Zuse Institute Mathematical Programming Language developed by T. Koch (zimpl.zib.de)
+  bliss 0.73           A Tool for Computing Automorphism Groups of Graphs by T. Junttila and P. Kaski (http://www.tcs.hut.fi/Software/bliss/)
+
+reading user parameter file </LOG_DATA/scripts/options_gcg.parm>
+
+read problem </ORDATA/miplib/france__D_B_M_N_C_A_N_N.mps>
+============
+
+original problem has 2205 variables (0 bin, 45 int, 0 impl, 2160 cont) and 715 constraints
+presolving:
+(round 1, fast)       20 del vars, 20 del conss, 0 add conss, 90 chg bounds, 0 chg sides, 0 chg coeffs, 0 upgd conss, 0 impls, 0 clqs
+(round 2, fast)       25 del vars, 21 del conss, 0 add conss, 100 chg bounds, 0 chg sides, 0 chg coeffs, 0 upgd conss, 0 impls, 0 clqs
+(round 3, fast)       30 del vars, 21 del conss, 0 add conss, 100 chg bounds, 0 chg sides, 0 chg coeffs, 0 upgd conss, 0 impls, 0 clqs
+presolving (4 rounds: 4 fast, 1 medium, 1 exhaustive):
+ 30 deleted vars, 21 deleted constraints, 0 added constraints, 100 tightened bounds, 0 added holes, 0 changed sides, 0 changed coefficients
+ 0 implications, 0 cliques
+presolved problem has 2175 variables (0 bin, 45 int, 0 impl, 2130 cont) and 694 constraints
+    694 constraints of type <linear>
+transformed objective value is always integral (scale: 200)
+Presolving Time: 0.01
+start creating seeedpool for current problem 
+created seeedpool for current problem, n detectors: 26 
+ Consclassifier "nonzeros" yields a classification with 15  different constraint classes 
+ Consclassifier "constypes" yields a classification with 1 different constraint classes 
+ Consclassifier "constypes according to miplib" yields a classification with 2 different constraint classes 
+ Varclassifier "vartypes" yields a classification with 2 different variable classes
+ Varclassifier "varobjvals" yields a classification with 2 different variable classes
+ Varclassifier "varobjvals" is not considered since it offers the same structure as "vartypes"
+ Varclassifier "varobjvalsigns" yields a classification with 2 different variable classes
+ Varclassifier "varobjvalsigns" is not considered since it offers the same structure as "vartypes"
+ Added reduced version of consclassifier nonzeros with 9  different constraint classes 
+Begin of detection round 0 of 1 total rounds 
+Start to propagate seeed with id 1 (0 of 1 in round 0) 
+ in dec_consclass: there are 4 different constraint classes   
+ the current consclass distribution includes 15 classes but only 9 are allowed for propagateSeeed() of cons class detector
+  the current constraint classifier "constypes" consists of 1 different classes   
+  the current constraint classifier "constypes according to miplib" consists of 2 different classes   
+  the current constraint classifier "nonzeros-red-to-9" consists of 9 different classes   
+ dec_consclass found 515 new seeeds 
+dec_densemasterconss found 1 new seeed 
+Detecting Arrowhead structure: 3 9 2 done, 6 seeeds found.
+Start finishing of partial decomposition 1.
+Measured running time per detector: 
+Detector consclass                 	 worked on 	 512 of 521	 and took a total time of 	0.35
+Detector densemasterconss          	 worked on 	 1 of 521	 and took a total time of 	0
+Detector hrgpartition              	 worked on 	 5 of 521	 and took a total time of 	0.14
+Detector varclass                  	 worked on 	 2 of 521	 and took a total time of 	0
+Started postprocessing of decompositions...
+...finished postprocessing of decompositions. Added 318 new decomps. 
+
+solve problem
+=============
+
+
+A Dantzig-Wolfe reformulation is applied to solve the original problem.
+
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+   0.1s|     1 |     0 |      0 |      0 |     - |  10M|   0 |   0 | 694 |   0 |   0 |  0 | 1.096400e+04 |      --      |   --   |    Inf 
+r  0.1s|     1 |     0 |      0 |      0 |     - |  10M|   0 |   0 | 694 |   0 |   0 |  0 | 1.096400e+04 | 1.520000e+04 |   --   |  38.64%
+Chosen structure has 25 blocks, 49 master-only (static) variables, and 90 linking constraints.
+This decomposition has a maxwhite score of 0.836273.
+Warning: Discretization with continuous variables is only an experimental feature.
+Matrix has 25 blocks, using 25 pricing problems.
+Big M to be used for artificial variables not reliable; use regular Farkas pricing instead.
+
+     
+   0.2s|     1 |     0 |     14 |     14 |     - |  21M|   0 |  74 | 695 | 116 |   0 |  0 | 1.096400e+04 | 1.520000e+04 |   0.00%|  38.64%
+   0.2s|     1 |     0 |     14 |     14 |     - |  21M|   0 |  74 | 695 | 116 |   0 |  0 | 1.096400e+04 | 1.520000e+04 |   0.00%|  38.64%
+Starting reduced cost pricing...
+   0.8s|     1 |     0 |   4526 |    157 |     - |  22M|   0 | 133 | 695 | 116 |   0 |  0 | 1.096400e+04 | 1.520000e+04 |   6.49%|  38.64%
+   0.9s|     1 |     0 |   4913 |    544 |     - |  22M|   0 | 143 | 695 | 116 |   9 |  2 | 1.096400e+04 | 1.520000e+04 |   5.74%|  38.64%
+** 1.3s|     1 |     0 |   5791 |    712 |     - |  23M|   0 | 228 | 695 | 116 |   9 |  2 | 1.096400e+04 | 1.460000e+04 |   3.35%|  33.16%
+   1.3s|     1 |     0 |   5791 |    712 |     - |  23M|   0 | 228 | 695 | 116 |   9 |  2 | 1.096400e+04 | 1.460000e+04 |   3.35%|  33.16%
+   2.0s|     1 |     0 |   8796 |    850 |     - |  23M|   0 | 274 | 695 | 116 |   9 |  2 | 1.100863e+04 | 1.460000e+04 |   2.51%|  32.62%
+   2.0s|     1 |     0 |   9055 |   1109 |     - |  23M|   0 | 274 | 695 | 116 |  16 |  4 | 1.100863e+04 | 1.460000e+04 |   2.51%|  32.62%
+   3.1s|     1 |     0 |  13445 |   1344 |     - |  23M|   0 | 333 | 695 | 116 |  16 |  4 | 1.106969e+04 | 1.460000e+04 |   2.06%|  31.89%
+   3.2s|     1 |     0 |  13610 |   1509 |     - |  24M|   0 | 333 | 695 | 116 |  20 |  6 | 1.106969e+04 | 1.460000e+04 |   2.06%|  31.89%
+   3.8s|     1 |     0 |  16021 |   1579 |     - |  24M|   0 | 365 | 695 | 116 |  20 |  6 | 1.108446e+04 | 1.460000e+04 |   1.76%|  31.72%
+   4.2s|     1 |     0 |  17744 |   1651 |     - |  24M|   0 | 365 | 695 | 116 |  21 |  8 | 1.108446e+04 | 1.460000e+04 |   1.69%|  31.72%
+   4.3s|     1 |     0 |  17807 |   1714 |     - |  24M|   0 | 365 | 695 | 116 |  23 | 10 | 1.108446e+04 | 1.460000e+04 |   1.69%|  31.72%
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+   4.9s|     1 |     0 |  20181 |   1760 |     - |  24M|   0 | 399 | 695 | 116 |  23 | 10 | 1.108446e+04 | 1.460000e+04 |   1.50%|  31.72%
+   5.0s|     1 |     0 |  20342 |   1921 |     - |  24M|   0 | 399 | 695 | 116 |  23 | 12 | 1.108446e+04 | 1.460000e+04 |   1.50%|  31.72%
+   5.0s|     1 |     0 |  20342 |   1921 |     - |  24M|   0 | 399 | 695 | 116 |  23 | 12 | 1.108446e+04 | 1.460000e+04 |   1.50%|  31.72%
+   5.0s|     1 |     0 |  20342 |   1921 |     - |  24M|   0 | 424 | 695 | 116 |  23 | 12 | 1.108446e+04 | 1.460000e+04 |   1.50%|  31.72%
+i  5.1s|     1 |     0 |  20342 |   1921 |     - |  25M|   0 | 474 | 695 | 116 |  23 | 12 | 1.108446e+04 | 1.440000e+04 |   1.50%|  29.91%
+   5.1s|     1 |     0 |  20342 |   1921 |     - |  25M|   0 | 474 | 695 | 116 |  23 | 12 | 1.108446e+04 | 1.440000e+04 |   1.50%|  29.91%
+   5.1s|     1 |     2 |  20342 |   1921 |     - |  25M|   0 | 474 | 695 | 116 |  23 | 12 | 1.108446e+04 | 1.440000e+04 |   1.50%|  29.91%
+p 10.6s|     8 |     9 |  41993 |   7970 | 887.1 |  27M|   4 | 667 | 695 | 116 |   0 |  1 | 1.111334e+04 | 1.380000e+04 |   --   |  24.18%
+l 36.0s|    48 |    49 | 123312 |  44674 | 913.1 |  34M|   7 |1575 | 695 | 116 |   0 |  1 | 1.121932e+04 | 1.340000e+04 |   --   |  19.44%
+  65.6s|   100 |   101 | 202052 |  72232 | 711.8 |  40M|   9 |2062 | 695 | 116 |  23 |  1 | 1.134065e+04 | 1.340000e+04 |   --   |  18.16%
+c  105s|   171 |   172 | 289144 | 102138 | 590.5 |  44M|  11 |2339 | 695 | 116 |   0 |  1 | 1.139606e+04 | 1.320000e+04 |   --   |  15.83%
+   135s|   200 |   201 | 349263 | 120965 | 599.0 |  49M|  11 |2918 | 695 | 116 |  23 |  1 | 1.140766e+04 | 1.320000e+04 |   --   |  15.71%
+c  184s|   246 |   247 | 422916 | 150494 | 607.1 |  56M|  12 |3664 | 695 | 116 |   0 |  1 | 1.142032e+04 | 1.300000e+04 |   --   |  13.83%
+   253s|   300 |   301 | 510241 | 181445 | 601.0 |  62M|  12 |4473 | 695 | 116 |  23 |  1 | 1.143734e+04 | 1.300000e+04 |   --   |  13.66%
+   421s|   400 |   401 | 663835 | 257773 | 641.6 |  74M|  14 |5750 | 695 | 116 |  23 |  1 | 1.145980e+04 | 1.300000e+04 |   --   |  13.44%
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+   576s|   500 |   501 | 810794 | 325014 | 647.8 |  82M|  14 |6420 | 695 | 116 |  23 |  1 | 1.147782e+04 | 1.300000e+04 |   --   |  13.26%
+   716s|   600 |   599 | 953648 | 382643 | 635.9 |  90M|  15 |6920 | 695 | 116 |  23 |  1 | 1.149322e+04 | 1.300000e+04 |   --   |  13.11%
+p  790s|   639 |   638 |1019849 | 410412 | 640.5 |  93M|  15 |7228 | 695 | 116 |   0 |  1 | 1.149983e+04 | 1.280000e+04 |   --   |  11.31%
+   875s|   700 |   699 |1094582 | 442755 | 630.9 |  99M|  15 |7538 | 695 | 116 |  23 |  1 | 1.150999e+04 | 1.280000e+04 |   --   |  11.21%
+   993s|   800 |   799 |1201607 | 483711 | 603.2 | 106M|  15 |7888 | 695 | 116 |  23 |  1 | 1.152256e+04 | 1.280000e+04 |   --   |  11.09%
+  1076s|   900 |   897 |1302818 | 511640 | 567.2 | 112M|  15 |8059 | 695 | 116 |  23 |  1 | 1.153893e+04 | 1.280000e+04 |   --   |  10.93%
+  1240s|  1000 |   997 |1424011 | 564299 | 563.1 | 119M|  15 |8348 | 695 | 116 |  23 |  1 | 1.155068e+04 | 1.280000e+04 |   --   |  10.82%
+  1359s|  1100 |  1097 |1525687 | 598742 | 543.2 | 125M|  15 |8502 | 695 | 116 |  23 |  1 | 1.157156e+04 | 1.280000e+04 |   --   |  10.62%
+  1511s|  1200 |  1197 |1648063 | 644142 | 535.8 | 130M|  15 |8802 | 695 | 116 |  23 |  1 | 1.157875e+04 | 1.280000e+04 |   --   |  10.55%
+  1652s|  1300 |  1295 |1771120 | 695152 | 533.8 | 136M|  15 |9096 | 695 | 116 |  23 |  1 | 1.158374e+04 | 1.280000e+04 |   --   |  10.50%
+  1763s|  1400 |  1393 |1869182 | 728385 | 519.4 | 143M|  16 |9255 | 695 | 116 |  23 |  1 | 1.158636e+04 | 1.280000e+04 |   --   |  10.47%
+  1876s|  1500 |  1493 |1972960 | 767839 | 511.1 | 148M|  16 |9370 | 695 | 116 |  23 |  1 | 1.159007e+04 | 1.280000e+04 |   --   |  10.44%
+  2000s|  1600 |  1591 |2074327 | 808998 | 504.8 | 154M|  16 |9618 | 695 | 116 |  23 |  1 | 1.159561e+04 | 1.280000e+04 |   --   |  10.39%
+  2175s|  1700 |  1687 |2191567 | 858610 | 504.3 | 159M|  16 |9722 | 695 | 116 |  23 |  1 | 1.160307e+04 | 1.280000e+04 |   --   |  10.32%
+  2269s|  1800 |  1785 |2300777 | 893565 | 495.7 | 164M|  17 |9883 | 695 | 116 |  23 |  1 | 1.160640e+04 | 1.280000e+04 |   --   |  10.28%
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+  2447s|  1900 |  1879 |2431958 | 955715 | 502.3 | 170M|  17 |  10k| 695 | 116 |  23 |  1 | 1.160897e+04 | 1.280000e+04 |   --   |  10.26%
+  2540s|  2000 |  1979 |2516866 | 982015 | 490.4 | 175M|  17 |  10k| 695 | 116 |  23 |  1 | 1.161074e+04 | 1.280000e+04 |   --   |  10.24%
+  2641s|  2100 |  2077 |2607911 |1014171 | 482.3 | 181M|  17 |  10k| 695 | 116 |  23 |  1 | 1.161543e+04 | 1.280000e+04 |   --   |  10.20%
+  2763s|  2200 |  2175 |2715535 |1053408 | 478.2 | 187M|  17 |  10k| 695 | 116 |  23 |  1 | 1.161979e+04 | 1.280000e+04 |   --   |  10.16%
+  2854s|  2300 |  2273 |2820606 |1085601 | 471.4 | 192M|  17 |  10k| 695 | 116 |  23 |  1 | 1.162215e+04 | 1.280000e+04 |   --   |  10.13%
+  2997s|  2400 |  2371 |2917413 |1120490 | 466.3 | 198M|  17 |  10k| 695 | 116 |  23 |  1 | 1.162645e+04 | 1.280000e+04 |   --   |  10.09%
+  3115s|  2500 |  2467 |3023987 |1154433 | 461.3 | 204M|  17 |  10k| 695 | 116 |  23 |  1 | 1.162951e+04 | 1.280000e+04 |   --   |  10.06%
+  3230s|  2600 |  2563 |3128834 |1192985 | 458.3 | 210M|  17 |  11k| 695 | 116 |  23 |  1 | 1.163163e+04 | 1.280000e+04 |   --   |  10.04%
+  3350s|  2700 |  2663 |3229082 |1228073 | 454.4 | 216M|  18 |  11k| 695 | 116 |  23 |  1 | 1.163335e+04 | 1.280000e+04 |   --   |  10.03%
+  3436s|  2800 |  2761 |3325566 |1260809 | 449.8 | 222M|  18 |  11k| 695 | 116 |  23 |  1 | 1.163472e+04 | 1.280000e+04 |   --   |  10.02%
+  3539s|  2900 |  2859 |3420461 |1294391 | 445.9 | 227M|  18 |  11k| 695 | 116 |  23 |  1 | 1.163772e+04 | 1.280000e+04 |   --   |   9.99%
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 3600.08
+Solving Nodes      : 2965
+Primal Bound       : +1.28000000000000e+04 (342 solutions)
+Dual Bound         : +1.16408000000000e+04
+Gap                : 9.96 %
+
+primal solution:
+================
+
+objective value:                                12800
+XHC(LD_LD_2500.000000__LinkN25_N04)                    3 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN25_N03)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN25_N02)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN25_N01)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN24_N23)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN22_N24)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN22_N23)                    3 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN22_N20)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN22_N09)                    3 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN20_N24)                    2 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN20_N19)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN18_N19)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN17_N16)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN17_N10)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN16_N12)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN16_N09)                    2 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN15_N25)                    4 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN15_N22)                    3 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN15_N21)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN15_N20)                    4 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN15_N18)                    2 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN15_N16)                    3 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN15_N14)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN15_N13)                    2 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN15_N11)                    2 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN15_N09)                    2 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN11_N12)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN11_N10)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN10_N12)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN08_N09)                    2 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN08_N07)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN06_N08)                    2 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN06_N05)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN05_N04)                    2 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN03_N10)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN03_N09)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN03_N07)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN01_N02)                    1 	(obj:200)
+XHC(LD_LD_2500.000000__LinkN25_N09)                    1 	(obj:200)
+EF(NOS__CSN15_IntDS__FLinkN01_N02)     225.630722962123 	(obj:0)
+EF(NOS__CSN15_IntDS__BLinkN01_N02)     183.160105125987 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN25_N01)     42.4706178361357 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN25_N02)     443.529382163864 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN01_N02)     351.213300812551 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN01_N02)     88.8954396809845 	(obj:0)
+EF(NOS__CSN18_IntDS__FLinkN01_N02)     1678.15443209833 	(obj:0)
+EF(NOS__CSN25_IntDS__FLinkN01_N02)                  155 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN01_N02)     1.10610444601314 	(obj:0)
+EF(NOS__CSN10_IntDS__BLinkN01_N02)     129.657686970169 	(obj:0)
+EF(NOS__CSN16_IntDS__BLinkN01_N02)                  213 	(obj:0)
+EF(NOS__CSN18_IntDS__BLinkN01_N02)      1536.0802897905 	(obj:0)
+EF(NOS__CSN02_IntDS__BLinkN01_N02)                   77 	(obj:0)
+EF(NOS__CSN19_IntDS__BLinkN01_N02)     48.0000000000211 	(obj:0)
+EF(NOS__CSN21_IntDS__BLinkN01_N02)     49.1019181133408 	(obj:0)
+EF(NOS__CSN07_IntDS__BLinkN01_N02)                   48 	(obj:0)
+EF(NOS__CSN15_IntDS__BLinkN03_N07)      513.87952912422 	(obj:0)
+EF(NOS__CSN15_IntDS__BLinkN03_N09)     14.1785474671895 	(obj:0)
+EF(NOS__CSN15_IntDS__BLinkN03_N10)     5.90630227321601 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN25_N03)     117.035621135374 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN08_N07)      513.87952912422 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN03_N07)     250.049042401712 	(obj:0)
+EF(NOS__CSN23_IntDS__FLinkN03_N07)                  184 	(obj:0)
+EF(NOS__CSN10_IntDS__FLinkN03_N07)     494.054698291089 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN03_N07)     58.8962593071978 	(obj:0)
+EF(NOS__CSN04_IntDS__FLinkN03_N07)                   48 	(obj:0)
+EF(NOS__CSN08_IntDS__BLinkN03_N07)                  155 	(obj:0)
+EF(NOS__CSN13_IntDS__BLinkN03_N07)     90.8404603093568 	(obj:0)
+EF(NOS__CSN06_IntDS__BLinkN03_N07)     212.280010566423 	(obj:0)
+EF(NOS__CSN07_IntDS__BLinkN03_N07)                 1528 	(obj:0)
+EF(NOS__CSN15_IntDS__BLinkN08_N09)      513.87952912422 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN15_N09)     2171.05807659141 	(obj:0)
+EF(NOS__CSN10_IntDS__FLinkN03_N09)     357.267362992516 	(obj:0)
+EF(NOS__CSN03_IntDS__FLinkN03_N09)                  923 	(obj:0)
+EF(NOS__CSN07_IntDS__FLinkN03_N09)     717.719989433577 	(obj:0)
+EF(NOS__CSN09_IntDS__BLinkN03_N09)                  544 	(obj:0)
+EF(NOS__CSN22_IntDS__BLinkN03_N09)     943.626291706793 	(obj:0)
+EF(NOS__CSN23_IntDS__BLinkN03_N09)                  563 	(obj:0)
+EF(NOS__CSN18_IntDS__BLinkN03_N09)     223.198710836124 	(obj:0)
+EF(NOS__CSN14_IntDS__BLinkN03_N09)                  106 	(obj:0)
+EF(NOS__CSN21_IntDS__BLinkN03_N09)     105.996449989894 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN11_N10)      34.364458739931 	(obj:0)
+EF(NOS__CSN15_IntDS__BLinkN17_N10)      28.458156466715 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN03_N10)     91.5772493050808 	(obj:0)
+EF(NOS__CSN05_IntDS__FLinkN03_N10)                  660 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN03_N10)      57.280010566423 	(obj:0)
+EF(NOS__CSN25_IntDS__FLinkN03_N10)                  272 	(obj:0)
+EF(NOS__CSN02_IntDS__FLinkN03_N10)                  408 	(obj:0)
+EF(NOS__CSN01_IntDS__FLinkN03_N10)                  184 	(obj:0)
+EF(NOS__CSN03_IntDS__FLinkN03_N10)                  155 	(obj:0)
+EF(NOS__CSN07_IntDS__FLinkN03_N10)                  184 	(obj:0)
+EF(NOS__CSN04_IntDS__FLinkN03_N10)                   48 	(obj:0)
+EF(NOS__CSN10_IntDS__BLinkN03_N10)     1871.32206128361 	(obj:0)
+EF(NOS__CSN12_IntDS__BLinkN03_N10)                  272 	(obj:0)
+EF(NOS__CSN11_IntDS__BLinkN03_N10)     58.8962593071978 	(obj:0)
+EF(NOS__CSN17_IntDS__BLinkN03_N10)                  106 	(obj:0)
+EF(NOS__CSN15_IntDS__BLinkN05_N04)                 1147 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN25_N04)                 1467 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN05_N04)      13.280010566423 	(obj:0)
+EF(NOS__CSN05_IntDS__FLinkN05_N04)                 4352 	(obj:0)
+EF(NOS__CSN08_IntDS__FLinkN05_N04)                   77 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN05_N04)     433.719989433577 	(obj:0)
+EF(NOS__CSN09_IntDS__BLinkN05_N04)                  953 	(obj:0)
+EF(NOS__CSN23_IntDS__BLinkN05_N04)     82.3048921486626 	(obj:0)
+EF(NOS__CSN24_IntDS__BLinkN05_N04)     41.6951078513372 	(obj:0)
+EF(NOS__CSN20_IntDS__BLinkN05_N04)                  768 	(obj:0)
+EF(NOS__CSN10_IntDS__BLinkN05_N04)                  476 	(obj:0)
+EF(NOS__CSN13_IntDS__BLinkN05_N04)                  379 	(obj:0)
+EF(NOS__CSN18_IntDS__BLinkN05_N04)                  476 	(obj:0)
+EF(NOS__CSN25_IntDS__BLinkN05_N04)                  155 	(obj:0)
+EF(NOS__CSN01_IntDS__BLinkN05_N04)                  261 	(obj:0)
+EF(NOS__CSN14_IntDS__BLinkN05_N04)                  184 	(obj:0)
+EF(NOS__CSN04_IntDS__BLinkN05_N04)                   77 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN06_N05)      13.280010566423 	(obj:0)
+EF(NOS__CSN23_IntDS__FLinkN06_N05)     588.695107851337 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN06_N05)     823.304892148663 	(obj:0)
+EF(NOS__CSN08_IntDS__FLinkN06_N05)                  359 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN06_N05)     715.719989433577 	(obj:0)
+EF(NOS__CSN05_IntDS__BLinkN06_N05)                  184 	(obj:0)
+EF(NOS__CSN25_IntDS__BLinkN06_N05)                  155 	(obj:0)
+EF(NOS__CSN01_IntDS__BLinkN06_N05)                   77 	(obj:0)
+EF(NOS__CSN04_IntDS__BLinkN06_N05)                   77 	(obj:0)
+EF(NOS__CSN05_IntDS__FLinkN06_N08)                  184 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN06_N08)     2320.28001056642 	(obj:0)
+EF(NOS__CSN09_IntDS__BLinkN06_N08)                  408 	(obj:0)
+EF(NOS__CSN22_IntDS__BLinkN06_N08)      13.280010566423 	(obj:0)
+EF(NOS__CSN23_IntDS__BLinkN06_N08)     870.695107851337 	(obj:0)
+EF(NOS__CSN24_IntDS__BLinkN06_N08)     1192.30489214866 	(obj:0)
+EF(NOS__CSN10_IntDS__BLinkN06_N08)                  204 	(obj:0)
+EF(NOS__CSN08_IntDS__BLinkN06_N08)                  359 	(obj:0)
+EF(NOS__CSN11_IntDS__BLinkN06_N08)                  116 	(obj:0)
+EF(NOS__CSN14_IntDS__BLinkN06_N08)                   77 	(obj:0)
+EF(NOS__CSN07_IntDS__BLinkN06_N08)                   77 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN08_N07)     50.9509575982876 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN08_N07)                  243 	(obj:0)
+EF(NOS__CSN05_IntDS__FLinkN08_N07)                  184 	(obj:0)
+EF(NOS__CSN08_IntDS__FLinkN08_N07)                  232 	(obj:0)
+EF(NOS__CSN16_IntDS__FLinkN08_N07)                  213 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN08_N07)     90.8404603093568 	(obj:0)
+EF(NOS__CSN18_IntDS__FLinkN08_N07)                  136 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN08_N07)     212.280010566423 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN08_N07)     18.1037406928022 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN08_N07)                   48 	(obj:0)
+EF(NOS__CSN10_IntDS__BLinkN08_N07)     358.054698291089 	(obj:0)
+EF(NOS__CSN07_IntDS__BLinkN08_N07)                   77 	(obj:0)
+EF(NOS__CSN08_IntDS__FLinkN08_N09)                 3008 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN08_N09)                 1992 	(obj:0)
+EF(NOS__CSN09_IntDS__BLinkN08_N09)                  408 	(obj:0)
+EF(NOS__CSN22_IntDS__BLinkN08_N09)     64.2309681647105 	(obj:0)
+EF(NOS__CSN23_IntDS__BLinkN08_N09)     870.695107851337 	(obj:0)
+EF(NOS__CSN24_IntDS__BLinkN08_N09)     1804.30489214866 	(obj:0)
+EF(NOS__CSN10_IntDS__BLinkN08_N09)     49.9453017089106 	(obj:0)
+EF(NOS__CSN16_IntDS__BLinkN08_N09)                  213 	(obj:0)
+EF(NOS__CSN13_IntDS__BLinkN08_N09)     90.8404603093568 	(obj:0)
+EF(NOS__CSN18_IntDS__BLinkN08_N09)                  340 	(obj:0)
+EF(NOS__CSN25_IntDS__BLinkN08_N09)                  155 	(obj:0)
+EF(NOS__CSN11_IntDS__BLinkN08_N09)     134.103740692802 	(obj:0)
+EF(NOS__CSN01_IntDS__BLinkN08_N09)                   77 	(obj:0)
+EF(NOS__CSN14_IntDS__BLinkN08_N09)                   77 	(obj:0)
+EF(NOS__CSN21_IntDS__BLinkN08_N09)                  125 	(obj:0)
+EF(NOS__CSN17_IntDS__BLinkN08_N09)                   77 	(obj:0)
+EF(NOS__CSN20_IntDS__FLinkN10_N12)      303.31487830697 	(obj:0)
+EF(NOS__CSN10_IntDS__FLinkN10_N12)     1216.56630384292 	(obj:0)
+EF(NOS__CSN05_IntDS__FLinkN10_N12)                  476 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN10_N12)     28.1188178501135 	(obj:0)
+EF(NOS__CSN02_IntDS__FLinkN10_N12)                  204 	(obj:0)
+EF(NOS__CSN01_IntDS__FLinkN10_N12)                  136 	(obj:0)
+EF(NOS__CSN07_IntDS__FLinkN10_N12)                  136 	(obj:0)
+EF(NOS__CSN12_IntDS__BLinkN10_N12)     503.056811088868 	(obj:0)
+EF(NOS__CSN16_IntDS__BLinkN10_N12)                  544 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN15_N11)      34.364458739931 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN11_N10)      13.280010566423 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN11_N10)     623.713192147832 	(obj:0)
+EF(NOS__CSN20_IntDS__FLinkN11_N10)     966.076034702898 	(obj:0)
+EF(NOS__CSN12_IntDS__FLinkN11_N10)     144.992231312845 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN11_N10)                  272 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN11_N10)     179.509492754049 	(obj:0)
+EF(NOS__CSN19_IntDS__FLinkN11_N10)                  136 	(obj:0)
+EF(NOS__CSN10_IntDS__BLinkN11_N10)     425.724868320329 	(obj:0)
+EF(NOS__CSN03_IntDS__BLinkN11_N10)                  155 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN11_N12)      126.61566871601 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN11_N12)     582.500108664719 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN11_N12)                  272 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN11_N12)     333.490507245951 	(obj:0)
+EF(NOS__CSN19_IntDS__FLinkN11_N12)     4.45508119213514 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN11_N12)     135.995445270052 	(obj:0)
+EF(NOS__CSN10_IntDS__BLinkN11_N12)     1216.56630384292 	(obj:0)
+EF(NOS__CSN12_IntDS__BLinkN11_N12)     1206.43369615708 	(obj:0)
+EF(NOS__CSN17_IntDS__BLinkN11_N12)                   77 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN15_N13)                  651 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN15_N16)     1603.54184353328 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN15_N18)     875.156672787024 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN15_N20)     449.147388063148 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN15_N21)                  320 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN15_N22)     1289.69593914983 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN15_N25)     2721.03562113537 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN15_N09)     90.8404603093568 	(obj:0)
+EF(NOS__CSN18_IntDS__FLinkN15_N09)     1243.19871083612 	(obj:0)
+EF(NOS__CSN14_IntDS__FLinkN15_N09)                  183 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN15_N09)     502.996449989894 	(obj:0)
+EF(NOS__CSN09_IntDS__FLinkN15_N11)                  408 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN15_N11)     139.895679282433 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN15_N11)     1206.21330081255 	(obj:0)
+EF(NOS__CSN20_IntDS__FLinkN15_N11)      1286.0760347029 	(obj:0)
+EF(NOS__CSN05_IntDS__FLinkN15_N11)                  282 	(obj:0)
+EF(NOS__CSN08_IntDS__FLinkN15_N11)                  116 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN15_N11)                  699 	(obj:0)
+EF(NOS__CSN18_IntDS__FLinkN15_N11)                  204 	(obj:0)
+EF(NOS__CSN25_IntDS__FLinkN15_N11)                  155 	(obj:0)
+EF(NOS__CSN02_IntDS__FLinkN15_N11)                  116 	(obj:0)
+EF(NOS__CSN19_IntDS__FLinkN15_N11)     140.455081192135 	(obj:0)
+EF(NOS__CSN14_IntDS__FLinkN15_N11)                   77 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN15_N11)     135.995445270052 	(obj:0)
+EF(NOS__CSN09_IntDS__FLinkN15_N13)                  544 	(obj:0)
+EF(NOS__CSN23_IntDS__FLinkN15_N13)                  379 	(obj:0)
+EF(NOS__CSN20_IntDS__FLinkN15_N13)                  437 	(obj:0)
+EF(NOS__CSN08_IntDS__FLinkN15_N13)                  155 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN15_N13)                  155 	(obj:0)
+EF(NOS__CSN25_IntDS__FLinkN15_N13)                  213 	(obj:0)
+EF(NOS__CSN01_IntDS__FLinkN15_N13)                  106 	(obj:0)
+EF(NOS__CSN19_IntDS__FLinkN15_N13)                  106 	(obj:0)
+EF(NOS__CSN14_IntDS__FLinkN15_N13)                  106 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN15_N13)                  106 	(obj:0)
+EF(NOS__CSN07_IntDS__FLinkN15_N13)                  106 	(obj:0)
+EF(NOS__CSN17_IntDS__FLinkN15_N13)                  106 	(obj:0)
+EF(NOS__CSN09_IntDS__FLinkN15_N14)                  272 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN15_N14)                  301 	(obj:0)
+EF(NOS__CSN23_IntDS__FLinkN15_N14)                  184 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN15_N14)                  243 	(obj:0)
+EF(NOS__CSN10_IntDS__FLinkN15_N14)                  136 	(obj:0)
+EF(NOS__CSN12_IntDS__FLinkN15_N14)                  136 	(obj:0)
+EF(NOS__CSN08_IntDS__FLinkN15_N14)                   77 	(obj:0)
+EF(NOS__CSN02_IntDS__FLinkN15_N14)                   77 	(obj:0)
+EF(NOS__CSN07_IntDS__FLinkN15_N14)                   48 	(obj:0)
+EF(NOS__CSN15_IntDS__BLinkN17_N16)     291.541843533285 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN15_N16)     1260.60891884236 	(obj:0)
+EF(NOS__CSN23_IntDS__FLinkN15_N16)     152.589099601992 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN15_N16)     1242.78669918745 	(obj:0)
+EF(NOS__CSN20_IntDS__FLinkN15_N16)     334.923965297102 	(obj:0)
+EF(NOS__CSN05_IntDS__FLinkN15_N16)                  768 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN15_N16)                  437 	(obj:0)
+EF(NOS__CSN18_IntDS__FLinkN15_N16)                  680 	(obj:0)
+EF(NOS__CSN25_IntDS__FLinkN15_N16)                  106 	(obj:0)
+EF(NOS__CSN19_IntDS__FLinkN15_N16)     392.544918807865 	(obj:0)
+EF(NOS__CSN14_IntDS__FLinkN15_N16)                  261 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN15_N16)     261.004554729947 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN18_N19)     59.1566727870244 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN15_N18)     761.280010566423 	(obj:0)
+EF(NOS__CSN23_IntDS__FLinkN15_N18)                  476 	(obj:0)
+EF(NOS__CSN10_IntDS__FLinkN15_N18)                  340 	(obj:0)
+EF(NOS__CSN12_IntDS__FLinkN15_N18)                  340 	(obj:0)
+EF(NOS__CSN08_IntDS__FLinkN15_N18)                   77 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN15_N18)                  272 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN15_N18)     262.452282648684 	(obj:0)
+EF(NOS__CSN25_IntDS__FLinkN15_N18)                  272 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN15_N18)     18.1037406928022 	(obj:0)
+EF(NOS__CSN14_IntDS__FLinkN15_N18)                  136 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN15_N18)     47.9983924482538 	(obj:0)
+EF(NOS__CSN07_IntDS__FLinkN15_N18)      29.108244207907 	(obj:0)
+EF(NOS__CSN04_IntDS__FLinkN15_N18)                  136 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN20_N19)     260.843327212976 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN20_N24)     188.304060850172 	(obj:0)
+EF(NOS__CSN09_IntDS__FLinkN15_N20)                 1098 	(obj:0)
+EF(NOS__CSN05_IntDS__FLinkN15_N20)                  184 	(obj:0)
+EF(NOS__CSN08_IntDS__FLinkN15_N20)                  320 	(obj:0)
+EF(NOS__CSN16_IntDS__FLinkN15_N20)                  875 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN15_N20)                  486 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN15_N20)     338.547717351316 	(obj:0)
+EF(NOS__CSN25_IntDS__FLinkN15_N20)                  981 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN15_N20)     427.896259307198 	(obj:0)
+EF(NOS__CSN02_IntDS__FLinkN15_N20)                  320 	(obj:0)
+EF(NOS__CSN01_IntDS__FLinkN15_N20)                  213 	(obj:0)
+EF(NOS__CSN03_IntDS__FLinkN15_N20)                  543 	(obj:0)
+EF(NOS__CSN14_IntDS__FLinkN15_N20)                  261 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN15_N20)     242.993469321031 	(obj:0)
+EF(NOS__CSN07_IntDS__FLinkN15_N20)     231.891755792093 	(obj:0)
+EF(NOS__CSN09_IntDS__FLinkN15_N21)     310.904674016531 	(obj:0)
+EF(NOS__CSN23_IntDS__FLinkN15_N21)                  184 	(obj:0)
+EF(NOS__CSN20_IntDS__FLinkN15_N21)                  213 	(obj:0)
+EF(NOS__CSN10_IntDS__FLinkN15_N21)                  136 	(obj:0)
+EF(NOS__CSN05_IntDS__FLinkN15_N21)                  184 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN15_N21)     418.095325983469 	(obj:0)
+EF(NOS__CSN18_IntDS__FLinkN15_N21)                  136 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN15_N21)                   77 	(obj:0)
+EF(NOS__CSN25_IntDS__FLinkN15_N21)                  106 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN15_N21)                   77 	(obj:0)
+EF(NOS__CSN14_IntDS__FLinkN15_N21)                   48 	(obj:0)
+EF(NOS__CSN15_IntDS__FLinkN22_N24)     1289.69593914983 	(obj:0)
+EF(NOS__CSN10_IntDS__FLinkN15_N22)     633.090870161554 	(obj:0)
+EF(NOS__CSN05_IntDS__FLinkN15_N22)                  267 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN15_N22)                  602 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN15_N22)                  729 	(obj:0)
+EF(NOS__CSN02_IntDS__FLinkN15_N22)                  282 	(obj:0)
+EF(NOS__CSN01_IntDS__FLinkN15_N22)                  485 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN15_N22)     301.008138230715 	(obj:0)
+EF(NOS__CSN17_IntDS__FLinkN15_N22)                  184 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN15_N25)     247.295505659108 	(obj:0)
+EF(NOS__CSN23_IntDS__FLinkN15_N25)     266.304892148663 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN15_N25)     1276.36053222122 	(obj:0)
+EF(NOS__CSN20_IntDS__FLinkN15_N25)                 1418 	(obj:0)
+EF(NOS__CSN12_IntDS__FLinkN15_N25)     191.759059404579 	(obj:0)
+EF(NOS__CSN16_IntDS__FLinkN15_N25)                  650 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN15_N25)     762.159539690643 	(obj:0)
+EF(NOS__CSN18_IntDS__FLinkN15_N25)     864.801289163876 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN15_N25)                  154 	(obj:0)
+EF(NOS__CSN19_IntDS__FLinkN15_N25)                  279 	(obj:0)
+EF(NOS__CSN14_IntDS__FLinkN15_N25)                  386 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN15_N25)     173.003550010106 	(obj:0)
+EF(NOS__CSN10_IntDS__FLinkN16_N09)      963.58706855484 	(obj:0)
+EF(NOS__CSN12_IntDS__FLinkN16_N09)     896.240940595421 	(obj:0)
+EF(NOS__CSN16_IntDS__FLinkN16_N09)                 1311 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN16_N09)     134.103740692802 	(obj:0)
+EF(NOS__CSN17_IntDS__FLinkN16_N09)                  426 	(obj:0)
+EF(NOS__CSN22_IntDS__BLinkN16_N09)     761.918152570125 	(obj:0)
+EF(NOS__CSN23_IntDS__BLinkN16_N09)     1091.41090039801 	(obj:0)
+EF(NOS__CSN08_IntDS__BLinkN16_N09)                  524 	(obj:0)
+EF(NOS__CSN06_IntDS__BLinkN16_N09)     543.719989433577 	(obj:0)
+EF(NOS__CSN02_IntDS__BLinkN16_N09)                  320 	(obj:0)
+EF(NOS__CSN03_IntDS__BLinkN16_N09)                  437 	(obj:0)
+EF(NOS__CSN04_IntDS__BLinkN16_N09)                  213 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN16_N12)      621.38433128399 	(obj:0)
+EF(NOS__CSN23_IntDS__FLinkN16_N12)                  476 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN16_N12)     29.4998913352814 	(obj:0)
+EF(NOS__CSN20_IntDS__FLinkN16_N12)      240.68512169303 	(obj:0)
+EF(NOS__CSN08_IntDS__FLinkN16_N12)                  204 	(obj:0)
+EF(NOS__CSN16_IntDS__FLinkN16_N12)                  544 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN16_N12)     175.881182149886 	(obj:0)
+EF(NOS__CSN19_IntDS__FLinkN16_N12)     131.544918807865 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN16_N12)  0.00455472994747631 	(obj:0)
+EF(NOS__CSN17_IntDS__FLinkN16_N12)                   77 	(obj:0)
+EF(NOS__CSN12_IntDS__BLinkN16_N12)     2166.50949275405 	(obj:0)
+EF(NOS__CSN11_IntDS__BLinkN16_N12)     333.490507245951 	(obj:0)
+EF(NOS__CSN17_IntDS__FLinkN17_N10)                  106 	(obj:0)
+EF(NOS__CSN22_IntDS__BLinkN17_N10)     104.857259871504 	(obj:0)
+EF(NOS__CSN24_IntDS__BLinkN17_N10)     11.7131921478323 	(obj:0)
+EF(NOS__CSN20_IntDS__BLinkN17_N10)     118.761156395928 	(obj:0)
+EF(NOS__CSN10_IntDS__BLinkN17_N10)     1722.38676655315 	(obj:0)
+EF(NOS__CSN05_IntDS__BLinkN17_N10)                  184 	(obj:0)
+EF(NOS__CSN12_IntDS__BLinkN17_N10)     36.0490424017122 	(obj:0)
+EF(NOS__CSN06_IntDS__BLinkN17_N10)     29.1611927163095 	(obj:0)
+EF(NOS__CSN11_IntDS__BLinkN17_N10)     120.613233446851 	(obj:0)
+EF(NOS__CSN01_IntDS__BLinkN17_N10)                   48 	(obj:0)
+EF(NOS__CSN07_IntDS__BLinkN17_N10)                   48 	(obj:0)
+EF(NOS__CSN04_IntDS__BLinkN17_N10)                   48 	(obj:0)
+EF(NOS__CSN10_IntDS__FLinkN17_N16)     1586.38676655315 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN17_N16)     120.613233446851 	(obj:0)
+EF(NOS__CSN17_IntDS__FLinkN17_N16)                  793 	(obj:0)
+EF(NOS__CSN22_IntDS__BLinkN17_N16)     196.142740128496 	(obj:0)
+EF(NOS__CSN24_IntDS__BLinkN17_N16)     231.286807852168 	(obj:0)
+EF(NOS__CSN20_IntDS__BLinkN17_N16)     94.2388436040724 	(obj:0)
+EF(NOS__CSN12_IntDS__BLinkN17_N16)     99.9509575982878 	(obj:0)
+EF(NOS__CSN16_IntDS__BLinkN17_N16)                  213 	(obj:0)
+EF(NOS__CSN18_IntDS__BLinkN17_N16)                  136 	(obj:0)
+EF(NOS__CSN06_IntDS__BLinkN17_N16)     47.8388072836905 	(obj:0)
+EF(NOS__CSN25_IntDS__BLinkN17_N16)                  106 	(obj:0)
+EF(NOS__CSN19_IntDS__BLinkN17_N16)                   48 	(obj:0)
+EF(NOS__CSN14_IntDS__BLinkN17_N16)                   48 	(obj:0)
+EF(NOS__CSN21_IntDS__BLinkN17_N16)                   48 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN18_N19)      13.280010566423 	(obj:0)
+EF(NOS__CSN08_IntDS__FLinkN18_N19)                   77 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN18_N19)     58.4522826486843 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN18_N19)     18.1037406928022 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN18_N19)     47.9983924482538 	(obj:0)
+EF(NOS__CSN07_IntDS__FLinkN18_N19)      29.108244207907 	(obj:0)
+EF(NOS__CSN24_IntDS__BLinkN18_N19)                  612 	(obj:0)
+EF(NOS__CSN20_IntDS__BLinkN18_N19)                  544 	(obj:0)
+EF(NOS__CSN19_IntDS__BLinkN18_N19)                 1054 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN20_N19)     287.719989433577 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN20_N19)                  612 	(obj:0)
+EF(NOS__CSN20_IntDS__FLinkN20_N19)                  544 	(obj:0)
+EF(NOS__CSN05_IntDS__FLinkN20_N19)                  184 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN20_N19)     18.5477173513157 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN20_N19)     58.8962593071978 	(obj:0)
+EF(NOS__CSN03_IntDS__FLinkN20_N19)                  106 	(obj:0)
+EF(NOS__CSN14_IntDS__FLinkN20_N19)                   48 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN20_N19)  0.00160755174616811 	(obj:0)
+EF(NOS__CSN07_IntDS__FLinkN20_N19)      18.891755792093 	(obj:0)
+EF(NOS__CSN19_IntDS__BLinkN20_N19)                  912 	(obj:0)
+EF(NOS__CSN20_IntDS__FLinkN20_N24)                  982 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN20_N24)                  486 	(obj:0)
+EF(NOS__CSN25_IntDS__FLinkN20_N24)                  379 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN20_N24)                  369 	(obj:0)
+EF(NOS__CSN19_IntDS__FLinkN20_N24)     413.012355374693 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN20_N24)     242.991861769285 	(obj:0)
+EF(NOS__CSN22_IntDS__BLinkN20_N24)     15.9999999999998 	(obj:0)
+EF(NOS__CSN23_IntDS__BLinkN20_N24)     403.639467778778 	(obj:0)
+EF(NOS__CSN24_IntDS__BLinkN20_N24)     4580.36053222122 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN22_N09)      2257.1998962161 	(obj:0)
+EF(NOS__CSN23_IntDS__FLinkN22_N09)     2525.10600824935 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN22_N09)     1910.63946777878 	(obj:0)
+EF(NOS__CSN19_IntDS__FLinkN22_N09)                  272 	(obj:0)
+EF(NOS__CSN09_IntDS__BLinkN22_N09)                 3695 	(obj:0)
+EF(NOS__CSN10_IntDS__BLinkN22_N09)     590.909129838445 	(obj:0)
+EF(NOS__CSN05_IntDS__BLinkN22_N09)                  783 	(obj:0)
+EF(NOS__CSN08_IntDS__BLinkN22_N09)                  729 	(obj:0)
+EF(NOS__CSN06_IntDS__BLinkN22_N09)                  447 	(obj:0)
+EF(NOS__CSN03_IntDS__BLinkN22_N09)                  486 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN22_N20)     1476.71998943358 	(obj:0)
+EF(NOS__CSN23_IntDS__FLinkN22_N20)     364.360532221222 	(obj:0)
+EF(NOS__CSN25_IntDS__BLinkN22_N20)                  602 	(obj:0)
+EF(NOS__CSN19_IntDS__BLinkN22_N20)     285.987644625307 	(obj:0)
+EF(NOS__CSN09_IntDS__FLinkN22_N23)     1479.70407738054 	(obj:0)
+EF(NOS__CSN10_IntDS__FLinkN22_N23)                  476 	(obj:0)
+EF(NOS__CSN08_IntDS__FLinkN22_N23)                  282 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN22_N23)                  282 	(obj:0)
+EF(NOS__CSN02_IntDS__FLinkN22_N23)                  282 	(obj:0)
+EF(NOS__CSN01_IntDS__FLinkN22_N23)                  184 	(obj:0)
+EF(NOS__CSN19_IntDS__FLinkN22_N23)     13.9876446253066 	(obj:0)
+EF(NOS__CSN17_IntDS__FLinkN22_N23)                  184 	(obj:0)
+EF(NOS__CSN23_IntDS__BLinkN22_N23)     6728.36053222122 	(obj:0)
+EF(NOS__CSN24_IntDS__BLinkN22_N23)     771.639467778778 	(obj:0)
+EF(NOS__CSN09_IntDS__FLinkN22_N24)     708.295922619457 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN22_N24)     15.9999999999998 	(obj:0)
+EF(NOS__CSN03_IntDS__FLinkN22_N24)                  486 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN22_N24)  0.00813823071497605 	(obj:0)
+EF(NOS__CSN24_IntDS__BLinkN22_N24)                 2500 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN24_N23)     771.639467778778 	(obj:0)
+EF(NOS__CSN25_IntDS__FLinkN24_N23)                  379 	(obj:0)
+EF(NOS__CSN19_IntDS__FLinkN24_N23)     874.668810215372 	(obj:0)
+EF(NOS__CSN09_IntDS__BLinkN24_N23)     526.704077380543 	(obj:0)
+EF(NOS__CSN23_IntDS__BLinkN24_N23)     1268.63946777878 	(obj:0)
+EF(NOS__CSN19_IntDS__BLinkN24_N23)     704.656454840679 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN25_N01)     594.213300812551 	(obj:0)
+EF(NOS__CSN10_IntDS__FLinkN25_N01)     6.34231302982958 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN25_N01)     88.8954396809845 	(obj:0)
+EF(NOS__CSN18_IntDS__FLinkN25_N01)     278.074142307827 	(obj:0)
+EF(NOS__CSN25_IntDS__FLinkN25_N01)                  155 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN25_N01)                   77 	(obj:0)
+EF(NOS__CSN03_IntDS__FLinkN25_N01)                  106 	(obj:0)
+EF(NOS__CSN14_IntDS__FLinkN25_N01)                   48 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN25_N01)  0.00418633267231278 	(obj:0)
+EF(NOS__CSN04_IntDS__FLinkN25_N01)                   48 	(obj:0)
+EF(NOS__CSN01_IntDS__BLinkN25_N01)                 2024 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN25_N02)                  447 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN25_N02)     17.7866991874491 	(obj:0)
+EF(NOS__CSN10_IntDS__FLinkN25_N02)      129.65768697017 	(obj:0)
+EF(NOS__CSN05_IntDS__FLinkN25_N02)                  282 	(obj:0)
+EF(NOS__CSN08_IntDS__FLinkN25_N02)                  116 	(obj:0)
+EF(NOS__CSN16_IntDS__FLinkN25_N02)                  213 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN25_N02)     66.1045603190155 	(obj:0)
+EF(NOS__CSN18_IntDS__FLinkN25_N02)      61.925857692173 	(obj:0)
+EF(NOS__CSN06_IntDS__FLinkN25_N02)                  116 	(obj:0)
+EF(NOS__CSN03_IntDS__FLinkN25_N02)                  155 	(obj:0)
+EF(NOS__CSN19_IntDS__FLinkN25_N02)                  125 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN25_N02)     124.995813667328 	(obj:0)
+EF(NOS__CSN07_IntDS__FLinkN25_N02)                  125 	(obj:0)
+EF(NOS__CSN17_IntDS__FLinkN25_N02)                   77 	(obj:0)
+EF(NOS__CSN02_IntDS__BLinkN25_N02)                 2008 	(obj:0)
+EF(NOS__CSN05_IntDS__FLinkN25_N03)                 1039 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN25_N03)     122.159539690643 	(obj:0)
+EF(NOS__CSN18_IntDS__FLinkN25_N03)     48.8012891638763 	(obj:0)
+EF(NOS__CSN25_IntDS__FLinkN25_N03)                  485 	(obj:0)
+EF(NOS__CSN02_IntDS__FLinkN25_N03)                  408 	(obj:0)
+EF(NOS__CSN01_IntDS__FLinkN25_N03)                  184 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN25_N03)  0.00355001010612124 	(obj:0)
+EF(NOS__CSN04_IntDS__FLinkN25_N03)                   96 	(obj:0)
+EF(NOS__CSN10_IntDS__BLinkN25_N03)                  748 	(obj:0)
+EF(NOS__CSN03_IntDS__BLinkN25_N03)                  910 	(obj:0)
+EF(NOS__CSN07_IntDS__BLinkN25_N03)     520.280010566424 	(obj:0)
+EF(NOS__CSN09_IntDS__FLinkN25_N04)                  953 	(obj:0)
+EF(NOS__CSN22_IntDS__FLinkN25_N04)     287.719989433577 	(obj:0)
+EF(NOS__CSN23_IntDS__FLinkN25_N04)     266.304892148663 	(obj:0)
+EF(NOS__CSN24_IntDS__FLinkN25_N04)     284.695107851337 	(obj:0)
+EF(NOS__CSN20_IntDS__FLinkN25_N04)                  981 	(obj:0)
+EF(NOS__CSN10_IntDS__FLinkN25_N04)                  612 	(obj:0)
+EF(NOS__CSN12_IntDS__FLinkN25_N04)                  136 	(obj:0)
+EF(NOS__CSN13_IntDS__FLinkN25_N04)                  485 	(obj:0)
+EF(NOS__CSN18_IntDS__FLinkN25_N04)                  476 	(obj:0)
+EF(NOS__CSN25_IntDS__FLinkN25_N04)                  155 	(obj:0)
+EF(NOS__CSN11_IntDS__FLinkN25_N04)                   77 	(obj:0)
+EF(NOS__CSN02_IntDS__FLinkN25_N04)                   77 	(obj:0)
+EF(NOS__CSN01_IntDS__FLinkN25_N04)                  261 	(obj:0)
+EF(NOS__CSN03_IntDS__FLinkN25_N04)                  106 	(obj:0)
+EF(NOS__CSN19_IntDS__FLinkN25_N04)                   48 	(obj:0)
+EF(NOS__CSN14_IntDS__FLinkN25_N04)                  232 	(obj:0)
+EF(NOS__CSN21_IntDS__FLinkN25_N04)                   48 	(obj:0)
+EF(NOS__CSN05_IntDS__BLinkN25_N04)                 4168 	(obj:0)
+EF(NOS__CSN06_IntDS__BLinkN25_N04)     433.719989433577 	(obj:0)
+EF(NOS__CSN04_IntDS__BLinkN25_N04)                  871 	(obj:0)
+EF(NOS__CSN05_IntDS__FLinkN25_N09)                  783 	(obj:0)
+EF(NOS__CSN25_IntDS__FLinkN25_N09)                  155 	(obj:0)
+EF(NOS__CSN02_IntDS__FLinkN25_N09)                  728 	(obj:0)
+EF(NOS__CSN01_IntDS__FLinkN25_N09)                  349 	(obj:0)
+EF(NOS__CSN04_IntDS__FLinkN25_N09)                  485 	(obj:0)
+EF(NOS__CSN09_IntDS__BLinkN25_N09)                 1497 	(obj:0)
+EF(NOS__CSN22_IntDS__BLinkN25_N09)     487.424483774469 	(obj:0)
+EF(NOS__CSN24_IntDS__BLinkN25_N09)     106.334575630116 	(obj:0)
+EF(NOS__CSN12_IntDS__BLinkN25_N09)     216.240940595421 	(obj:0)
+EF(NOS__CSN08_IntDS__BLinkN25_N09)                  116 	(obj:0)
+EF(NOS__CSN17_IntDS__BLinkN25_N09)                   77 	(obj:0)
+EF(NOS__CSN09_IntDS__BLinkN15_N09)                 2322 	(obj:0)
+EF(NOS__CSN09_IntDS__BLinkN15_N21)     310.904674016531 	(obj:0)
+EF(NOS__CSN08_IntDS__BLinkN15_N09)                 1231 	(obj:0)
+EF(NOS__CSN06_IntDS__BLinkN15_N09)     1001.28001056642 	(obj:0)
+EF(NOS__CSN07_IntDS__BLinkN15_N09)     445.719989433576 	(obj:0)
+EF(NOS__CSN10_IntDS__BLinkN15_N11)     1438.29117216325 	(obj:0)
+EF(NOS__CSN12_IntDS__BLinkN15_N11)     857.441464844239 	(obj:0)
+EF(NOS__CSN11_IntDS__BLinkN15_N11)                 1892 	(obj:0)
+EF(NOS__CSN13_IntDS__BLinkN15_N13)                 3349 	(obj:0)
+EF(NOS__CSN14_IntDS__BLinkN15_N14)                 1778 	(obj:0)
+EF(NOS__CSN10_IntDS__BLinkN15_N16)     622.799697998309 	(obj:0)
+EF(NOS__CSN12_IntDS__BLinkN15_N16)      626.31759456034 	(obj:0)
+EF(NOS__CSN16_IntDS__BLinkN15_N16)                 1525 	(obj:0)
+EF(NOS__CSN17_IntDS__BLinkN15_N16)                  290 	(obj:0)
+EF(NOS__CSN18_IntDS__BLinkN15_N18)                 3128 	(obj:0)
+EF(NOS__CSN19_IntDS__BLinkN15_N18)                  918 	(obj:0)
+EF(NOS__CSN24_IntDS__BLinkN15_N20)     3968.36053222122 	(obj:0)
+EF(NOS__CSN20_IntDS__BLinkN15_N20)                 5001 	(obj:0)
+EF(NOS__CSN13_IntDS__BLinkN15_N21)     418.095325983469 	(obj:0)
+EF(NOS__CSN21_IntDS__BLinkN15_N21)                 1771 	(obj:0)
+EF(NOS__CSN22_IntDS__BLinkN15_N22)     4518.08011435032 	(obj:0)
+EF(NOS__CSN23_IntDS__BLinkN15_N22)     2788.89399175065 	(obj:0)
+EF(NOS__CSN05_IntDS__BLinkN15_N25)                 1685 	(obj:0)
+EF(NOS__CSN06_IntDS__BLinkN15_N25)     317.719989433577 	(obj:0)
+EF(NOS__CSN25_IntDS__BLinkN15_N25)                 1833 	(obj:0)
+EF(NOS__CSN02_IntDS__BLinkN15_N25)                  795 	(obj:0)
+EF(NOS__CSN01_IntDS__BLinkN15_N25)                 1124 	(obj:0)
+EF(NOS__CSN03_IntDS__BLinkN15_N25)                  543 	(obj:0)
+EF(NOS__CSN07_IntDS__BLinkN15_N25)     289.280010566424 	(obj:0)
+EF(NOS__CSN04_IntDS__BLinkN15_N25)                  136 	(obj:0)
+
+Statistics
+==========
+
+Master Program statistics:
+SCIP Status        : solving was interrupted [node limit reached]
+Total Time         :    1029.25
+  solving          :    1029.25
+  presolving       :       0.00 (included in solving)
+  reading          :       0.00
+  copying          :       0.02 (14 #copies) (minimal 0.00, maximal 0.01, average 0.00)
+Original Problem   :
+  Problem name     : master_tmp/france--D-B-M-N-C-A-N-N.lp
+  Variables        : 49 (0 binary, 45 integer, 0 implicit integer, 4 continuous)
+  Constraints      : 115 initial, 115 maximal
+  Objective        : minimize, 45 non-zeros (abs.min = 1, abs.max = 1)
+Presolved Problem  :
+  Problem name     : t_master_tmp/france--D-B-M-N-C-A-N-N.lp
+  Variables        : 11528 (0 binary, 45 integer, 0 implicit integer, 11483 continuous)
+  Constraints      : 115 initial, 116 maximal
+  Objective        : minimize, 45 non-zeros (abs.min = 1, abs.max = 1)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  roundbound       :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  linear           :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -          0          -          -       3342          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  masterbranch     :          0+        73          0      36410          0          0          0          0          0          0    1546951          0          0          0          0
+  integralorig     :          0          0          0          0       2942          0          0        652          0          0          0          0          0          0       5884
+  integral         :          0          0          0          0          0          0          0        652          0          0          0          0          0          0          0
+  linear           :        115        115          6      80986          0          0          0        652          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  masterbranch     :    2689.37       0.00       0.00    2689.37       0.00       0.00       0.00       0.00       0.00       0.00
+  integralorig     :       1.01       0.00       0.00       0.00       0.11       0.00       0.00       0.90       0.00       0.00
+  integral         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       0.85       0.00       0.00       0.11       0.00       0.00       0.00       0.74       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          1          0          0          0
+  genvbounds       :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          0          0          0          0
+  redcost          :          0          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :      83928          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.02       0.00       0.00       0.02       0.00       0.00
+  redcost          :       0.02       0.00       0.00       0.02       0.00       0.00
+  rootredcost      :       0.06       0.00       0.00       0.06       0.00       0.00
+  vbounds          :       0.04       0.00       0.00       0.04       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     0          -          -          0          -          -    (maximal pool size: 0)
+  basis            :       0.26       0.00          6          0          0         51         23          0
+  master           :       0.25       0.00        100          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       9.68          -       7621   12156685
+  gcg              :     532.66       0.00       4158       5872
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  generic          :       0.00       0.00          0          0          0          0          0          0          0          0
+  orig             :       0.00       0.00          0          0          0          0          0          0          0          0
+  relpsprob        :       0.00       0.00          0          0          0          0          0          0          0          0
+  ryanfoster       :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.00       0.00          1          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  greedycolsel     :       0.02       0.00         10          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          1          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mastercoefdiving :       0.00       0.00          0          0          0
+  masterfracdiving :       0.00       0.00          0          0          0
+  masterlinesdiving:       0.00       0.00          0          0          0
+  mastervecldiving :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.02       0.00          8          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.02       0.00          6          0          0
+  relaxcolsel      :       0.05       0.00         10          0          0
+  rens             :       0.00       0.00          0          0          0
+  restmaster       :       0.11       0.00          1          2          1
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.04       0.00        721          0          0
+  setcover         :       0.00       0.00          0          0          0
+  shiftandpropagate:       0.00       0.00          1          0          0
+  shifting         :       1.13       0.00        202          0          0
+  simplerounding   :       1.92       0.00       6112        373          0
+  twoopt           :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.09       0.00       1000         13          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :      13.46       5183      95004      29.96    7058.25       1.30       2012
+  dual LP          :      65.74      24964     314216      86.85    4779.68      12.25      21346
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:     124.32      28226     907138      32.14    7296.80
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+B&B Tree           :
+  number of runs   :          1
+  nodes            :       2965 (2942 internal, 23 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :         23
+  objective leaves :          0
+  nodes (total)    :       2965 (2942 internal, 23 leaves)
+  nodes left       :       2920
+  max depth        :         18
+  max depth (total):         18
+  backtracks       :       1486 (50.1%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :       9961 (216985 domain reductions, 0 cutoffs)
+  avg switch length:       8.52
+  switching time   :      29.56
+Root Node          :
+  First LP value   :          -
+  First LP Iters   :          0
+  First LP Time    :       0.00
+  Final Dual Bound : +5.54222930307405e+01
+  Final Root Iters :       1760
+  Root LP Estimate : +5.54222930307403e+01
+Solution           :
+  Solutions found  :        646 (8 improvements)
+  First Solution   : +7.60000000000000e+01   (in run 1, after 1 nodes, 0.00 seconds, depth 0, found by <relaxation>)
+  Gap First Sol.   :      38.64 %
+  Gap Last Sol.    :      11.31 %
+  Primal Bound     : +6.40000000000000e+01   (in run 1, after 639 nodes, 206.41 seconds, depth 60, found by <relaxation>)
+  Dual Bound       : +5.82040000000000e+01
+  Gap              :       9.96 %
+  Avg. Gap         :      10.22 % (10515.20 primal-dual integral)
+Pricing Solver     : #HeurFarkas  #OptFarkas  #HeurRedcost #OptRedcost Time: HeurFarkas  OptFarkas  HeurRedcost OptRedcost
+  knapsack         :           0           0             0           0             0.00       0.00         0.01       0.00 
+  mip              :        1225           0        100250           0             5.73       0.00       486.11       0.00 
+
+Original Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3600.11
+  solving          :    3600.08
+  presolving       :       0.01 (included in solving)
+  reading          :       0.03
+  copying          :       0.01 (3 #copies) (minimal 0.00, maximal 0.01, average 0.00)
+Original Problem   :
+  Problem name     : tmp/france--D-B-M-N-C-A-N-N.lp
+  Variables        : 2205 (0 binary, 45 integer, 0 implicit integer, 2160 continuous)
+  Constraints      : 715 initial, 715 maximal
+  Objective        : minimize, 45 non-zeros (abs.min = 200, abs.max = 200)
+Presolved Problem  :
+  Problem name     : t_tmp/france--D-B-M-N-C-A-N-N.lp
+  Variables        : 2175 (0 binary, 45 integer, 0 implicit integer, 2130 continuous)
+  Constraints      : 694 initial, 695 maximal
+  Objective        : minimize, 45 non-zeros (abs.min = 1, abs.max = 1)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  convertinttobin  :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  domcol           :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      4          0          0          0          0          0          0          0          0          0
+  trivial          :       0.00       0.00      4          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      4          9          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  linear           :       0.01       0.00      5          0         21          0        100          0         21          0          0          0
+  root node        :          -          -      -          0          -          -       8665          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  origbranch       :          0+        73          0          0          0          0          0          0          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          1       2941          0      27337          0          0          0          0          0          0       5884
+  decomp           :          0          0          0          0          0          0          0       1176          0          0          0          0          0          0          0
+  linear           :        694        694         12      94244          0          0          0        721          0        269     617700          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  origbranch       :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.13       0.00       0.00       0.00       0.00       0.00       0.07       0.06       0.00       0.00
+  decomp           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       4.23       0.00       0.00       4.10       0.00       0.00       0.00       0.13       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          4          0          0          0
+  genvbounds       :          0          0          0          0
+  obbt             :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :      13024          0          0      46818
+  redcost          :          6          0          0          0
+  rootredcost      :          6          0          0       6478
+  vbounds          :      97189          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.01       0.00       0.00       0.01       0.00       0.00
+  obbt             :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.15       0.00       0.00       0.15       0.00       0.00
+  redcost          :       0.02       0.00       0.00       0.02       0.00       0.00
+  rootredcost      :       0.06       0.00       0.00       0.06       0.00       0.00
+  vbounds          :       0.01       0.00       0.00       0.01       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                    16          -          -         93          -          -    (maximal pool size: 170)
+  clique           :       0.00       0.00          1          0          0          0          0          0
+  closecuts        :       0.00       0.00          0          0          0          0          0          0
+  gomory           :       0.00       0.00          5          0          0          0         14          0
+  impliedbounds    :       0.00       0.00          0          0          0          0          0          0
+  intobj           :       0.00       0.00          0          0          0          0          0          0
+  mcf              :       0.05       0.00         12          0          0          0          3          0
+  oddcycle         :       0.00       0.00          0          0          0          0          0          0
+  rapidlearning    :       0.00       0.00          0          0          0          0          0          0
+  strongcg         :       0.00       0.00          5          0          0          0          0          0
+  zerohalf         :       0.00       0.00          8          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.00          -          0          0
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  empty            :       0.06       0.00          1       2941          0          0          0          0          0       5884
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.06       0.00          1          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  gcgcoefdiving    :     705.52       0.00        102         69          2
+  gcgdins          :       0.00       0.00          0          0          0
+  gcgfeaspump      :       0.00       0.00          0          0          0
+  gcgfracdiving    :     274.19       0.00         43         11          0
+  gcgguideddiving  :     317.43       0.00         50         17          0
+  gcglinesdiving   :     226.94       0.00         65         16          1
+  gcgpscostdiving  :     777.13       0.00        115         86          2
+  gcgrens          :       0.00       0.00          0          0          0
+  gcgrins          :       0.85       0.00          2          0          0
+  gcgrounding      :       0.26       0.00        720          0          0
+  gcgshifting      :       0.07       0.00        200          0          0
+  gcgsimplerounding:       0.17       0.00        258         70          0
+  gcgveclendiving  :     263.56       0.00         75         68          0
+  gcgzirounding    :       0.00       0.00          0          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.07       0.00          1          1          1
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  nlpdiving        :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.00       0.00          7          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.00       0.00          5          0          0
+  rens             :       0.00       0.00          0          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          5          0          0
+  shiftandpropagate:       0.01       0.00          1          0          0
+  shifting         :       0.00       0.00          5          0          0
+  simplerounding   :       0.02       0.00          5          3          1
+  subnlp           :       0.00       0.00          0          0          0
+  trivial          :       0.01       0.00          2          0          0
+  trysol           :       0.00       0.00          0          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  undercover       :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  xpcrossover      :       0.03       0.00          1          0          0
+  xprins           :       0.03       0.00          1          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          1          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.00          1          0       0.00          -       0.00          1
+  dual LP          :       0.06          6       1451     483.67   24183.33       0.00          3
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:       0.30         17       4541     267.12   15136.67
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+Relaxators         :       Time      Calls
+  gcg              :    1029.71       2965
+B&B Tree           :
+  number of runs   :          1
+  nodes            :       2965 (2942 internal, 23 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :         23
+  objective leaves :          0
+  nodes (total)    :       2965 (2942 internal, 23 leaves)
+  nodes left       :       2920
+  max depth        :         18
+  max depth (total):         18
+  backtracks       :       1486 (50.1%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          6 (0 domain reductions, 0 cutoffs)
+  avg switch length:       7.15
+  switching time   :       2.29
+Root Node          :
+  First LP value   : +1.09640000000000e+04
+  First LP Iters   :       1291 (25820.00 Iter/sec)
+  First LP Time    :       0.05
+  Final Dual Bound : +1.10844586061481e+04
+  Final Root Iters :       1451
+  Root LP Estimate : +1.33563704549769e+04
+Solution           :
+  Solutions found  :        342 (8 improvements)
+  First Solution   : +1.52000000000000e+04   (in run 1, after 1 nodes, 0.08 seconds, depth 0, found by <simplerounding>)
+  Gap First Sol.   :      38.64 %
+  Gap Last Sol.    :      11.31 %
+  Primal Bound     : +1.28000000000000e+04   (in run 1, after 639 nodes, 789.50 seconds, depth 60, found by <gcgpscostdiving>)
+  Dual Bound       : +1.16408000000000e+04
+  Gap              :       9.96 %
+  Avg. Gap         :          - (not evaluated)
+
+Simplex iterations :       iter
+  Master LP        :    1316358
+  Pricing LP       :    2167502
+  Original LP      :       5992
+
+Detector statistics:       time     number     blocks
+  connected        :       0.00          0    
+  constype         :       0.00          0    
+  postproces       :       0.00          0    
+  consclass        :       0.35          0    
+  consname         :       0.00          0    
+  densemaste       :       0.00          0    
+  stairheur        :       0.00          0    
+  staircase        :       0.00          0    
+  random           :       0.00          0    
+  staircase_       :       0.00          0    
+  colors           :       0.00          0    
+  cutpacking       :       0.00          0    
+  compgreedi       :       0.00          0    
+  mastersetc       :       0.00          0    
+  mastersetp       :       0.00          0    
+  mastersetp       :       0.00          0    
+  hcgpartiti       :       0.00          0    
+  hrgpartiti       :       0.14          0    
+  hrcgpartit       :       0.00          0    
+  connectedb       :       0.00          0    
+  connected_       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  varclass         :       0.00          0    
+  isomorph         :       0.00          0    
+
+Decomp statistics  :
+  type             :  arrowhead
+  detector         :         cC
+  blocks           :         25
+  aggr. blocks     :         25
+Master statistics  :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros    bnzeros bintnzeros  min(dens)  max(dens) medi(dens) mean(dens)
+  master           :         49          0         45          0          4         90       2241         90          0          0      0.011      0.033      0.011      0.011
+Pricing statistics :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros  min(dens)  max(dens) medi(dens) mean(dens)  identical
+          1        :         76          0          0          0         76         23        152          0      0.087      0.087      0.087      0.087          1
+          2        :         87          0          0          0         87         24        174          0      0.083      0.083      0.083      0.083          1
+          3        :         84          0          0          0         84         25        168          0      0.080      0.080      0.080      0.080          1
+          4        :         83          0          0          0         83         24        166          0      0.083      0.083      0.083      0.083          1
+          5        :         87          0          0          0         87         24        174          0      0.083      0.083      0.083      0.083          1
+          6        :         85          0          0          0         85         24        170          0      0.083      0.083      0.083      0.083          1
+          7        :         83          0          0          0         83         24        166          0      0.083      0.083      0.083      0.083          1
+          8        :         85          0          0          0         85         25        170          0      0.080      0.080      0.080      0.080          1
+          9        :         87          0          0          0         87         24        174          0      0.083      0.083      0.083      0.083          1
+         10        :         87          0          0          0         87         25        174          0      0.080      0.080      0.080      0.080          1
+         11        :         87          0          0          0         87         25        174          0      0.080      0.080      0.080      0.080          1
+         12        :         84          0          0          0         84         25        168          0      0.080      0.080      0.080      0.080          1
+         13        :         84          0          0          0         84         23        168          0      0.087      0.087      0.087      0.087          1
+         14        :         85          0          0          0         85         23        170          0      0.087      0.087      0.087      0.087          1
+         15        :         86          0          0          0         86         25        172          0      0.080      0.080      0.080      0.080          1
+         16        :         80          0          0          0         80         23        160          0      0.087      0.087      0.087      0.087          1
+         17        :         86          0          0          0         86         25        172          0      0.080      0.080      0.080      0.080          1
+         18        :         87          0          0          0         87         24        174          0      0.083      0.083      0.083      0.083          1
+         19        :         84          0          0          0         84         23        168          0      0.087      0.087      0.087      0.087          1
+         20        :         86          0          0          0         86         25        172          0      0.080      0.080      0.080      0.080          1
+         21        :         87          0          0          0         87         24        174          0      0.083      0.083      0.083      0.083          1
+         22        :         87          0          0          0         87         24        174          0      0.083      0.083      0.083      0.083          1
+         23        :         87          0          0          0         87         24        174          0      0.083      0.083      0.083      0.083          1
+         24        :         87          0          0          0         87         25        174          0      0.080      0.080      0.080      0.080          1
+         25        :         85          0          0          0         85         24        170          0      0.083      0.083      0.083      0.083          1
+Decomp Scores      :
+  border area      :      0.149
+  avg. density     :      0.920
+  linking score    :      0.500
+Pricing time in colpool = 0.000000 sec

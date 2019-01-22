@@ -1,0 +1,1352 @@
+GCG version 3.0.0 [GitHash: 70e7382]
+Copyright (C) 2010-2018 Operations Research, RWTH Aachen University
+                        Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+SCIP version 6.0.0 [precision: 8 byte] [memory: block] [mode: optimized] [LP solver: SoPlex 4.0.0] [GitHash: 77d3bc8]
+Copyright (C) 2002-2018 Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+External codes: 
+  Readline 6.0         GNU library for command line editing (gnu.org/s/readline)
+  SoPlex 4.0.0         Linear Programming Solver developed at Zuse Institute Berlin (soplex.zib.de) [GitHash: 82cab95]
+  CppAD 20180000.0     Algorithmic Differentiation of C++ algorithms developed by B. Bell (www.coin-or.org/CppAD)
+  ZLIB 1.2.3           General purpose compression library by J. Gailly and M. Adler (zlib.net)
+  ZIMPL 3.3.6          Zuse Institute Mathematical Programming Language developed by T. Koch (zimpl.zib.de)
+  bliss 0.73           A Tool for Computing Automorphism Groups of Graphs by T. Junttila and P. Kaski (http://www.tcs.hut.fi/Software/bliss/)
+
+reading user parameter file </LOG_DATA/scripts/options_gcg.parm>
+
+read problem </ORDATA/miplib/mg_30_50.mps>
+============
+
+original problem has 153001 variables (153000 bin, 0 int, 0 impl, 1 cont) and 178000 constraints
+presolving:
+(round 1, fast)       1419 del vars, 500 del conss, 0 add conss, 1316 chg bounds, 24 chg sides, 1894 chg coeffs, 0 upgd conss, 0 impls, 149237 clqs
+(round 2, fast)       1421 del vars, 1940 del conss, 0 add conss, 1316 chg bounds, 24 chg sides, 1903 chg coeffs, 0 upgd conss, 0 impls, 149337 clqs
+(round 3, exhaustive) 1447 del vars, 1940 del conss, 0 add conss, 1316 chg bounds, 24 chg sides, 1903 chg coeffs, 152113 upgd conss, 0 impls, 149337 clqs
+(round 4, medium)     1447 del vars, 96230 del conss, 92441 add conss, 1316 chg bounds, 73 chg sides, 96554 chg coeffs, 152113 upgd conss, 0 impls, 149337 clqs
+   (6.4s) probing: 51/151556 (0.0%) - 0 fixings, 0 aggregations, 0 implications, 0 bound changes
+   (6.4s) probing aborted: 50/50 successive totally useless probings
+presolving (5 rounds: 5 fast, 3 medium, 2 exhaustive):
+ 1447 deleted vars, 96230 deleted constraints, 92441 added constraints, 1316 tightened bounds, 0 added holes, 73 changed sides, 96574 changed coefficients
+ 0 implications, 149337 cliques
+presolved problem has 151556 variables (151556 bin, 0 int, 0 impl, 0 cont) and 174211 constraints
+    927 constraints of type <knapsack>
+ 149337 constraints of type <setppc>
+  23947 constraints of type <linear>
+transformed objective value is always integral (scale: 1)
+Presolving Time: 6.50
+start creating seeedpool for current problem 
+created seeedpool for current problem, n detectors: 26 
+ Consclassifier "nonzeros" yields a classification with 22  different constraint classes 
+ Consclassifier "constypes" yields a classification with 4 different constraint classes 
+ Consclassifier "constypes according to miplib" yields a classification with 4 different constraint classes 
+ Consclassifier "constypes according to miplib" is not considered since it offers the same structure as "constypes" consclassifier
+ Varclassifier "vartypes" yields a classification with 1 different variable classes
+ Varclassifier "varobjvals" yields a classification with 3619 different variable classes
+ Varclassifier "varobjvalsigns" yields a classification with 1 different variable classes
+ Varclassifier "varobjvalsigns" is not considered since it offers the same structure as "vartypes"
+ the current consclass distribution includes 22 classes but only 18 are allowed for calcCandidatesNBlocks()
+ the current varclass distribution includes 3619 classes but only 18 are allowed for calcCandidatesNBlocks()
+Begin of detection round 0 of 1 total rounds 
+Start to propagate seeed with id 1 (0 of 1 in round 0) 
+ in dec_consclass: there are 2 different constraint classes   
+ the current consclass distribution includes 22 classes but only 5 are allowed for propagateSeeed() of cons class detector
+  the current constraint classifier "constypes" consists of 4 different classes   
+ dec_consclass found 15 new seeeds 
+dec_densemasterconss found 1 new seeed 
+ the current varclass distribution includes 3619 classes but only 5 are allowed for propagateSeeed() of var class detector
+Start finishing of partial decomposition 1.
+Measured running time per detector: 
+Detector consclass                 	 worked on 	 14 of 16	 and took a total time of 	109.91
+Detector densemasterconss          	 worked on 	 1 of 16	 and took a total time of 	0.12
+Detector hrgpartition              	 worked on 	 0 of 16	 and took a total time of 	0
+Detector varclass                  	 worked on 	 0 of 16	 and took a total time of 	7.88
+Started postprocessing of decompositions...
+...finished postprocessing of decompositions. Added 0 new decomps. 
+
+solve problem
+=============
+
+
+A Dantzig-Wolfe reformulation is applied to solve the original problem.
+
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+V  9.6s|     1 |     0 |      0 |      0 |     - | 937M|   0 |   0 | 174k|   0 |   0 |  0 | 6.554800e+04 | 6.916719e+06 |   --   |  Large 
+   489s|     1 |     0 |      0 |      0 |     - | 907M|   0 |   0 | 174k|   0 |   0 |  0 | 2.143902e+06 | 6.916719e+06 |   --   | 222.62%
+Chosen structure has 2 blocks and 751 linking constraints.
+This decomposition has a maxwhite score of 0.000628.
+Master problem is a set partitioning problem.
+Matrix has 2 blocks, using 2 pricing problems.
+
+     
+   491s|     1 |     0 |      0 |      0 |     - |1236M|   0 |   2 | 174k| 754 |   0 |  0 | 2.143902e+06 | 6.916719e+06 |   0.00%| 222.62%
+   491s|     1 |     0 |      0 |      0 |     - |1236M|   0 |   2 | 174k| 754 |   0 |  0 | 2.143902e+06 | 6.916719e+06 |   0.00%| 222.62%
+Starting reduced cost pricing...
+  3663s|     1 |     0 |     49 |     49 |     - |1391M|   0 |  38 | 174k| 754 |   0 |  0 | 2.143902e+06 | 6.916719e+06 |  81.39%| 222.62%
+(node 1) LP solver hit time limit in LP 18 -- using pseudo solution instead
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 3172.61
+Solving Nodes      : 1
+Primal Bound       : +6.85117100000000e+06 (1 solutions)
+Dual Bound         : +2.07835445829725e+06
+Gap                : 229.64 %
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 3663.28
+Solving Nodes      : 1
+Primal Bound       : +6.91671900000000e+06 (1 solutions)
+Dual Bound         : +2.14390245829725e+06
+Gap                : 222.62 %
+
+primal solution:
+================
+
+objective value:                              6916719
+id340                                               1 	(obj:165)
+id2457                                              1 	(obj:435)
+id2509                                              1 	(obj:675)
+id2705                                              1 	(obj:315)
+id2822                                              1 	(obj:255)
+id2984                                              1 	(obj:300)
+id3953                                              1 	(obj:1275)
+id5536                                              1 	(obj:816)
+id5815                                              1 	(obj:765)
+id7925                                              1 	(obj:1120)
+id8327                                              1 	(obj:3600)
+id8342                                              1 	(obj:2400)
+id8351                                              1 	(obj:2960)
+id8436                                              1 	(obj:3440)
+id8442                                              1 	(obj:3920)
+id8460                                              1 	(obj:3920)
+id8485                                              1 	(obj:3120)
+id8525                                              1 	(obj:2480)
+id10553                                             1 	(obj:1110)
+id10927                                             1 	(obj:1480)
+id11207                                             1 	(obj:1258)
+id11258                                             1 	(obj:1702)
+id11365                                             1 	(obj:814)
+id11442                                             1 	(obj:3626)
+id11460                                             1 	(obj:3626)
+id13901                                             1 	(obj:756)
+id13910                                             1 	(obj:630)
+id13955                                             1 	(obj:792)
+id13991                                             1 	(obj:396)
+id14021                                             1 	(obj:288)
+id14130                                             1 	(obj:882)
+id14861                                             1 	(obj:738)
+id14893                                             1 	(obj:198)
+id14906                                             1 	(obj:630)
+id14954                                             1 	(obj:774)
+id14965                                             1 	(obj:504)
+id15026                                             1 	(obj:3680)
+id15186                                             1 	(obj:3404)
+id15306                                             1 	(obj:1564)
+id16901                                             1 	(obj:3864)
+id16910                                             1 	(obj:3220)
+id16914                                             1 	(obj:1012)
+id16939                                             1 	(obj:3404)
+id16947                                             1 	(obj:2576)
+id16955                                             1 	(obj:4048)
+id16967                                             1 	(obj:3220)
+id16991                                             1 	(obj:2024)
+id17021                                             1 	(obj:1472)
+id17051                                             1 	(obj:1288)
+id17066                                             1 	(obj:4048)
+id17130                                             1 	(obj:4508)
+id17157                                             1 	(obj:1012)
+id17515                                             1 	(obj:1012)
+id17558                                             1 	(obj:1104)
+id17576                                             1 	(obj:2208)
+id17861                                             1 	(obj:3772)
+id17954                                             1 	(obj:3956)
+id17965                                             1 	(obj:2576)
+id18805                                             1 	(obj:989)
+id20054                                             1 	(obj:516)
+id20109                                             1 	(obj:1677)
+id20211                                             1 	(obj:1677)
+id20220                                             1 	(obj:1204)
+id20223                                             1 	(obj:1118)
+id20236                                             1 	(obj:688)
+id20367                                             1 	(obj:1634)
+id20377                                             1 	(obj:1247)
+id20573                                             1 	(obj:1978)
+id22012                                             1 	(obj:1584)
+id22836                                             1 	(obj:1672)
+id23013                                             1 	(obj:1144)
+id23054                                             1 	(obj:1056)
+id23211                                             1 	(obj:3432)
+id23239                                             1 	(obj:3520)
+id23351                                             1 	(obj:3256)
+id23573                                             1 	(obj:4048)
+id25536                                             1 	(obj:1183)
+id25549                                             1 	(obj:1911)
+id25912                                             1 	(obj:2821)
+id25947                                             1 	(obj:2548)
+id25971                                             1 	(obj:2275)
+id26033                                             1 	(obj:4368)
+id26051                                             1 	(obj:1274)
+id26066                                             1 	(obj:4004)
+id26289                                             1 	(obj:4277)
+id26401                                             1 	(obj:3094)
+id26515                                             1 	(obj:1001)
+id26603                                             1 	(obj:4095)
+id27251                                             1 	(obj:900)
+id27520                                             1 	(obj:2280)
+id28894                                             1 	(obj:1620)
+id28925                                             1 	(obj:840)
+id28967                                             1 	(obj:2100)
+id29031                                             1 	(obj:840)
+id29053                                             1 	(obj:1200)
+id29327                                             1 	(obj:2700)
+id29351                                             1 	(obj:2220)
+id29397                                             1 	(obj:3000)
+id29436                                             1 	(obj:2580)
+id29442                                             1 	(obj:2940)
+id29460                                             1 	(obj:2940)
+id29486                                             1 	(obj:2280)
+id29525                                             1 	(obj:1860)
+id29558                                             1 	(obj:720)
+id29713                                             1 	(obj:1200)
+id30708                                             1 	(obj:1802)
+id32756                                             1 	(obj:1219)
+id32770                                             1 	(obj:2597)
+id32835                                             1 	(obj:2279)
+id32840                                             1 	(obj:2597)
+id34894                                             1 	(obj:567)
+id34901                                             1 	(obj:882)
+id34914                                             1 	(obj:231)
+id34925                                             1 	(obj:294)
+id34947                                             1 	(obj:588)
+id34965                                             1 	(obj:525)
+id34983                                             1 	(obj:609)
+id34990                                             1 	(obj:525)
+id35013                                             1 	(obj:273)
+id35054                                             1 	(obj:252)
+id35066                                             1 	(obj:924)
+id35157                                             1 	(obj:231)
+id35211                                             1 	(obj:819)
+id35227                                             1 	(obj:903)
+id35236                                             1 	(obj:336)
+id35327                                             1 	(obj:945)
+id35349                                             1 	(obj:861)
+id35442                                             1 	(obj:1029)
+id35460                                             1 	(obj:1029)
+id35515                                             1 	(obj:231)
+id35525                                             1 	(obj:651)
+id35545                                             1 	(obj:504)
+id35573                                             1 	(obj:966)
+id35597                                             1 	(obj:546)
+id35670                                             1 	(obj:609)
+id35713                                             1 	(obj:420)
+id35774                                             1 	(obj:651)
+id35915                                             1 	(obj:420)
+id38204                                             1 	(obj:540)
+id38217                                             1 	(obj:600)
+id38258                                             1 	(obj:276)
+id38365                                             1 	(obj:132)
+id38367                                             1 	(obj:456)
+id38377                                             1 	(obj:348)
+id38869                                             1 	(obj:528)
+id40087                                             1 	(obj:2145)
+id40243                                             1 	(obj:2255)
+id41015                                             1 	(obj:2090)
+id41054                                             1 	(obj:660)
+id41211                                             1 	(obj:2145)
+id41220                                             1 	(obj:1540)
+id41239                                             1 	(obj:2200)
+id41349                                             1 	(obj:2255)
+id41367                                             1 	(obj:2090)
+id41377                                             1 	(obj:1595)
+id41545                                             1 	(obj:1320)
+id41573                                             1 	(obj:2530)
+id42874                                             1 	(obj:1428)
+id42915                                             1 	(obj:1428)
+id43919                                             1 	(obj:2499)
+id44054                                             1 	(obj:612)
+id44111                                             1 	(obj:1275)
+id44211                                             1 	(obj:1989)
+id44220                                             1 	(obj:1428)
+id44241                                             1 	(obj:1530)
+id44367                                             1 	(obj:1938)
+id44377                                             1 	(obj:1479)
+id44573                                             1 	(obj:2346)
+id44647                                             1 	(obj:2397)
+id44701                                             1 	(obj:663)
+id44945                                             1 	(obj:2244)
+id46116                                             1 	(obj:851)
+id46894                                             1 	(obj:999)
+id46901                                             1 	(obj:1554)
+id46914                                             1 	(obj:407)
+id46925                                             1 	(obj:518)
+id46947                                             1 	(obj:1036)
+id46991                                             1 	(obj:814)
+id47013                                             1 	(obj:481)
+id47054                                             1 	(obj:444)
+id47066                                             1 	(obj:1628)
+id47157                                             1 	(obj:407)
+id47327                                             1 	(obj:1665)
+id47349                                             1 	(obj:1517)
+id47442                                             1 	(obj:1813)
+id47460                                             1 	(obj:1813)
+id47515                                             1 	(obj:407)
+id47525                                             1 	(obj:1147)
+id47545                                             1 	(obj:888)
+id47571                                             1 	(obj:1110)
+id49902                                             1 	(obj:2945)
+id49914                                             1 	(obj:1045)
+id50157                                             1 	(obj:1045)
+id50288                                             1 	(obj:1235)
+id50306                                             1 	(obj:3040)
+id50946                                             1 	(obj:3040)
+id51311                                             1 	(obj:840)
+id52942                                             1 	(obj:903)
+id53189                                             1 	(obj:546)
+id54224                                             1 	(obj:2392)
+id54457                                             1 	(obj:3036)
+id54594                                             1 	(obj:3404)
+id55068                                             1 	(obj:4048)
+id55913                                             1 	(obj:4416)
+id55947                                             1 	(obj:2576)
+id56013                                             1 	(obj:1196)
+id56048                                             1 	(obj:1840)
+id56054                                             1 	(obj:1104)
+id56066                                             1 	(obj:4048)
+id56515                                             1 	(obj:1012)
+id56571                                             1 	(obj:2760)
+id58925                                             1 	(obj:168)
+id58961                                             1 	(obj:216)
+id59051                                             1 	(obj:168)
+id59065                                             1 	(obj:468)
+id59327                                             1 	(obj:540)
+id59356                                             1 	(obj:180)
+id59442                                             1 	(obj:588)
+id59481                                             1 	(obj:564)
+id59515                                             1 	(obj:132)
+id59525                                             1 	(obj:372)
+id59558                                             1 	(obj:144)
+id59989                                             1 	(obj:348)
+id60313                                             1 	(obj:1081)
+id61894                                             1 	(obj:1269)
+id61925                                             1 	(obj:658)
+id61967                                             1 	(obj:1645)
+id62053                                             1 	(obj:940)
+id62327                                             1 	(obj:2115)
+id62351                                             1 	(obj:1739)
+id62398                                             1 	(obj:2021)
+id62436                                             1 	(obj:2021)
+id62442                                             1 	(obj:2303)
+id62460                                             1 	(obj:2303)
+id62486                                             1 	(obj:1786)
+id62525                                             1 	(obj:1457)
+id62558                                             1 	(obj:564)
+id62713                                             1 	(obj:940)
+id64018                                             1 	(obj:1105)
+id64905                                             1 	(obj:3120)
+id64907                                             1 	(obj:2405)
+id64925                                             1 	(obj:910)
+id65065                                             1 	(obj:2535)
+id65102                                             1 	(obj:2535)
+id65128                                             1 	(obj:2145)
+id65318                                             1 	(obj:3120)
+id65327                                             1 	(obj:2925)
+id65349                                             1 	(obj:2665)
+id65358                                             1 	(obj:2015)
+id65442                                             1 	(obj:3185)
+id65490                                             1 	(obj:2275)
+id65496                                             1 	(obj:2145)
+id65503                                             1 	(obj:1430)
+id65525                                             1 	(obj:2015)
+id65545                                             1 	(obj:1560)
+id65997                                             1 	(obj:2210)
+id67673                                             1 	(obj:3053)
+id67927                                             1 	(obj:1420)
+id68065                                             1 	(obj:2769)
+id68204                                             1 	(obj:3195)
+id68258                                             1 	(obj:1633)
+id68365                                             1 	(obj:781)
+id68369                                             1 	(obj:3550)
+id68377                                             1 	(obj:2059)
+id68406                                             1 	(obj:3337)
+id68442                                             1 	(obj:3479)
+id68628                                             1 	(obj:3053)
+id70353                                             1 	(obj:784)
+id70925                                             1 	(obj:784)
+id71051                                             1 	(obj:784)
+id71065                                             1 	(obj:2184)
+id71327                                             1 	(obj:2520)
+id71333                                             1 	(obj:2016)
+id71351                                             1 	(obj:2072)
+id71436                                             1 	(obj:2408)
+id71442                                             1 	(obj:2744)
+id71485                                             1 	(obj:2184)
+id71515                                             1 	(obj:616)
+id71525                                             1 	(obj:1736)
+id73414                                             1 	(obj:460)
+id73866                                             1 	(obj:989)
+id73905                                             1 	(obj:1104)
+id73907                                             1 	(obj:851)
+id73912                                             1 	(obj:713)
+id73947                                             1 	(obj:644)
+id74066                                             1 	(obj:1012)
+id74102                                             1 	(obj:897)
+id74288                                             1 	(obj:299)
+id74304                                             1 	(obj:322)
+id74318                                             1 	(obj:1104)
+id74414                                             1 	(obj:851)
+id74490                                             1 	(obj:805)
+id74496                                             1 	(obj:759)
+id74503                                             1 	(obj:506)
+id74514                                             1 	(obj:644)
+id74611                                             1 	(obj:897)
+id74693                                             1 	(obj:1035)
+id74708                                             1 	(obj:874)
+id74826                                             1 	(obj:575)
+id74985                                             1 	(obj:1058)
+id76875                                             1 	(obj:882)
+id76967                                             1 	(obj:2205)
+id77051                                             1 	(obj:882)
+id77486                                             1 	(obj:2394)
+id77514                                             1 	(obj:1764)
+id77558                                             1 	(obj:756)
+id77693                                             1 	(obj:2835)
+id77708                                             1 	(obj:2394)
+id79946                                             1 	(obj:3040)
+id79971                                             1 	(obj:2375)
+id80054                                             1 	(obj:1140)
+id80066                                             1 	(obj:4180)
+id80111                                             1 	(obj:2375)
+id80220                                             1 	(obj:2660)
+id80263                                             1 	(obj:1615)
+id80367                                             1 	(obj:3610)
+id80377                                             1 	(obj:2755)
+id80515                                             1 	(obj:1045)
+id80571                                             1 	(obj:2850)
+id80741                                             1 	(obj:1995)
+id80945                                             1 	(obj:4180)
+id81166                                             1 	(obj:560)
+id82912                                             1 	(obj:496)
+id82947                                             1 	(obj:448)
+id83033                                             1 	(obj:768)
+id83066                                             1 	(obj:704)
+id83289                                             1 	(obj:752)
+id83795                                             1 	(obj:704)
+id84775                                             1 	(obj:1056)
+id85332                                             1 	(obj:432)
+id85723                                             1 	(obj:720)
+id85925                                             1 	(obj:336)
+id86065                                             1 	(obj:936)
+id86327                                             1 	(obj:1080)
+id86349                                             1 	(obj:984)
+id86442                                             1 	(obj:1176)
+id86525                                             1 	(obj:744)
+id86544                                             1 	(obj:600)
+id86628                                             1 	(obj:1032)
+id86752                                             1 	(obj:984)
+id88501                                             1 	(obj:966)
+id88903                                             1 	(obj:357)
+id88914                                             1 	(obj:231)
+id88947                                             1 	(obj:588)
+id88965                                             1 	(obj:525)
+id88983                                             1 	(obj:609)
+id89066                                             1 	(obj:924)
+id89157                                             1 	(obj:231)
+id89515                                             1 	(obj:231)
+id89915                                             1 	(obj:420)
+id91830                                             1 	(obj:612)
+id91880                                             1 	(obj:1020)
+id91901                                             1 	(obj:1428)
+id91955                                             1 	(obj:1496)
+id91991                                             1 	(obj:748)
+id92070                                             1 	(obj:714)
+id92229                                             1 	(obj:1054)
+id92893                                             1 	(obj:374)
+id93260                                             1 	(obj:901)
+id94905                                             1 	(obj:2544)
+id94907                                             1 	(obj:1961)
+id94927                                             1 	(obj:1060)
+id94955                                             1 	(obj:2332)
+id95021                                             1 	(obj:848)
+id95065                                             1 	(obj:2067)
+id95102                                             1 	(obj:2067)
+id95130                                             1 	(obj:2597)
+id95166                                             1 	(obj:1272)
+id95204                                             1 	(obj:2385)
+id95258                                             1 	(obj:1219)
+id95318                                             1 	(obj:2544)
+id95365                                             1 	(obj:583)
+id95372                                             1 	(obj:1060)
+id95377                                             1 	(obj:1537)
+id95442                                             1 	(obj:2597)
+id95490                                             1 	(obj:1855)
+id95496                                             1 	(obj:1749)
+id95770                                             1 	(obj:2597)
+id95839                                             1 	(obj:2173)
+id97142                                             1 	(obj:3913)
+id97925                                             1 	(obj:1274)
+id98015                                             1 	(obj:3458)
+id98054                                             1 	(obj:1092)
+id98065                                             1 	(obj:3549)
+id98220                                             1 	(obj:2548)
+id98367                                             1 	(obj:3458)
+id98377                                             1 	(obj:2639)
+id98442                                             1 	(obj:4459)
+id98515                                             1 	(obj:1001)
+id98524                                             1 	(obj:1456)
+id98571                                             1 	(obj:2730)
+id100243                                            1 	(obj:451)
+id100692                                            1 	(obj:308)
+id101015                                            1 	(obj:418)
+id101054                                            1 	(obj:132)
+id101211                                            1 	(obj:429)
+id101220                                            1 	(obj:308)
+id101239                                            1 	(obj:440)
+id101351                                            1 	(obj:407)
+id101367                                            1 	(obj:418)
+id101377                                            1 	(obj:319)
+id101433                                            1 	(obj:209)
+id101573                                            1 	(obj:506)
+id103925                                            1 	(obj:1036)
+id104065                                            1 	(obj:2886)
+id104411                                            1 	(obj:1110)
+id104442                                            1 	(obj:3626)
+id104515                                            1 	(obj:814)
+id104524                                            1 	(obj:1184)
+id104571                                            1 	(obj:2220)
+id104574                                            1 	(obj:1850)
+id104826                                            1 	(obj:1850)
+id104971                                            1 	(obj:1332)
+id106912                                            1 	(obj:1085)
+id106947                                            1 	(obj:980)
+id106967                                            1 	(obj:1225)
+id107051                                            1 	(obj:490)
+id107066                                            1 	(obj:1540)
+id107288                                            1 	(obj:455)
+id107304                                            1 	(obj:490)
+id107436                                            1 	(obj:1505)
+id107486                                            1 	(obj:1330)
+id107515                                            1 	(obj:385)
+id107558                                            1 	(obj:420)
+id107786                                            1 	(obj:490)
+id107985                                            1 	(obj:1610)
+id109901                                            1 	(obj:3990)
+id109910                                            1 	(obj:3325)
+id109914                                            1 	(obj:1045)
+id109947                                            1 	(obj:2660)
+id109955                                            1 	(obj:4180)
+id109991                                            1 	(obj:2090)
+id110021                                            1 	(obj:1520)
+id110051                                            1 	(obj:1330)
+id110066                                            1 	(obj:4180)
+id110130                                            1 	(obj:4655)
+id110157                                            1 	(obj:1045)
+id110515                                            1 	(obj:1045)
+id110547                                            1 	(obj:2375)
+id110558                                            1 	(obj:1140)
+id110632                                            1 	(obj:2565)
+id110989                                            1 	(obj:2755)
+id112673                                            1 	(obj:1634)
+id112901                                            1 	(obj:1596)
+id112914                                            1 	(obj:418)
+id112947                                            1 	(obj:1064)
+id112988                                            1 	(obj:1292)
+id113066                                            1 	(obj:1672)
+id113157                                            1 	(obj:418)
+id113628                                            1 	(obj:1634)
+id113694                                            1 	(obj:1482)
+id116054                                            1 	(obj:1188)
+id116209                                            1 	(obj:3663)
+id116573                                            1 	(obj:4554)
+id118859                                            1 	(obj:624)
+id118925                                            1 	(obj:182)
+id119013                                            1 	(obj:169)
+id119054                                            1 	(obj:156)
+id119065                                            1 	(obj:507)
+id119211                                            1 	(obj:507)
+id119226                                            1 	(obj:494)
+id119236                                            1 	(obj:208)
+id119327                                            1 	(obj:585)
+id119349                                            1 	(obj:533)
+id119442                                            1 	(obj:637)
+id119525                                            1 	(obj:403)
+id119545                                            1 	(obj:312)
+id119573                                            1 	(obj:598)
+id120278                                            1 	(obj:1245)
+id120506                                            1 	(obj:2573)
+id121946                                            1 	(obj:2656)
+id122054                                            1 	(obj:996)
+id122066                                            1 	(obj:3652)
+id122204                                            1 	(obj:3735)
+id122220                                            1 	(obj:2324)
+id122243                                            1 	(obj:3984)
+id122258                                            1 	(obj:1909)
+id122262                                            1 	(obj:2075)
+id122365                                            1 	(obj:913)
+id122367                                            1 	(obj:3154)
+id122377                                            1 	(obj:2407)
+id122463                                            1 	(obj:1079)
+id122515                                            1 	(obj:913)
+id122571                                            1 	(obj:2490)
+id122869                                            1 	(obj:3652)
+id123370                                            1 	(obj:468)
+id124925                                            1 	(obj:364)
+id125013                                            1 	(obj:338)
+id125051                                            1 	(obj:364)
+id125054                                            1 	(obj:312)
+id125065                                            1 	(obj:1014)
+id125211                                            1 	(obj:1014)
+id125327                                            1 	(obj:1170)
+id125349                                            1 	(obj:1066)
+id125442                                            1 	(obj:1274)
+id125515                                            1 	(obj:286)
+id125525                                            1 	(obj:806)
+id125545                                            1 	(obj:624)
+id125558                                            1 	(obj:312)
+id125573                                            1 	(obj:1196)
+id125749                                            1 	(obj:780)
+id125989                                            1 	(obj:754)
+id126247                                            1 	(obj:1221)
+id126837                                            1 	(obj:851)
+id128013                                            1 	(obj:481)
+id128054                                            1 	(obj:444)
+id128211                                            1 	(obj:1443)
+id128233                                            1 	(obj:1554)
+id128545                                            1 	(obj:888)
+id128573                                            1 	(obj:1702)
+id128671                                            1 	(obj:740)
+id129906                                            1 	(obj:720)
+id130295                                            1 	(obj:675)
+id130914                                            1 	(obj:495)
+id130947                                            1 	(obj:1260)
+id130975                                            1 	(obj:630)
+id131054                                            1 	(obj:540)
+id131066                                            1 	(obj:1980)
+id131111                                            1 	(obj:1125)
+id131157                                            1 	(obj:495)
+id131185                                            1 	(obj:630)
+id131220                                            1 	(obj:1260)
+id131367                                            1 	(obj:1710)
+id131377                                            1 	(obj:1305)
+id131515                                            1 	(obj:495)
+id131571                                            1 	(obj:1350)
+id133150                                            1 	(obj:2112)
+id133243                                            1 	(obj:3936)
+id134015                                            1 	(obj:3648)
+id134218                                            1 	(obj:1824)
+id134367                                            1 	(obj:3648)
+id134377                                            1 	(obj:2784)
+id135347                                            1 	(obj:364)
+id135828                                            1 	(obj:1144)
+id135973                                            1 	(obj:338)
+id136180                                            1 	(obj:1118)
+id136374                                            1 	(obj:598)
+id136946                                            1 	(obj:832)
+id137051                                            1 	(obj:364)
+id137066                                            1 	(obj:1144)
+id137261                                            1 	(obj:494)
+id137466                                            1 	(obj:858)
+id137515                                            1 	(obj:286)
+id137547                                            1 	(obj:650)
+id137558                                            1 	(obj:312)
+id137989                                            1 	(obj:754)
+id138096                                            1 	(obj:4048)
+id138664                                            1 	(obj:2376)
+id139859                                            1 	(obj:4224)
+id139946                                            1 	(obj:2816)
+id140066                                            1 	(obj:3872)
+id140260                                            1 	(obj:2640)
+id140274                                            1 	(obj:2024)
+id140726                                            1 	(obj:4400)
+id141837                                            1 	(obj:2277)
+id143013                                            1 	(obj:1287)
+id143054                                            1 	(obj:1188)
+id143211                                            1 	(obj:3861)
+id143239                                            1 	(obj:3960)
+id143351                                            1 	(obj:3663)
+id143437                                            1 	(obj:2277)
+id143545                                            1 	(obj:2376)
+id143573                                            1 	(obj:4554)
+id143876                                            1 	(obj:1584)
+id145407                                            1 	(obj:728)
+id146054                                            1 	(obj:312)
+id146204                                            1 	(obj:1170)
+id146211                                            1 	(obj:1014)
+id146220                                            1 	(obj:728)
+id146238                                            1 	(obj:1144)
+id146258                                            1 	(obj:598)
+id146365                                            1 	(obj:286)
+id146367                                            1 	(obj:988)
+id146377                                            1 	(obj:754)
+id146573                                            1 	(obj:1196)
+id148544                                            1 	(obj:2268)
+id148905                                            1 	(obj:4032)
+id148925                                            1 	(obj:1176)
+id149065                                            1 	(obj:3276)
+id149102                                            1 	(obj:3276)
+id149318                                            1 	(obj:4032)
+id149327                                            1 	(obj:3780)
+id149342                                            1 	(obj:2520)
+id149351                                            1 	(obj:3108)
+id149436                                            1 	(obj:3612)
+id149442                                            1 	(obj:4116)
+id149485                                            1 	(obj:3276)
+id149490                                            1 	(obj:2940)
+id149496                                            1 	(obj:2772)
+id149525                                            1 	(obj:2604)
+id150026                                            1 	(obj:48820)
+id150096                                            1 	(obj:24125)
+id150166                                            1 	(obj:27628)
+id150186                                            1 	(obj:47507)
+id150224                                            1 	(obj:20782)
+id150247                                            1 	(obj:45743)
+id150251                                            1 	(obj:13000)
+id150260                                            1 	(obj:23659)
+id150278                                            1 	(obj:31225)
+id150306                                            1 	(obj:12341)
+id150311                                            1 	(obj:30302)
+id150313                                            1 	(obj:16740)
+id150340                                            1 	(obj:40198)
+id150347                                            1 	(obj:26751)
+id150370                                            1 	(obj:10444)
+id150457                                            1 	(obj:19434)
+id150506                                            1 	(obj:30706)
+id150520                                            1 	(obj:46483)
+id150594                                            1 	(obj:13539)
+id150664                                            1 	(obj:21895)
+id150708                                            1 	(obj:23126)
+id150775                                            1 	(obj:45754)
+id150805                                            1 	(obj:49055)
+id150828                                            1 	(obj:45569)
+id150837                                            1 	(obj:26894)
+id150874                                            1 	(obj:34752)
+id150906                                            1 	(obj:27085)
+id150915                                            1 	(obj:23047)
+id150953                                            1 	(obj:37676)
+id150973                                            1 	(obj:22579)
+id151012                                            1 	(obj:10128)
+id151018                                            1 	(obj:25473)
+id151068                                            1 	(obj:25902)
+id151087                                            1 	(obj:1)
+id151116                                            1 	(obj:17797)
+id151142                                            1 	(obj:1)
+id151150                                            1 	(obj:19210)
+id151180                                            1 	(obj:40103)
+id151243                                            1 	(obj:31023)
+id151295                                            1 	(obj:44291)
+id151332                                            1 	(obj:1)
+id151353                                            1 	(obj:23624)
+id151374                                            1 	(obj:35738)
+id151407                                            1 	(obj:30419)
+id151414                                            1 	(obj:35535)
+id151501                                            1 	(obj:42755)
+id151536                                            1 	(obj:43444)
+id151544                                            1 	(obj:29244)
+id151549                                            1 	(obj:17713)
+id151553                                            1 	(obj:24811)
+id151673                                            1 	(obj:47203)
+id151692                                            1 	(obj:27762)
+id151723                                            1 	(obj:35857)
+id151830                                            1 	(obj:22877)
+id151836                                            1 	(obj:40207)
+id151859                                            1 	(obj:46577)
+id151866                                            1 	(obj:21909)
+id151875                                            1 	(obj:33844)
+id151880                                            1 	(obj:1)
+id151894                                            1 	(obj:34379)
+id151901                                            1 	(obj:21951)
+id151902                                            1 	(obj:42477)
+id151903                                            1 	(obj:41144)
+id151905                                            1 	(obj:31373)
+id151907                                            1 	(obj:40270)
+id151910                                            1 	(obj:33145)
+id151912                                            1 	(obj:17083)
+id151913                                            1 	(obj:28493)
+id151914                                            1 	(obj:12963)
+id151919                                            1 	(obj:17497)
+id151925                                            1 	(obj:40347)
+id151927                                            1 	(obj:38781)
+id151939                                            1 	(obj:19629)
+id151942                                            1 	(obj:38478)
+id151946                                            1 	(obj:38379)
+id151947                                            1 	(obj:18424)
+id151955                                            1 	(obj:28495)
+id151961                                            1 	(obj:26439)
+id151965                                            1 	(obj:1)
+id151967                                            1 	(obj:37813)
+id151971                                            1 	(obj:16951)
+id151975                                            1 	(obj:11048)
+id151983                                            1 	(obj:48747)
+id151988                                            1 	(obj:33217)
+id151990                                            1 	(obj:10220)
+id151991                                            1 	(obj:13171)
+id152013                                            1 	(obj:14927)
+id152015                                            1 	(obj:12734)
+id152021                                            1 	(obj:1)
+id152031                                            1 	(obj:38806)
+id152033                                            1 	(obj:32783)
+id152048                                            1 	(obj:21007)
+id152051                                            1 	(obj:1)
+id152053                                            1 	(obj:40334)
+id152054                                            1 	(obj:32922)
+id152065                                            1 	(obj:28822)
+id152066                                            1 	(obj:1)
+id152070                                            1 	(obj:36882)
+id152102                                            1 	(obj:35306)
+id152109                                            1 	(obj:44004)
+id152111                                            1 	(obj:41632)
+id152128                                            1 	(obj:27166)
+id152130                                            1 	(obj:28450)
+id152157                                            1 	(obj:11611)
+id152166                                            1 	(obj:37521)
+id152185                                            1 	(obj:25272)
+id152189                                            1 	(obj:30028)
+id152204                                            1 	(obj:11846)
+id152207                                            1 	(obj:25206)
+id152209                                            1 	(obj:13108)
+id152211                                            1 	(obj:16992)
+id152217                                            1 	(obj:33352)
+id152218                                            1 	(obj:12511)
+id152220                                            1 	(obj:29823)
+id152223                                            1 	(obj:35363)
+id152226                                            1 	(obj:23840)
+id152227                                            1 	(obj:39335)
+id152229                                            1 	(obj:37801)
+id152233                                            1 	(obj:39273)
+id152236                                            1 	(obj:33425)
+id152238                                            1 	(obj:46863)
+id152239                                            1 	(obj:10456)
+id152241                                            1 	(obj:13752)
+id152243                                            1 	(obj:46954)
+id152258                                            1 	(obj:39766)
+id152260                                            1 	(obj:14776)
+id152261                                            1 	(obj:34604)
+id152262                                            1 	(obj:20814)
+id152263                                            1 	(obj:12684)
+id152274                                            1 	(obj:11135)
+id152288                                            1 	(obj:1)
+id152289                                            1 	(obj:1)
+id152304                                            1 	(obj:20846)
+id152306                                            1 	(obj:1)
+id152318                                            1 	(obj:1)
+id152327                                            1 	(obj:27913)
+id152333                                            1 	(obj:25155)
+id152342                                            1 	(obj:14404)
+id152349                                            1 	(obj:1)
+id152351                                            1 	(obj:22194)
+id152356                                            1 	(obj:42136)
+id152358                                            1 	(obj:46582)
+id152365                                            1 	(obj:27544)
+id152367                                            1 	(obj:38300)
+id152369                                            1 	(obj:35354)
+id152372                                            1 	(obj:20050)
+id152377                                            1 	(obj:41677)
+id152397                                            1 	(obj:1)
+id152398                                            1 	(obj:44259)
+id152401                                            1 	(obj:1)
+id152406                                            1 	(obj:31151)
+id152411                                            1 	(obj:38366)
+id152414                                            1 	(obj:45854)
+id152433                                            1 	(obj:35546)
+id152436                                            1 	(obj:26906)
+id152437                                            1 	(obj:46473)
+id152442                                            1 	(obj:37284)
+id152457                                            1 	(obj:34393)
+id152460                                            1 	(obj:46480)
+id152463                                            1 	(obj:48670)
+id152466                                            1 	(obj:1)
+id152481                                            1 	(obj:48444)
+id152485                                            1 	(obj:10370)
+id152486                                            1 	(obj:21091)
+id152490                                            1 	(obj:16585)
+id152496                                            1 	(obj:31719)
+id152503                                            1 	(obj:16183)
+id152509                                            1 	(obj:17148)
+id152514                                            1 	(obj:1)
+id152515                                            1 	(obj:39912)
+id152524                                            1 	(obj:1)
+id152525                                            1 	(obj:41298)
+id152536                                            1 	(obj:19171)
+id152544                                            1 	(obj:47773)
+id152545                                            1 	(obj:42527)
+id152547                                            1 	(obj:31075)
+id152558                                            1 	(obj:24817)
+id152571                                            1 	(obj:34879)
+id152573                                            1 	(obj:31674)
+id152574                                            1 	(obj:14101)
+id152576                                            1 	(obj:20661)
+id152597                                            1 	(obj:32220)
+id152603                                            1 	(obj:1)
+id152611                                            1 	(obj:21905)
+id152628                                            1 	(obj:26190)
+id152632                                            1 	(obj:38905)
+id152647                                            1 	(obj:18738)
+id152670                                            1 	(obj:38389)
+id152671                                            1 	(obj:19191)
+id152693                                            1 	(obj:29858)
+id152694                                            1 	(obj:23772)
+id152701                                            1 	(obj:40900)
+id152705                                            1 	(obj:49921)
+id152708                                            1 	(obj:36242)
+id152713                                            1 	(obj:12055)
+id152726                                            1 	(obj:42836)
+id152741                                            1 	(obj:17263)
+id152749                                            1 	(obj:29454)
+id152752                                            1 	(obj:15227)
+id152756                                            1 	(obj:46145)
+id152770                                            1 	(obj:12743)
+id152774                                            1 	(obj:32754)
+id152786                                            1 	(obj:17986)
+id152795                                            1 	(obj:1)
+id152815                                            1 	(obj:1)
+id152822                                            1 	(obj:12462)
+id152826                                            1 	(obj:22451)
+id152835                                            1 	(obj:42528)
+id152839                                            1 	(obj:13487)
+id152840                                            1 	(obj:36751)
+id152861                                            1 	(obj:33604)
+id152869                                            1 	(obj:16846)
+id152876                                            1 	(obj:27027)
+id152893                                            1 	(obj:32367)
+id152906                                            1 	(obj:47793)
+id152915                                            1 	(obj:17996)
+id152945                                            1 	(obj:19262)
+id152946                                            1 	(obj:42386)
+id152954                                            1 	(obj:41088)
+id152965                                            1 	(obj:1)
+id152971                                            1 	(obj:21258)
+id152984                                            1 	(obj:24147)
+id152985                                            1 	(obj:21616)
+id152989                                            1 	(obj:1)
+id152997                                            1 	(obj:47960)
+
+Statistics
+==========
+
+Master Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3172.61
+  solving          :    3172.61
+  presolving       :       0.00 (included in solving)
+  reading          :       0.00
+  copying          :       0.00 (3 #copies) (minimal 0.00, maximal 0.00, average 0.00)
+Original Problem   :
+  Problem name     : master_CPLEX
+  Variables        : 0 (0 binary, 0 integer, 0 implicit integer, 0 continuous)
+  Constraints      : 753 initial, 753 maximal
+  Objective        : minimize, 0 non-zeros (abs.min = 1e+20, abs.max = -1e+20)
+Presolved Problem  :
+  Problem name     : t_master_CPLEX
+  Variables        : 38 (0 binary, 38 integer, 0 implicit integer, 0 continuous)
+  Constraints      : 753 initial, 754 maximal
+  Objective        : minimize, 37 non-zeros (abs.min = 12983, abs.max = 1.12916e+07)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  roundbound       :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  linear           :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -          0          -          -          0          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  masterbranch     :          0+         1          0          0          0          0          0          0          0          0          0          0          0          0          0
+  integralorig     :          0          0          0          0          0          0          0          2          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          0          0          0          2          0          0          0          0          0          0          0
+  linear           :        753        753          0          1          0          0          0          1          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  masterbranch     :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integralorig     :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          1          0          0          0
+  genvbounds       :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          0          0          0          0
+  redcost          :          0          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :          0          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.00       0.00       0.00       0.00       0.00       0.00
+  redcost          :       0.00       0.00       0.00       0.00       0.00       0.00
+  rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
+  vbounds          :       0.00       0.00       0.00       0.00       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     0          -          -          0          -          -    (maximal pool size: 0)
+  basis            :       0.00       0.00          0          0          0          0          0          0
+  master           :       0.00       0.00          0          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.00          -          2          2
+  gcg              :    3172.57       0.01         19         38
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  generic          :       0.00       0.00          0          0          0          0          0          0          0          0
+  orig             :       0.00       0.00          0          0          0          0          0          0          0          0
+  relpsprob        :       0.00       0.00          0          0          0          0          0          0          0          0
+  ryanfoster       :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.00       0.00          0          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  greedycolsel     :       0.00       0.00          0          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mastercoefdiving :       0.00       0.00          0          0          0
+  masterfracdiving :       0.00       0.00          0          0          0
+  masterlinesdiving:       0.00       0.00          0          0          0
+  mastervecldiving :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.00       0.00          0          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.00       0.00          0          0          0
+  relaxcolsel      :       0.00       0.00          0          0          0
+  rens             :       0.00       0.00          0          0          0
+  restmaster       :       0.00       0.00          1          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          0          0          0
+  setcover         :       0.00       0.00          0          0          0
+  shiftandpropagate:       0.00       0.00          0          0          0
+  shifting         :       0.00       0.00          0          0          0
+  simplerounding   :       0.00       0.00          0          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          0          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.01         17         47       2.76    4700.00       0.00          0
+  dual LP          :       0.01         21          2       2.00     200.00       0.01         20
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:       0.00          0          0       0.00          -
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+B&B Tree           :
+  number of runs   :          1
+  nodes            :          1 (0 internal, 1 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          0
+  objective leaves :          0
+  nodes (total)    :          1 (0 internal, 1 leaves)
+  nodes left       :          1
+  max depth        :          0
+  max depth (total):          0
+  backtracks       :          0 (0.0%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          0 (0 domain reductions, 0 cutoffs)
+  avg switch length:       1.00
+  switching time   :       0.00
+Root Node          :
+  First LP value   :          -
+  First LP Iters   :          0
+  First LP Time    :       0.00
+  Final Dual Bound : +2.07835445829725e+06
+  Final Root Iters :         49
+  Root LP Estimate :                     -
+Solution           :
+  Solutions found  :          1 (1 improvements)
+  First Solution   : +6.85117100000000e+06   (in run 1, after 1 nodes, 0.02 seconds, depth 0, found by <relaxation>)
+  Gap First Sol.   :     229.64 %
+  Gap Last Sol.    :     229.64 %
+  Primal Bound     : +6.85117100000000e+06   (in run 1, after 1 nodes, 0.02 seconds, depth 0, found by <relaxation>)
+  Dual Bound       : +2.07835445829725e+06
+  Gap              :     229.64 %
+  Avg. Gap         :      69.66 % (221018.09 primal-dual integral)
+Pricing Solver     : #HeurFarkas  #OptFarkas  #HeurRedcost #OptRedcost Time: HeurFarkas  OptFarkas  HeurRedcost OptRedcost
+  knapsack         :           0           0             0           0             0.00       0.00         0.00       0.00 
+  mip              :           0           0            36           1             0.00       0.00      3152.94       0.00 
+
+Original Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3665.92
+  solving          :    3663.28
+  presolving       :       6.50 (included in solving)
+  reading          :       2.64
+  copying          :       0.00 (0 times copied the problem)
+Original Problem   :
+  Problem name     : CPLEX
+  Variables        : 153001 (153000 binary, 0 integer, 0 implicit integer, 1 continuous)
+  Constraints      : 178000 initial, 178000 maximal
+  Objective        : minimize, 153001 non-zeros (abs.min = 1, abs.max = 49994)
+Presolved Problem  :
+  Problem name     : t_CPLEX
+  Variables        : 151556 (151556 binary, 0 integer, 0 implicit integer, 0 continuous)
+  Constraints      : 174211 initial, 174212 maximal
+  Objective        : minimize, 151556 non-zeros (abs.min = 1, abs.max = 49994)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  convertinttobin  :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  domcol           :       0.21       0.00      1          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      3          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  trivial          :       0.05       0.00      5          3          0          0          0          0          0          0          0          0
+  dualfix          :       0.05       0.00      5         26          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       2.67       0.01      1          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.11       0.00      1          0          0          0          0          0          0          0          0          0
+  knapsack         :       0.50       0.00      5          0          0          0          0          0       1849      92441         49      94671
+  setppc           :       0.96       0.03      5          0          0          0          0          0      92441          0          0          0
+  linear           :       1.26       0.17      7       1316        100          0       1316          0       1940          0         24       1903
+  root node        :          -          -      -          0          -          -          0          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  origbranch       :          0+         1          0          0          0          0          0          0          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          0          0          0         12          0          0          0          0          0          0          0
+  decomp           :          0          0          0          0          0          0          0         11          0          0          0          0          0          0          0
+  knapsack         :        927        927          0     114170          0          0          0          5          0          3          0          0          0          0          0
+  setppc           :     149337     149337          0     114167          0          0          0          4          0          4          0          0          0          0          0
+  linear           :      23947      23947          0     114163          0          0          0          1          0         33          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  origbranch       :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.12       0.00       0.00       0.00       0.00       0.00       0.00       0.12       0.00       0.00
+  decomp           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  knapsack         :       0.19       0.00       0.02       0.15       0.00       0.00       0.00       0.02       0.00       0.00
+  setppc           :       0.89       0.03       0.14       0.61       0.00       0.00       0.00       0.11       0.00       0.00
+  linear           :       0.89       0.17       0.09       0.63       0.00       0.00       0.00       0.00       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          2          0          0          0
+  genvbounds       :          0          0          0          0
+  obbt             :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          3          0          0          0
+  redcost          :          1          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :     114070          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.06       0.00       0.05       0.01       0.00       0.00
+  genvbounds       :       0.02       0.00       0.00       0.02       0.00       0.00
+  obbt             :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       2.68       0.01       2.67       0.00       0.00       0.00
+  pseudoobj        :       0.11       0.00       0.00       0.11       0.00       0.00
+  redcost          :       0.02       0.00       0.00       0.02       0.00       0.00
+  rootredcost      :       0.05       0.00       0.00       0.05       0.00       0.00
+  vbounds          :       0.18       0.00       0.11       0.07       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     0          -          -          0          -          -    (maximal pool size: 0)
+  clique           :       0.00       0.00          0          0          0          0          0          0
+  closecuts        :       0.00       0.00          0          0          0          0          0          0
+  gomory           :       0.00       0.00          0          0          0          0          0          0
+  impliedbounds    :       0.00       0.00          0          0          0          0          0          0
+  intobj           :       0.00       0.00          0          0          0          0          0          0
+  mcf              :       0.00       0.00          0          0          0          0          0          0
+  oddcycle         :       0.00       0.00          0          0          0          0          0          0
+  rapidlearning    :       0.00       0.00          0          0          0          0          0          0
+  strongcg         :       0.00       0.00          0          0          0          0          0          0
+  zerohalf         :       0.00       0.00          0          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.00          -          0          0
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  empty            :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.00       0.00          0          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  gcgcoefdiving    :       0.00       0.00          0          0          0
+  gcgdins          :       0.00       0.00          0          0          0
+  gcgfeaspump      :       0.00       0.00          0          0          0
+  gcgfracdiving    :       0.00       0.00          0          0          0
+  gcgguideddiving  :       0.00       0.00          0          0          0
+  gcglinesdiving   :       0.00       0.00          0          0          0
+  gcgpscostdiving  :       0.00       0.00          0          0          0
+  gcgrens          :       0.00       0.00          0          0          0
+  gcgrins          :       0.00       0.00          0          0          0
+  gcgrounding      :       0.00       0.00          0          0          0
+  gcgshifting      :       0.00       0.00          0          0          0
+  gcgsimplerounding:       0.00       0.00          0          0          0
+  gcgveclendiving  :       0.00       0.00          0          0          0
+  gcgzirounding    :       0.00       0.00          0          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  nlpdiving        :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.10       0.00          1          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.13       0.00          1          0          0
+  rens             :       0.00       0.00          0          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.07       0.00          1          0          0
+  shiftandpropagate:       0.00       0.00          0          0          0
+  shifting         :       0.07       0.00          1          0          0
+  simplerounding   :       0.01       0.00          1          0          0
+  subnlp           :       0.00       0.00          0          0          0
+  trivial          :       0.50       0.00          2          0          0
+  trysol           :       0.00       0.00          0          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  undercover       :       0.00       0.00          0          0          0
+  vbounds          :       4.62       0.00          1          1          1
+  veclendiving     :       0.00       0.00          0          0          0
+  xpcrossover      :       0.00       0.00          0          0          0
+  xprins           :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          0          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.00          0          0       0.00          -       0.00          0
+  dual LP          :     477.65          1      50864   50864.00     106.49       0.00          0
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:       1.01          1        864     864.00     855.45
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+Relaxators         :       Time      Calls
+  gcg              :    3173.64          0
+B&B Tree           :
+  number of runs   :          1
+  nodes            :          1 (0 internal, 1 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          0
+  objective leaves :          0
+  nodes (total)    :          1 (0 internal, 1 leaves)
+  nodes left       :          1
+  max depth        :          0
+  max depth (total):          0
+  backtracks       :          0 (0.0%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          0 (0 domain reductions, 0 cutoffs)
+  avg switch length:       1.00
+  switching time   :       0.00
+Root Node          :
+  First LP value   : +2.14390245829725e+06
+  First LP Iters   :      50864 (106.48 Iter/sec)
+  First LP Time    :     477.68
+  Final Dual Bound : +2.14390245829725e+06
+  Final Root Iters :      50864
+  Root LP Estimate :                     -
+Solution           :
+  Solutions found  :          1 (1 improvements)
+  First Solution   : +6.91671900000000e+06   (in run 1, after 1 nodes, 9.52 seconds, depth 65534, found by <vbounds>)
+  Gap First Sol.   :   10452.14 %
+  Gap Last Sol.    :   10452.14 %
+  Primal Bound     : +6.91671900000000e+06   (in run 1, after 1 nodes, 9.52 seconds, depth 65534, found by <vbounds>)
+  Dual Bound       : +2.14390245829725e+06
+  Gap              :     222.62 %
+  Avg. Gap         :          - (not evaluated)
+
+Simplex iterations :       iter
+  Master LP        :         49
+  Pricing LP       :          0
+  Original LP      :      51728
+
+Detector statistics:       time     number     blocks
+  connected        :       0.00          0    
+  constype         :       0.00          0    
+  postproces       :       0.00          0    
+  consclass        :     109.91          0    
+  consname         :       0.00          0    
+  densemaste       :       0.12          0    
+  stairheur        :       0.00          0    
+  staircase        :       0.00          0    
+  random           :       0.00          0    
+  staircase_       :       0.00          0    
+  colors           :       0.00          0    
+  cutpacking       :       0.00          0    
+  compgreedi       :       0.00          0    
+  mastersetc       :       0.00          0    
+  mastersetp       :       0.00          0    
+  mastersetp       :       0.00          0    
+  hcgpartiti       :       0.00          0    
+  hrgpartiti       :       0.00          0    
+  hrcgpartit       :       0.00          0    
+  connectedb       :       0.00          0    
+  connected_       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  varclass         :       7.88          0    
+  isomorph         :       0.00          0    
+
+Decomp statistics  :
+  type             :   bordered
+  detector         :         cC
+  blocks           :          2
+  aggr. blocks     :          2
+Master statistics  :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros    bnzeros bintnzeros  min(dens)  max(dens) medi(dens) mean(dens)
+  master           :          0          0          0          0          0        751       5306       5306          0          0      0.000      0.003      0.000      0.000
+Pricing statistics :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros  min(dens)  max(dens) medi(dens) mean(dens)  identical
+          1        :     151505     151505          0          0          0     173409     636155     636155      0.000      0.000      0.000      0.000          1
+          2        :         51         51          0          0          0         51        151        151      0.039      1.000      0.039      0.058          1
+Decomp Scores      :
+  border area      :      0.004
+  avg. density     :      0.999
+  linking score    :      0.500
+Pricing time in colpool = 0.000000 sec

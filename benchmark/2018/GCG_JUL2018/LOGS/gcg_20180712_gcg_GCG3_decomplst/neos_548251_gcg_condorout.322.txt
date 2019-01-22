@@ -1,0 +1,932 @@
+GCG version 3.0.0 [GitHash: 70e7382]
+Copyright (C) 2010-2018 Operations Research, RWTH Aachen University
+                        Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+SCIP version 6.0.0 [precision: 8 byte] [memory: block] [mode: optimized] [LP solver: SoPlex 4.0.0] [GitHash: 77d3bc8]
+Copyright (C) 2002-2018 Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+External codes: 
+  Readline 6.0         GNU library for command line editing (gnu.org/s/readline)
+  SoPlex 4.0.0         Linear Programming Solver developed at Zuse Institute Berlin (soplex.zib.de) [GitHash: 82cab95]
+  CppAD 20180000.0     Algorithmic Differentiation of C++ algorithms developed by B. Bell (www.coin-or.org/CppAD)
+  ZLIB 1.2.3           General purpose compression library by J. Gailly and M. Adler (zlib.net)
+  ZIMPL 3.3.6          Zuse Institute Mathematical Programming Language developed by T. Koch (zimpl.zib.de)
+  bliss 0.73           A Tool for Computing Automorphism Groups of Graphs by T. Junttila and P. Kaski (http://www.tcs.hut.fi/Software/bliss/)
+
+reading user parameter file </LOG_DATA/scripts/options_gcg.parm>
+
+read problem </ORDATA/miplib/neos_548251.mps>
+============
+
+original problem has 1922 variables (930 bin, 0 int, 0 impl, 992 cont) and 2386 constraints
+presolving:
+(round 1, fast)       465 del vars, 465 del conss, 0 add conss, 61 chg bounds, 465 chg sides, 930 chg coeffs, 0 upgd conss, 465 impls, 0 clqs
+(round 2, fast)       465 del vars, 465 del conss, 0 add conss, 91 chg bounds, 465 chg sides, 930 chg coeffs, 0 upgd conss, 465 impls, 0 clqs
+(round 3, exhaustive) 465 del vars, 465 del conss, 0 add conss, 91 chg bounds, 465 chg sides, 930 chg coeffs, 465 upgd conss, 465 impls, 0 clqs
+(round 4, exhaustive) 465 del vars, 465 del conss, 0 add conss, 91 chg bounds, 465 chg sides, 930 chg coeffs, 930 upgd conss, 467 impls, 0 clqs
+   (0.1s) probing cycle finished: starting next cycle
+presolving (5 rounds: 5 fast, 3 medium, 3 exhaustive):
+ 465 deleted vars, 465 deleted constraints, 0 added constraints, 91 tightened bounds, 0 added holes, 465 changed sides, 930 changed coefficients
+ 2790 implications, 0 cliques
+presolved problem has 1457 variables (465 bin, 0 int, 0 impl, 992 cont) and 1921 constraints
+    930 constraints of type <varbound>
+    991 constraints of type <linear>
+Presolving Time: 0.08
+start creating seeedpool for current problem 
+created seeedpool for current problem, n detectors: 26 
+ Consclassifier "nonzeros" yields a classification with 4  different constraint classes 
+ Consclassifier "constypes" yields a classification with 2 different constraint classes 
+ Consclassifier "constypes according to miplib" yields a classification with 2 different constraint classes 
+ Varclassifier "vartypes" yields a classification with 2 different variable classes
+ Varclassifier "varobjvals" yields a classification with 2 different variable classes
+ Varclassifier "varobjvalsigns" yields a classification with 2 different variable classes
+ Varclassifier "varobjvalsigns" is not considered since it offers the same structure as "varobjvals"
+Begin of detection round 0 of 1 total rounds 
+Start to propagate seeed with id 1 (0 of 1 in round 0) 
+ in dec_consclass: there are 3 different constraint classes   
+  the current constraint classifier "nonzeros" consists of 4 different classes   
+  the current constraint classifier "constypes" consists of 2 different classes   
+  the current constraint classifier "constypes according to miplib" consists of 2 different classes   
+ dec_consclass found 21 new seeeds 
+dec_densemasterconss found 1 new seeed 
+Detecting Arrowhead structure: 15 465 1395 done, 2 seeeds found.
+Start finishing of partial decomposition 1.
+Measured running time per detector: 
+Detector consclass                 	 worked on 	 16 of 23	 and took a total time of 	0.03
+Detector densemasterconss          	 worked on 	 0 of 23	 and took a total time of 	0
+Detector hrgpartition              	 worked on 	 2 of 23	 and took a total time of 	0.12
+Detector varclass                  	 worked on 	 4 of 23	 and took a total time of 	0.01
+Started postprocessing of decompositions...
+...finished postprocessing of decompositions. Added 0 new decomps. 
+
+solve problem
+=============
+
+
+A Dantzig-Wolfe reformulation is applied to solve the original problem.
+
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+   0.1s|     1 |     0 |      0 |      0 |     - |9854k|   0 |   0 |1921 |   0 |   0 |  0 | 0.000000e+00 |      --      |   --   |    Inf 
+   0.4s|     1 |     0 |      0 |      0 |     - |  10M|   0 |   0 |1921 |   0 |   0 |  0 | 0.000000e+00 |      --      |   --   |    Inf 
+Chosen structure has 397 blocks, 6 master-only (static) variables, and 405 linking constraints.
+This decomposition has a maxwhite score of 0.775958.
+Warning: Discretization with continuous variables is only an experimental feature.
+Matrix has 397 blocks, using 397 pricing problems.
+
+     
+   2.5s|     1 |     0 |     80 |      6 |     - | 119M|   0 |   8 |1922 | 803 |   0 |  0 | 0.000000e+00 |      --      |   0.00%|    Inf 
+   2.6s|     1 |     0 |    278 |    204 |     - | 121M|   0 | 208 |1922 | 803 |   0 |  0 | 0.000000e+00 |      --      |   0.00%|    Inf 
+   3.1s|     1 |     0 |    552 |    404 |     - | 121M|   0 | 408 |1922 | 803 |   0 |  0 | 0.000000e+00 |      --      |   0.00%|    Inf 
+   7.0s|     1 |     0 |   2018 |   1036 |     - | 123M|   0 | 784 |1922 | 803 |   0 |  0 | 0.000000e+00 |      --      |   0.00%|    Inf 
+Starting reduced cost pricing...
+  52.9s|     1 |     0 |  17521 |   4479 |     - | 126M|   0 |1478 |1922 | 803 |   0 |  0 | 1.200000e+01 |      --      |   2.07%|    Inf 
+  53.2s|     1 |     0 |  17576 |   4534 |     - | 128M|   0 |1478 |1922 | 803 |   4 |  2 | 1.200000e+01 |      --      |   2.07%|    Inf 
+  64.2s|     1 |     0 |  27835 |   4570 |     - | 128M|   0 |1497 |1922 | 803 |   4 |  2 | 1.400000e+01 |      --      |   2.04%|    Inf 
+  64.6s|     1 |     0 |  27842 |   4577 |     - | 129M|   0 |1497 |1922 | 803 |   7 |  4 | 1.400000e+01 |      --      |   2.04%|    Inf 
+  68.4s|     1 |     0 |  32008 |   4577 |     - | 129M|   0 |1497 |1922 | 803 |   7 |  4 | 1.400000e+01 |      --      |   1.99%|    Inf 
+  72.5s|     1 |     0 |  35707 |   4584 |     - | 129M|   0 |1497 |1922 | 803 |  10 |  6 | 1.400000e+01 |      --      |   1.96%|    Inf 
+  76.6s|     1 |     0 |  39278 |   4586 |     - | 129M|   0 |1497 |1922 | 803 |  11 |  8 | 1.400000e+01 |      --      |   1.93%|    Inf 
+  76.9s|     1 |     0 |  39278 |   4586 |     - | 129M|   0 |1497 |1922 | 803 |  11 | 10 | 1.400000e+01 |      --      |   1.93%|    Inf 
+  76.9s|     1 |     2 |  39278 |   4586 |     - | 129M|   0 |1497 |1922 | 803 |  11 | 10 | 1.400000e+01 |      --      |   1.93%|    Inf 
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+   728s|   100 |   101 | 402838 |  35236 | 309.6 | 133M|  12 |1535 |1922 | 803 |  11 |  1 | 1.600000e+01 |      --      |   --   |    Inf 
+  1023s|   200 |   201 | 610238 |  53400 | 245.3 | 136M|  14 |1622 |1922 | 803 |  11 |  1 | 1.600000e+01 |      --      |   --   |    Inf 
+  1310s|   300 |   299 | 782110 |  70769 | 222.1 | 139M|  18 |1731 |1922 | 803 |  11 |  1 | 1.600000e+01 |      --      |   --   |    Inf 
+  1621s|   400 |   393 | 986885 |  92948 | 223.7 | 143M|  21 |1846 |1922 | 803 |  11 |  1 | 1.600000e+01 |      --      |   --   |    Inf 
+  1961s|   500 |   487 |1197087 | 107816 | 209.8 | 148M|  22 |1969 |1922 | 803 |  11 |  1 | 1.600000e+01 |      --      |   --   |    Inf 
+  2291s|   600 |   585 |1389186 | 122422 | 199.4 | 153M|  32 |2088 |1922 | 803 |  11 |  1 | 1.607143e+01 |      --      |   --   |    Inf 
+  2584s|   700 |   685 |1600944 | 143670 | 201.3 | 156M|  32 |2176 |1922 | 803 |  11 |  1 | 1.607143e+01 |      --      |   --   |    Inf 
+  2872s|   800 |   785 |1810360 | 164751 | 202.5 | 160M|  32 |2254 |1922 | 803 |  11 |  1 | 1.607143e+01 |      --      |   --   |    Inf 
+  3089s|   900 |   885 |1979468 | 182660 | 199.9 | 162M|  32 |2288 |1922 | 803 |  11 |  1 | 1.622222e+01 |      --      |   --   |    Inf 
+  3334s|  1000 |   977 |2165258 | 194690 | 192.6 | 164M|  32 |2343 |1922 | 803 |  11 |  1 | 1.622222e+01 |      --      |   --   |    Inf 
+  3595s|  1100 |  1073 |2360321 | 217340 | 196.1 | 166M|  32 |2402 |1922 | 803 |  11 |  1 | 1.625000e+01 |      --      |   --   |    Inf 
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 3600.10
+Solving Nodes      : 1103
+Primal Bound       : +1.00000000000000e+20 (0 solutions)
+Dual Bound         : +1.62500000000000e+01
+Gap                : infinite
+
+primal solution:
+================
+
+no solution available
+
+Statistics
+==========
+
+Master Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3393.85
+  solving          :    3393.85
+  presolving       :       0.00 (included in solving)
+  reading          :       0.00
+  copying          :       0.20 (46 #copies) (minimal 0.00, maximal 0.02, average 0.00)
+Original Problem   :
+  Problem name     : master_file
+  Variables        : 6 (0 binary, 0 integer, 0 implicit integer, 6 continuous)
+  Constraints      : 802 initial, 802 maximal
+  Objective        : minimize, 1 non-zeros (abs.min = 1, abs.max = 1)
+Presolved Problem  :
+  Problem name     : t_master_file
+  Variables        : 2402 (0 binary, 0 integer, 0 implicit integer, 2402 continuous)
+  Constraints      : 802 initial, 803 maximal
+  Objective        : minimize, 1 non-zeros (abs.min = 1, abs.max = 1)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  roundbound       :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  linear           :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -          0          -          -       3790          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  masterbranch     :          0+        48          0       4360          0          0          0          0          0          0      22663          0          0          0          0
+  integralorig     :          0          0          0          0       1088          0          0       2608          0          0          0          0          0          0       2176
+  integral         :          0          0          0          0          0          0          0          0          0          0          0          0          0          0          0
+  linear           :        802        802          5      10939          0          0          0          0          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  masterbranch     :       9.62       0.00       0.00       9.62       0.00       0.00       0.00       0.00       0.00       0.00
+  integralorig     :     218.27       0.00       0.00       0.00       0.11       0.00       0.00     218.16       0.00       0.00
+  integral         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       0.04       0.00       0.00       0.04       0.00       0.00       0.00       0.00       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          1          0          0          0
+  genvbounds       :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          0          0          0          0
+  redcost          :          0          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :      12027          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.02       0.00       0.00       0.02       0.00       0.00
+  redcost          :       0.00       0.00       0.00       0.00       0.00       0.00
+  rootredcost      :       0.01       0.00       0.00       0.01       0.00       0.00
+  vbounds          :       0.01       0.00       0.00       0.01       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     0          -          -          0          -          -    (maximal pool size: 0)
+  basis            :       0.65       0.00          5          0          0         21         11          0
+  master           :       7.65       0.00         93          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.67          -       1734     663134
+  gcg              :    3016.37       0.00       3082       6183
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  generic          :       0.00       0.00          0          0          0          0          0          0          0          0
+  orig             :       0.00       0.00          0          0          0          0          0          0          0          0
+  relpsprob        :       0.00       0.00          0          0          0          0          0          0          0          0
+  ryanfoster       :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.00       0.00          0          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  greedycolsel     :       0.01       0.00          4          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mastercoefdiving :       0.00       0.00          0          0          0
+  masterfracdiving :       0.00       0.00          0          0          0
+  masterlinesdiving:       0.00       0.00          0          0          0
+  mastervecldiving :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.00       0.00          0          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.00       0.00          0          0          0
+  relaxcolsel      :       0.02       0.00          2          0          0
+  rens             :       0.01       0.00          0          0          0
+  restmaster       :       0.49       0.00          1          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          0          0          0
+  setcover         :       0.00       0.00          0          0          0
+  shiftandpropagate:       0.00       0.00          0          0          0
+  shifting         :       0.00       0.00          0          0          0
+  simplerounding   :     218.61       0.00       2607          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          0          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       6.06       1848      27561      18.20    4548.02       0.52        334
+  dual LP          :      20.56      11198     128194      54.48    6235.12      10.04       8845
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          1         41      41.00          -
+  diving/probing LP:       9.02       2898      62161      21.45    6891.46
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+B&B Tree           :
+  number of runs   :          1
+  nodes            :       1089 (1088 internal, 1 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          0
+  objective leaves :          0
+  nodes (total)    :       1089 (1088 internal, 1 leaves)
+  nodes left       :       1089
+  max depth        :         32
+  max depth (total):         32
+  backtracks       :        295 (27.1%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :       2711 (1907 domain reductions, 0 cutoffs)
+  avg switch length:       9.90
+  switching time   :       9.62
+Root Node          :
+  First LP value   :          -
+  First LP Iters   :          0
+  First LP Time    :       0.00
+  Final Dual Bound : +1.40000000000000e+01
+  Final Root Iters :       4586
+  Root LP Estimate : +1.40000000000000e+01
+Solution           :
+  Solutions found  :          0 (0 improvements)
+  Primal Bound     :          -
+  Dual Bound       : +1.60000000000008e+01
+  Gap              :   infinite
+  Avg. Gap         :     100.00 % (339385.00 primal-dual integral)
+Pricing Solver     : #HeurFarkas  #OptFarkas  #HeurRedcost #OptRedcost Time: HeurFarkas  OptFarkas  HeurRedcost OptRedcost
+  knapsack         :           0           0             0           0             0.03       0.00         0.27       0.00 
+  mip              :       75922           4        955182        1292           165.87       0.20      2587.50      29.05 
+
+Original Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3600.11
+  solving          :    3600.10
+  presolving       :       0.08 (included in solving)
+  reading          :       0.01
+  copying          :       0.01 (1 #copies) (minimal 0.01, maximal 0.01, average 0.01)
+Original Problem   :
+  Problem name     : file
+  Variables        : 1922 (930 binary, 0 integer, 0 implicit integer, 992 continuous)
+  Constraints      : 2386 initial, 2386 maximal
+  Objective        : minimize, 1 non-zeros (abs.min = 1, abs.max = 1)
+Presolved Problem  :
+  Problem name     : t_file
+  Variables        : 1457 (465 binary, 0 integer, 0 implicit integer, 992 continuous)
+  Constraints      : 1921 initial, 1922 maximal
+  Objective        : minimize, 1 non-zeros (abs.min = 1, abs.max = 1)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  convertinttobin  :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  domcol           :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      3          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  trivial          :       0.00       0.00      5          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      5          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.05       0.00      1          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  varbound         :       0.00       0.00      4          0          0          0          0          0          0          0          0          0
+  linear           :       0.03       0.00      8          0        465          0         91          0        465          0        465        930
+  root node        :          -          -      -          0          -          -          4          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  origbranch       :          0+        48          0          0          0          0          0          0          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          1       1085          0       4427          0          0          0          0          0          0       2172
+  decomp           :          0          0          0          0          0          0          2          8          0          0          0          0          0          0          0
+  varbound         :        930        930         11      14138          0          0          2          5          0          0       1106          0          0          0          0
+  linear           :        991        991         11      14138          0          0          0          3          0         23       6120          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  origbranch       :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.10       0.00       0.00       0.00       0.00       0.00       0.07       0.03       0.00       0.00
+  decomp           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  varbound         :       0.03       0.00       0.00       0.03       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       0.32       0.00       0.12       0.20       0.00       0.00       0.00       0.00       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          2          0          0          0
+  genvbounds       :          0          0          0          0
+  obbt             :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :       4191          0          0          4
+  redcost          :          3          0          0          0
+  rootredcost      :          1          0          0          0
+  vbounds          :      13372          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.01       0.00       0.00       0.01       0.00       0.00
+  obbt             :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.05       0.00       0.05       0.00       0.00       0.00
+  pseudoobj        :       0.00       0.00       0.00       0.00       0.00       0.00
+  redcost          :       0.01       0.00       0.00       0.01       0.00       0.00
+  rootredcost      :       0.01       0.00       0.00       0.01       0.00       0.00
+  vbounds          :       0.02       0.00       0.00       0.02       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                    13          -          -         43          -          -    (maximal pool size: 707)
+  clique           :       0.00       0.00          1          0          0          0          0          0
+  closecuts        :       0.00       0.00          0          0          0          0          0          0
+  gomory           :       0.01       0.00          5          0          0          0          4          0
+  impliedbounds    :       0.00       0.00         11          0          0          0          0          0
+  intobj           :       0.00       0.00          0          0          0          0          0          0
+  mcf              :       0.00       0.00          7          0          0          0          0          0
+  oddcycle         :       0.01       0.00         10          0          0          0          0          0
+  rapidlearning    :       0.00       0.00          0          0          0          0          0          0
+  strongcg         :       0.01       0.00          5          0          0          0          0          0
+  zerohalf         :       0.00       0.00          7          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.00          -          0          0
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  empty            :       0.01       0.00          1       1085          2          0          0          0          0       2176
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.28       0.00          1          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  gcgcoefdiving    :      40.01       0.00         48          0          0
+  gcgdins          :       0.00       0.00          0          0          0
+  gcgfeaspump      :       0.00       0.00          0          0          0
+  gcgfracdiving    :      43.01       0.00         43          0          0
+  gcgguideddiving  :      36.15       0.00         48          0          0
+  gcglinesdiving   :      53.42       0.00         47          0          0
+  gcgpscostdiving  :      19.16       0.00         39          0          0
+  gcgrens          :       0.01       0.00          0          0          0
+  gcgrins          :       0.00       0.00          0          0          0
+  gcgrounding      :       0.18       0.00        418          0          0
+  gcgshifting      :       1.13       0.00        103          0          0
+  gcgsimplerounding:       0.00       0.00          0          0          0
+  gcgveclendiving  :      10.74       0.00         28          0          0
+  gcgzirounding    :       0.00       0.00          0          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.02       0.00          1          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  nlpdiving        :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.00       0.00          0          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.02       0.00          3          0          0
+  rens             :       0.00       0.00          0          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          3          0          0
+  shiftandpropagate:       0.03       0.00          1          0          0
+  shifting         :       0.02       0.00          3          0          0
+  simplerounding   :       0.00       0.00          0          0          0
+  subnlp           :       0.00       0.00          0          0          0
+  trivial          :       0.00       0.00          2          0          0
+  trysol           :       0.00       0.00          0          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  undercover       :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  xpcrossover      :       0.04       0.00          1          0          0
+  xprins           :       0.03       0.00          1          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          1          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.00          0          0       0.00          -       0.00          0
+  dual LP          :       0.04          3       1796     898.00   44900.00       0.00          1
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:       0.38         30       5318     177.27   13994.74
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+Relaxators         :       Time      Calls
+  gcg              :    3395.48       1088
+B&B Tree           :
+  number of runs   :          1
+  nodes            :       1103 (1088 internal, 15 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :         14
+  objective leaves :          0
+  nodes (total)    :       1103 (1088 internal, 15 leaves)
+  nodes left       :       1075
+  max depth        :         32
+  max depth (total):         32
+  backtracks       :        300 (27.2%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          2 (0 domain reductions, 0 cutoffs)
+  avg switch length:       5.28
+  switching time   :       0.03
+Root Node          :
+  First LP value   : +0.00000000000000e+00
+  First LP Iters   :       1795 (44875.00 Iter/sec)
+  First LP Time    :       0.04
+  Final Dual Bound : +1.40000000000000e+01
+  Final Root Iters :       5341
+  Root LP Estimate : +3.06064617144843e+01
+Solution           :
+  Solutions found  :          0 (0 improvements)
+  Primal Bound     :          -
+  Dual Bound       : +1.62500000000000e+01
+  Gap              :   infinite
+  Avg. Gap         :          - (not evaluated)
+
+Simplex iterations :       iter
+  Master LP        :     217916
+  Pricing LP       :    2146016
+  Original LP      :       7114
+
+Detector statistics:       time     number     blocks
+  connected        :       0.00          0    
+  constype         :       0.00          0    
+  postproces       :       0.00          0    
+  consclass        :       0.03          0    
+  consname         :       0.00          0    
+  densemaste       :       0.00          0    
+  stairheur        :       0.00          0    
+  staircase        :       0.00          0    
+  random           :       0.00          0    
+  staircase_       :       0.00          0    
+  colors           :       0.00          0    
+  cutpacking       :       0.00          0    
+  compgreedi       :       0.00          0    
+  mastersetc       :       0.00          0    
+  mastersetp       :       0.00          0    
+  mastersetp       :       0.00          0    
+  hcgpartiti       :       0.00          0    
+  hrgpartiti       :       0.12          0    
+  hrcgpartit       :       0.00          0    
+  connectedb       :       0.00          0    
+  connected_       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  varclass         :       0.01          0    
+  isomorph         :       0.00          0    
+
+Decomp statistics  :
+  type             :  arrowhead
+  detector         :         rC
+  blocks           :        397
+  aggr. blocks     :        397
+Master statistics  :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros    bnzeros bintnzeros  min(dens)  max(dens) medi(dens) mean(dens)
+  master           :          6          0          0          0          6        405       1637          0          0          0      0.000      0.077      0.002      0.003
+Pricing statistics :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros  min(dens)  max(dens) medi(dens) mean(dens)  identical
+          1        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+          2        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+          3        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+          4        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+          5        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+          6        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+          7        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+          8        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+          9        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         10        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         11        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         12        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         13        :        128         33          0          0         95        160        414         66      0.013      0.075      0.019      0.020          1
+         14        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         15        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         16        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         17        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         18        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         19        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         20        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         21        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         22        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         23        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         24        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         25        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         26        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         27        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         28        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         29        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         30        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         31        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         32        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         33        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         34        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         35        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         36        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         37        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         38        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         39        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         40        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         41        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         42        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         43        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         44        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         45        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         46        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         47        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         48        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         49        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         50        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         51        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         52        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         53        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         54        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         55        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         56        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         57        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         58        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         59        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         60        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         61        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         62        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         63        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         64        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         65        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         66        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         67        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         68        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         69        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         70        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         71        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         72        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         73        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         74        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         75        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         76        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         77        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         78        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         79        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         80        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         81        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         82        :         54         14          0          0         40         66        170         28      0.030      0.152      0.045      0.048          1
+         83        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         84        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         85        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         86        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         87        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         88        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         89        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         90        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         91        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         92        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         93        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         94        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         95        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         96        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         97        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         98        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+         99        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        100        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        101        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        102        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        103        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        104        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        105        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        106        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        107        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        108        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        109        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        110        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        111        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        112        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        113        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        114        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        115        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        116        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        117        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        118        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        119        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        120        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        121        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        122        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        123        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        124        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        125        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        126        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        127        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        128        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        129        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        130        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        131        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        132        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        133        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        134        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        135        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        136        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        137        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        138        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        139        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        140        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        141        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        142        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        143        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        144        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        145        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        146        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        147        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        148        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        149        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        150        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        151        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        152        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        153        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        154        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        155        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        156        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        157        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        158        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        159        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        160        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        161        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        162        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        163        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        164        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        165        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        166        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        167        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        168        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        169        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        170        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        171        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        172        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        173        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        174        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        175        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        176        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        177        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        178        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        179        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        180        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        181        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        182        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        183        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        184        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        185        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        186        :         87         24          0          0         63        108        276         48      0.019      0.111      0.028      0.029          1
+        187        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        188        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        189        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        190        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        191        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        192        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        193        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        194        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        195        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        196        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        197        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        198        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        199        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        200        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        201        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        202        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        203        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        204        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        205        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        206        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        207        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        208        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        209        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        210        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        211        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        212        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        213        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        214        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        215        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        216        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        217        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        218        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        219        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        220        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        221        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        222        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        223        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        224        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        225        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        226        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        227        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        228        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        229        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        230        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        231        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        232        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        233        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        234        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        235        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        236        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        237        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        238        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        239        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        240        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        241        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        242        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        243        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        244        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        245        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        246        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        247        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        248        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        249        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        250        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        251        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        252        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        253        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        254        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        255        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        256        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        257        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        258        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        259        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        260        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        261        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        262        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        263        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        264        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        265        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        266        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        267        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        268        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        269        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        270        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        271        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        272        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        273        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        274        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        275        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        276        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        277        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        278        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        279        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        280        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        281        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        282        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        283        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        284        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        285        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        286        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        287        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        288        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        289        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        290        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        291        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        292        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        293        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        294        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        295        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        296        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        297        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        298        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        299        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        300        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        301        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        302        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        303        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        304        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        305        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        306        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        307        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        308        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        309        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        310        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        311        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        312        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        313        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        314        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        315        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        316        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        317        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        318        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        319        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        320        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        321        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        322        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        323        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        324        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        325        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        326        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        327        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        328        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        329        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        330        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        331        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        332        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        333        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        334        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        335        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        336        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        337        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        338        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        339        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        340        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        341        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        342        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        343        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        344        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        345        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        346        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        347        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        348        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        349        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        350        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        351        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        352        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        353        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        354        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        355        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        356        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        357        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        358        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        359        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        360        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        361        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        362        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        363        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        364        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        365        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        366        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        367        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        368        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        369        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        370        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        371        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        372        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        373        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        374        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        375        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        376        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        377        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        378        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        379        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        380        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        381        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        382        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        383        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        384        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        385        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        386        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        387        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        388        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        389        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        390        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        391        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        392        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        393        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        394        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        395        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        396        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+        397        :          3          1          0          0          2          3          6          2      0.667      0.667      0.667      0.667          1
+Decomp Scores      :
+  border area      :      0.214
+  avg. density     :      0.980
+  linking score    :      0.500
+Pricing time in colpool = 0.010000 sec

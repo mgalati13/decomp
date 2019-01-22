@@ -1,0 +1,1263 @@
+GCG version 3.0.0 [GitHash: 70e7382]
+Copyright (C) 2010-2018 Operations Research, RWTH Aachen University
+                        Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+SCIP version 6.0.0 [precision: 8 byte] [memory: block] [mode: optimized] [LP solver: SoPlex 4.0.0] [GitHash: 77d3bc8]
+Copyright (C) 2002-2018 Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+External codes: 
+  Readline 6.0         GNU library for command line editing (gnu.org/s/readline)
+  SoPlex 4.0.0         Linear Programming Solver developed at Zuse Institute Berlin (soplex.zib.de) [GitHash: 82cab95]
+  CppAD 20180000.0     Algorithmic Differentiation of C++ algorithms developed by B. Bell (www.coin-or.org/CppAD)
+  ZLIB 1.2.3           General purpose compression library by J. Gailly and M. Adler (zlib.net)
+  ZIMPL 3.3.6          Zuse Institute Mathematical Programming Language developed by T. Koch (zimpl.zib.de)
+  bliss 0.73           A Tool for Computing Automorphism Groups of Graphs by T. Junttila and P. Kaski (http://www.tcs.hut.fi/Software/bliss/)
+
+reading user parameter file </LOG_DATA/scripts/options_gcg.parm>
+
+read problem </ORDATA/miplib/uct_subprob.mps>
+============
+
+original problem has 2256 variables (379 bin, 0 int, 0 impl, 1877 cont) and 1973 constraints
+presolving:
+(round 1, fast)       151 del vars, 219 del conss, 0 add conss, 20 chg bounds, 0 chg sides, 0 chg coeffs, 0 upgd conss, 0 impls, 717 clqs
+(round 2, fast)       171 del vars, 219 del conss, 0 add conss, 20 chg bounds, 0 chg sides, 0 chg coeffs, 0 upgd conss, 0 impls, 717 clqs
+(round 3, exhaustive) 171 del vars, 219 del conss, 0 add conss, 20 chg bounds, 0 chg sides, 0 chg coeffs, 1754 upgd conss, 0 impls, 717 clqs
+(round 4, exhaustive) 171 del vars, 225 del conss, 0 add conss, 20 chg bounds, 0 chg sides, 0 chg coeffs, 1754 upgd conss, 0 impls, 1466 clqs
+   (0.1s) probing: 51/2085 (2.4%) - 0 fixings, 0 aggregations, 0 implications, 0 bound changes
+   (0.1s) probing aborted: 50/50 successive totally useless probings
+presolving (5 rounds: 5 fast, 3 medium, 3 exhaustive):
+ 171 deleted vars, 225 deleted constraints, 0 added constraints, 20 tightened bounds, 0 added holes, 0 changed sides, 0 changed coefficients
+ 0 implications, 1466 cliques
+presolved problem has 2085 variables (379 bin, 0 int, 1706 impl, 0 cont) and 1748 constraints
+    792 constraints of type <setppc>
+    956 constraints of type <logicor>
+transformed objective value is always integral (scale: 1)
+Presolving Time: 0.05
+start creating seeedpool for current problem 
+created seeedpool for current problem, n detectors: 26 
+ Consclassifier "nonzeros" yields a classification with 17  different constraint classes 
+ Consclassifier "constypes" yields a classification with 3 different constraint classes 
+ Consclassifier "constypes according to miplib" yields a classification with 4 different constraint classes 
+ Varclassifier "vartypes" yields a classification with 2 different variable classes
+ Varclassifier "varobjvals" yields a classification with 10 different variable classes
+ Varclassifier "varobjvalsigns" yields a classification with 3 different variable classes
+ Added reduced version of consclassifier nonzeros with 9  different constraint classes 
+ Added reduced version of varclassifier varobjvals with 9 different variable classes
+Begin of detection round 0 of 1 total rounds 
+Start to propagate seeed with id 1 (0 of 1 in round 0) 
+ in dec_consclass: there are 4 different constraint classes   
+ the current consclass distribution includes 17 classes but only 9 are allowed for propagateSeeed() of cons class detector
+  the current constraint classifier "constypes" consists of 3 different classes   
+  the current constraint classifier "constypes according to miplib" consists of 4 different classes   
+  the current constraint classifier "nonzeros-red-to-9" consists of 9 different classes   
+ dec_consclass found 533 new seeeds 
+dec_densemasterconss found 1 new seeed 
+Detecting Arrowhead structure: 2 4 6 done, 6 seeeds found.
+ the current varclass distribution includes 10 classes but only 9 are allowed for propagateSeeed() of var class detector
+Start finishing of partial decomposition 1.
+Measured running time per detector: 
+Detector consclass                 	 worked on 	 524 of 1045	 and took a total time of 	0.86
+Detector densemasterconss          	 worked on 	 0 of 1045	 and took a total time of 	0
+Detector hrgpartition              	 worked on 	 6 of 1045	 and took a total time of 	0.16
+Detector varclass                  	 worked on 	 514 of 1045	 and took a total time of 	0.62
+Started postprocessing of decompositions...
+...finished postprocessing of decompositions. Added 0 new decomps. 
+
+solve problem
+=============
+
+
+A Dantzig-Wolfe reformulation is applied to solve the original problem.
+
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+T  0.1s|     1 |     0 |      0 |      0 |     - |  13M|   0 |   0 |1748 |   0 |   0 |  0 |-2.000000e+00 | 3.800000e+02 |   --   |    Inf 
+   0.2s|     1 |     0 |      0 |      0 |     - |  13M|   0 |   0 |1748 |   0 |   0 |  0 | 2.420000e+02 | 3.800000e+02 |   --   |  57.02%
+Chosen structure has 12 blocks, 568 master-only (static) variables, and 581 linking constraints.
+This decomposition has a maxwhite score of 0.586930.
+Matrix has 12 blocks, using 12 pricing problems.
+
+     
+   0.5s|     1 |     0 |    329 |    329 |     - |  22M|   0 | 580 |1749 | 594 |   0 |  0 | 2.420000e+02 | 3.800000e+02 |   0.00%|  57.02%
+   0.5s|     1 |     0 |    329 |    329 |     - |  22M|   0 | 580 |1749 | 594 |   0 |  0 | 2.420000e+02 | 3.800000e+02 |   0.00%|  57.02%
+Starting reduced cost pricing...
+   133s|     1 |     0 | 211778 |   3060 |     - |  28M|   0 | 906 |1749 | 594 |   0 |  0 | 2.700075e+02 | 3.800000e+02 |   5.06%|  40.74%
+   133s|     1 |     0 | 213349 |   4631 |     - |  35M|   0 | 906 |1749 | 594 |   1 |  1 | 2.700075e+02 | 3.800000e+02 |   5.06%|  40.74%
+   133s|     1 |     0 | 213350 |   4632 |     - |  35M|   0 | 906 |1749 | 594 |   1 |  1 | 2.700075e+02 | 3.800000e+02 |   5.06%|  40.74%
+   133s|     1 |     0 | 213869 |   5151 |     - |  36M|   0 | 906 |1749 | 594 |   6 |  3 | 2.700075e+02 | 3.800000e+02 |   5.06%|  40.74%
+   173s|     1 |     0 | 279308 |   5686 |     - |  37M|   0 | 976 |1749 | 594 |   6 |  3 | 2.720752e+02 | 3.800000e+02 |   5.21%|  39.67%
+   173s|     1 |     0 | 279431 |   5809 |     - |  37M|   0 | 976 |1749 | 594 |   7 |  4 | 2.720752e+02 | 3.800000e+02 |   5.21%|  39.67%
+   173s|     1 |     0 | 279431 |   5809 |     - |  37M|   0 | 976 |1749 | 594 |   7 |  4 | 2.720752e+02 | 3.800000e+02 |   5.21%|  39.67%
+   173s|     1 |     0 | 280053 |   6431 |     - |  39M|   0 | 976 |1749 | 594 |  11 |  6 | 2.720752e+02 | 3.800000e+02 |   5.21%|  39.67%
+   203s|     1 |     0 | 333358 |   6905 |     - |  39M|   0 |1014 |1749 | 594 |  11 |  6 | 2.741204e+02 | 3.800000e+02 |   4.97%|  38.63%
+   204s|     1 |     0 | 333902 |   7449 |     - |  40M|   0 |1014 |1749 | 594 |  13 |  8 | 2.741204e+02 | 3.800000e+02 |   4.97%|  38.63%
+   245s|     1 |     0 | 405620 |   8224 |     - |  40M|   0 |1046 |1749 | 594 |  13 |  8 | 2.751449e+02 | 3.800000e+02 |   4.84%|  38.11%
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+   245s|     1 |     0 | 405841 |   8445 |     - |  41M|   0 |1046 |1749 | 594 |  15 |  9 | 2.751449e+02 | 3.800000e+02 |   4.84%|  38.11%
+   249s|     1 |     0 | 412883 |   8621 |     - |  41M|   0 |1058 |1749 | 594 |  15 |  9 | 2.751449e+02 | 3.800000e+02 |   4.82%|  38.11%
+     
+   249s|     1 |     0 | 412884 |   8622 |     - |  41M|   0 |1058 |1749 | 594 |  16 | 10 | 2.751449e+02 | 3.800000e+02 |   4.82%|  38.11%
+   249s|     1 |     0 | 413771 |   9509 |     - |  42M|   0 |1058 |1749 | 594 |  20 | 12 | 2.751449e+02 | 3.800000e+02 |   4.82%|  38.11%
+   322s|     1 |     0 | 542244 |  10546 |     - |  43M|   0 |1114 |1749 | 594 |  20 | 12 | 2.770112e+02 | 3.800000e+02 |   4.39%|  37.18%
+   323s|     1 |     0 | 542700 |  11002 |     - |  43M|   0 |1114 |1749 | 594 |  21 | 14 | 2.770112e+02 | 3.800000e+02 |   4.39%|  37.18%
+   349s|     1 |     0 | 587662 |  11453 |     - |  44M|   0 |1130 |1749 | 594 |  21 | 14 | 2.780159e+02 | 3.800000e+02 |   4.29%|  36.68%
+   349s|     1 |     0 | 588009 |  11800 |     - |  44M|   0 |1130 |1749 | 594 |  22 | 15 | 2.780159e+02 | 3.800000e+02 |   4.29%|  36.68%
+   349s|     1 |     0 | 588009 |  11800 |     - |  44M|   0 |1130 |1749 | 594 |  22 | 15 | 2.780159e+02 | 3.800000e+02 |   4.29%|  36.68%
+   349s|     1 |     0 | 588434 |  12225 |     - |  44M|   0 |1130 |1749 | 594 |  24 | 17 | 2.780159e+02 | 3.800000e+02 |   4.29%|  36.68%
+   349s|     1 |     0 | 588434 |  12225 |     - |  44M|   0 |1130 |1749 | 594 |  24 | 17 | 2.780159e+02 | 3.800000e+02 |   4.29%|  36.68%
+   349s|     1 |     0 | 588682 |  12473 |     - |  44M|   0 |1130 |1749 | 594 |  25 | 18 | 2.780159e+02 | 3.800000e+02 |   4.29%|  36.68%
+   349s|     1 |     0 | 588682 |  12473 |     - |  44M|   0 |1130 |1749 | 594 |  25 | 18 | 2.780159e+02 | 3.800000e+02 |   4.29%|  36.68%
+   350s|     1 |     0 | 588943 |  12734 |     - |  44M|   0 |1130 |1749 | 594 |  26 | 20 | 2.780159e+02 | 3.800000e+02 |   4.29%|  36.68%
+   350s|     1 |     0 | 588943 |  12734 |     - |  44M|   0 |1130 |1749 | 594 |  26 | 20 | 2.780159e+02 | 3.800000e+02 |   4.29%|  36.68%
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+X  351s|     1 |     0 | 588945 |  12736 |     - |  44M|   0 |1154 |1749 | 594 |  26 | 22 | 2.780159e+02 | 3.580000e+02 |   4.29%|  28.77%
+   351s|     1 |     0 | 588945 |  12736 |     - |  44M|   0 |1154 |1749 | 594 |  26 | 22 | 2.780159e+02 | 3.580000e+02 |   4.29%|  28.77%
+   352s|     1 |     0 | 588945 |  12736 |     - |  44M|   0 |1154 |1749 | 594 |  26 | 22 | 2.780159e+02 | 3.580000e+02 |   4.29%|  28.77%
+   352s|     1 |     2 | 588945 |  12736 |     - |  44M|   0 |1154 |1749 | 594 |  26 | 22 | 2.780159e+02 | 3.580000e+02 |   4.29%|  28.77%
+  2302s|   100 |   101 |3885593 | 377327 |3682.7 |  83M|  12 |3323 |1749 | 594 |  26 |  1 | 2.801193e+02 | 3.580000e+02 |   --   |  27.80%
+v 3427s|   178 |   179 |5632824 | 623900 |3452.9 | 104M|  14 |4495 |1749 | 594 |   0 |  1 | 2.810242e+02 | 3.560000e+02 |   --   |  26.68%
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 3600.09
+Solving Nodes      : 187
+Primal Bound       : +3.56000000000000e+02 (35 solutions)
+Dual Bound         : +2.81024215903539e+02
+Gap                : 26.68 %
+
+primal solution:
+================
+
+objective value:                                  356
+xTopRilMonAnt_Day_2_P_5                             1 	(obj:3)
+xArcClaCS_Day_2_P_3                                 1 	(obj:3)
+xArcCla2_Day_2_P_6                                  1 	(obj:3)
+xArcVicOriAnt_Day_2_P_4                             1 	(obj:2)
+xArchivCS_Day_2_P_5                                 1 	(obj:2)
+xArchivCS_Day_2_P_6                                 1 	(obj:2)
+xBioarcCS_Day_2_P_4                                 1 	(obj:1)
+xCartog_Day_2_P_2                                   1 	(obj:5)
+xCodicoCS_Day_2_P_2                                 1 	(obj:1)
+xCodicoCS_Day_2_P_3                                 1 	(obj:1)
+xEcoAzi_Day_2_P_5                                   1 	(obj:5)
+xEleInfSciCatBenCulM3_Day_2_P_4                     1 	(obj:2)
+xEpiLat_Day_2_P_4                                   1 	(obj:5)
+xEsteti_Day_2_P_1                                   1 	(obj:4)
+xEtrAntIta_Day_2_P_1                                1 	(obj:4)
+xFilCla2_Day_2_P_3                                  1 	(obj:2)
+xFilTeo_Day_2_P_2                                   1 	(obj:0)
+xFilTeo_Day_2_P_3                                   1 	(obj:0)
+xFilTeo_Day_2_P_4                                   1 	(obj:0)
+xFilTeo_Day_2_P_5                                   1 	(obj:0)
+xFilTeo_Day_2_P_6                                   1 	(obj:0)
+xFonSoc_Day_2_P_5                                   1 	(obj:3)
+xFonSoc_Day_2_P_6                                   1 	(obj:3)
+xGeoTur_Day_2_P_6                                   1 	(obj:5)
+xGeo1_Day_2_P_3                                     1 	(obj:6)
+xGlotto_Day_2_P_3                                   1 	(obj:4)
+xLegBenCul2_Day_2_P_4                               1 	(obj:4)
+xLinLetLatCS_Day_2_P_5                              1 	(obj:2)
+xLinLetLat2_Day_2_P_2                               1 	(obj:3)
+xLinLatB_Day_2_P_2                                  1 	(obj:5)
+xLinGen_Day_2_P_4                                   1 	(obj:4)
+xMatTecAppArcM3_Day_2_P_2                           1 	(obj:5)
+xMatCarCosResEdiSto_Day_2_P_2                       1 	(obj:3)
+xNumismCS_Day_2_P_5                                 1 	(obj:4)
+xPaleoa_Day_2_P_5                                   1 	(obj:1)
+xProMedCS_Day_2_P_2                                 1 	(obj:3)
+xPsiTur_Day_2_P_6                                   1 	(obj:4)
+xSocArt_Day_2_P_3                                   1 	(obj:3)
+xStoColIstMus_Day_2_P_3                             1 	(obj:0)
+xStoLibSta_Day_2_P_4                                1 	(obj:2)
+xStoLibSta_Day_2_P_5                                1 	(obj:2)
+xStoLibSta_Day_2_P_6                                1 	(obj:2)
+xStoRes_Day_2_P_6                                   1 	(obj:3)
+xStoArc_Day_2_P_5                                   1 	(obj:5)
+xStoArcMed_Day_2_P_4                                1 	(obj:3)
+xStoArt_Day_2_P_5                                   1 	(obj:3)
+xStoCriArt_Day_2_P_5                                1 	(obj:4)
+xStoTecArtM12_Day_2_P_1                             1 	(obj:3)
+xStoTecArtM3_Day_2_P_1                              1 	(obj:-2)
+xStoRomCS_Day_2_P_6                                 1 	(obj:2)
+xTedUma_Day_2_P_4                                   1 	(obj:3)
+y_compact_q007_Day_2_Period_3                       1 	(obj:2)
+y_compact_q028_Day_2_Period_1                       1 	(obj:2)
+y_compact_q038_Day_2_Period_3                       1 	(obj:2)
+y_compact_q050_Day_2_Period_5                       1 	(obj:2)
+y_compact_q052_Day_2_Period_5                       1 	(obj:2)
+y_compact_q099_Day_2_Period_5                       1 	(obj:2)
+y_compact_q103_Day_2_Period_5                       1 	(obj:2)
+y_compact_q118_Day_2_Period_2                       1 	(obj:2)
+y_compact_q119_Day_2_Period_6                       1 	(obj:2)
+y_compact_q120_Day_2_Period_2                       1 	(obj:2)
+y_compact_q120_Day_2_Period_4                       1 	(obj:2)
+y_compact_q120_Day_2_Period_6                       1 	(obj:2)
+y_compact_q121_Day_2_Period_2                       1 	(obj:2)
+y_compact_q123_Day_2_Period_6                       1 	(obj:2)
+y_compact_q126_Day_2_Period_2                       1 	(obj:2)
+y_compact_q129_Day_2_Period_5                       1 	(obj:2)
+y_compact_q132_Day_2_Period_4                       1 	(obj:2)
+y_compact_q133_Day_2_Period_6                       1 	(obj:2)
+y_compact_q137_Day_2_Period_6                       1 	(obj:2)
+y_compact_q141_Day_2_Period_4                       1 	(obj:2)
+y_compact_q141_Day_2_Period_6                       1 	(obj:2)
+y_compact_q147_Day_2_Period_4                       1 	(obj:2)
+DaySingleVar_C_1_Day_1                              1 	(obj:5)
+DaySingleVar_C_3_Day_1                              1 	(obj:5)
+DaySingleVar_C_5_Day_1                              1 	(obj:5)
+DaySingleVar_C_7_Day_1                              1 	(obj:5)
+DaySingleVar_C_8_Day_1                              1 	(obj:5)
+DaySingleVar_C_9_Day_1                              1 	(obj:5)
+DaySingleVar_C_14_Day_1                             1 	(obj:5)
+DaySingleVar_C_28_Day_1                             1 	(obj:5)
+DaySingleVar_C_29_Day_1                             1 	(obj:5)
+DaySingleVar_C_30_Day_1                             1 	(obj:5)
+DaySingleVar_C_33_Day_1                             1 	(obj:5)
+DaySingleVar_C_36_Day_1                             1 	(obj:5)
+DaySingleVar_C_37_Day_1                             1 	(obj:5)
+DaySingleVar_C_41_Day_1                             1 	(obj:5)
+DaySingleVar_C_44_Day_1                             1 	(obj:5)
+DaySingleVar_C_48_Day_1                             1 	(obj:5)
+DaySingleVar_C_49_Day_1                             1 	(obj:5)
+DaySingleVar_C_53_Day_1                             1 	(obj:5)
+DaySingleVar_C_54_Day_1                             1 	(obj:5)
+DaySingleVar_C_55_Day_1                             1 	(obj:5)
+DaySingleVar_C_57_Day_1                             1 	(obj:5)
+DaySingleVar_C_60_Day_1                             1 	(obj:5)
+DaySingleVar_C_61_Day_1                             1 	(obj:5)
+DaySingleVar_C_64_Day_1                             1 	(obj:5)
+DaySingleVar_C_68_Day_1                             1 	(obj:5)
+DaySingleVar_C_71_Day_1                             1 	(obj:5)
+DaySingleVar_C_72_Day_1                             1 	(obj:5)
+DaySingleVar_C_73_Day_1                             1 	(obj:5)
+DaySingleVar_C_75_Day_1                             1 	(obj:5)
+DaySingleVar_C_78_Day_1                             1 	(obj:5)
+DaySingleVar_C_80_Day_1                             1 	(obj:5)
+DaySingleVar_C_81_Day_1                             1 	(obj:5)
+DaySingleVar_C_82_Day_1                             1 	(obj:5)
+DaySingleVar_C_83_Day_1                             1 	(obj:5)
+DaySingleVar_C_85_Day_1                             1 	(obj:5)
+y_q000_Day_2_Period_1                               1 	(obj:0)
+y_q000_Day_2_Period_2                               1 	(obj:0)
+y_q000_Day_2_Period_5                               1 	(obj:0)
+y_q000_Day_2_Period_6                               1 	(obj:0)
+y_q001_Day_2_Period_1                               1 	(obj:0)
+y_q001_Day_2_Period_2                               1 	(obj:0)
+y_q001_Day_2_Period_3                               1 	(obj:0)
+y_q001_Day_2_Period_4                               1 	(obj:0)
+y_q001_Day_2_Period_5                               1 	(obj:0)
+y_q001_Day_2_Period_6                               1 	(obj:0)
+y_q002_Day_2_Period_1                               1 	(obj:0)
+y_q002_Day_2_Period_2                               1 	(obj:0)
+y_q002_Day_2_Period_3                               1 	(obj:0)
+y_q002_Day_2_Period_4                               1 	(obj:0)
+y_q002_Day_2_Period_5                               1 	(obj:0)
+y_q002_Day_2_Period_6                               1 	(obj:0)
+y_q003_Day_2_Period_1                               1 	(obj:0)
+y_q003_Day_2_Period_2                               1 	(obj:0)
+y_q003_Day_2_Period_3                               1 	(obj:0)
+y_q003_Day_2_Period_4                               1 	(obj:0)
+y_q003_Day_2_Period_5                               1 	(obj:0)
+y_q003_Day_2_Period_6                               1 	(obj:0)
+y_q004_Day_2_Period_1                               1 	(obj:0)
+y_q004_Day_2_Period_2                               1 	(obj:0)
+y_q004_Day_2_Period_3                               1 	(obj:0)
+y_q005_Day_2_Period_3                               1 	(obj:0)
+y_q005_Day_2_Period_4                               1 	(obj:0)
+y_q005_Day_2_Period_5                               1 	(obj:0)
+y_q005_Day_2_Period_6                               1 	(obj:0)
+y_q006_Day_2_Period_1                               1 	(obj:0)
+y_q006_Day_2_Period_2                               1 	(obj:0)
+y_q006_Day_2_Period_5                               1 	(obj:0)
+y_q006_Day_2_Period_6                               1 	(obj:0)
+y_q007_Day_2_Period_1                               1 	(obj:0)
+y_q007_Day_2_Period_2                               1 	(obj:0)
+y_q007_Day_2_Period_4                               1 	(obj:0)
+y_q007_Day_2_Period_5                               1 	(obj:0)
+y_q007_Day_2_Period_6                               1 	(obj:0)
+y_q008_Day_2_Period_1                               1 	(obj:0)
+y_q008_Day_2_Period_4                               1 	(obj:0)
+y_q008_Day_2_Period_5                               1 	(obj:0)
+y_q008_Day_2_Period_6                               1 	(obj:0)
+y_q010_Day_2_Period_1                               1 	(obj:0)
+y_q010_Day_2_Period_2                               1 	(obj:0)
+y_q010_Day_2_Period_3                               1 	(obj:0)
+y_q010_Day_2_Period_4                               1 	(obj:0)
+y_q010_Day_2_Period_5                               1 	(obj:0)
+y_q010_Day_2_Period_6                               1 	(obj:0)
+y_q011_Day_2_Period_1                               1 	(obj:0)
+y_q011_Day_2_Period_2                               1 	(obj:0)
+y_q011_Day_2_Period_5                               1 	(obj:0)
+y_q011_Day_2_Period_6                               1 	(obj:0)
+y_q012_Day_2_Period_1                               1 	(obj:0)
+y_q012_Day_2_Period_2                               1 	(obj:0)
+y_q012_Day_2_Period_6                               1 	(obj:0)
+y_q014_Day_2_Period_1                               1 	(obj:0)
+y_q014_Day_2_Period_2                               1 	(obj:0)
+y_q014_Day_2_Period_5                               1 	(obj:0)
+y_q014_Day_2_Period_6                               1 	(obj:0)
+y_q015_Day_2_Period_1                               1 	(obj:0)
+y_q015_Day_2_Period_2                               1 	(obj:0)
+y_q015_Day_2_Period_6                               1 	(obj:0)
+y_q017_Day_2_Period_1                               1 	(obj:0)
+y_q017_Day_2_Period_2                               1 	(obj:0)
+y_q018_Day_2_Period_1                               1 	(obj:0)
+y_q018_Day_2_Period_2                               1 	(obj:0)
+y_q018_Day_2_Period_3                               1 	(obj:0)
+y_q018_Day_2_Period_4                               1 	(obj:0)
+y_q018_Day_2_Period_5                               1 	(obj:0)
+y_q018_Day_2_Period_6                               1 	(obj:0)
+y_q019_Day_2_Period_1                               1 	(obj:0)
+y_q019_Day_2_Period_2                               1 	(obj:0)
+y_q019_Day_2_Period_3                               1 	(obj:0)
+y_q019_Day_2_Period_4                               1 	(obj:0)
+y_q019_Day_2_Period_5                               1 	(obj:0)
+y_q019_Day_2_Period_6                               1 	(obj:0)
+y_q020_Day_2_Period_1                               1 	(obj:0)
+y_q020_Day_2_Period_2                               1 	(obj:0)
+y_q020_Day_2_Period_3                               1 	(obj:0)
+y_q020_Day_2_Period_4                               1 	(obj:0)
+y_q020_Day_2_Period_5                               1 	(obj:0)
+y_q020_Day_2_Period_6                               1 	(obj:0)
+y_q021_Day_2_Period_1                               1 	(obj:0)
+y_q021_Day_2_Period_2                               1 	(obj:0)
+y_q021_Day_2_Period_3                               1 	(obj:0)
+y_q021_Day_2_Period_4                               1 	(obj:0)
+y_q021_Day_2_Period_5                               1 	(obj:0)
+y_q021_Day_2_Period_6                               1 	(obj:0)
+y_q022_Day_2_Period_1                               1 	(obj:0)
+y_q022_Day_2_Period_2                               1 	(obj:0)
+y_q022_Day_2_Period_3                               1 	(obj:0)
+y_q022_Day_2_Period_4                               1 	(obj:0)
+y_q022_Day_2_Period_5                               1 	(obj:0)
+y_q022_Day_2_Period_6                               1 	(obj:0)
+y_q024_Day_2_Period_1                               1 	(obj:0)
+y_q024_Day_2_Period_2                               1 	(obj:0)
+y_q024_Day_2_Period_3                               1 	(obj:0)
+y_q024_Day_2_Period_4                               1 	(obj:0)
+y_q024_Day_2_Period_5                               1 	(obj:0)
+y_q024_Day_2_Period_6                               1 	(obj:0)
+y_q025_Day_2_Period_1                               1 	(obj:0)
+y_q025_Day_2_Period_2                               1 	(obj:0)
+y_q025_Day_2_Period_3                               1 	(obj:0)
+y_q025_Day_2_Period_4                               1 	(obj:0)
+y_q025_Day_2_Period_5                               1 	(obj:0)
+y_q025_Day_2_Period_6                               1 	(obj:0)
+y_q026_Day_2_Period_1                               1 	(obj:0)
+y_q026_Day_2_Period_2                               1 	(obj:0)
+y_q026_Day_2_Period_3                               1 	(obj:0)
+y_q026_Day_2_Period_4                               1 	(obj:0)
+y_q026_Day_2_Period_5                               1 	(obj:0)
+y_q026_Day_2_Period_6                               1 	(obj:0)
+y_q027_Day_2_Period_1                               1 	(obj:0)
+y_q027_Day_2_Period_2                               1 	(obj:0)
+y_q027_Day_2_Period_3                               1 	(obj:0)
+y_q027_Day_2_Period_4                               1 	(obj:0)
+y_q028_Day_2_Period_2                               1 	(obj:0)
+y_q028_Day_2_Period_3                               1 	(obj:0)
+y_q028_Day_2_Period_4                               1 	(obj:0)
+y_q028_Day_2_Period_5                               1 	(obj:0)
+y_q028_Day_2_Period_6                               1 	(obj:0)
+y_q029_Day_2_Period_1                               1 	(obj:0)
+y_q029_Day_2_Period_2                               1 	(obj:0)
+y_q029_Day_2_Period_3                               1 	(obj:0)
+y_q029_Day_2_Period_4                               1 	(obj:0)
+y_q030_Day_2_Period_5                               1 	(obj:0)
+y_q030_Day_2_Period_6                               1 	(obj:0)
+y_q031_Day_2_Period_5                               1 	(obj:0)
+y_q031_Day_2_Period_6                               1 	(obj:0)
+y_q032_Day_2_Period_4                               1 	(obj:0)
+y_q032_Day_2_Period_5                               1 	(obj:0)
+y_q032_Day_2_Period_6                               1 	(obj:0)
+y_q034_Day_2_Period_4                               1 	(obj:0)
+y_q034_Day_2_Period_5                               1 	(obj:0)
+y_q034_Day_2_Period_6                               1 	(obj:0)
+y_q035_Day_2_Period_4                               1 	(obj:0)
+y_q035_Day_2_Period_5                               1 	(obj:0)
+y_q035_Day_2_Period_6                               1 	(obj:0)
+y_q036_Day_2_Period_1                               1 	(obj:0)
+y_q036_Day_2_Period_2                               1 	(obj:0)
+y_q036_Day_2_Period_3                               1 	(obj:0)
+y_q036_Day_2_Period_4                               1 	(obj:0)
+y_q037_Day_2_Period_1                               1 	(obj:0)
+y_q037_Day_2_Period_2                               1 	(obj:0)
+y_q037_Day_2_Period_3                               1 	(obj:0)
+y_q038_Day_2_Period_1                               1 	(obj:0)
+y_q038_Day_2_Period_2                               1 	(obj:0)
+y_q038_Day_2_Period_4                               1 	(obj:0)
+y_q039_Day_2_Period_1                               1 	(obj:0)
+y_q039_Day_2_Period_2                               1 	(obj:0)
+y_q040_Day_2_Period_1                               1 	(obj:0)
+y_q040_Day_2_Period_2                               1 	(obj:0)
+y_q040_Day_2_Period_3                               1 	(obj:0)
+y_q040_Day_2_Period_4                               1 	(obj:0)
+y_q041_Day_2_Period_1                               1 	(obj:0)
+y_q041_Day_2_Period_2                               1 	(obj:0)
+y_q041_Day_2_Period_3                               1 	(obj:0)
+y_q042_Day_2_Period_1                               1 	(obj:0)
+y_q042_Day_2_Period_2                               1 	(obj:0)
+y_q042_Day_2_Period_3                               1 	(obj:0)
+y_q042_Day_2_Period_4                               1 	(obj:0)
+y_q043_Day_2_Period_1                               1 	(obj:0)
+y_q043_Day_2_Period_2                               1 	(obj:0)
+y_q043_Day_2_Period_3                               1 	(obj:0)
+y_q044_Day_2_Period_1                               1 	(obj:0)
+y_q044_Day_2_Period_4                               1 	(obj:0)
+y_q044_Day_2_Period_5                               1 	(obj:0)
+y_q044_Day_2_Period_6                               1 	(obj:0)
+y_q045_Day_2_Period_1                               1 	(obj:0)
+y_q045_Day_2_Period_4                               1 	(obj:0)
+y_q045_Day_2_Period_5                               1 	(obj:0)
+y_q045_Day_2_Period_6                               1 	(obj:0)
+y_q046_Day_2_Period_1                               1 	(obj:0)
+y_q046_Day_2_Period_4                               1 	(obj:0)
+y_q046_Day_2_Period_5                               1 	(obj:0)
+y_q046_Day_2_Period_6                               1 	(obj:0)
+y_q047_Day_2_Period_3                               1 	(obj:0)
+y_q047_Day_2_Period_4                               1 	(obj:0)
+y_q047_Day_2_Period_5                               1 	(obj:0)
+y_q047_Day_2_Period_6                               1 	(obj:0)
+y_q048_Day_2_Period_3                               1 	(obj:0)
+y_q048_Day_2_Period_4                               1 	(obj:0)
+y_q048_Day_2_Period_5                               1 	(obj:0)
+y_q048_Day_2_Period_6                               1 	(obj:0)
+y_q049_Day_2_Period_3                               1 	(obj:0)
+y_q049_Day_2_Period_4                               1 	(obj:0)
+y_q049_Day_2_Period_5                               1 	(obj:0)
+y_q049_Day_2_Period_6                               1 	(obj:0)
+y_q050_Day_2_Period_1                               1 	(obj:0)
+y_q050_Day_2_Period_4                               1 	(obj:0)
+y_q050_Day_2_Period_6                               1 	(obj:0)
+y_q051_Day_2_Period_1                               1 	(obj:0)
+y_q051_Day_2_Period_2                               1 	(obj:0)
+y_q051_Day_2_Period_3                               1 	(obj:0)
+y_q051_Day_2_Period_4                               1 	(obj:0)
+y_q052_Day_2_Period_1                               1 	(obj:0)
+y_q052_Day_2_Period_2                               1 	(obj:0)
+y_q052_Day_2_Period_3                               1 	(obj:0)
+y_q052_Day_2_Period_4                               1 	(obj:0)
+y_q052_Day_2_Period_6                               1 	(obj:0)
+y_q053_Day_2_Period_1                               1 	(obj:0)
+y_q053_Day_2_Period_2                               1 	(obj:0)
+y_q053_Day_2_Period_3                               1 	(obj:0)
+y_q053_Day_2_Period_6                               1 	(obj:0)
+y_q054_Day_2_Period_4                               1 	(obj:0)
+y_q054_Day_2_Period_5                               1 	(obj:0)
+y_q054_Day_2_Period_6                               1 	(obj:0)
+y_q055_Day_2_Period_4                               1 	(obj:0)
+y_q055_Day_2_Period_5                               1 	(obj:0)
+y_q055_Day_2_Period_6                               1 	(obj:0)
+y_q056_Day_2_Period_3                               1 	(obj:0)
+y_q056_Day_2_Period_4                               1 	(obj:0)
+y_q056_Day_2_Period_5                               1 	(obj:0)
+y_q056_Day_2_Period_6                               1 	(obj:0)
+y_q057_Day_2_Period_3                               1 	(obj:0)
+y_q057_Day_2_Period_4                               1 	(obj:0)
+y_q057_Day_2_Period_5                               1 	(obj:0)
+y_q057_Day_2_Period_6                               1 	(obj:0)
+y_q058_Day_2_Period_4                               1 	(obj:0)
+y_q058_Day_2_Period_5                               1 	(obj:0)
+y_q058_Day_2_Period_6                               1 	(obj:0)
+y_q059_Day_2_Period_4                               1 	(obj:0)
+y_q059_Day_2_Period_5                               1 	(obj:0)
+y_q059_Day_2_Period_6                               1 	(obj:0)
+y_q060_Day_2_Period_3                               1 	(obj:0)
+y_q060_Day_2_Period_4                               1 	(obj:0)
+y_q060_Day_2_Period_5                               1 	(obj:0)
+y_q060_Day_2_Period_6                               1 	(obj:0)
+y_q061_Day_2_Period_3                               1 	(obj:0)
+y_q061_Day_2_Period_4                               1 	(obj:0)
+y_q061_Day_2_Period_5                               1 	(obj:0)
+y_q061_Day_2_Period_6                               1 	(obj:0)
+y_q062_Day_2_Period_1                               1 	(obj:0)
+y_q062_Day_2_Period_4                               1 	(obj:0)
+y_q062_Day_2_Period_5                               1 	(obj:0)
+y_q062_Day_2_Period_6                               1 	(obj:0)
+y_q063_Day_2_Period_1                               1 	(obj:0)
+y_q063_Day_2_Period_2                               1 	(obj:0)
+y_q063_Day_2_Period_3                               1 	(obj:0)
+y_q063_Day_2_Period_4                               1 	(obj:0)
+y_q063_Day_2_Period_5                               1 	(obj:0)
+y_q063_Day_2_Period_6                               1 	(obj:0)
+y_q064_Day_2_Period_1                               1 	(obj:0)
+y_q064_Day_2_Period_2                               1 	(obj:0)
+y_q064_Day_2_Period_3                               1 	(obj:0)
+y_q064_Day_2_Period_4                               1 	(obj:0)
+y_q064_Day_2_Period_5                               1 	(obj:0)
+y_q064_Day_2_Period_6                               1 	(obj:0)
+y_q065_Day_2_Period_1                               1 	(obj:0)
+y_q065_Day_2_Period_2                               1 	(obj:0)
+y_q065_Day_2_Period_3                               1 	(obj:0)
+y_q065_Day_2_Period_4                               1 	(obj:0)
+y_q065_Day_2_Period_5                               1 	(obj:0)
+y_q065_Day_2_Period_6                               1 	(obj:0)
+y_q066_Day_2_Period_1                               1 	(obj:0)
+y_q066_Day_2_Period_2                               1 	(obj:0)
+y_q066_Day_2_Period_3                               1 	(obj:0)
+y_q066_Day_2_Period_4                               1 	(obj:0)
+y_q066_Day_2_Period_5                               1 	(obj:0)
+y_q066_Day_2_Period_6                               1 	(obj:0)
+y_q067_Day_2_Period_1                               1 	(obj:0)
+y_q067_Day_2_Period_2                               1 	(obj:0)
+y_q067_Day_2_Period_3                               1 	(obj:0)
+y_q067_Day_2_Period_4                               1 	(obj:0)
+y_q067_Day_2_Period_5                               1 	(obj:0)
+y_q067_Day_2_Period_6                               1 	(obj:0)
+y_q068_Day_2_Period_1                               1 	(obj:0)
+y_q068_Day_2_Period_2                               1 	(obj:0)
+y_q068_Day_2_Period_3                               1 	(obj:0)
+y_q068_Day_2_Period_4                               1 	(obj:0)
+y_q068_Day_2_Period_5                               1 	(obj:0)
+y_q068_Day_2_Period_6                               1 	(obj:0)
+y_q069_Day_2_Period_1                               1 	(obj:0)
+y_q069_Day_2_Period_2                               1 	(obj:0)
+y_q069_Day_2_Period_3                               1 	(obj:0)
+y_q070_Day_2_Period_1                               1 	(obj:0)
+y_q070_Day_2_Period_2                               1 	(obj:0)
+y_q070_Day_2_Period_3                               1 	(obj:0)
+y_q071_Day_2_Period_1                               1 	(obj:0)
+y_q071_Day_2_Period_2                               1 	(obj:0)
+y_q071_Day_2_Period_3                               1 	(obj:0)
+y_q072_Day_2_Period_1                               1 	(obj:0)
+y_q072_Day_2_Period_2                               1 	(obj:0)
+y_q072_Day_2_Period_3                               1 	(obj:0)
+y_q072_Day_2_Period_4                               1 	(obj:0)
+y_q072_Day_2_Period_5                               1 	(obj:0)
+y_q072_Day_2_Period_6                               1 	(obj:0)
+y_q073_Day_2_Period_1                               1 	(obj:0)
+y_q073_Day_2_Period_2                               1 	(obj:0)
+y_q073_Day_2_Period_3                               1 	(obj:0)
+y_q074_Day_2_Period_1                               1 	(obj:0)
+y_q074_Day_2_Period_2                               1 	(obj:0)
+y_q074_Day_2_Period_3                               1 	(obj:0)
+y_q074_Day_2_Period_4                               1 	(obj:0)
+y_q074_Day_2_Period_5                               1 	(obj:0)
+y_q074_Day_2_Period_6                               1 	(obj:0)
+y_q075_Day_2_Period_1                               1 	(obj:0)
+y_q075_Day_2_Period_2                               1 	(obj:0)
+y_q075_Day_2_Period_3                               1 	(obj:0)
+y_q076_Day_2_Period_1                               1 	(obj:0)
+y_q076_Day_2_Period_2                               1 	(obj:0)
+y_q076_Day_2_Period_3                               1 	(obj:0)
+y_q076_Day_2_Period_4                               1 	(obj:0)
+y_q076_Day_2_Period_5                               1 	(obj:0)
+y_q076_Day_2_Period_6                               1 	(obj:0)
+y_q077_Day_2_Period_1                               1 	(obj:0)
+y_q077_Day_2_Period_2                               1 	(obj:0)
+y_q077_Day_2_Period_3                               1 	(obj:0)
+y_q078_Day_2_Period_1                               1 	(obj:0)
+y_q078_Day_2_Period_2                               1 	(obj:0)
+y_q078_Day_2_Period_3                               1 	(obj:0)
+y_q079_Day_2_Period_1                               1 	(obj:0)
+y_q079_Day_2_Period_2                               1 	(obj:0)
+y_q079_Day_2_Period_3                               1 	(obj:0)
+y_q080_Day_2_Period_1                               1 	(obj:0)
+y_q080_Day_2_Period_2                               1 	(obj:0)
+y_q080_Day_2_Period_3                               1 	(obj:0)
+y_q081_Day_2_Period_1                               1 	(obj:0)
+y_q081_Day_2_Period_2                               1 	(obj:0)
+y_q081_Day_2_Period_3                               1 	(obj:0)
+y_q081_Day_2_Period_4                               1 	(obj:0)
+y_q082_Day_2_Period_1                               1 	(obj:0)
+y_q082_Day_2_Period_2                               1 	(obj:0)
+y_q083_Day_2_Period_1                               1 	(obj:0)
+y_q083_Day_2_Period_2                               1 	(obj:0)
+y_q083_Day_2_Period_3                               1 	(obj:0)
+y_q083_Day_2_Period_4                               1 	(obj:0)
+y_q084_Day_2_Period_1                               1 	(obj:0)
+y_q084_Day_2_Period_2                               1 	(obj:0)
+y_q084_Day_2_Period_3                               1 	(obj:0)
+y_q084_Day_2_Period_4                               1 	(obj:0)
+y_q085_Day_2_Period_1                               1 	(obj:0)
+y_q085_Day_2_Period_2                               1 	(obj:0)
+y_q086_Day_2_Period_1                               1 	(obj:0)
+y_q086_Day_2_Period_2                               1 	(obj:0)
+y_q094_Day_2_Period_1                               1 	(obj:0)
+y_q094_Day_2_Period_2                               1 	(obj:0)
+y_q094_Day_2_Period_3                               1 	(obj:0)
+y_q094_Day_2_Period_4                               1 	(obj:0)
+y_q094_Day_2_Period_5                               1 	(obj:0)
+y_q094_Day_2_Period_6                               1 	(obj:0)
+y_q095_Day_2_Period_1                               1 	(obj:0)
+y_q095_Day_2_Period_2                               1 	(obj:0)
+y_q095_Day_2_Period_3                               1 	(obj:0)
+y_q095_Day_2_Period_4                               1 	(obj:0)
+y_q095_Day_2_Period_5                               1 	(obj:0)
+y_q095_Day_2_Period_6                               1 	(obj:0)
+y_q096_Day_2_Period_1                               1 	(obj:0)
+y_q096_Day_2_Period_2                               1 	(obj:0)
+y_q096_Day_2_Period_3                               1 	(obj:0)
+y_q096_Day_2_Period_4                               1 	(obj:0)
+y_q096_Day_2_Period_5                               1 	(obj:0)
+y_q096_Day_2_Period_6                               1 	(obj:0)
+y_q097_Day_2_Period_1                               1 	(obj:0)
+y_q097_Day_2_Period_2                               1 	(obj:0)
+y_q097_Day_2_Period_3                               1 	(obj:0)
+y_q097_Day_2_Period_4                               1 	(obj:0)
+y_q097_Day_2_Period_5                               1 	(obj:0)
+y_q097_Day_2_Period_6                               1 	(obj:0)
+y_q098_Day_2_Period_1                               1 	(obj:0)
+y_q098_Day_2_Period_2                               1 	(obj:0)
+y_q098_Day_2_Period_3                               1 	(obj:0)
+y_q098_Day_2_Period_4                               1 	(obj:0)
+y_q098_Day_2_Period_5                               1 	(obj:0)
+y_q098_Day_2_Period_6                               1 	(obj:0)
+y_q099_Day_2_Period_1                               1 	(obj:0)
+y_q099_Day_2_Period_2                               1 	(obj:0)
+y_q099_Day_2_Period_3                               1 	(obj:0)
+y_q099_Day_2_Period_4                               1 	(obj:0)
+y_q099_Day_2_Period_5                               1 	(obj:0)
+y_q099_Day_2_Period_6                               1 	(obj:0)
+y_q100_Day_2_Period_1                               1 	(obj:0)
+y_q100_Day_2_Period_2                               1 	(obj:0)
+y_q100_Day_2_Period_3                               1 	(obj:0)
+y_q100_Day_2_Period_4                               1 	(obj:0)
+y_q100_Day_2_Period_5                               1 	(obj:0)
+y_q100_Day_2_Period_6                               1 	(obj:0)
+y_q101_Day_2_Period_1                               1 	(obj:0)
+y_q101_Day_2_Period_2                               1 	(obj:0)
+y_q101_Day_2_Period_3                               1 	(obj:0)
+y_q101_Day_2_Period_4                               1 	(obj:0)
+y_q101_Day_2_Period_5                               1 	(obj:0)
+y_q101_Day_2_Period_6                               1 	(obj:0)
+y_q102_Day_2_Period_1                               1 	(obj:0)
+y_q102_Day_2_Period_2                               1 	(obj:0)
+y_q102_Day_2_Period_3                               1 	(obj:0)
+y_q103_Day_2_Period_1                               1 	(obj:0)
+y_q103_Day_2_Period_2                               1 	(obj:0)
+y_q103_Day_2_Period_3                               1 	(obj:0)
+y_q104_Day_2_Period_1                               1 	(obj:0)
+y_q104_Day_2_Period_2                               1 	(obj:0)
+y_q104_Day_2_Period_3                               1 	(obj:0)
+y_q105_Day_2_Period_1                               1 	(obj:0)
+y_q105_Day_2_Period_2                               1 	(obj:0)
+y_q105_Day_2_Period_3                               1 	(obj:0)
+y_q106_Day_2_Period_1                               1 	(obj:0)
+y_q106_Day_2_Period_2                               1 	(obj:0)
+y_q106_Day_2_Period_3                               1 	(obj:0)
+y_q106_Day_2_Period_4                               1 	(obj:0)
+y_q106_Day_2_Period_5                               1 	(obj:0)
+y_q106_Day_2_Period_6                               1 	(obj:0)
+y_q107_Day_2_Period_1                               1 	(obj:0)
+y_q107_Day_2_Period_2                               1 	(obj:0)
+y_q107_Day_2_Period_3                               1 	(obj:0)
+y_q107_Day_2_Period_4                               1 	(obj:0)
+y_q107_Day_2_Period_5                               1 	(obj:0)
+y_q107_Day_2_Period_6                               1 	(obj:0)
+y_q108_Day_2_Period_1                               1 	(obj:0)
+y_q108_Day_2_Period_2                               1 	(obj:0)
+y_q108_Day_2_Period_3                               1 	(obj:0)
+y_q108_Day_2_Period_4                               1 	(obj:0)
+y_q108_Day_2_Period_5                               1 	(obj:0)
+y_q108_Day_2_Period_6                               1 	(obj:0)
+y_q109_Day_2_Period_1                               1 	(obj:0)
+y_q109_Day_2_Period_2                               1 	(obj:0)
+y_q109_Day_2_Period_3                               1 	(obj:0)
+y_q109_Day_2_Period_4                               1 	(obj:0)
+y_q109_Day_2_Period_5                               1 	(obj:0)
+y_q109_Day_2_Period_6                               1 	(obj:0)
+y_q110_Day_2_Period_1                               1 	(obj:0)
+y_q110_Day_2_Period_2                               1 	(obj:0)
+y_q110_Day_2_Period_3                               1 	(obj:0)
+y_q110_Day_2_Period_4                               1 	(obj:0)
+y_q110_Day_2_Period_5                               1 	(obj:0)
+y_q110_Day_2_Period_6                               1 	(obj:0)
+y_q111_Day_2_Period_1                               1 	(obj:0)
+y_q111_Day_2_Period_2                               1 	(obj:0)
+y_q111_Day_2_Period_3                               1 	(obj:0)
+y_q111_Day_2_Period_4                               1 	(obj:0)
+y_q111_Day_2_Period_5                               1 	(obj:0)
+y_q111_Day_2_Period_6                               1 	(obj:0)
+y_q112_Day_2_Period_1                               1 	(obj:0)
+y_q112_Day_2_Period_2                               1 	(obj:0)
+y_q112_Day_2_Period_3                               1 	(obj:0)
+y_q112_Day_2_Period_4                               1 	(obj:0)
+y_q112_Day_2_Period_5                               1 	(obj:0)
+y_q112_Day_2_Period_6                               1 	(obj:0)
+y_q113_Day_2_Period_1                               1 	(obj:0)
+y_q113_Day_2_Period_2                               1 	(obj:0)
+y_q113_Day_2_Period_3                               1 	(obj:0)
+y_q113_Day_2_Period_4                               1 	(obj:0)
+y_q113_Day_2_Period_5                               1 	(obj:0)
+y_q113_Day_2_Period_6                               1 	(obj:0)
+y_q114_Day_2_Period_1                               1 	(obj:0)
+y_q114_Day_2_Period_2                               1 	(obj:0)
+y_q114_Day_2_Period_3                               1 	(obj:0)
+y_q115_Day_2_Period_1                               1 	(obj:0)
+y_q115_Day_2_Period_2                               1 	(obj:0)
+y_q115_Day_2_Period_3                               1 	(obj:0)
+y_q116_Day_2_Period_1                               1 	(obj:0)
+y_q116_Day_2_Period_2                               1 	(obj:0)
+y_q116_Day_2_Period_3                               1 	(obj:0)
+y_q117_Day_2_Period_1                               1 	(obj:0)
+y_q117_Day_2_Period_2                               1 	(obj:0)
+y_q117_Day_2_Period_3                               1 	(obj:0)
+y_q118_Day_2_Period_1                               1 	(obj:0)
+y_q118_Day_2_Period_3                               1 	(obj:0)
+y_q118_Day_2_Period_4                               1 	(obj:0)
+y_q118_Day_2_Period_5                               1 	(obj:0)
+y_q118_Day_2_Period_6                               1 	(obj:0)
+y_q119_Day_2_Period_1                               1 	(obj:0)
+y_q119_Day_2_Period_5                               1 	(obj:0)
+y_q120_Day_2_Period_1                               1 	(obj:0)
+y_q120_Day_2_Period_3                               1 	(obj:0)
+y_q120_Day_2_Period_5                               1 	(obj:0)
+y_q121_Day_2_Period_1                               1 	(obj:0)
+y_q121_Day_2_Period_3                               1 	(obj:0)
+y_q123_Day_2_Period_1                               1 	(obj:0)
+y_q123_Day_2_Period_5                               1 	(obj:0)
+y_q124_Day_2_Period_1                               1 	(obj:0)
+y_q126_Day_2_Period_1                               1 	(obj:0)
+y_q126_Day_2_Period_3                               1 	(obj:0)
+y_q129_Day_2_Period_1                               1 	(obj:0)
+y_q129_Day_2_Period_2                               1 	(obj:0)
+y_q129_Day_2_Period_3                               1 	(obj:0)
+y_q129_Day_2_Period_4                               1 	(obj:0)
+y_q129_Day_2_Period_6                               1 	(obj:0)
+y_q130_Day_2_Period_1                               1 	(obj:0)
+y_q130_Day_2_Period_2                               1 	(obj:0)
+y_q130_Day_2_Period_3                               1 	(obj:0)
+y_q130_Day_2_Period_6                               1 	(obj:0)
+y_q131_Day_2_Period_1                               1 	(obj:0)
+y_q131_Day_2_Period_2                               1 	(obj:0)
+y_q131_Day_2_Period_3                               1 	(obj:0)
+y_q131_Day_2_Period_4                               1 	(obj:0)
+y_q131_Day_2_Period_5                               1 	(obj:0)
+y_q131_Day_2_Period_6                               1 	(obj:0)
+y_q132_Day_2_Period_1                               1 	(obj:0)
+y_q132_Day_2_Period_2                               1 	(obj:0)
+y_q132_Day_2_Period_3                               1 	(obj:0)
+y_q132_Day_2_Period_5                               1 	(obj:0)
+y_q132_Day_2_Period_6                               1 	(obj:0)
+y_q133_Day_2_Period_5                               1 	(obj:0)
+y_q134_Day_2_Period_1                               1 	(obj:0)
+y_q135_Day_2_Period_4                               1 	(obj:0)
+y_q136_Day_2_Period_6                               1 	(obj:0)
+y_q137_Day_2_Period_5                               1 	(obj:0)
+y_q138_Day_2_Period_1                               1 	(obj:0)
+y_q139_Day_2_Period_4                               1 	(obj:0)
+y_q140_Day_2_Period_6                               1 	(obj:0)
+y_q141_Day_2_Period_1                               1 	(obj:0)
+y_q141_Day_2_Period_2                               1 	(obj:0)
+y_q141_Day_2_Period_3                               1 	(obj:0)
+y_q141_Day_2_Period_5                               1 	(obj:0)
+y_q142_Day_2_Period_1                               1 	(obj:0)
+y_q142_Day_2_Period_2                               1 	(obj:0)
+y_q142_Day_2_Period_3                               1 	(obj:0)
+y_q142_Day_2_Period_4                               1 	(obj:0)
+y_q142_Day_2_Period_5                               1 	(obj:0)
+y_q142_Day_2_Period_6                               1 	(obj:0)
+y_q143_Day_2_Period_1                               1 	(obj:0)
+y_q143_Day_2_Period_2                               1 	(obj:0)
+y_q143_Day_2_Period_5                               1 	(obj:0)
+y_q143_Day_2_Period_6                               1 	(obj:0)
+y_q144A_Day_2_Period_1                              1 	(obj:0)
+y_q144A_Day_2_Period_2                              1 	(obj:0)
+y_q144A_Day_2_Period_3                              1 	(obj:0)
+y_q144B_Day_2_Period_1                              1 	(obj:0)
+y_q144B_Day_2_Period_2                              1 	(obj:0)
+y_q144B_Day_2_Period_5                              1 	(obj:0)
+y_q144B_Day_2_Period_6                              1 	(obj:0)
+y_q145A_Day_2_Period_1                              1 	(obj:0)
+y_q145A_Day_2_Period_2                              1 	(obj:0)
+y_q145A_Day_2_Period_3                              1 	(obj:0)
+y_q145A_Day_2_Period_6                              1 	(obj:0)
+y_q145B_Day_2_Period_1                              1 	(obj:0)
+y_q145B_Day_2_Period_2                              1 	(obj:0)
+y_q145B_Day_2_Period_5                              1 	(obj:0)
+y_q145B_Day_2_Period_6                              1 	(obj:0)
+y_q147_Day_2_Period_1                               1 	(obj:0)
+y_q147_Day_2_Period_2                               1 	(obj:0)
+y_q147_Day_2_Period_3                               1 	(obj:0)
+y_q147_Day_2_Period_5                               1 	(obj:0)
+y_q147_Day_2_Period_6                               1 	(obj:0)
+y_q148_Day_2_Period_1                               1 	(obj:0)
+y_q148_Day_2_Period_2                               1 	(obj:0)
+y_q148_Day_2_Period_3                               1 	(obj:0)
+y_q149_Day_2_Period_1                               1 	(obj:0)
+y_q150_Day_2_Period_1                               1 	(obj:0)
+y_q150_Day_2_Period_5                               1 	(obj:0)
+y_q150_Day_2_Period_6                               1 	(obj:0)
+y_q151_Day_2_Period_1                               1 	(obj:0)
+y_q151_Day_2_Period_2                               1 	(obj:0)
+y_q151_Day_2_Period_3                               1 	(obj:0)
+y_q151_Day_2_Period_4                               1 	(obj:0)
+y_q152_Day_2_Period_1                               1 	(obj:0)
+y_q152_Day_2_Period_2                               1 	(obj:0)
+y_q152_Day_2_Period_3                               1 	(obj:0)
+y_q152_Day_2_Period_4                               1 	(obj:0)
+y_q153_Day_2_Period_1                               1 	(obj:0)
+y_q153_Day_2_Period_2                               1 	(obj:0)
+y_q153_Day_2_Period_3                               1 	(obj:0)
+y_q153_Day_2_Period_4                               1 	(obj:0)
+y_q154_Day_2_Period_1                               1 	(obj:0)
+y_q154_Day_2_Period_4                               1 	(obj:0)
+y_q155_Day_2_Period_1                               1 	(obj:0)
+y_q155_Day_2_Period_4                               1 	(obj:0)
+y_q155_Day_2_Period_5                               1 	(obj:0)
+y_q155_Day_2_Period_6                               1 	(obj:0)
+y_q156_Day_2_Period_1                               1 	(obj:0)
+y_q156_Day_2_Period_4                               1 	(obj:0)
+y_q156_Day_2_Period_5                               1 	(obj:0)
+y_q156_Day_2_Period_6                               1 	(obj:0)
+y_q157_Day_2_Period_1                               1 	(obj:0)
+y_q157_Day_2_Period_4                               1 	(obj:0)
+y_q157_Day_2_Period_5                               1 	(obj:0)
+y_q157_Day_2_Period_6                               1 	(obj:0)
+y_q158_Day_2_Period_1                               1 	(obj:0)
+y_q158_Day_2_Period_2                               1 	(obj:0)
+y_q158_Day_2_Period_3                               1 	(obj:0)
+y_q158_Day_2_Period_4                               1 	(obj:0)
+y_q158_Day_2_Period_5                               1 	(obj:0)
+y_q158_Day_2_Period_6                               1 	(obj:0)
+y_q159_Day_2_Period_1                               1 	(obj:0)
+y_q159_Day_2_Period_2                               1 	(obj:0)
+y_q159_Day_2_Period_3                               1 	(obj:0)
+y_q159_Day_2_Period_4                               1 	(obj:0)
+y_q159_Day_2_Period_5                               1 	(obj:0)
+y_q159_Day_2_Period_6                               1 	(obj:0)
+y_q160_Day_2_Period_1                               1 	(obj:0)
+y_q160_Day_2_Period_2                               1 	(obj:0)
+y_q160_Day_2_Period_3                               1 	(obj:0)
+y_q160_Day_2_Period_4                               1 	(obj:0)
+y_q160_Day_2_Period_5                               1 	(obj:0)
+y_q160_Day_2_Period_6                               1 	(obj:0)
+
+Statistics
+==========
+
+Master Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3548.46
+  solving          :    3548.46
+  presolving       :       0.00 (included in solving)
+  reading          :       0.00
+  copying          :       0.02 (2 #copies) (minimal 0.01, maximal 0.01, average 0.01)
+Original Problem   :
+  Problem name     : master_uct-subprob
+  Variables        : 568 (6 binary, 0 integer, 562 implicit integer, 0 continuous)
+  Constraints      : 593 initial, 593 maximal
+  Objective        : minimize, 363 non-zeros (abs.min = 2, abs.max = 5)
+Presolved Problem  :
+  Problem name     : t_master_uct-subprob
+  Variables        : 4678 (6 binary, 4110 integer, 562 implicit integer, 0 continuous)
+  Constraints      : 593 initial, 594 maximal
+  Objective        : minimize, 4399 non-zeros (abs.min = 2, abs.max = 109)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  roundbound       :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  linear           :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -        636          -          -        636          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  masterbranch     :          0+       143          0       4402          0          0          0          0          0          0      50089          0          0          0          0
+  integralorig     :          0          0          0          0        186          0          0         49          0          0          0          0          0          0          0
+  integral         :          0          0          0          0        186          0          0         49          0          0          0          0          0          0        372
+  linear           :        593        593         14      10320          0          0          0         35          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  masterbranch     :      15.44       0.00       0.00      15.44       0.00       0.00       0.00       0.00       0.00       0.00
+  integralorig     :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       0.21       0.00       0.00       0.03       0.00       0.00       0.00       0.18       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          1          0          0          0
+  genvbounds       :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          0          0          0          0
+  redcost          :          0          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :      10456          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.00       0.00       0.00       0.00       0.00       0.00
+  redcost          :       0.01       0.00       0.00       0.01       0.00       0.00
+  rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
+  vbounds          :       0.01       0.00       0.00       0.01       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     0          -          -          0          -          -    (maximal pool size: 0)
+  basis            :       2.71       0.00          8          0          0         72         19          0
+  master           :       0.20       0.00         28          0          0          8          7          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.57          -       2424      33406
+  gcg              :    3476.14       0.00       1324       4338
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  generic          :       0.00       0.00          0          0          0          0          0          0          0          0
+  orig             :       0.00       0.00        186          0          0          0          0          0          0        372
+  relpsprob        :       0.00       0.00          0          0          0          0          0          0          0          0
+  ryanfoster       :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.10       0.00          1          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  greedycolsel     :       0.00       0.00          6          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mastercoefdiving :       0.00       0.00          0          0          0
+  masterfracdiving :       0.00       0.00          0          0          0
+  masterlinesdiving:       0.00       0.00          0          0          0
+  mastervecldiving :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.01       0.00          3          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.04       0.00         14          0          0
+  relaxcolsel      :       0.00       0.00          5          0          0
+  rens             :       0.03       0.00          1          0          0
+  restmaster       :       0.01       0.00          1          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00        150          0          0
+  setcover         :       0.00       0.00          0          0          0
+  shiftandpropagate:       0.00       0.00          1          0          0
+  shifting         :       0.13       0.00         26          0          0
+  simplerounding   :       0.30       0.00       2500          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.03       0.00        186          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :      20.34       2305     112315      55.93    5521.88       0.76        297
+  dual LP          :      44.12       3461     385307    1817.49    8733.16       3.17       3249
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:      23.39       4175     148692      35.61    6357.08
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+B&B Tree           :
+  number of runs   :          1
+  nodes            :        187 (186 internal, 1 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          0
+  objective leaves :          0
+  nodes (total)    :        187 (186 internal, 1 leaves)
+  nodes left       :        187
+  max depth        :         15
+  max depth (total):         15
+  backtracks       :         70 (37.4%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :        244 (6860 domain reductions, 0 cutoffs)
+  avg switch length:       5.43
+  switching time   :       0.98
+Root Node          :
+  First LP value   :          -
+  First LP Iters   :          0
+  First LP Time    :       0.00
+  Final Dual Bound : +2.78015877907791e+02
+  Final Root Iters :      12736
+  Root LP Estimate : +2.78931026149669e+02
+Solution           :
+  Solutions found  :         35 (3 improvements)
+  First Solution   : +3.80000000000000e+02   (in run 1, after 1 nodes, 0.00 seconds, depth 0, found by <relaxation>)
+  Gap First Sol.   :      57.02 %
+  Gap Last Sol.    :      26.68 %
+  Primal Bound     : +3.56000000000000e+02   (in run 1, after 178 nodes, 3381.77 seconds, depth 23, found by <relaxation>)
+  Dual Bound       : +2.81024215903539e+02
+  Gap              :      26.68 %
+  Avg. Gap         :      22.51 % (79871.56 primal-dual integral)
+Pricing Solver     : #HeurFarkas  #OptFarkas  #HeurRedcost #OptRedcost Time: HeurFarkas  OptFarkas  HeurRedcost OptRedcost
+  knapsack         :           4           4          2154        2150             0.00       0.00         0.04       0.00 
+  mip              :          20           0         10770        3581             0.30       0.00      2427.76    1028.58 
+
+Original Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3600.15
+  solving          :    3600.09
+  presolving       :       0.05 (included in solving)
+  reading          :       0.06
+  copying          :       0.00 (1 #copies) (minimal 0.00, maximal 0.00, average 0.00)
+Original Problem   :
+  Problem name     : uct-subprob
+  Variables        : 2256 (379 binary, 0 integer, 0 implicit integer, 1877 continuous)
+  Constraints      : 1973 initial, 1973 maximal
+  Objective        : minimize, 1345 non-zeros (abs.min = 1, abs.max = 8)
+Presolved Problem  :
+  Problem name     : t_uct-subprob
+  Variables        : 2085 (379 binary, 0 integer, 1706 implicit integer, 0 continuous)
+  Constraints      : 1748 initial, 1749 maximal
+  Objective        : minimize, 1325 non-zeros (abs.min = 1, abs.max = 8)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  convertinttobin  :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  domcol           :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      3          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.01       0.00      0          0          0          0          0          0          0          0          0          0
+  trivial          :       0.00       0.00      5          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      5         20          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  setppc           :       0.01       0.00      6          0          0          0          0          0          6          0          0          0
+  linear           :       0.01       0.00      4         20        131          0         20          0        219          0          0          0
+  logicor          :       0.02       0.00      5          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -          0          -          -          0          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  origbranch       :          0+       143          0          0          0          0          0          0          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          1        185          0       4523          0          0          0          0          0          0        372
+  decomp           :          0          0          0          0          0          0          0         79          0          0          0          0          0          0          0
+  setppc           :        792        792         24       7025          0          0          0         39          0          0       2643          0          0          0          0
+  logicor          :        956        956         24       1917          0          0          0         35          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  origbranch       :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.04       0.00       0.00       0.00       0.00       0.00       0.00       0.04       0.00       0.00
+  decomp           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  setppc           :       0.03       0.00       0.01       0.02       0.00       0.00       0.00       0.00       0.00       0.00
+  logicor          :       0.02       0.00       0.00       0.02       0.00       0.00       0.00       0.00       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          3          0          0          0
+  genvbounds       :          0          0          0          0
+  obbt             :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :        572          0          0          0
+  redcost          :          5          0          0          0
+  rootredcost      :          2          0          0          0
+  vbounds          :       7163          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  obbt             :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.00       0.00       0.00       0.00       0.00       0.00
+  redcost          :       0.00       0.00       0.00       0.00       0.00       0.00
+  rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
+  vbounds          :       0.01       0.00       0.00       0.01       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.01                    21          -          -        184          -          -    (maximal pool size: 433)
+  clique           :       0.00       0.00         24          0          0          0          6          0
+  closecuts        :       0.00       0.00          0          0          0          0          0          0
+  gomory           :       0.07       0.00          5          0          0          0          4          0
+  impliedbounds    :       0.00       0.00         24          0          0          0          0          0
+  intobj           :       0.00       0.00          0          0          0          0          0          0
+  mcf              :       0.00       0.00          1          0          0          0          0          0
+  oddcycle         :       0.07       0.00         15          0          0         13          0          0
+  rapidlearning    :       0.00       0.00          0          0          0          0          0          0
+  strongcg         :       0.04       0.00          5          0          0          0          0          0
+  zerohalf         :       0.11       0.00         15          0          0          0          7          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.00          -          0          0
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  empty            :       0.00       0.00          1        185          0          0          0          0          0        372
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.15       0.00          1          1          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  gcgcoefdiving    :       4.31       0.00         10          1          0
+  gcgdins          :       0.00       0.00          0          0          0
+  gcgfeaspump      :       0.00       0.00          0          0          0
+  gcgfracdiving    :      12.38       0.00          7          2          0
+  gcgguideddiving  :      13.64       0.00         16          8          0
+  gcglinesdiving   :       7.42       0.00         13          7          0
+  gcgpscostdiving  :       8.64       0.00          8          8          0
+  gcgrens          :       0.00       0.00          0          0          0
+  gcgrins          :       0.00       0.00          0          0          0
+  gcgrounding      :       0.06       0.00        143          0          0
+  gcgshifting      :       0.01       0.00         13          0          0
+  gcgsimplerounding:       0.00       0.00          0          0          0
+  gcgveclendiving  :       3.35       0.00          8          6          1
+  gcgzirounding    :       0.00       0.00          0          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  nlpdiving        :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.00       0.00          3          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.01       0.00          3          0          0
+  rens             :       0.00       0.00          0          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          3          0          0
+  shiftandpropagate:       0.01       0.00          1          1          1
+  shifting         :       0.01       0.00          3          0          0
+  simplerounding   :       0.00       0.00          0          0          0
+  subnlp           :       0.00       0.00          0          0          0
+  trivial          :       0.00       0.00          2          0          0
+  trysol           :       0.00       0.00          0          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  undercover       :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  xpcrossover      :       0.89       0.00          1          1          1
+  xprins           :       0.04       0.00          1          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          1          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.00          1          0       0.00          -       0.00          1
+  dual LP          :       0.36          3       3854    1927.00   10705.56       0.00          1
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:       2.68         15      22992    1532.80    8579.10
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+Relaxators         :       Time      Calls
+  gcg              :    3548.73        186
+B&B Tree           :
+  number of runs   :          1
+  nodes            :        187 (186 internal, 1 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          0
+  objective leaves :          0
+  nodes (total)    :        187 (186 internal, 1 leaves)
+  nodes left       :        187
+  max depth        :         15
+  max depth (total):         15
+  backtracks       :         70 (37.4%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          0 (0 domain reductions, 0 cutoffs)
+  avg switch length:       3.23
+  switching time   :       0.00
+Root Node          :
+  First LP value   : +2.42000000000000e+02
+  First LP Iters   :       2017 (12606.25 Iter/sec)
+  First LP Time    :       0.16
+  Final Dual Bound : +2.78015877907791e+02
+  Final Root Iters :       3854
+  Root LP Estimate : +3.57776084234007e+02
+Solution           :
+  Solutions found  :         35 (3 improvements)
+  First Solution   : +3.80000000000000e+02   (in run 1, after 1 nodes, 0.07 seconds, depth 381, found by <shiftandpropagate>)
+  Gap First Sol.   :   infinite
+  Gap Last Sol.    :      26.68 %
+  Primal Bound     : +3.56000000000000e+02   (in run 1, after 178 nodes, 3427.17 seconds, depth 23, found by <gcgveclendiving>)
+  Dual Bound       : +2.81024215903539e+02
+  Gap              :      26.68 %
+  Avg. Gap         :          - (not evaluated)
+
+Simplex iterations :       iter
+  Master LP        :     646314
+  Pricing LP       :    5257901
+  Original LP      :      26846
+
+Detector statistics:       time     number     blocks
+  connected        :       0.00          0    
+  constype         :       0.00          0    
+  postproces       :       0.00          0    
+  consclass        :       0.86          0    
+  consname         :       0.00          0    
+  densemaste       :       0.00          0    
+  stairheur        :       0.00          0    
+  staircase        :       0.00          0    
+  random           :       0.00          0    
+  staircase_       :       0.00          0    
+  colors           :       0.00          0    
+  cutpacking       :       0.00          0    
+  compgreedi       :       0.00          0    
+  mastersetc       :       0.00          0    
+  mastersetp       :       0.00          0    
+  mastersetp       :       0.00          0    
+  hcgpartiti       :       0.00          0    
+  hrgpartiti       :       0.16          0    
+  hrcgpartit       :       0.00          0    
+  connectedb       :       0.00          0    
+  connected_       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  varclass         :       0.62          0    
+  isomorph         :       0.00          0    
+
+Decomp statistics  :
+  type             :  arrowhead
+  detector         :         rC
+  blocks           :         12
+  aggr. blocks     :         12
+Master statistics  :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros    bnzeros bintnzeros  min(dens)  max(dens) medi(dens) mean(dens)
+  master           :        568        568          0        562          0        581       3877       2999          0          0      0.000      0.086      0.000      0.003
+Pricing statistics :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros  min(dens)  max(dens) medi(dens) mean(dens)  identical
+          1        :        220        220          0        179          0        179        845        595      0.006      0.156      0.011      0.021          1
+          2        :        286        286          0        220          0        228       1401       1084      0.004      0.154      0.009      0.021          1
+          3        :        287        287          0        228          0        234       1003        699      0.004      0.145      0.004      0.015          1
+          4        :        230        230          0        181          0        185        763        531      0.005      0.173      0.005      0.018          1
+          5        :          2          2          0          0          0          1          2          2      1.000      1.000      1.000      1.000          1
+          6        :          2          2          0          0          0          1          2          2      1.000      1.000      1.000      1.000          1
+          7        :         11         11          0          5          0          8         24         19      0.125      0.625      0.250      0.273          1
+          8        :        277        277          0        195          0        195       1048        768      0.005      0.128      0.010      0.019          1
+          9        :        193        193          0        133          0        133        720        533      0.008      0.143      0.015      0.028          1
+         10        :          3          3          0          1          0          1          3          2      1.000      1.000      1.000      1.000          1
+         11        :          3          3          0          1          0          1          3          2      1.000      1.000      1.000      1.000          1
+         12        :          3          3          0          1          0          1          3          2      1.000      1.000      1.000      1.000          1
+Decomp Scores      :
+  border area      :      0.514
+  avg. density     :      0.985
+  linking score    :      0.500
+Pricing time in colpool = 0.000000 sec
