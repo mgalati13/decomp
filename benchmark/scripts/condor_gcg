@@ -1,0 +1,111 @@
+#!/bin/bash
+if [ "$#" -lt "3" ] 
+then
+echo "
+Condor submission script for GCG
+usage: condor_GCG listfile option extra cores
+
+listfile: a plain text file with instance names, one per line
+          if you want to run a generic milp benchmark, use milpBench.lst
+
+option: basically the solver name, i.e., milp
+        This is also the way to specify options, e.g., milp_pre3
+        For this to work a file names options_milp_pre3.sas needs to exist
+        with the proper option settings
+
+extra: an extra identifier that helps you to distinguish between different runs
+       tip: start with an underscore _ to get a nicer filename
+"
+
+cat coresmessage
+
+echo "
+
+Contact: Imre Polik, imre.polik@sas.com
+"
+exit 1
+fi
+
+
+LIST_FILE=$1
+OPTION=$2
+EXTRA=$3
+if (($# < 4)) ; then
+   CORES=1
+else
+   CORES=$4
+fi
+
+OPTIONS_FILE="/LOG_DATA/scripts/options_${OPTION}.parm"
+RESULTS_DIR=/LOG_DATA/LOGS/gcg_`date +%Y%m%d`_${OPTION}${EXTRA}
+PATH_MYTESTS=${RESULTS_DIR}/_scripts
+SUBMISSION_FILE=${RESULTS_DIR}/_condor.gcg.${OPTION}${EXTRA}.submit
+NEWPLAYPEN=${RESULTS_DIR}/_playpen${PLAYPEN}
+
+if [ ! -e ./options_${OPTION}.parm ]
+then echo "The option you specified (${OPTION}) is not available."
+exit
+fi
+
+if ((${CORES} < 1)) || ((${CORES} > 16)) 
+then echo "The number of cores must be between 1 and 16, you set ${CORES}."
+exit
+fi
+
+if ((${CORES} < 9))
+then CORES_REQUESTED=8
+else CORES_REQUESTED=16
+fi
+
+echo "Submitting GCG instances 
+List file:    ${LIST_FILE}
+Option:       ${OPTION}
+Identifier:   ${EXTRA}
+Cores:        ${CORES}
+
+Logfiles and scripts will be put in ${RESULTS_DIR}
+"
+
+read -p "If this is what you want, press ENTER, otherwise CRTL-C."
+
+mkdir -p ${RESULTS_DIR}
+mkdir -p ${PATH_MYTESTS}
+
+#create a condor submission file
+touch ${SUBMISSION_FILE}
+
+#Set the header part for the condor submission file
+echo " 
+universe    = vanilla
+notification = Error
+executable = /LOG_DATA/scripts/Sgcg
+initialdir = /LOG_DATA/gcgtemp
+log         = ${RESULTS_DIR}/_condor.log
+notify_user = `whoami`@unx.sas.com
+request_cpus = ${CORES_REQUESTED}
+RunAsOwner = TRUE
+getenv = TRUE
+periodic_remove = (CurrentTime - JobStartDate ) > 10000
+
+" > ${SUBMISSION_FILE}
+
+
+while read i
+do
+  base=${i}
+  echo $base  
+
+#Add this job to the condor submission file
+echo "
+output      = ${RESULTS_DIR}/${i}_${OPTION}_condorout.\$(Process).txt
+error       = ${RESULTS_DIR}/${i}_${OPTION}_condorerr.\$(Process).txt
+arguments = ${OPTIONS_FILE} /ORDATA_NEW/mipinstances/${i}.mps ${CORES}
++IsSuspendableJob = False
+queue" >> ${SUBMISSION_FILE}
+
+done < $1
+
+#submit the condor job
+condor_submit ${SUBMISSION_FILE}
+condor_reschedule
+condor_info
