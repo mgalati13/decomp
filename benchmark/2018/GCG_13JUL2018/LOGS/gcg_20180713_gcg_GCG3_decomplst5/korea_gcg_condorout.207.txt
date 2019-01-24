@@ -1,0 +1,1639 @@
+GCG version 3.0.0 [GitHash: 70e7382]
+Copyright (C) 2010-2018 Operations Research, RWTH Aachen University
+                        Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+SCIP version 6.0.0 [precision: 8 byte] [memory: block] [mode: optimized] [LP solver: SoPlex 4.0.0] [GitHash: 77d3bc8]
+Copyright (C) 2002-2018 Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+External codes: 
+  Readline 6.0         GNU library for command line editing (gnu.org/s/readline)
+  SoPlex 4.0.0         Linear Programming Solver developed at Zuse Institute Berlin (soplex.zib.de) [GitHash: 82cab95]
+  CppAD 20180000.0     Algorithmic Differentiation of C++ algorithms developed by B. Bell (www.coin-or.org/CppAD)
+  ZLIB 1.2.3           General purpose compression library by J. Gailly and M. Adler (zlib.net)
+  ZIMPL 3.3.6          Zuse Institute Mathematical Programming Language developed by T. Koch (zimpl.zib.de)
+  bliss 0.73           A Tool for Computing Automorphism Groups of Graphs by T. Junttila and P. Kaski (http://www.tcs.hut.fi/Software/bliss/)
+
+reading user parameter file </LOG_DATA/scripts/options_gcg.parm>
+
+read problem </ORDATA/miplib/korea.mps>
+============
+
+original problem has 13256 variables (95 bin, 11685 int, 0 impl, 1476 cont) and 1182 constraints
+presolving:
+(round 1, fast)       738 del vars, 0 del conss, 0 add conss, 0 chg bounds, 0 chg sides, 95 chg coeffs, 0 upgd conss, 0 impls, 0 clqs
+(round 2, fast)       738 del vars, 0 del conss, 0 add conss, 0 chg bounds, 0 chg sides, 42344 chg coeffs, 0 upgd conss, 0 impls, 0 clqs
+(round 3, fast)       738 del vars, 0 del conss, 0 add conss, 10450 chg bounds, 0 chg sides, 42344 chg coeffs, 0 upgd conss, 0 impls, 0 clqs
+(round 4, exhaustive) 738 del vars, 123 del conss, 0 add conss, 10450 chg bounds, 0 chg sides, 42439 chg coeffs, 0 upgd conss, 0 impls, 0 clqs
+   (0.4s) probing: 146/6472 (2.3%) - 0 fixings, 0 aggregations, 11685 implications, 0 bound changes
+   (0.4s) probing aborted: 50/50 successive totally useless probings
+presolving (5 rounds: 5 fast, 2 medium, 2 exhaustive):
+ 738 deleted vars, 123 deleted constraints, 0 added constraints, 10450 tightened bounds, 0 added holes, 0 changed sides, 42439 changed coefficients
+ 5308 implications, 6377 cliques
+presolved problem has 12518 variables (6472 bin, 5308 int, 0 impl, 738 cont) and 1059 constraints
+   1059 constraints of type <linear>
+Presolving Time: 0.44
+start creating seeedpool for current problem 
+created seeedpool for current problem, n detectors: 26 
+ Consclassifier "nonzeros" yields a classification with 12  different constraint classes 
+ Consclassifier "constypes" yields a classification with 1 different constraint classes 
+ Consclassifier "constypes according to miplib" yields a classification with 5 different constraint classes 
+ Varclassifier "vartypes" yields a classification with 3 different variable classes
+ Varclassifier "varobjvals" yields a classification with 20 different variable classes
+ Varclassifier "varobjvalsigns" yields a classification with 2 different variable classes
+ Added reduced version of consclassifier nonzeros with 9  different constraint classes 
+ the current varclass distribution includes 20 classes but only 18 are allowed for calcCandidatesNBlocks()
+Begin of detection round 0 of 1 total rounds 
+Start to propagate seeed with id 1 (0 of 1 in round 0) 
+ in dec_consclass: there are 4 different constraint classes   
+ the current consclass distribution includes 12 classes but only 9 are allowed for propagateSeeed() of cons class detector
+  the current constraint classifier "constypes" consists of 1 different classes   
+  the current constraint classifier "constypes according to miplib" consists of 5 different classes   
+  the current constraint classifier "nonzeros-red-to-9" consists of 9 different classes   
+ dec_consclass found 543 new seeeds 
+dec_densemasterconss found 1 new seeed 
+ the current varclass distribution includes 20 classes but only 9 are allowed for propagateSeeed() of var class detector
+Start finishing of partial decomposition 1.
+Measured running time per detector: 
+Detector consclass                 	 worked on 	 538 of 547	 and took a total time of 	1.9839
+Detector densemasterconss          	 worked on 	 1 of 547	 and took a total time of 	0.002138
+Detector hrgpartition              	 worked on 	 0 of 547	 and took a total time of 	3e-06
+Detector varclass                  	 worked on 	 7 of 547	 and took a total time of 	0.288082
+Started postprocessing of decompositions...
+...finished postprocessing of decompositions. Added 0 new decomps. 
+
+solve problem
+=============
+
+
+A Dantzig-Wolfe reformulation is applied to solve the original problem.
+
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+   0.9s|     1 |     0 |      0 |      0 |     - |  73M|   0 |   0 |1059 |   0 |   0 |  0 | 1.006550e+02 |      --      |   --   |    Inf 
+Chosen structure has 124 blocks and 197 linking constraints.
+This decomposition has a maxwhite score of 0.807408.
+Warning: Discretization with continuous variables is only an experimental feature.
+Matrix has 124 blocks, using 124 pricing problems.
+
+     
+  34.9s|     1 |     0 |      1 |      1 |     - | 136M|   0 |   1 |1060 | 322 |   0 |  0 | 1.006550e+02 |      --      |   0.00%|    Inf 
+Starting reduced cost pricing...
+  41.4s|     1 |     0 |   1477 |    553 |     - | 141M|   0 | 772 |1060 | 322 |   0 |  0 | 1.006550e+02 |      --      |   4.21%|    Inf 
+   148s|     1 |     0 | 217367 |   1362 |     - | 148M|   0 |2523 |1060 | 322 |   0 |  0 | 1.968765e+02 |      --      |   5.47%|    Inf 
+   149s|     1 |     0 | 217544 |   1539 |     - | 175M|   0 |2523 |1060 | 322 |   1 |  1 | 1.968765e+02 |      --      |   5.47%|    Inf 
+   213s|     1 |     0 | 372050 |   1928 |     - | 176M|   0 |2806 |1060 | 322 |   1 |  1 | 1.968765e+02 |      --      |   7.70%|    Inf 
+   241s|     1 |     0 | 439467 |   2142 |     - | 180M|   0 |2806 |1060 | 322 |   4 |  3 | 1.968765e+02 |      --      |   7.79%|    Inf 
+   270s|     1 |     0 | 507945 |   2185 |     - | 181M|   0 |2806 |1060 | 322 |   7 |  5 | 1.968765e+02 |      --      |   7.88%|    Inf 
+   299s|     1 |     0 | 576951 |   2281 |     - | 182M|   0 |2806 |1060 | 322 |   9 |  7 | 1.968765e+02 |      --      |   7.96%|    Inf 
+   310s|     1 |     0 | 598374 |   2485 |     - | 183M|   0 |2807 |1060 | 322 |  11 |  9 | 1.968765e+02 |      --      |   8.03%|    Inf 
+   358s|     1 |     0 | 727561 |   2497 |     - | 183M|   0 |2809 |1060 | 322 |  11 |  9 | 1.968765e+02 |      --      |   8.09%|    Inf 
+   392s|     1 |     0 | 810379 |   2545 |     - | 184M|   0 |2809 |1060 | 322 |  15 | 11 | 1.968765e+02 |      --      |   8.04%|    Inf 
+   425s|     1 |     0 | 893582 |   2619 |     - | 184M|   0 |2809 |1060 | 322 |  17 | 12 | 1.968765e+02 |      --      |   8.01%|    Inf 
+i  427s|     1 |     0 | 893582 |   2619 |     - | 186M|   0 |2933 |1060 | 322 |  17 | 13 | 1.968765e+02 | 7.766000e+02 |   8.01%| 294.46%
+   428s|     1 |     0 | 893582 |   2619 |     - | 186M|   0 |2933 |1060 | 322 |  17 | 13 | 1.968765e+02 | 7.766000e+02 |   8.01%| 294.46%
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+   428s|     1 |     0 | 893582 |   2619 |     - | 186M|   0 |2933 |1060 | 322 |  17 | 13 | 1.968765e+02 | 7.766000e+02 |   8.01%| 294.46%
+   429s|     1 |     2 | 893582 |   2619 |     - | 187M|   0 |3057 |1060 | 322 |  17 | 13 | 1.968765e+02 | 7.766000e+02 |   8.01%| 294.46%
+*r1362s|     8 |     7 |2948580 |  18827 |2315.4 | 188M|   7 |1603 |1060 | 322 |  17 |  0 | 1.968765e+02 | 2.269427e+02 |   --   |  15.27%
+**2993s|    32 |    27 |6869146 |  51006 |1560.9 | 193M|  11 |2673 |1060 | 322 |  17 |  0 | 1.968765e+02 | 2.161823e+02 |   --   |   9.81%
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 3602.81
+Solving Nodes      : 38
+Primal Bound       : +2.16182318999999e+02 (5 solutions)
+Dual Bound         : +1.96876547031859e+02
+Gap                : 9.81 %
+
+primal solution:
+================
+
+objective value:                     216.182318999999
+IsUsedBox['93']                                     1 	(obj:0)
+IsUsedBox['46']                                     1 	(obj:0)
+IsUsedBox['44']                                     1 	(obj:0)
+IsUsedBox['18']                                     1 	(obj:0)
+IsUsedBox['11']                                     1 	(obj:0)
+IsUsedBox['6']                                      1 	(obj:0)
+IsUsedBox['1']                                      1 	(obj:0)
+Distribute['3759','93']                             1 	(obj:0)
+Distribute['4217','46']                             1 	(obj:0)
+Distribute['4018','46']                             1 	(obj:0)
+Distribute['3891','46']                             1 	(obj:0)
+Distribute['3767','46']                             1 	(obj:0)
+Distribute['3764','46']                             1 	(obj:0)
+Distribute['3751','46']                             1 	(obj:0)
+Distribute['3721','46']                             1 	(obj:0)
+Distribute['3641','46']                             1 	(obj:0)
+Distribute['3637','46']                             1 	(obj:0)
+Distribute['3431','46']                             1 	(obj:0)
+Distribute['3424','46']                             1 	(obj:0)
+Distribute['3198','46']                             1 	(obj:0)
+Distribute['2477','46']                             1 	(obj:0)
+Distribute['2466','46']                             1 	(obj:0)
+Distribute['2216','46']                             1 	(obj:0)
+Distribute['1621','46']                             1 	(obj:0)
+Distribute['1132','46']                             1 	(obj:0)
+Distribute['3807','44']                             1 	(obj:0)
+Distribute['3769','44']                             1 	(obj:0)
+Distribute['3768','44']                             1 	(obj:0)
+Distribute['3720','44']                             1 	(obj:0)
+Distribute['3355','44']                             1 	(obj:0)
+Distribute['3311','44']                             1 	(obj:0)
+Distribute['3200','44']                             1 	(obj:0)
+Distribute['2407','44']                             1 	(obj:0)
+Distribute['4231','18']                             1 	(obj:0)
+Distribute['4218','18']                             1 	(obj:0)
+Distribute['4174','18']                             1 	(obj:0)
+Distribute['4014','18']                             1 	(obj:0)
+Distribute['3851','18']                             1 	(obj:0)
+Distribute['3825','18']                             1 	(obj:0)
+Distribute['3781','18']                             1 	(obj:0)
+Distribute['3765','18']                             1 	(obj:0)
+Distribute['3747','18']                             1 	(obj:0)
+Distribute['3531','18']                             1 	(obj:0)
+Distribute['3481','18']                             1 	(obj:0)
+Distribute['3435','18']                             1 	(obj:0)
+Distribute['3432','18']                             1 	(obj:0)
+Distribute['3402','18']                             1 	(obj:0)
+Distribute['3358','18']                             1 	(obj:0)
+Distribute['3357','18']                             1 	(obj:0)
+Distribute['3345','18']                             1 	(obj:0)
+Distribute['3322','18']                             1 	(obj:0)
+Distribute['3042','18']                             1 	(obj:0)
+Distribute['2998','18']                             1 	(obj:0)
+Distribute['2930','18']                             1 	(obj:0)
+Distribute['2813','18']                             1 	(obj:0)
+Distribute['2806','18']                             1 	(obj:0)
+Distribute['2620','18']                             1 	(obj:0)
+Distribute['2591','18']                             1 	(obj:0)
+Distribute['2396','18']                             1 	(obj:0)
+Distribute['2335','18']                             1 	(obj:0)
+Distribute['2178','18']                             1 	(obj:0)
+Distribute['2130','18']                             1 	(obj:0)
+Distribute['1867','18']                             1 	(obj:0)
+Distribute['1614','18']                             1 	(obj:0)
+Distribute['1134','18']                             1 	(obj:0)
+Distribute['4224','11']                             1 	(obj:0)
+Distribute['4223','11']                             1 	(obj:0)
+Distribute['4217','11']                             1 	(obj:0)
+Distribute['4215','11']                             1 	(obj:0)
+Distribute['4210','11']                             1 	(obj:0)
+Distribute['4179','11']                             1 	(obj:0)
+Distribute['4103','11']                             1 	(obj:0)
+Distribute['4018','11']                             1 	(obj:0)
+Distribute['3827','11']                             1 	(obj:0)
+Distribute['3805','11']                             1 	(obj:0)
+Distribute['3761','11']                             1 	(obj:0)
+Distribute['3721','11']                             1 	(obj:0)
+Distribute['3637','11']                             1 	(obj:0)
+Distribute['3627','11']                             1 	(obj:0)
+Distribute['3431','11']                             1 	(obj:0)
+Distribute['3424','11']                             1 	(obj:0)
+Distribute['3359','11']                             1 	(obj:0)
+Distribute['3200','11']                             1 	(obj:0)
+Distribute['3198','11']                             1 	(obj:0)
+Distribute['2849','11']                             1 	(obj:0)
+Distribute['2829','11']                             1 	(obj:0)
+Distribute['2733','11']                             1 	(obj:0)
+Distribute['2719','11']                             1 	(obj:0)
+Distribute['2693','11']                             1 	(obj:0)
+Distribute['2652','11']                             1 	(obj:0)
+Distribute['2643','11']                             1 	(obj:0)
+Distribute['2631','11']                             1 	(obj:0)
+Distribute['2581','11']                             1 	(obj:0)
+Distribute['2574','11']                             1 	(obj:0)
+Distribute['2527','11']                             1 	(obj:0)
+Distribute['2477','11']                             1 	(obj:0)
+Distribute['2458','11']                             1 	(obj:0)
+Distribute['2455','11']                             1 	(obj:0)
+Distribute['2446','11']                             1 	(obj:0)
+Distribute['2369','11']                             1 	(obj:0)
+Distribute['2343','11']                             1 	(obj:0)
+Distribute['2321','11']                             1 	(obj:0)
+Distribute['2267','11']                             1 	(obj:0)
+Distribute['2257','11']                             1 	(obj:0)
+Distribute['2245','11']                             1 	(obj:0)
+Distribute['2204','11']                             1 	(obj:0)
+Distribute['2181','11']                             1 	(obj:0)
+Distribute['2127','11']                             1 	(obj:0)
+Distribute['2101','11']                             1 	(obj:0)
+Distribute['1919','11']                             1 	(obj:0)
+Distribute['1915','11']                             1 	(obj:0)
+Distribute['1712','11']                             1 	(obj:0)
+Distribute['1530','11']                             1 	(obj:0)
+Distribute['1516','11']                             1 	(obj:0)
+Distribute['1515','11']                             1 	(obj:0)
+Distribute['1435','11']                             1 	(obj:0)
+Distribute['1373','11']                             1 	(obj:0)
+Distribute['1353','11']                             1 	(obj:0)
+Distribute['1132','11']                             1 	(obj:0)
+Distribute['1131','11']                             1 	(obj:0)
+Distribute['1087','11']                             1 	(obj:0)
+Distribute['4270','6']                              1 	(obj:0)
+Distribute['4231','6']                              1 	(obj:0)
+Distribute['4226','6']                              1 	(obj:0)
+Distribute['4218','6']                              1 	(obj:0)
+Distribute['4179','6']                              1 	(obj:0)
+Distribute['4174','6']                              1 	(obj:0)
+Distribute['4018','6']                              1 	(obj:0)
+Distribute['4014','6']                              1 	(obj:0)
+Distribute['3851','6']                              1 	(obj:0)
+Distribute['3825','6']                              1 	(obj:0)
+Distribute['3781','6']                              1 	(obj:0)
+Distribute['3765','6']                              1 	(obj:0)
+Distribute['3761','6']                              1 	(obj:0)
+Distribute['3747','6']                              1 	(obj:0)
+Distribute['3637','6']                              1 	(obj:0)
+Distribute['3627','6']                              1 	(obj:0)
+Distribute['3531','6']                              1 	(obj:0)
+Distribute['3481','6']                              1 	(obj:0)
+Distribute['3435','6']                              1 	(obj:0)
+Distribute['3432','6']                              1 	(obj:0)
+Distribute['3424','6']                              1 	(obj:0)
+Distribute['3402','6']                              1 	(obj:0)
+Distribute['3359','6']                              1 	(obj:0)
+Distribute['3358','6']                              1 	(obj:0)
+Distribute['3357','6']                              1 	(obj:0)
+Distribute['3345','6']                              1 	(obj:0)
+Distribute['3322','6']                              1 	(obj:0)
+Distribute['3042','6']                              1 	(obj:0)
+Distribute['2998','6']                              1 	(obj:0)
+Distribute['2930','6']                              1 	(obj:0)
+Distribute['2849','6']                              1 	(obj:0)
+Distribute['2813','6']                              1 	(obj:0)
+Distribute['2806','6']                              1 	(obj:0)
+Distribute['2765','6']                              1 	(obj:0)
+Distribute['2670','6']                              1 	(obj:0)
+Distribute['2620','6']                              1 	(obj:0)
+Distribute['2591','6']                              1 	(obj:0)
+Distribute['2462','6']                              1 	(obj:0)
+Distribute['2396','6']                              1 	(obj:0)
+Distribute['2366','6']                              1 	(obj:0)
+Distribute['2335','6']                              1 	(obj:0)
+Distribute['2329','6']                              1 	(obj:0)
+Distribute['2297','6']                              1 	(obj:0)
+Distribute['2291','6']                              1 	(obj:0)
+Distribute['2259','6']                              1 	(obj:0)
+Distribute['2178','6']                              1 	(obj:0)
+Distribute['2173','6']                              1 	(obj:0)
+Distribute['2130','6']                              1 	(obj:0)
+Distribute['2102','6']                              1 	(obj:0)
+Distribute['2043','6']                              1 	(obj:0)
+Distribute['2013','6']                              1 	(obj:0)
+Distribute['1965','6']                              1 	(obj:0)
+Distribute['1867','6']                              1 	(obj:0)
+Distribute['1712','6']                              1 	(obj:0)
+Distribute['1626','6']                              1 	(obj:0)
+Distribute['1614','6']                              1 	(obj:0)
+Distribute['1606','6']                              1 	(obj:0)
+Distribute['1435','6']                              1 	(obj:0)
+Distribute['1353','6']                              1 	(obj:0)
+Distribute['1134','6']                              1 	(obj:0)
+Distribute['1124','6']                              1 	(obj:0)
+Distribute['4231','1']                              1 	(obj:0)
+Distribute['4224','1']                              1 	(obj:0)
+Distribute['4223','1']                              1 	(obj:0)
+Distribute['4218','1']                              1 	(obj:0)
+Distribute['4215','1']                              1 	(obj:0)
+Distribute['4210','1']                              1 	(obj:0)
+Distribute['4014','1']                              1 	(obj:0)
+Distribute['3851','1']                              1 	(obj:0)
+Distribute['3827','1']                              1 	(obj:0)
+Distribute['3807','1']                              1 	(obj:0)
+Distribute['3781','1']                              1 	(obj:0)
+Distribute['3769','1']                              1 	(obj:0)
+Distribute['3768','1']                              1 	(obj:0)
+Distribute['3765','1']                              1 	(obj:0)
+Distribute['3759','1']                              1 	(obj:0)
+Distribute['3747','1']                              1 	(obj:0)
+Distribute['3720','1']                              1 	(obj:0)
+Distribute['3531','1']                              1 	(obj:0)
+Distribute['3435','1']                              1 	(obj:0)
+Distribute['3358','1']                              1 	(obj:0)
+Distribute['3355','1']                              1 	(obj:0)
+Distribute['3345','1']                              1 	(obj:0)
+Distribute['3322','1']                              1 	(obj:0)
+Distribute['3311','1']                              1 	(obj:0)
+Distribute['3200','1']                              1 	(obj:0)
+Distribute['3042','1']                              1 	(obj:0)
+Distribute['2998','1']                              1 	(obj:0)
+Distribute['2829','1']                              1 	(obj:0)
+Distribute['2813','1']                              1 	(obj:0)
+Distribute['2733','1']                              1 	(obj:0)
+Distribute['2719','1']                              1 	(obj:0)
+Distribute['2693','1']                              1 	(obj:0)
+Distribute['2652','1']                              1 	(obj:0)
+Distribute['2631','1']                              1 	(obj:0)
+Distribute['2620','1']                              1 	(obj:0)
+Distribute['2591','1']                              1 	(obj:0)
+Distribute['2574','1']                              1 	(obj:0)
+Distribute['2527','1']                              1 	(obj:0)
+Distribute['2455','1']                              1 	(obj:0)
+Distribute['2446','1']                              1 	(obj:0)
+Distribute['2407','1']                              1 	(obj:0)
+Distribute['2369','1']                              1 	(obj:0)
+Distribute['2343','1']                              1 	(obj:0)
+Distribute['2335','1']                              1 	(obj:0)
+Distribute['2267','1']                              1 	(obj:0)
+Distribute['2257','1']                              1 	(obj:0)
+Distribute['2204','1']                              1 	(obj:0)
+Distribute['2181','1']                              1 	(obj:0)
+Distribute['2178','1']                              1 	(obj:0)
+Distribute['2127','1']                              1 	(obj:0)
+Distribute['2101','1']                              1 	(obj:0)
+Distribute['1919','1']                              1 	(obj:0)
+Distribute['1915','1']                              1 	(obj:0)
+Distribute['1516','1']                              1 	(obj:0)
+Distribute['1515','1']                              1 	(obj:0)
+Distribute['1373','1']                              1 	(obj:0)
+Distribute['1134','1']                              1 	(obj:0)
+Distribute['1131','1']                              1 	(obj:0)
+Distribute['1100','1']                              1 	(obj:0)
+Distribute['1087','1']                              1 	(obj:0)
+Surplus['1134',_60]                          0.338497 	(obj:1)
+Surplus['1614',_60]                          0.480421 	(obj:1)
+Surplus['1621',_60]                          0.263377 	(obj:1)
+Surplus['1867',_60]                           0.44719 	(obj:1)
+Surplus['2130',_60]                          0.418228 	(obj:1)
+Surplus['2178',_60]                          0.373076 	(obj:1)
+Surplus['2216',_60]                          0.273609 	(obj:1)
+Surplus['2335',_60]                          0.347879 	(obj:1)
+Surplus['2396',_60]                          0.454364 	(obj:1)
+Surplus['2407',_60]                          0.169184 	(obj:1)
+Surplus['2466',_60]                          0.226596 	(obj:1)
+Surplus['2591',_60]                          0.366797 	(obj:1)
+Surplus['2620',_60]                          0.344627 	(obj:1)
+Surplus['2806',_60]                          0.459457 	(obj:1)
+Surplus['2813',_60]                          0.406294 	(obj:1)
+Surplus['2930',_60]                          0.489736 	(obj:1)
+Surplus['2998',_60]                          0.330227 	(obj:1)
+Surplus['3042',_60]                          0.359624 	(obj:1)
+Surplus['3198',_60]                          0.025568 	(obj:1)
+Surplus['3311',_60]                          0.091065 	(obj:1)
+Surplus['3322',_60]                           0.39155 	(obj:1)
+Surplus['3345',_60]                          0.385786 	(obj:1)
+Surplus['3355',_60]                          0.168741 	(obj:1)
+Surplus['3357',_60]                          0.478968 	(obj:1)
+Surplus['3358',_60]                          0.353853 	(obj:1)
+Surplus['3402',_60]                          0.444986 	(obj:1)
+Surplus['3431',_60]                          0.051476 	(obj:1)
+Surplus['3432',_60]                          0.471964 	(obj:1)
+Surplus['3435',_60]                          0.361604 	(obj:1)
+Surplus['3481',_60]                          0.486425 	(obj:1)
+Surplus['3531',_60]                          0.330859 	(obj:1)
+Surplus['3641',_60]                          0.271721 	(obj:1)
+Surplus['3720',_60]                          0.128037 	(obj:1)
+Surplus['3721',_60]               0.00395800000000002 	(obj:1)
+Surplus['3747',_60]                          0.303583 	(obj:1)
+Surplus['3751',_60]                          0.230386 	(obj:1)
+Surplus['3764',_60]                          0.259283 	(obj:1)
+Surplus['3765',_60]                          0.296425 	(obj:1)
+Surplus['3767',_60]                          0.270387 	(obj:1)
+Surplus['3768',_60]                          0.192715 	(obj:1)
+Surplus['3769',_60]                          0.126827 	(obj:1)
+Surplus['3781',_60]                           0.36714 	(obj:1)
+Surplus['3807',_60]                          0.170064 	(obj:1)
+Surplus['3825',_60]                          0.494076 	(obj:1)
+Surplus['3851',_60]                          0.302273 	(obj:1)
+Surplus['3891',_60]                           0.26049 	(obj:1)
+Surplus['4014',_60]                          0.385246 	(obj:1)
+Surplus['4174',_60]                          0.448596 	(obj:1)
+Surplus['4217',_60]               0.00352399999999997 	(obj:1)
+Surplus['4218',_60]                          0.317555 	(obj:1)
+Surplus['4231',_60]                          0.312357 	(obj:1)
+Surplus['1087',_65]                          0.573659 	(obj:1)
+Surplus['1100',_65]                          0.580603 	(obj:1)
+Surplus['1124',_65]                          0.097339 	(obj:1)
+Surplus['1131',_65]                          0.653107 	(obj:1)
+Surplus['1134',_65]                          0.631819 	(obj:1)
+Surplus['1353',_65]                          0.223054 	(obj:1)
+Surplus['1373',_65]                           0.57685 	(obj:1)
+Surplus['1435',_65]                          0.249883 	(obj:1)
+Surplus['1515',_65]                           0.69884 	(obj:1)
+Surplus['1516',_65]                          0.499157 	(obj:1)
+Surplus['1606',_65]                          0.254698 	(obj:1)
+Surplus['1614',_65]                          0.139907 	(obj:1)
+Surplus['1621',_65]                           0.36289 	(obj:1)
+Surplus['1626',_65]                          0.029339 	(obj:1)
+Surplus['1712',_65]                          0.255565 	(obj:1)
+Surplus['1867',_65]                0.0209410000000001 	(obj:1)
+Surplus['1915',_65]                          0.464114 	(obj:1)
+Surplus['1919',_65]                          0.677507 	(obj:1)
+Surplus['1965',_65]               0.00741499999999995 	(obj:1)
+Surplus['2043',_65]                          0.246175 	(obj:1)
+Surplus['2101',_65]                          0.507088 	(obj:1)
+Surplus['2102',_65]                           0.06194 	(obj:1)
+Surplus['2127',_65]                          0.613288 	(obj:1)
+Surplus['2178',_65]                          0.755612 	(obj:1)
+Surplus['2181',_65]                           0.72629 	(obj:1)
+Surplus['2204',_65]                          0.455081 	(obj:1)
+Surplus['2216',_65]                          0.399519 	(obj:1)
+Surplus['2257',_65]                          0.479664 	(obj:1)
+Surplus['2267',_65]                          0.625337 	(obj:1)
+Surplus['2291',_65]                          0.251317 	(obj:1)
+Surplus['2297',_65]                          0.104823 	(obj:1)
+Surplus['2335',_65]                          0.665407 	(obj:1)
+Surplus['2343',_65]                          0.430314 	(obj:1)
+Surplus['2366',_65]                          0.195672 	(obj:1)
+Surplus['2369',_65]                          0.722293 	(obj:1)
+Surplus['2396',_65]                          0.046624 	(obj:1)
+Surplus['2407',_65]                0.0256769999999999 	(obj:1)
+Surplus['2446',_65]                          0.596178 	(obj:1)
+Surplus['2455',_65]                          0.571616 	(obj:1)
+Surplus['2462',_65]                          0.105002 	(obj:1)
+Surplus['2466',_65]                          0.231212 	(obj:1)
+Surplus['2477',_65]                          0.400887 	(obj:1)
+Surplus['2527',_65]                          0.433653 	(obj:1)
+Surplus['2574',_65]                          0.524279 	(obj:1)
+Surplus['2591',_65]                          0.733133 	(obj:1)
+Surplus['2620',_65]                          0.653763 	(obj:1)
+Surplus['2631',_65]                          0.651735 	(obj:1)
+Surplus['2652',_65]                          0.477757 	(obj:1)
+Surplus['2670',_65]                          0.147857 	(obj:1)
+Surplus['2693',_65]                          0.541759 	(obj:1)
+Surplus['2719',_65]                          0.694739 	(obj:1)
+Surplus['2733',_65]                          0.412937 	(obj:1)
+Surplus['2806',_65]                0.0648580000000001 	(obj:1)
+Surplus['2813',_65]                          0.874531 	(obj:1)
+Surplus['2829',_65]                          0.718339 	(obj:1)
+Surplus['2849',_65]                          0.310817 	(obj:1)
+Surplus['2930',_65]                          0.173255 	(obj:1)
+Surplus['2998',_65]                          0.602211 	(obj:1)
+Surplus['3042',_65]                          0.707455 	(obj:1)
+Surplus['3198',_65]                          0.511535 	(obj:1)
+Surplus['3322',_65]                          0.821747 	(obj:1)
+Surplus['3345',_65]                          0.801114 	(obj:1)
+Surplus['3355',_65]                          0.024092 	(obj:1)
+Surplus['3357',_65]                          0.134704 	(obj:1)
+Surplus['3358',_65]                          0.686794 	(obj:1)
+Surplus['3359',_65]                          0.236636 	(obj:1)
+Surplus['3402',_65]                0.0130509999999999 	(obj:1)
+Surplus['3424',_65]                          0.706489 	(obj:1)
+Surplus['3431',_65]                          0.604282 	(obj:1)
+Surplus['3432',_65]                          0.109632 	(obj:1)
+Surplus['3435',_65]                          0.714542 	(obj:1)
+Surplus['3481',_65]                          0.161403 	(obj:1)
+Surplus['3531',_65]                          0.604474 	(obj:1)
+Surplus['3627',_65]                          0.227203 	(obj:1)
+Surplus['3637',_65]                          0.287579 	(obj:1)
+Surplus['3641',_65]                           0.39276 	(obj:1)
+Surplus['3721',_65]                          0.434171 	(obj:1)
+Surplus['3747',_65]                          0.506828 	(obj:1)
+Surplus['3751',_65]                          0.244783 	(obj:1)
+Surplus['3759',_65]                          0.498144 	(obj:1)
+Surplus['3761',_65]                          0.296377 	(obj:1)
+Surplus['3764',_65]                          0.348233 	(obj:1)
+Surplus['3765',_65]                          0.481202 	(obj:1)
+Surplus['3767',_65]                          0.387985 	(obj:1)
+Surplus['3768',_65]                          0.109919 	(obj:1)
+Surplus['3781',_65]                          0.734361 	(obj:1)
+Surplus['3807',_65]                0.0288270000000002 	(obj:1)
+Surplus['3825',_65]                           0.18879 	(obj:1)
+Surplus['3827',_65]                          0.471195 	(obj:1)
+Surplus['3851',_65]                          0.502137 	(obj:1)
+Surplus['3891',_65]                          0.352554 	(obj:1)
+Surplus['4014',_65]                          0.799181 	(obj:1)
+Surplus['4018',_65]                           0.69646 	(obj:1)
+Surplus['4174',_65]                          0.025973 	(obj:1)
+Surplus['4179',_65]                          0.282628 	(obj:1)
+Surplus['4210',_65]                          0.455675 	(obj:1)
+Surplus['4215',_65]                          0.625372 	(obj:1)
+Surplus['4217',_65]                          0.432615 	(obj:1)
+Surplus['4218',_65]                          0.556847 	(obj:1)
+Surplus['4223',_65]                          0.426797 	(obj:1)
+Surplus['4224',_65]                           0.50267 	(obj:1)
+Surplus['4231',_65]                          0.538238 	(obj:1)
+Surplus['1087',_70]                0.0477449999999999 	(obj:1)
+Surplus['1100',_70]                          0.425965 	(obj:1)
+Surplus['1131',_70]                          0.156487 	(obj:1)
+Surplus['1373',_70]                          0.052114 	(obj:1)
+Surplus['1515',_70]                          0.219083 	(obj:1)
+Surplus['1621',_70]                          0.390548 	(obj:1)
+Surplus['1919',_70]                          0.189883 	(obj:1)
+Surplus['2127',_70]                          0.101986 	(obj:1)
+Surplus['2181',_70]                          0.256654 	(obj:1)
+Surplus['2216',_70]                          0.440683 	(obj:1)
+Surplus['2267',_70]                          0.118478 	(obj:1)
+Surplus['2369',_70]                          0.251183 	(obj:1)
+Surplus['2446',_70]                          0.078568 	(obj:1)
+Surplus['2455',_70]                0.0449489999999999 	(obj:1)
+Surplus['2466',_70]                          0.210318 	(obj:1)
+Surplus['2477',_70]                0.0738399999999997 	(obj:1)
+Surplus['2631',_70]                          0.154609 	(obj:1)
+Surplus['2693',_70]               0.00408300000000006 	(obj:1)
+Surplus['2719',_70]                           0.21347 	(obj:1)
+Surplus['2813',_70]                0.0908389999999999 	(obj:1)
+Surplus['2829',_70]                          0.245771 	(obj:1)
+Surplus['3198',_70]                          0.225286 	(obj:1)
+Surplus['3322',_70]                0.0185930000000001 	(obj:1)
+Surplus['3424',_70]                          0.123406 	(obj:1)
+Surplus['3431',_70]                           0.35223 	(obj:1)
+Surplus['3641',_70]                          0.431431 	(obj:1)
+Surplus['3721',_70]                          0.119396 	(obj:1)
+Surplus['3751',_70]                          0.228893 	(obj:1)
+Surplus['3764',_70]                          0.370487 	(obj:1)
+Surplus['3767',_70]                          0.424895 	(obj:1)
+Surplus['3768',_70]                0.0443020000000001 	(obj:1)
+Surplus['3891',_70]                          0.376401 	(obj:1)
+Surplus['4018',_70]                           0.10968 	(obj:1)
+Surplus['4215',_70]                          0.118526 	(obj:1)
+Surplus['4217',_70]                          0.117267 	(obj:1)
+Surplus['1124',_75]                           0.18811 	(obj:1)
+Surplus['1353',_75]                          0.401741 	(obj:1)
+Surplus['1435',_75]                          0.425872 	(obj:1)
+Surplus['1606',_75]                          0.329644 	(obj:1)
+Surplus['1614',_75]                          0.326956 	(obj:1)
+Surplus['1626',_75]                          0.126948 	(obj:1)
+Surplus['1712',_75]                          0.430983 	(obj:1)
+Surplus['1867',_75]                          0.219953 	(obj:1)
+Surplus['1965',_75]                          0.107228 	(obj:1)
+Surplus['2013',_75]                          0.030578 	(obj:1)
+Surplus['2043',_75]                          0.321979 	(obj:1)
+Surplus['2102',_75]                           0.15627 	(obj:1)
+Surplus['2130',_75]                          0.126695 	(obj:1)
+Surplus['2173',_75]                          0.042559 	(obj:1)
+Surplus['2259',_75]                            0.0746 	(obj:1)
+Surplus['2291',_75]                          0.326603 	(obj:1)
+Surplus['2297',_75]                          0.194841 	(obj:1)
+Surplus['2329',_75]                          0.025706 	(obj:1)
+Surplus['2366',_75]                          0.276554 	(obj:1)
+Surplus['2396',_75]                          0.243053 	(obj:1)
+Surplus['2407',_75]                          0.324771 	(obj:1)
+Surplus['2462',_75]                          0.195002 	(obj:1)
+Surplus['2670',_75]                          0.233547 	(obj:1)
+Surplus['2765',_75]                           0.06271 	(obj:1)
+Surplus['2806',_75]                          0.259453 	(obj:1)
+Surplus['2813',_75]                          0.088266 	(obj:1)
+Surplus['2849',_75]                          0.480679 	(obj:1)
+Surplus['2930',_75]                           0.35695 	(obj:1)
+Surplus['3200',_75]                          0.247619 	(obj:1)
+Surplus['3311',_75]                0.0732300000000001 	(obj:1)
+Surplus['3322',_75]                0.0407900000000001 	(obj:1)
+Surplus['3345',_75]                0.0222309999999999 	(obj:1)
+Surplus['3355',_75]                          0.323346 	(obj:1)
+Surplus['3357',_75]                          0.322276 	(obj:1)
+Surplus['3359',_75]                          0.413958 	(obj:1)
+Surplus['3402',_75]                          0.212856 	(obj:1)
+Surplus['3424',_75]                          0.138238 	(obj:1)
+Surplus['3432',_75]                          0.299725 	(obj:1)
+Surplus['3481',_75]                           0.34629 	(obj:1)
+Surplus['3627',_75]                          0.405473 	(obj:1)
+Surplus['3720',_75]                          0.192279 	(obj:1)
+Surplus['3759',_75]                0.0514029999999996 	(obj:1)
+Surplus['3761',_75]                          0.467691 	(obj:1)
+Surplus['3768',_75]                          0.400541 	(obj:1)
+Surplus['3769',_75]                          0.188383 	(obj:1)
+Surplus['3807',_75]                          0.327605 	(obj:1)
+Surplus['3825',_75]                          0.370923 	(obj:1)
+Surplus['4014',_75]                          0.020492 	(obj:1)
+Surplus['4018',_75]                          0.129219 	(obj:1)
+Surplus['4174',_75]                          0.224478 	(obj:1)
+Surplus['4179',_75]                          0.455325 	(obj:1)
+Surplus['4226',_75]                          0.086435 	(obj:1)
+Surplus['4270',_75]                          0.094201 	(obj:1)
+Surplus['1087',_80]                          0.362529 	(obj:1)
+Surplus['1131',_80]                          0.398037 	(obj:1)
+Surplus['1132',_80]                          0.171385 	(obj:1)
+Surplus['1353',_80]                          0.205834 	(obj:1)
+Surplus['1373',_80]                          0.363955 	(obj:1)
+Surplus['1435',_80]                          0.217825 	(obj:1)
+Surplus['1515',_80]                          0.418476 	(obj:1)
+Surplus['1516',_80]                          0.329232 	(obj:1)
+Surplus['1530',_80]                          0.484778 	(obj:1)
+Surplus['1614',_80]                          0.168674 	(obj:1)
+Surplus['1712',_80]                          0.220364 	(obj:1)
+Surplus['1867',_80]                          0.115504 	(obj:1)
+Surplus['1915',_80]                          0.313571 	(obj:1)
+Surplus['1919',_80]                          0.408941 	(obj:1)
+Surplus['2101',_80]                          0.332777 	(obj:1)
+Surplus['2127',_80]                           0.38024 	(obj:1)
+Surplus['2130',_80]                          0.069165 	(obj:1)
+Surplus['2181',_80]                          0.430744 	(obj:1)
+Surplus['2204',_80]                          0.309533 	(obj:1)
+Surplus['2245',_80]                           0.49158 	(obj:1)
+Surplus['2257',_80]                           0.32052 	(obj:1)
+Surplus['2267',_80]                          0.385625 	(obj:1)
+Surplus['2321',_80]                          0.442664 	(obj:1)
+Surplus['2343',_80]                          0.298464 	(obj:1)
+Surplus['2369',_80]                          0.428958 	(obj:1)
+Surplus['2396',_80]                          0.126983 	(obj:1)
+Surplus['2446',_80]                          0.372594 	(obj:1)
+Surplus['2455',_80]                          0.361616 	(obj:1)
+Surplus['2458',_80]                          0.475256 	(obj:1)
+Surplus['2477',_80]                          0.391458 	(obj:1)
+Surplus['2527',_80]                          0.299956 	(obj:1)
+Surplus['2574',_80]                           0.34046 	(obj:1)
+Surplus['2581',_80]                           0.45625 	(obj:1)
+Surplus['2631',_80]                          0.397423 	(obj:1)
+Surplus['2643',_80]                          0.435607 	(obj:1)
+Surplus['2652',_80]                          0.319668 	(obj:1)
+Surplus['2693',_80]                          0.348272 	(obj:1)
+Surplus['2719',_80]                          0.416643 	(obj:1)
+Surplus['2733',_80]                          0.290698 	(obj:1)
+Surplus['2806',_80]                          0.135132 	(obj:1)
+Surplus['2813',_80]                0.0500699999999999 	(obj:1)
+Surplus['2829',_80]                           0.42719 	(obj:1)
+Surplus['2849',_80]                          0.245058 	(obj:1)
+Surplus['2930',_80]                          0.183578 	(obj:1)
+Surplus['3198',_80]                           0.44091 	(obj:1)
+Surplus['3200',_80]                          0.135463 	(obj:1)
+Surplus['3322',_80]                          0.026479 	(obj:1)
+Surplus['3345',_80]                          0.017258 	(obj:1)
+Surplus['3357',_80]                          0.166348 	(obj:1)
+Surplus['3359',_80]                          0.211905 	(obj:1)
+Surplus['3402',_80]                          0.111978 	(obj:1)
+Surplus['3424',_80]                0.0811120000000001 	(obj:1)
+Surplus['3431',_80]                          0.482361 	(obj:1)
+Surplus['3432',_80]                          0.155143 	(obj:1)
+Surplus['3481',_80]                          0.178281 	(obj:1)
+Surplus['3627',_80]                          0.207688 	(obj:1)
+Surplus['3721',_80]                          0.406333 	(obj:1)
+Surplus['3761',_80]                          0.238604 	(obj:1)
+Surplus['3805',_80]                          0.458776 	(obj:1)
+Surplus['3825',_80]                          0.190521 	(obj:1)
+Surplus['3827',_80]                          0.316735 	(obj:1)
+Surplus['4014',_80]                          0.016394 	(obj:1)
+Surplus['4018',_80]                           0.07663 	(obj:1)
+Surplus['4103',_80]                          0.475245 	(obj:1)
+Surplus['4174',_80]                          0.117753 	(obj:1)
+Surplus['4179',_80]                           0.23246 	(obj:1)
+Surplus['4210',_80]                          0.309799 	(obj:1)
+Surplus['4215',_80]                          0.385641 	(obj:1)
+Surplus['4217',_80]                          0.405638 	(obj:1)
+Surplus['4223',_80]                          0.296892 	(obj:1)
+Surplus['4224',_80]                          0.330802 	(obj:1)
+Surplus['3759',_85]                          0.293058 	(obj:1)
+Slack['1087',_60]                            0.398419 	(obj:1)
+Slack['1100',_60]                             0.11715 	(obj:1)
+Slack['1124',_60]                             0.25214 	(obj:1)
+Slack['1131',_60]                            0.376227 	(obj:1)
+Slack['1132',_60]                            0.142884 	(obj:1)
+Slack['1353',_60]                            0.496354 	(obj:1)
+Slack['1373',_60]                            0.397528 	(obj:1)
+Slack['1435',_60]                             0.48886 	(obj:1)
+Slack['1515',_60]                            0.363452 	(obj:1)
+Slack['1516',_60]                             0.41923 	(obj:1)
+Slack['1530',_60]                            0.322014 	(obj:1)
+Slack['1606',_60]                            0.208185 	(obj:1)
+Slack['1626',_60]                            0.271134 	(obj:1)
+Slack['1712',_60]                            0.487272 	(obj:1)
+Slack['1915',_60]                            0.429018 	(obj:1)
+Slack['1919',_60]                            0.369412 	(obj:1)
+Slack['1965',_60]                            0.277258 	(obj:1)
+Slack['2013',_60]                            0.301063 	(obj:1)
+Slack['2043',_60]                            0.210566 	(obj:1)
+Slack['2101',_60]                            0.417015 	(obj:1)
+Slack['2102',_60]                            0.262028 	(obj:1)
+Slack['2127',_60]                             0.38735 	(obj:1)
+Slack['2173',_60]                            0.297342 	(obj:1)
+Slack['2181',_60]                            0.355785 	(obj:1)
+Slack['2204',_60]                            0.431542 	(obj:1)
+Slack['2245',_60]                            0.317762 	(obj:1)
+Slack['2257',_60]                            0.424675 	(obj:1)
+Slack['2259',_60]                            0.287391 	(obj:1)
+Slack['2267',_60]                            0.383984 	(obj:1)
+Slack['2291',_60]                            0.209129 	(obj:1)
+Slack['2297',_60]                            0.250049 	(obj:1)
+Slack['2321',_60]                            0.348335 	(obj:1)
+Slack['2329',_60]                            0.302576 	(obj:1)
+Slack['2343',_60]                             0.43846 	(obj:1)
+Slack['2366',_60]                            0.224673 	(obj:1)
+Slack['2369',_60]                            0.356901 	(obj:1)
+Slack['2446',_60]                            0.392129 	(obj:1)
+Slack['2455',_60]                             0.39899 	(obj:1)
+Slack['2458',_60]                            0.327965 	(obj:1)
+Slack['2462',_60]                                0.25 	(obj:1)
+Slack['2477',_60]                 0.00533899999999998 	(obj:1)
+Slack['2527',_60]                            0.437527 	(obj:1)
+Slack['2574',_60]                            0.412212 	(obj:1)
+Slack['2581',_60]                            0.339844 	(obj:1)
+Slack['2631',_60]                             0.37661 	(obj:1)
+Slack['2643',_60]                            0.352746 	(obj:1)
+Slack['2652',_60]                            0.425207 	(obj:1)
+Slack['2670',_60]                            0.238029 	(obj:1)
+Slack['2693',_60]                             0.40733 	(obj:1)
+Slack['2719',_60]                            0.364598 	(obj:1)
+Slack['2733',_60]                            0.443314 	(obj:1)
+Slack['2765',_60]                            0.291084 	(obj:1)
+Slack['2829',_60]                            0.358006 	(obj:1)
+Slack['2849',_60]                            0.471839 	(obj:1)
+Slack['3200',_60]                            0.165336 	(obj:1)
+Slack['3359',_60]                             0.49256 	(obj:1)
+Slack['3424',_60]                            0.199305 	(obj:1)
+Slack['3627',_60]                            0.495195 	(obj:1)
+Slack['3637',_60]                   0.316318999999999 	(obj:1)
+Slack['3759',_60]                            0.536831 	(obj:1)
+Slack['3761',_60]                            0.475872 	(obj:1)
+Slack['3805',_60]                            0.338265 	(obj:1)
+Slack['3827',_60]                             0.42704 	(obj:1)
+Slack['4018',_60]                            0.202106 	(obj:1)
+Slack['4103',_60]                            0.327972 	(obj:1)
+Slack['4179',_60]                            0.479713 	(obj:1)
+Slack['4210',_60]                            0.431376 	(obj:1)
+Slack['4215',_60]                            0.383974 	(obj:1)
+Slack['4223',_60]                            0.439442 	(obj:1)
+Slack['4224',_60]                            0.418249 	(obj:1)
+Slack['4226',_60]                            0.283716 	(obj:1)
+Slack['4270',_60]                            0.281304 	(obj:1)
+Slack['1132',_65]                  0.0915260000000001 	(obj:1)
+Slack['1530',_65]                            0.152809 	(obj:1)
+Slack['2013',_65]                  0.0778040000000138 	(obj:1)
+Slack['2130',_65]                  0.0827429999999998 	(obj:1)
+Slack['2173',_65]                  0.0644839999997866 	(obj:1)
+Slack['2245',_65]                             0.13759 	(obj:1)
+Slack['2259',_65]                            0.028861 	(obj:1)
+Slack['2321',_65]                            0.247039 	(obj:1)
+Slack['2329',_65]                  0.0832209999998135 	(obj:1)
+Slack['2458',_65]                            0.174115 	(obj:1)
+Slack['2581',_65]                            0.216642 	(obj:1)
+Slack['2643',_65]                            0.262829 	(obj:1)
+Slack['2765',_65]                  0.0420799999999746 	(obj:1)
+Slack['3200',_65]                            0.171901 	(obj:1)
+Slack['3311',_65]                            0.253987 	(obj:1)
+Slack['3720',_65]                            0.121628 	(obj:1)
+Slack['3769',_65]                            0.125959 	(obj:1)
+Slack['3805',_65]                             0.21099 	(obj:1)
+Slack['4103',_65]                            0.174138 	(obj:1)
+Slack['4226',_65]                  0.0157020000001271 	(obj:1)
+Slack['4270',_65]                 0.00706900000002531 	(obj:1)
+Slack['1124',_70]                            0.235485 	(obj:1)
+Slack['1132',_70]                            0.600133 	(obj:1)
+Slack['1134',_70]                            0.241365 	(obj:1)
+Slack['1353',_70]                            0.432133 	(obj:1)
+Slack['1435',_70]                            0.395412 	(obj:1)
+Slack['1516',_70]                  0.0542270000000002 	(obj:1)
+Slack['1530',_70]                            0.577867 	(obj:1)
+Slack['1606',_70]                  0.0201060000000002 	(obj:1)
+Slack['1614',_70]                            0.545937 	(obj:1)
+Slack['1626',_70]                            0.328558 	(obj:1)
+Slack['1712',_70]                            0.387635 	(obj:1)
+Slack['1867',_70]                            0.708768 	(obj:1)
+Slack['1915',_70]                             0.10219 	(obj:1)
+Slack['1965',_70]                            0.358566 	(obj:1)
+Slack['2013',_70]                    0.47520700000002 	(obj:1)
+Slack['2043',_70]                  0.0317710000000005 	(obj:1)
+Slack['2101',_70]                  0.0433720000000002 	(obj:1)
+Slack['2102',_70]                            0.283937 	(obj:1)
+Slack['2130',_70]                            0.850682 	(obj:1)
+Slack['2173',_70]                   0.456974999999689 	(obj:1)
+Slack['2178',_70]                  0.0719270000000001 	(obj:1)
+Slack['2204',_70]                            0.114555 	(obj:1)
+Slack['2245',_70]                            0.557036 	(obj:1)
+Slack['2257',_70]                  0.0809070000000001 	(obj:1)
+Slack['2259',_70]                            0.408217 	(obj:1)
+Slack['2291',_70]                  0.0247339999999998 	(obj:1)
+Slack['2297',_70]                            0.225242 	(obj:1)
+Slack['2321',_70]                            0.706842 	(obj:1)
+Slack['2329',_70]                   0.482620999999723 	(obj:1)
+Slack['2335',_70]                            0.195393 	(obj:1)
+Slack['2343',_70]                            0.148453 	(obj:1)
+Slack['2366',_70]                            0.100896 	(obj:1)
+Slack['2396',_70]                            0.673615 	(obj:1)
+Slack['2407',_70]                  0.0710009999999999 	(obj:1)
+Slack['2458',_70]                            0.607029 	(obj:1)
+Slack['2462',_70]                            0.224998 	(obj:1)
+Slack['2527',_70]                            0.143883 	(obj:1)
+Slack['2574',_70]                            0.019841 	(obj:1)
+Slack['2581',_70]                            0.665236 	(obj:1)
+Slack['2591',_70]                            0.102695 	(obj:1)
+Slack['2620',_70]                             0.21133 	(obj:1)
+Slack['2643',_70]                            0.728453 	(obj:1)
+Slack['2652',_70]                  0.0835159999999999 	(obj:1)
+Slack['2670',_70]                            0.166341 	(obj:1)
+Slack['2733',_70]                            0.172237 	(obj:1)
+Slack['2765',_70]                   0.426310999999964 	(obj:1)
+Slack['2806',_70]                            0.648658 	(obj:1)
+Slack['2849',_70]                             0.31201 	(obj:1)
+Slack['2930',_70]                            0.500294 	(obj:1)
+Slack['2998',_70]                             0.28189 	(obj:1)
+Slack['3042',_70]                             0.13784 	(obj:1)
+Slack['3200',_70]                            0.710144 	(obj:1)
+Slack['3311',_70]                             0.45378 	(obj:1)
+Slack['3345',_70]                 0.00964799999999988 	(obj:1)
+Slack['3355',_70]                  0.0731700000000002 	(obj:1)
+Slack['3357',_70]                            0.553059 	(obj:1)
+Slack['3358',_70]                            0.166119 	(obj:1)
+Slack['3359',_70]                            0.413542 	(obj:1)
+Slack['3402',_70]                            0.719567 	(obj:1)
+Slack['3432',_70]                            0.587375 	(obj:1)
+Slack['3435',_70]                            0.128141 	(obj:1)
+Slack['3481',_70]                            0.516515 	(obj:1)
+Slack['3531',_70]                            0.278793 	(obj:1)
+Slack['3627',_70]                            0.426454 	(obj:1)
+Slack['3637',_70]                            0.449961 	(obj:1)
+Slack['3720',_70]                            0.272619 	(obj:1)
+Slack['3747',_70]                            0.412442 	(obj:1)
+Slack['3759',_70]                   0.530473000000001 	(obj:1)
+Slack['3761',_70]                            0.331774 	(obj:1)
+Slack['3765',_70]                            0.447517 	(obj:1)
+Slack['3769',_70]                            0.278547 	(obj:1)
+Slack['3781',_70]                            0.101015 	(obj:1)
+Slack['3805',_70]                              0.6575 	(obj:1)
+Slack['3807',_70]                  0.0666890000000038 	(obj:1)
+Slack['3825',_70]                             0.47903 	(obj:1)
+Slack['3827',_70]                            0.092498 	(obj:1)
+Slack['3851',_70]                   0.418861999999999 	(obj:1)
+Slack['4014',_70]                  0.0122939999999998 	(obj:1)
+Slack['4103',_70]                            0.607061 	(obj:1)
+Slack['4174',_70]                            0.701881 	(obj:1)
+Slack['4179',_70]                            0.350592 	(obj:1)
+Slack['4210',_70]                            0.113741 	(obj:1)
+Slack['4218',_70]                             0.34398 	(obj:1)
+Slack['4223',_70]                            0.153267 	(obj:1)
+Slack['4224',_70]                  0.0494180000000002 	(obj:1)
+Slack['4226',_70]                   0.390207000000127 	(obj:1)
+Slack['4231',_70]                            0.369451 	(obj:1)
+Slack['4270',_70]                   0.378390000000025 	(obj:1)
+Slack['1087',_75]                             0.28291 	(obj:1)
+Slack['1100',_75]                            0.377223 	(obj:1)
+Slack['1131',_75]                            0.211451 	(obj:1)
+Slack['1132',_75]                            0.680087 	(obj:1)
+Slack['1134',_75]                             0.13004 	(obj:1)
+Slack['1373',_75]                             0.28004 	(obj:1)
+Slack['1515',_75]                            0.170317 	(obj:1)
+Slack['1516',_75]                            0.349921 	(obj:1)
+Slack['1530',_75]                  0.0368839999999999 	(obj:1)
+Slack['1621',_75]                   0.371924999999994 	(obj:1)
+Slack['1915',_75]                            0.381439 	(obj:1)
+Slack['1919',_75]                            0.189505 	(obj:1)
+Slack['2101',_75]                            0.342787 	(obj:1)
+Slack['2127',_75]                            0.247266 	(obj:1)
+Slack['2178',_75]                  0.0186950000000001 	(obj:1)
+Slack['2181',_75]                            0.145627 	(obj:1)
+Slack['2204',_75]                            0.389564 	(obj:1)
+Slack['2216',_75]                   0.338980000000001 	(obj:1)
+Slack['2245',_75]                  0.0231950000000001 	(obj:1)
+Slack['2257',_75]                            0.367453 	(obj:1)
+Slack['2267',_75]                            0.236429 	(obj:1)
+Slack['2321',_75]                            0.121639 	(obj:1)
+Slack['2335',_75]                  0.0998299999999998 	(obj:1)
+Slack['2343',_75]                             0.41184 	(obj:1)
+Slack['2369',_75]                            0.149222 	(obj:1)
+Slack['2446',_75]                            0.262655 	(obj:1)
+Slack['2455',_75]                            0.284748 	(obj:1)
+Slack['2458',_75]                            0.056047 	(obj:1)
+Slack['2466',_75]                   0.490362000000001 	(obj:1)
+Slack['2477',_75]                            0.237191 	(obj:1)
+Slack['2527',_75]                            0.408838 	(obj:1)
+Slack['2574',_75]                            0.327324 	(obj:1)
+Slack['2581',_75]                            0.094298 	(obj:1)
+Slack['2591',_75]                  0.0389140000000001 	(obj:1)
+Slack['2620',_75]                            0.110302 	(obj:1)
+Slack['2631',_75]                            0.212686 	(obj:1)
+Slack['2643',_75]                            0.135841 	(obj:1)
+Slack['2652',_75]                            0.369168 	(obj:1)
+Slack['2693',_75]                            0.311602 	(obj:1)
+Slack['2719',_75]                            0.174005 	(obj:1)
+Slack['2733',_75]                             0.42747 	(obj:1)
+Slack['2829',_75]                            0.152779 	(obj:1)
+Slack['2998',_75]                             0.15667 	(obj:1)
+Slack['3042',_75]                  0.0620090000000002 	(obj:1)
+Slack['3198',_75]                             0.13767 	(obj:1)
+Slack['3358',_75]                  0.0805929999999999 	(obj:1)
+Slack['3431',_75]                            0.054249 	(obj:1)
+Slack['3435',_75]                  0.0556350000000001 	(obj:1)
+Slack['3531',_75]                            0.154635 	(obj:1)
+Slack['3637',_75]                            0.238546 	(obj:1)
+Slack['3641',_75]                            0.345059 	(obj:1)
+Slack['3721',_75]                            0.207254 	(obj:1)
+Slack['3747',_75]                            0.242462 	(obj:1)
+Slack['3751',_75]                            0.478156 	(obj:1)
+Slack['3764',_75]                            0.385109 	(obj:1)
+Slack['3765',_75]                            0.265511 	(obj:1)
+Slack['3767',_75]                   0.349354000000017 	(obj:1)
+Slack['3781',_75]                  0.0378099999999999 	(obj:1)
+Slack['3805',_75]                  0.0892139999999999 	(obj:1)
+Slack['3827',_75]                             0.37507 	(obj:1)
+Slack['3851',_75]                            0.246681 	(obj:1)
+Slack['3891',_75]                   0.381221999999994 	(obj:1)
+Slack['4103',_75]                  0.0560689999999999 	(obj:1)
+Slack['4210',_75]                             0.38903 	(obj:1)
+Slack['4215',_75]                            0.236397 	(obj:1)
+Slack['4217',_75]                            0.208653 	(obj:1)
+Slack['4218',_75]                            0.197473 	(obj:1)
+Slack['4223',_75]                            0.415004 	(obj:1)
+Slack['4224',_75]                            0.346761 	(obj:1)
+Slack['4231',_75]                             0.21421 	(obj:1)
+Slack['1100',_80]                             0.18744 	(obj:1)
+Slack['1124',_80]                            0.403424 	(obj:1)
+Slack['1134',_80]                            0.058405 	(obj:1)
+Slack['1606',_80]                            0.333096 	(obj:1)
+Slack['1621',_80]                            0.178597 	(obj:1)
+Slack['1626',_80]                            0.433815 	(obj:1)
+Slack['1965',_80]                            0.443613 	(obj:1)
+Slack['2013',_80]                              0.4817 	(obj:1)
+Slack['2043',_80]                            0.336905 	(obj:1)
+Slack['2102',_80]                            0.419245 	(obj:1)
+Slack['2173',_80]                            0.475747 	(obj:1)
+Slack['2178',_80]                 0.00307799999999991 	(obj:1)
+Slack['2216',_80]                            0.162226 	(obj:1)
+Slack['2259',_80]                            0.459826 	(obj:1)
+Slack['2291',_80]                            0.334607 	(obj:1)
+Slack['2297',_80]                            0.400079 	(obj:1)
+Slack['2329',_80]                            0.484121 	(obj:1)
+Slack['2335',_80]                  0.0433939999999999 	(obj:1)
+Slack['2366',_80]                            0.359476 	(obj:1)
+Slack['2407',_80]                            0.329306 	(obj:1)
+Slack['2462',_80]                            0.399999 	(obj:1)
+Slack['2466',_80]                            0.237447 	(obj:1)
+Slack['2591',_80]                  0.0131250000000001 	(obj:1)
+Slack['2620',_80]                            0.048597 	(obj:1)
+Slack['2670',_80]                            0.380846 	(obj:1)
+Slack['2765',_80]                            0.465734 	(obj:1)
+Slack['2998',_80]                            0.071637 	(obj:1)
+Slack['3042',_80]                  0.0246010000000001 	(obj:1)
+Slack['3311',_80]                            0.454296 	(obj:1)
+Slack['3355',_80]                            0.330015 	(obj:1)
+Slack['3358',_80]                  0.0338350000000001 	(obj:1)
+Slack['3435',_80]                            0.021434 	(obj:1)
+Slack['3531',_80]                  0.0706260000000001 	(obj:1)
+Slack['3637',_80]                   0.106109999999999 	(obj:1)
+Slack['3641',_80]                            0.165247 	(obj:1)
+Slack['3720',_80]                            0.395141 	(obj:1)
+Slack['3747',_80]                            0.114267 	(obj:1)
+Slack['3751',_80]                            0.231382 	(obj:1)
+Slack['3759',_80]                   0.458930000000001 	(obj:1)
+Slack['3764',_80]                            0.185147 	(obj:1)
+Slack['3765',_80]                             0.12572 	(obj:1)
+Slack['3767',_80]                            0.167381 	(obj:1)
+Slack['3768',_80]                            0.291656 	(obj:1)
+Slack['3769',_80]                            0.397077 	(obj:1)
+Slack['3781',_80]                  0.0125759999999999 	(obj:1)
+Slack['3807',_80]                            0.327898 	(obj:1)
+Slack['3851',_80]                            0.116363 	(obj:1)
+Slack['3891',_80]                            0.183216 	(obj:1)
+Slack['4218',_80]                            0.091912 	(obj:1)
+Slack['4226',_80]                   0.453945000000058 	(obj:1)
+Slack['4231',_80]                            0.100229 	(obj:1)
+Slack['4270',_80]                   0.450087000000011 	(obj:1)
+Slack['1087',_85]                            0.183273 	(obj:1)
+Slack['1100',_85]                            0.053889 	(obj:1)
+Slack['1124',_85]                            0.115984 	(obj:1)
+Slack['1131',_85]                            0.173064 	(obj:1)
+Slack['1132',_85]                            0.525727 	(obj:1)
+Slack['1134',_85]                            0.304291 	(obj:1)
+Slack['1353',_85]                            0.228323 	(obj:1)
+Slack['1373',_85]                            0.182863 	(obj:1)
+Slack['1435',_85]                            0.224875 	(obj:1)
+Slack['1515',_85]                            0.167188 	(obj:1)
+Slack['1516',_85]                            0.192846 	(obj:1)
+Slack['1530',_85]                            0.148126 	(obj:1)
+Slack['1606',_85]                            0.095765 	(obj:1)
+Slack['1614',_85]                            0.239006 	(obj:1)
+Slack['1621',_85]                   0.338845999999998 	(obj:1)
+Slack['1626',_85]                            0.124722 	(obj:1)
+Slack['1712',_85]                            0.224145 	(obj:1)
+Slack['1867',_85]                            0.254292 	(obj:1)
+Slack['1915',_85]                            0.197348 	(obj:1)
+Slack['1919',_85]                            0.169929 	(obj:1)
+Slack['1965',_85]                            0.127539 	(obj:1)
+Slack['2013',_85]                            0.138489 	(obj:1)
+Slack['2043',_85]                             0.09686 	(obj:1)
+Slack['2101',_85]                            0.191827 	(obj:1)
+Slack['2102',_85]                            0.120533 	(obj:1)
+Slack['2127',_85]                            0.178181 	(obj:1)
+Slack['2130',_85]                            0.267615 	(obj:1)
+Slack['2173',_85]                            0.136777 	(obj:1)
+Slack['2178',_85]                            0.288385 	(obj:1)
+Slack['2181',_85]                            0.163661 	(obj:1)
+Slack['2204',_85]                            0.198509 	(obj:1)
+Slack['2216',_85]                             0.33414 	(obj:1)
+Slack['2245',_85]                            0.146171 	(obj:1)
+Slack['2257',_85]                             0.19535 	(obj:1)
+Slack['2259',_85]                              0.1322 	(obj:1)
+Slack['2267',_85]                            0.176633 	(obj:1)
+Slack['2291',_85]                              0.0962 	(obj:1)
+Slack['2297',_85]                            0.115023 	(obj:1)
+Slack['2321',_85]                            0.160234 	(obj:1)
+Slack['2329',_85]                            0.139185 	(obj:1)
+Slack['2335',_85]                            0.299976 	(obj:1)
+Slack['2343',_85]                            0.201691 	(obj:1)
+Slack['2366',_85]                            0.103349 	(obj:1)
+Slack['2369',_85]                            0.164175 	(obj:1)
+Slack['2396',_85]                            0.250992 	(obj:1)
+Slack['2407',_85]                            0.382176 	(obj:1)
+Slack['2446',_85]                            0.180379 	(obj:1)
+Slack['2455',_85]                            0.183535 	(obj:1)
+Slack['2458',_85]                            0.150864 	(obj:1)
+Slack['2462',_85]                               0.115 	(obj:1)
+Slack['2466',_85]                            0.355766 	(obj:1)
+Slack['2477',_85]                            0.462456 	(obj:1)
+Slack['2527',_85]                            0.201263 	(obj:1)
+Slack['2574',_85]                            0.189618 	(obj:1)
+Slack['2581',_85]                            0.156328 	(obj:1)
+Slack['2591',_85]                            0.291273 	(obj:1)
+Slack['2620',_85]                            0.301472 	(obj:1)
+Slack['2631',_85]                            0.173241 	(obj:1)
+Slack['2643',_85]                            0.162263 	(obj:1)
+Slack['2652',_85]                            0.195595 	(obj:1)
+Slack['2670',_85]                            0.109493 	(obj:1)
+Slack['2693',_85]                            0.187372 	(obj:1)
+Slack['2719',_85]                            0.167715 	(obj:1)
+Slack['2733',_85]                            0.203924 	(obj:1)
+Slack['2765',_85]                            0.133899 	(obj:1)
+Slack['2806',_85]                             0.24865 	(obj:1)
+Slack['2813',_85]                            0.273105 	(obj:1)
+Slack['2829',_85]                            0.164683 	(obj:1)
+Slack['2849',_85]                            0.217046 	(obj:1)
+Slack['2930',_85]                            0.234721 	(obj:1)
+Slack['2998',_85]                            0.308096 	(obj:1)
+Slack['3042',_85]                            0.294573 	(obj:1)
+Slack['3198',_85]                            0.448239 	(obj:1)
+Slack['3200',_85]                            0.536054 	(obj:1)
+Slack['3311',_85]                             0.41811 	(obj:1)
+Slack['3322',_85]                            0.279887 	(obj:1)
+Slack['3345',_85]                            0.282538 	(obj:1)
+Slack['3355',_85]                            0.382379 	(obj:1)
+Slack['3357',_85]                            0.239675 	(obj:1)
+Slack['3358',_85]                            0.297228 	(obj:1)
+Slack['3359',_85]                            0.226577 	(obj:1)
+Slack['3402',_85]                            0.255306 	(obj:1)
+Slack['3424',_85]                             0.55168 	(obj:1)
+Slack['3431',_85]                            0.436321 	(obj:1)
+Slack['3432',_85]                            0.242896 	(obj:1)
+Slack['3435',_85]                            0.293662 	(obj:1)
+Slack['3481',_85]                            0.236244 	(obj:1)
+Slack['3531',_85]                            0.307805 	(obj:1)
+Slack['3627',_85]                             0.22779 	(obj:1)
+Slack['3637',_85]                            0.605507 	(obj:1)
+Slack['3641',_85]                            0.335008 	(obj:1)
+Slack['3720',_85]                            0.401103 	(obj:1)
+Slack['3721',_85]                            0.458179 	(obj:1)
+Slack['3747',_85]                            0.320352 	(obj:1)
+Slack['3751',_85]                            0.354022 	(obj:1)
+Slack['3761',_85]                            0.218901 	(obj:1)
+Slack['3764',_85]                             0.34073 	(obj:1)
+Slack['3765',_85]                            0.323644 	(obj:1)
+Slack['3767',_85]                    0.33562200000001 	(obj:1)
+Slack['3768',_85]                            0.371351 	(obj:1)
+Slack['3769',_85]                             0.40166 	(obj:1)
+Slack['3781',_85]                            0.291116 	(obj:1)
+Slack['3805',_85]                            0.155602 	(obj:1)
+Slack['3807',_85]                            0.381771 	(obj:1)
+Slack['3825',_85]                            0.232725 	(obj:1)
+Slack['3827',_85]                            0.196439 	(obj:1)
+Slack['3851',_85]                            0.320954 	(obj:1)
+Slack['3891',_85]                   0.340174999999998 	(obj:1)
+Slack['4014',_85]                            0.282787 	(obj:1)
+Slack['4018',_85]                            0.552969 	(obj:1)
+Slack['4103',_85]                            0.150867 	(obj:1)
+Slack['4174',_85]                            0.253646 	(obj:1)
+Slack['4179',_85]                            0.220668 	(obj:1)
+Slack['4210',_85]                            0.198433 	(obj:1)
+Slack['4215',_85]                            0.176628 	(obj:1)
+Slack['4217',_85]                            0.458379 	(obj:1)
+Slack['4218',_85]                            0.313925 	(obj:1)
+Slack['4223',_85]                            0.202143 	(obj:1)
+Slack['4224',_85]                            0.192394 	(obj:1)
+Slack['4226',_85]                            0.130509 	(obj:1)
+Slack['4231',_85]                            0.316316 	(obj:1)
+Slack['4270',_85]                              0.1294 	(obj:1)
+
+Statistics
+==========
+
+Master Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3560.27
+  solving          :    3560.27
+  presolving       :       0.00 (included in solving)
+  reading          :       0.00
+  copying          :       0.00 (1 #copies) (minimal 0.00, maximal 0.00, average 0.00)
+Original Problem   :
+  Problem name     : master_MPSData
+  Variables        : 0 (0 binary, 0 integer, 0 implicit integer, 0 continuous)
+  Constraints      : 321 initial, 321 maximal
+  Objective        : minimize, 0 non-zeros (abs.min = 1e+20, abs.max = -1e+20)
+Presolved Problem  :
+  Problem name     : t_master_MPSData
+  Variables        : 3645 (0 binary, 0 integer, 0 implicit integer, 3645 continuous)
+  Constraints      : 321 initial, 322 maximal
+  Objective        : minimize, 3263 non-zeros (abs.min = 3.4714, abs.max = 56.3673)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  roundbound       :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  linear           :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -          0          -          -      21395          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  masterbranch     :          0+        12          0         40          0          0          0          0          0          0       5105          0          0          0          0
+  integralorig     :          0          0          0          0         34          0          0        799          0          0          0          0          0          0         68
+  integral         :          0          0          0          0          0          0          0         11          0          0          0          0          0          0          0
+  linear           :        321        321          7        103          0          0          0         11          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  masterbranch     :       0.18       0.00       0.00       0.18       0.00       0.00       0.00       0.00       0.00       0.00
+  integralorig     :     632.03       0.00       0.00       0.00       0.00       0.00       0.00     632.03       0.00       0.00
+  integral         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          1          0          0          0
+  genvbounds       :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          0          0          0          0
+  redcost          :          0          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :        136          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.00       0.00       0.00       0.00       0.00       0.00
+  redcost          :       0.00       0.00       0.00       0.00       0.00       0.00
+  rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
+  vbounds          :       0.00       0.00       0.00       0.00       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     0          -          -          0          -          -    (maximal pool size: 0)
+  basis            :       9.66       0.00          6          0          0         88         16          0
+  master           :      13.77       0.00         13          0          0          2          1          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.12          -        745      54345
+  gcg              :    2867.91       0.00       1150      24420
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  generic          :       0.00       0.00          0          0          0          0          0          0          0          0
+  orig             :       0.00       0.00          0          0          0          0          0          0          0          0
+  relpsprob        :       0.00       0.00          0          0          0          0          0          0          0          0
+  ryanfoster       :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.00       0.00          0          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  greedycolsel     :       0.00       0.00          5          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mastercoefdiving :       0.00       0.00          0          0          0
+  masterfracdiving :       0.00       0.00          0          0          0
+  masterlinesdiving:       0.00       0.00          0          0          0
+  mastervecldiving :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.00       0.00          0          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.00       0.00          0          0          0
+  relaxcolsel      :       0.02       0.00          2          0          0
+  rens             :       0.00       0.00          0          0          0
+  restmaster       :       1.10       0.00          1          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          0          0          0
+  setcover         :       0.00       0.00          0          0          0
+  shiftandpropagate:       0.00       0.00          0          0          0
+  shifting         :       0.00       0.00          0          0          0
+  simplerounding   :     632.04       0.00        793          6          6
+  twoopt           :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          0          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       1.64       1037      27204      32.12   16606.11       0.07        190
+  dual LP          :       2.57       2130      34209      87.94   13306.07       0.45       1741
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:       0.00          0          0       0.00          -
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+B&B Tree           :
+  number of runs   :          1
+  nodes            :         38 (34 internal, 4 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          3
+  objective leaves :          0
+  nodes (total)    :         38 (34 internal, 4 leaves)
+  nodes left       :         32
+  max depth        :         11
+  max depth (total):         11
+  backtracks       :          3 (7.9%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :         26 (63 domain reductions, 0 cutoffs)
+  avg switch length:       5.32
+  switching time   :       0.92
+Root Node          :
+  First LP value   :          -
+  First LP Iters   :          0
+  First LP Time    :       0.00
+  Final Dual Bound : +1.18983836203186e+03
+  Final Root Iters :       2619
+  Root LP Estimate : +1.18983836199999e+03
+Solution           :
+  Solutions found  :         11 (8 improvements)
+  First Solution   : +1.76956177600000e+03   (in run 1, after 1 nodes, 391.41 seconds, depth 0, found by <relaxation>)
+  Gap First Sol.   :      48.72 %
+  Gap Last Sol.    :       1.62 %
+  Primal Bound     : +1.20914413400000e+03   (in run 1, after 32 nodes, 2951.73 seconds, depth 11, found by <relaxation>)
+  Dual Bound       : +1.18983836203186e+03
+  Gap              :       1.62 %
+  Avg. Gap         :      20.89 % (74368.24 primal-dual integral)
+Pricing Solver     : #HeurFarkas  #OptFarkas  #HeurRedcost #OptRedcost Time: HeurFarkas  OptFarkas  HeurRedcost OptRedcost
+  knapsack         :           0           0             0           0             0.00       0.00         0.02       0.00 
+  mip              :        7755           0         68123       54008            32.34       0.00       525.62    2097.38 
+
+Original Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3603.12
+  solving          :    3602.81
+  presolving       :       0.44 (included in solving)
+  reading          :       0.31
+  copying          :       0.07 (2 #copies) (minimal 0.03, maximal 0.04, average 0.03)
+Original Problem   :
+  Problem name     : MPSData
+  Variables        : 13256 (95 binary, 11685 integer, 0 implicit integer, 1476 continuous)
+  Constraints      : 1182 initial, 1182 maximal
+  Objective        : minimize, 1476 non-zeros (abs.min = 1, abs.max = 1)
+Presolved Problem  :
+  Problem name     : t_MPSData
+  Variables        : 12518 (6472 binary, 5308 integer, 0 implicit integer, 738 continuous)
+  Constraints      : 1059 initial, 1060 maximal
+  Objective        : minimize, 12423 non-zeros (abs.min = 2, abs.max = 20)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  convertinttobin  :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  domcol           :       0.08       0.00      1          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      5          0          0          0          0          0          0          0          0          0
+  trivial          :       0.00       0.00      5          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      5          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.14       0.00      1          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  linear           :       0.18       0.02      7          0        738          0      10450          0        123          0          0      42439
+  root node        :          -          -      -          0          -          -          0          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  origbranch       :          0+        12          0          0          0          0          0          0          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          1         33          0        145          0          0          0          0          0          0         68
+  decomp           :          0          0          0          0          0          0          0         55          0          0          0          0          0          0          0
+  linear           :       1059       1059         13       1560          0          0          0         38          0         15      33181          2          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  origbranch       :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.03       0.00       0.00       0.00       0.00       0.00       0.01       0.02       0.00       0.00
+  decomp           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       2.28       0.02       1.98       0.25       0.00       0.00       0.00       0.03       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          2          0          0          0
+  genvbounds       :          0          0          0          0
+  obbt             :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :         98          0          0          0
+  redcost          :          5          0          0          0
+  rootredcost      :          3          0          0          0
+  vbounds          :       1210          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  obbt             :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.14       0.00       0.14       0.00       0.00       0.00
+  pseudoobj        :       0.02       0.00       0.00       0.02       0.00       0.00
+  redcost          :       0.01       0.00       0.00       0.01       0.00       0.00
+  rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
+  vbounds          :       0.01       0.00       0.00       0.01       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.01                    14          -          -        370          -          -    (maximal pool size: 729)
+  clique           :       0.02       0.00         13          0          0          0          0          0
+  closecuts        :       0.00       0.00          0          0          0          0          0          0
+  gomory           :       0.05       0.00          5          0          0          0          0          0
+  impliedbounds    :       0.01       0.00         13          0          0          0         11          0
+  intobj           :       0.00       0.00          0          0          0          0          0          0
+  mcf              :       0.00       0.00          1          0          0          0          0          0
+  oddcycle         :       0.07       0.00         11          0          0          0          0          0
+  rapidlearning    :       0.00       0.00          0          0          0          0          0          0
+  strongcg         :       0.03       0.00          5          0          0          0          0          0
+  zerohalf         :       0.04       0.00          9          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.00          -          0          0
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  empty            :       0.00       0.00          1         33          0          0          0          0          0         68
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.20       0.00          1          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  gcgcoefdiving    :       0.00       0.00          0          0          0
+  gcgdins          :       0.00       0.00          0          0          0
+  gcgfeaspump      :       0.00       0.00          0          0          0
+  gcgfracdiving    :       0.00       0.00          0          0          0
+  gcgguideddiving  :       0.00       0.00          0          0          0
+  gcglinesdiving   :       0.00       0.00          0          0          0
+  gcgpscostdiving  :       0.00       0.00          0          0          0
+  gcgrens          :       0.15       0.00          1          0          0
+  gcgrins          :       0.00       0.00          0          0          0
+  gcgrounding      :       0.13       0.00         34          0          0
+  gcgshifting      :       0.02       0.00          3          0          0
+  gcgsimplerounding:       0.00       0.00          0          0          0
+  gcgveclendiving  :       0.00       0.00          0          0          0
+  gcgzirounding    :       0.00       0.00          0          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       1.09       0.00          1          1          1
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  nlpdiving        :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.01       0.00          3          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.14       0.00          3          0          0
+  rens             :       0.09       0.00          1          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          3          0          0
+  shiftandpropagate:       0.15       0.00          1          0          0
+  shifting         :       1.22       0.00          3          1          0
+  simplerounding   :       0.00       0.00          0          0          0
+  subnlp           :       0.00       0.00          0          0          0
+  trivial          :       0.02       0.00          2          0          0
+  trysol           :       0.00       0.00          0          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  undercover       :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  xpcrossover      :       0.17       0.00          1          0          0
+  xprins           :       0.34       0.00          1          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          1          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.00          0          0       0.00          -       0.00          0
+  dual LP          :       0.29          4       1893     946.50    6549.06       0.01          2
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:       1.94         22      13064     593.82    6750.55
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+Relaxators         :       Time      Calls
+  gcg              :    3598.17         37
+B&B Tree           :
+  number of runs   :          1
+  nodes            :         38 (34 internal, 4 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          3
+  objective leaves :          0
+  nodes (total)    :         38 (34 internal, 4 leaves)
+  nodes left       :         32
+  max depth        :         11
+  max depth (total):         11
+  backtracks       :          3 (7.9%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          0 (0 domain reductions, 0 cutoffs)
+  avg switch length:       1.89
+  switching time   :       0.05
+Root Node          :
+  First LP value   : +1.00654994999999e+02
+  First LP Iters   :       1854 (7044.98 Iter/sec)
+  First LP Time    :       0.26
+  Final Dual Bound : +1.96876547031859e+02
+  Final Root Iters :       2923
+  Root LP Estimate : +1.00654995000002e+02
+Solution           :
+  Solutions found  :          5 (3 improvements)
+  First Solution   : +7.76599961000002e+02   (in run 1, after 1 nodes, 426.21 seconds, depth 0, found by <intshifting>)
+  Gap First Sol.   :     294.46 %
+  Gap Last Sol.    :       9.81 %
+  Primal Bound     : +2.16182318999999e+02   (in run 1, after 32 nodes, 2992.10 seconds, depth 11, found by <relaxation>)
+  Dual Bound       : +1.96876547031859e+02
+  Gap              :       9.81 %
+  Avg. Gap         :          - (not evaluated)
+
+Simplex iterations :       iter
+  Master LP        :      61413
+  Pricing LP       :    8263538
+  Original LP      :      14957
+
+Detector statistics:       time     number     blocks
+  connected        :       0.00          0    
+  constype         :       0.00          0    
+  postproces       :       0.00          0    
+  consclass        :       1.98          0    
+  consname         :       0.00          0    
+  densemaste       :       0.00          0    
+  stairheur        :       0.00          0    
+  staircase        :       0.00          0    
+  random           :       0.00          0    
+  staircase_       :       0.00          0    
+  colors           :       0.00          0    
+  cutpacking       :       0.00          0    
+  compgreedi       :       0.00          0    
+  mastersetc       :       0.00          0    
+  mastersetp       :       0.00          0    
+  mastersetp       :       0.00          0    
+  hcgpartiti       :       0.00          0    
+  hrgpartiti       :       0.00          0    
+  hrcgpartit       :       0.00          0    
+  connectedb       :       0.00          0    
+  connected_       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  varclass         :       0.29          0    
+  isomorph         :       0.00          0    
+
+Decomp statistics  :
+  type             :   bordered
+  detector         :         cC
+  blocks           :        124
+  aggr. blocks     :        124
+Master statistics  :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros    bnzeros bintnzeros  min(dens)  max(dens) medi(dens) mean(dens)
+  master           :          0          0          0          0          0        197      90718      90718          0          0      0.000      0.046      0.041      0.037
+Pricing statistics :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros  min(dens)  max(dens) medi(dens) mean(dens)  identical
+          1        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+          2        :        101         95          0          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+          3        :        101         81         14          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+          4        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+          5        :        101          3         92          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+          6        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+          7        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+          8        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+          9        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         10        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         11        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         12        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         13        :        101         81         14          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         14        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         15        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         16        :        101         81         14          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         17        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         18        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         19        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         20        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         21        :        101         81         14          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         22        :        101         72         23          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         23        :        101         81         14          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         24        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         25        :        101         81         14          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         26        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         27        :        101         50         45          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         28        :        101         72         23          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         29        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         30        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         31        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         32        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         33        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         34        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         35        :        101         72         23          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         36        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         37        :        101         81         14          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         38        :        101         81         14          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         39        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         40        :        101         72         23          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         41        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         42        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         43        :        101         81         14          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         44        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         45        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         46        :        101         27         68          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         47        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         48        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         49        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         50        :        101         81         14          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         51        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         52        :        101          6         89          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         53        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         54        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         55        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         56        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         57        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         58        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         59        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         60        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         61        :        101         81         14          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         62        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         63        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         64        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         65        :        101         72         23          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         66        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         67        :        101         50         45          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         68        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         69        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         70        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         71        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         72        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         73        :        101         18         77          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         74        :        101          3         92          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         75        :        101         23         72          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         76        :        101         50         45          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         77        :        101         46         49          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         78        :        101         27         68          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         79        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         80        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         81        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         82        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         83        :        101          3         92          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         84        :        101         18         77          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         85        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         86        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         87        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         88        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         89        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         90        :        101          0         95          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         91        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         92        :        101         23         72          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         93        :        101         18         77          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         94        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         95        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         96        :        101          0         95          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         97        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         98        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+         99        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        100        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        101        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        102        :        101         23         72          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        103        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        104        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        105        :        101         27         68          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        106        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        107        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        108        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        109        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        110        :        101         46         49          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        111        :        101          3         92          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        112        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        113        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        114        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        115        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        116        :        101         66         29          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        117        :        101         18         77          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        118        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        119        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        120        :        101         62         33          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        121        :        101         72         23          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        122        :        101         31         64          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        123        :        101         72         23          0          6          7        552        546      0.143      1.000      0.857      0.781          1
+        124        :         95         95          0          0          0          1         95         95      1.000      1.000      1.000      1.000          1
+Decomp Scores      :
+  border area      :      0.186
+  avg. density     :      0.219
+  linking score    :      0.500
+Pricing time in colpool = 0.073473 sec
+
+GCGTIME= 3638.53

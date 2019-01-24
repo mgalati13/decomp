@@ -1,0 +1,1340 @@
+GCG version 3.0.0 [GitHash: 70e7382]
+Copyright (C) 2010-2018 Operations Research, RWTH Aachen University
+                        Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+SCIP version 6.0.0 [precision: 8 byte] [memory: block] [mode: optimized] [LP solver: SoPlex 4.0.0] [GitHash: 77d3bc8]
+Copyright (C) 2002-2018 Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+External codes: 
+  Readline 6.0         GNU library for command line editing (gnu.org/s/readline)
+  SoPlex 4.0.0         Linear Programming Solver developed at Zuse Institute Berlin (soplex.zib.de) [GitHash: 82cab95]
+  CppAD 20180000.0     Algorithmic Differentiation of C++ algorithms developed by B. Bell (www.coin-or.org/CppAD)
+  ZLIB 1.2.3           General purpose compression library by J. Gailly and M. Adler (zlib.net)
+  ZIMPL 3.3.6          Zuse Institute Mathematical Programming Language developed by T. Koch (zimpl.zib.de)
+  bliss 0.73           A Tool for Computing Automorphism Groups of Graphs by T. Junttila and P. Kaski (http://www.tcs.hut.fi/Software/bliss/)
+
+reading user parameter file </LOG_DATA/scripts/options_gcg.parm>
+
+read problem </ORDATA/miplib/neos_935769.mps>
+============
+
+Warning line 6745: row "R6743" for objective function "N" ignored
+original problem has 9799 variables (7020 bin, 0 int, 0 impl, 2779 cont) and 6741 constraints
+presolving:
+(round 1, fast)       2161 del vars, 0 del conss, 0 add conss, 139 chg bounds, 0 chg sides, 0 chg coeffs, 0 upgd conss, 0 impls, 5910 clqs
+(round 2, fast)       2161 del vars, 0 del conss, 0 add conss, 139 chg bounds, 139 chg sides, 0 chg coeffs, 0 upgd conss, 0 impls, 5910 clqs
+(round 3, fast)       2161 del vars, 0 del conss, 0 add conss, 757 chg bounds, 139 chg sides, 0 chg coeffs, 0 upgd conss, 0 impls, 5910 clqs
+(round 4, exhaustive) 2161 del vars, 23 del conss, 0 add conss, 757 chg bounds, 139 chg sides, 0 chg coeffs, 0 upgd conss, 0 impls, 5910 clqs
+(round 5, exhaustive) 2161 del vars, 23 del conss, 0 add conss, 757 chg bounds, 139 chg sides, 0 chg coeffs, 6108 upgd conss, 0 impls, 5910 clqs
+(round 6, medium)     2161 del vars, 26 del conss, 2 add conss, 757 chg bounds, 141 chg sides, 6 chg coeffs, 6108 upgd conss, 0 impls, 5910 clqs
+   (1.1s) probing: 1000/7028 (14.2%) - 0 fixings, 0 aggregations, 17488 implications, 0 bound changes
+   (1.1s) probing: 1001/7028 (14.2%) - 0 fixings, 0 aggregations, 17501 implications, 0 bound changes
+   (1.1s) probing aborted: 1000/1000 successive useless probings
+presolving (7 rounds: 7 fast, 4 medium, 3 exhaustive):
+ 2161 deleted vars, 26 deleted constraints, 2 added constraints, 757 tightened bounds, 0 added holes, 141 changed sides, 6 changed coefficients
+ 0 implications, 23411 cliques
+presolved problem has 7638 variables (7020 bin, 0 int, 618 impl, 0 cont) and 6717 constraints
+    189 constraints of type <knapsack>
+   5910 constraints of type <setppc>
+    610 constraints of type <linear>
+      8 constraints of type <logicor>
+transformed objective value is always integral (scale: 1)
+Presolving Time: 1.15
+start creating seeedpool for current problem 
+created seeedpool for current problem, n detectors: 26 
+ Consclassifier "nonzeros" yields a classification with 17  different constraint classes 
+ Consclassifier "constypes" yields a classification with 4 different constraint classes 
+ Consclassifier "constypes according to miplib" yields a classification with 5 different constraint classes 
+ Varclassifier "vartypes" yields a classification with 2 different variable classes
+ Varclassifier "varobjvals" yields a classification with 7 different variable classes
+ Varclassifier "varobjvalsigns" yields a classification with 2 different variable classes
+ Varclassifier "varobjvalsigns" is not considered since it offers the same structure as "vartypes"
+ Added reduced version of consclassifier nonzeros with 9  different constraint classes 
+Begin of detection round 0 of 1 total rounds 
+Start to propagate seeed with id 1 (0 of 1 in round 0) 
+ in dec_consclass: there are 4 different constraint classes   
+ the current consclass distribution includes 17 classes but only 9 are allowed for propagateSeeed() of cons class detector
+  the current constraint classifier "constypes" consists of 4 different classes   
+  the current constraint classifier "constypes according to miplib" consists of 5 different classes   
+  the current constraint classifier "nonzeros-red-to-9" consists of 9 different classes   
+ dec_consclass found 557 new seeeds 
+dec_densemasterconss found 1 new seeed 
+Start finishing of partial decomposition 1.
+Measured running time per detector: 
+Detector consclass                 	 worked on 	 538 of 666	 and took a total time of 	6.10006
+Detector densemasterconss          	 worked on 	 1 of 666	 and took a total time of 	0.001867
+Detector hrgpartition              	 worked on 	 0 of 666	 and took a total time of 	3e-06
+Detector varclass                  	 worked on 	 126 of 666	 and took a total time of 	1.47984
+Started postprocessing of decompositions...
+...finished postprocessing of decompositions. Added 0 new decomps. 
+
+solve problem
+=============
+
+
+A Dantzig-Wolfe reformulation is applied to solve the original problem.
+
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+t  1.2s|     1 |     0 |      0 |      0 |     - |  43M|   0 |   0 |6717 |   0 |   0 |  0 |-2.019600e+05 | 2.370000e+04 |   --   |    Inf 
+V  7.0s|     1 |     0 |      0 |      0 |     - |  52M|   0 |   0 |6717 |   0 |   0 |  0 |-2.019600e+05 | 4.722000e+03 |   --   |    Inf 
+  23.7s|     1 |     0 |      0 |      0 |     - |  51M|   0 |   0 |6717 |   0 |   0 |  0 | 3.010000e+03 | 4.722000e+03 |   --   |  56.88%
+Chosen structure has 139 blocks and 2230 linking constraints.
+This decomposition has a maxwhite score of 0.662882.
+Matrix has 139 blocks, using 139 pricing problems.
+
+     
+  24.5s|     1 |     0 |      0 |      0 |     - | 109M|   0 | 139 |6718 |2370 |   0 |  0 | 3.010000e+03 | 4.722000e+03 |   0.00%|  56.88%
+  24.5s|     1 |     0 |      0 |      0 |     - | 110M|   0 | 417 |6718 |2370 |   0 |  0 | 3.010000e+03 | 4.722000e+03 |   0.00%|  56.88%
+Starting reduced cost pricing...
+  26.1s|     1 |     0 |   5918 |    399 |     - | 116M|   0 | 620 |6718 |2370 |   0 |  0 | 3.010000e+03 | 4.712000e+03 |  13.75%|  56.54%
+   142s|     1 |     0 | 277070 | 258379 |     - | 128M|   0 |4214 |6718 |2370 |   0 |  0 | 3.010000e+03 | 4.712000e+03 |  27.96%|  56.54%
+   349s|     1 |     0 | 649300 | 508494 |     - | 139M|   0 |7623 |6718 |2370 |   0 |  0 | 3.010000e+03 | 4.712000e+03 |  32.54%|  56.54%
+   369s|     1 |     0 | 673806 | 524175 |     - | 139M|   0 |7652 |6718 |2370 |   0 |  0 | 3.010000e+03 | 4.712000e+03 |  32.80%|  56.54%
+   442s|     1 |     0 | 756384 | 606753 |     - | 170M|   0 |7653 |6718 |2370 |   3 |  2 | 3.010000e+03 | 4.712000e+03 |  32.83%|  56.54%
+   449s|     1 |     0 | 768547 | 612313 |     - | 170M|   0 |7729 |6718 |2370 |   3 |  2 | 3.010000e+03 | 4.712000e+03 |  33.01%|  56.54%
+   461s|     1 |     0 | 780807 | 624573 |     - | 170M|   0 |7729 |6718 |2370 |   4 |  3 | 3.010000e+03 | 4.712000e+03 |  33.01%|  56.54%
+*r 479s|     1 |     0 | 780808 | 624574 |     - | 171M|   0 |8007 |6718 |2370 |   4 |  5 | 3.010000e+03 | 4.712000e+03 |  33.01%|  56.54%
+Y  636s|     1 |     0 | 780808 | 624574 |     - | 175M|   0 |8841 |6718 |2370 |   4 |  5 | 3.010000e+03 | 3.364000e+03 |  33.01%|  11.76%
+   636s|     1 |     0 | 780808 | 624574 |     - | 175M|   0 |8841 |6718 |2370 |   4 |  5 | 3.010000e+03 | 3.364000e+03 |  33.01%|  11.76%
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+b  639s|     1 |     0 | 780808 | 624574 |     - | 175M|   0 |8980 |6718 |2370 |   4 |  5 | 3.010000e+03 | 3.324000e+03 |  33.01%|  10.43%
+   639s|     1 |     2 | 780808 | 624574 |     - | 175M|   0 |8980 |6718 |2370 |   4 |  5 | 3.010000e+03 | 3.324000e+03 |  33.01%|  10.43%
+  1367s|   100 |   101 |1789450 |1524546 |9090.6 | 197M|  99 |  13k|6718 |2370 |   4 |  1 | 3.010000e+03 | 3.324000e+03 |   --   |  10.43%
+  2504s|   200 |   201 |2889736 |2514290 |9496.1 | 218M| 116 |  17k|6718 |2370 |   4 |  1 | 3.010000e+03 | 3.324000e+03 |   --   |  10.43%
+**2761s|   260 |   239 |3191582 |2715451 |8072.9 | 236M| 143 |  22k|6718 |2370 |   4 |  0 | 3.010000e+03 | 3.012000e+03 |   --   |   0.07%
+  3417s|   300 |   279 |3591211 |3115080 |8329.5 | 238M| 143 |  21k|6718 |2370 |   4 |  1 | 3.010000e+03 | 3.012000e+03 |   --   |   0.07%
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 3600.24
+Solving Nodes      : 310
+Primal Bound       : +3.01200000000000e+03 (25 solutions)
+Dual Bound         : +3.01000000000003e+03
+Gap                : 0.07 %
+
+primal solution:
+================
+
+objective value:                                 3012
+C2786                                               1 	(obj:-10)
+C2801                                               1 	(obj:-10)
+C2808                                               1 	(obj:-10)
+C2832                                               1 	(obj:-10)
+C2854                                               1 	(obj:-10)
+C2875                                               1 	(obj:-10)
+C2878                                               1 	(obj:-10)
+C2895                                               1 	(obj:-10)
+C2919                                               1 	(obj:-10)
+C2931                                               1 	(obj:-10)
+C2941                                               1 	(obj:-10)
+C2955                                               1 	(obj:-10)
+C2957                                               1 	(obj:-10)
+C2961                                               1 	(obj:-10)
+C2977                                               1 	(obj:-10)
+C2991                                               1 	(obj:-10)
+C2993                                               1 	(obj:-1)
+C2995                                               1 	(obj:-10)
+C2998                                               1 	(obj:-10)
+C3002                                               1 	(obj:-10)
+C3015                                               1 	(obj:-10)
+C3018                                               1 	(obj:-10)
+C3027                                               1 	(obj:-10)
+C3031                                               1 	(obj:-10)
+C3034                                               1 	(obj:-10)
+C3035                                               1 	(obj:-10)
+C3036                                               1 	(obj:-10)
+C3037                                               1 	(obj:-10)
+C3040                                               1 	(obj:-10)
+C3041                                               1 	(obj:-10)
+C3056                                               1 	(obj:-10)
+C3078                                               1 	(obj:-10)
+C3091                                               1 	(obj:-10)
+C3104                                               1 	(obj:-10)
+C3124                                               1 	(obj:-10)
+C3129                                               1 	(obj:-10)
+C3141                                               1 	(obj:-10)
+C3155                                               1 	(obj:-10)
+C3162                                               1 	(obj:-10)
+C3173                                               1 	(obj:-10)
+C3178                                               1 	(obj:-10)
+C3197                                               1 	(obj:-10)
+C3206                                               1 	(obj:-5)
+C3210                                               1 	(obj:-10)
+C3217                                               1 	(obj:-10)
+C3228                                               1 	(obj:-10)
+C3232                                               1 	(obj:-10)
+C3235                                               1 	(obj:-10)
+C3248                                               1 	(obj:-10)
+C3256                                               1 	(obj:-10)
+C3282                                               1 	(obj:-10)
+C3284                                               1 	(obj:-10)
+C3302                                               1 	(obj:-10)
+C3305                                               1 	(obj:-10)
+C3313                                               1 	(obj:-10)
+C3334                                               1 	(obj:-10)
+C3336                                               1 	(obj:-10)
+C3360                                               1 	(obj:-10)
+C3371                                               1 	(obj:-10)
+C3392                                               1 	(obj:-10)
+C3409                                               1 	(obj:-10)
+C3430                                               1 	(obj:-10)
+C3442                                               1 	(obj:-10)
+C3451                                               1 	(obj:-10)
+C3470                                               1 	(obj:-1)
+C3474                                               1 	(obj:-10)
+C3478                                               1 	(obj:-10)
+C3510                                               1 	(obj:-10)
+C3542                                               1 	(obj:-10)
+C3558                                               1 	(obj:-10)
+C3567                                               1 	(obj:-10)
+C3576                                               1 	(obj:-10)
+C3579                                               1 	(obj:-10)
+C3599                                               1 	(obj:-10)
+C3611                                               1 	(obj:-10)
+C3622                                               1 	(obj:-10)
+C3646                                               1 	(obj:-10)
+C3664                                               1 	(obj:-10)
+C3667                                               1 	(obj:-10)
+C3670                                               1 	(obj:-10)
+C3674                                               1 	(obj:-10)
+C3684                                               1 	(obj:-10)
+C3688                                               1 	(obj:-10)
+C3695                                               1 	(obj:-10)
+C3713                                               1 	(obj:-10)
+C3720                                               1 	(obj:-10)
+C3732                                               1 	(obj:-10)
+C3736                                               1 	(obj:-10)
+C3746                                               1 	(obj:-10)
+C3768                                               1 	(obj:-10)
+C3782                                               1 	(obj:-10)
+C3809                                               1 	(obj:-10)
+C3813                                               1 	(obj:-10)
+C3815                                               1 	(obj:-10)
+C3823                                               1 	(obj:-10)
+C3835                                               1 	(obj:-10)
+C3841                                               1 	(obj:-10)
+C3847                                               1 	(obj:-10)
+C3849                                               1 	(obj:-10)
+C3866                                               1 	(obj:-10)
+C3885                                               1 	(obj:-10)
+C3889                                               1 	(obj:-10)
+C3899                                               1 	(obj:-10)
+C3905                                               1 	(obj:-5)
+C3913                                               1 	(obj:-10)
+C3924                                               1 	(obj:-10)
+C3927                                               1 	(obj:-10)
+C3946                                               1 	(obj:-10)
+C3956                                               1 	(obj:-10)
+C3963                                               1 	(obj:-10)
+C3968                                               1 	(obj:-10)
+C3975                                               1 	(obj:-10)
+C3977                                               1 	(obj:-10)
+C3996                                               1 	(obj:-10)
+C4000                                               1 	(obj:-10)
+C4006                                               1 	(obj:-10)
+C4007                                               1 	(obj:-5)
+C4017                                               1 	(obj:-10)
+C4025                                               1 	(obj:-10)
+C4028                                               1 	(obj:-10)
+C4034                                               1 	(obj:-10)
+C4039                                               1 	(obj:-10)
+C4041                                               1 	(obj:-10)
+C4057                                               1 	(obj:-10)
+C4074                                               1 	(obj:-10)
+C4076                                               1 	(obj:-10)
+C4086                                               1 	(obj:-10)
+C4095                                               1 	(obj:-10)
+C4100                                               1 	(obj:-10)
+C4103                                               1 	(obj:-1)
+C4108                                               1 	(obj:-10)
+C4111                                               1 	(obj:-10)
+C4149                                               1 	(obj:-10)
+C4158                                               1 	(obj:-10)
+C4172                                               1 	(obj:-10)
+C4193                                               1 	(obj:-10)
+C4205                                               1 	(obj:-10)
+C4213                                               1 	(obj:-10)
+C4214                                               1 	(obj:-10)
+C4224                                               1 	(obj:-10)
+C4232                                               1 	(obj:-10)
+C4261                                               1 	(obj:-10)
+C4266                                               1 	(obj:-10)
+C4268                                               1 	(obj:-10)
+C4271                                               1 	(obj:-10)
+C4279                                               1 	(obj:-10)
+C4285                                               1 	(obj:-10)
+C4290                                               1 	(obj:-10)
+C4293                                               1 	(obj:-10)
+C4297                                               1 	(obj:-10)
+C4302                                               1 	(obj:-10)
+C4311                                               1 	(obj:-10)
+C4316                                               1 	(obj:-10)
+C4350                                               1 	(obj:-10)
+C4352                                               1 	(obj:-10)
+C4359                                               1 	(obj:-10)
+C4366                                               1 	(obj:-10)
+C4368                                               1 	(obj:-10)
+C4384                                               1 	(obj:-10)
+C4402                                               1 	(obj:-10)
+C4407                                               1 	(obj:-10)
+C4420                                               1 	(obj:-10)
+C4438                                               1 	(obj:-10)
+C4445                                               1 	(obj:-10)
+C4476                                               1 	(obj:-10)
+C4478                                               1 	(obj:-10)
+C4517                                               1 	(obj:-10)
+C4531                                               1 	(obj:-10)
+C4565                                               1 	(obj:-10)
+C4568                                               1 	(obj:-10)
+C4582                                               1 	(obj:-10)
+C4602                                               1 	(obj:-10)
+C4608                                               1 	(obj:-10)
+C4636                                               1 	(obj:10)
+C4637                                               1 	(obj:10)
+C4678                                               1 	(obj:10)
+C4679                                               1 	(obj:10)
+C4695                                               1 	(obj:10)
+C4696                                               1 	(obj:10)
+C4764                                               1 	(obj:10)
+C4765                                               1 	(obj:10)
+C4783                                               1 	(obj:10)
+C4803                                               1 	(obj:10)
+C4823                                               1 	(obj:10)
+C4824                                               1 	(obj:10)
+C4883                                               1 	(obj:10)
+C4884                                               1 	(obj:10)
+C4892                                               1 	(obj:10)
+C4893                                               1 	(obj:10)
+C4900                                               1 	(obj:10)
+C4902                                               1 	(obj:10)
+C4938                                               1 	(obj:10)
+C4939                                               1 	(obj:10)
+C4961                                               1 	(obj:10)
+C5007                                               1 	(obj:10)
+C5008                                               1 	(obj:10)
+C5027                                               1 	(obj:10)
+C5037                                               1 	(obj:10)
+C5040                                               1 	(obj:10)
+C5041                                               1 	(obj:10)
+C5054                                               1 	(obj:10)
+C5066                                               1 	(obj:10)
+C5067                                               1 	(obj:10)
+C5106                                               1 	(obj:10)
+C5107                                               1 	(obj:10)
+C5113                                               1 	(obj:10)
+C5114                                               1 	(obj:10)
+C5124                                               1 	(obj:10)
+C5125                                               1 	(obj:10)
+C5145                                               1 	(obj:10)
+C5153                                               1 	(obj:10)
+C5162                                               1 	(obj:10)
+C5163                                               1 	(obj:10)
+C5168                                               1 	(obj:10)
+C5169                                               1 	(obj:10)
+C5208                                               1 	(obj:10)
+C5209                                               1 	(obj:10)
+C5212                                               1 	(obj:1)
+C5213                                               1 	(obj:10)
+C5216                                               1 	(obj:10)
+C5217                                               1 	(obj:10)
+C5220                                               1 	(obj:10)
+C5225                                               1 	(obj:10)
+C5226                                               1 	(obj:10)
+C5236                                               1 	(obj:10)
+C5237                                               1 	(obj:10)
+C5239                                               1 	(obj:10)
+C5240                                               1 	(obj:10)
+C5263                                               1 	(obj:10)
+C5264                                               1 	(obj:10)
+C5277                                               1 	(obj:10)
+C5278                                               1 	(obj:10)
+C5286                                               1 	(obj:10)
+C5287                                               1 	(obj:10)
+C5313                                               1 	(obj:10)
+C5314                                               1 	(obj:10)
+C5324                                               1 	(obj:10)
+C5325                                               1 	(obj:10)
+C5327                                               1 	(obj:10)
+C5333                                               1 	(obj:10)
+C5334                                               1 	(obj:10)
+C5335                                               1 	(obj:10)
+C5336                                               1 	(obj:10)
+C5337                                               1 	(obj:10)
+C5338                                               1 	(obj:10)
+C5339                                               1 	(obj:10)
+C5340                                               1 	(obj:10)
+C5348                                               1 	(obj:10)
+C5349                                               1 	(obj:10)
+C5353                                               1 	(obj:10)
+C5354                                               1 	(obj:10)
+C5395                                               1 	(obj:10)
+C5396                                               1 	(obj:10)
+C5409                                               1 	(obj:10)
+C5425                                               1 	(obj:10)
+C5449                                               1 	(obj:10)
+C5454                                               1 	(obj:10)
+C5455                                               1 	(obj:10)
+C5489                                               1 	(obj:10)
+C5490                                               1 	(obj:10)
+C5515                                               1 	(obj:10)
+C5516                                               1 	(obj:10)
+C5527                                               1 	(obj:10)
+C5528                                               1 	(obj:10)
+C5542                                               1 	(obj:10)
+C5582                                               1 	(obj:10)
+C5583                                               1 	(obj:10)
+C5595                                               1 	(obj:10)
+C5596                                               1 	(obj:10)
+C5610                                               1 	(obj:10)
+C5631                                               1 	(obj:10)
+C5632                                               1 	(obj:10)
+C5671                                               1 	(obj:10)
+C5672                                               1 	(obj:10)
+C5688                                               1 	(obj:10)
+C5689                                               1 	(obj:10)
+C5719                                               1 	(obj:10)
+C5720                                               1 	(obj:10)
+C5732                                               1 	(obj:10)
+C5733                                               1 	(obj:10)
+C5743                                               1 	(obj:10)
+C5744                                               1 	(obj:10)
+C5788                                               1 	(obj:10)
+C5789                                               1 	(obj:10)
+C5811                                               1 	(obj:10)
+C5812                                               1 	(obj:5)
+C5813                                               1 	(obj:10)
+C5823                                               1 	(obj:10)
+C5824                                               1 	(obj:10)
+C5837                                               1 	(obj:10)
+C5838                                               1 	(obj:10)
+C5843                                               1 	(obj:10)
+C5844                                               1 	(obj:10)
+C5869                                               1 	(obj:10)
+C5874                                               1 	(obj:10)
+C5875                                               1 	(obj:10)
+C5882                                               1 	(obj:10)
+C5883                                               1 	(obj:10)
+C5891                                               1 	(obj:10)
+C5892                                               1 	(obj:10)
+C5913                                               1 	(obj:10)
+C5927                                               1 	(obj:10)
+C5928                                               1 	(obj:10)
+C5929                                               1 	(obj:10)
+C5930                                               1 	(obj:10)
+C5945                                               1 	(obj:10)
+C5951                                               1 	(obj:10)
+C5952                                               1 	(obj:10)
+C5978                                               1 	(obj:10)
+C5996                                               1 	(obj:10)
+C6019                                               1 	(obj:10)
+C6024                                               1 	(obj:10)
+C6025                                               1 	(obj:10)
+C6031                                               1 	(obj:10)
+C6032                                               1 	(obj:10)
+C6082                                               1 	(obj:10)
+C6083                                               1 	(obj:10)
+C6088                                               1 	(obj:10)
+C6089                                               1 	(obj:10)
+C6105                                               1 	(obj:10)
+C6110                                               1 	(obj:10)
+C6111                                               1 	(obj:10)
+C6156                                               1 	(obj:10)
+C6170                                               1 	(obj:10)
+C6171                                               1 	(obj:10)
+C6174                                               1 	(obj:10)
+C6175                                               1 	(obj:10)
+C6238                                               1 	(obj:10)
+C6243                                               1 	(obj:10)
+C6244                                               1 	(obj:10)
+C6274                                               1 	(obj:10)
+C6275                                               1 	(obj:10)
+C6334                                               1 	(obj:10)
+C6335                                               1 	(obj:10)
+C6380                                               1 	(obj:10)
+C6381                                               1 	(obj:10)
+C6390                                               1 	(obj:10)
+C6406                                               1 	(obj:10)
+C6437                                               1 	(obj:10)
+C6438                                               1 	(obj:10)
+C6470                                               1 	(obj:10)
+C6471                                               1 	(obj:10)
+C6483                                               1 	(obj:10)
+C6497                                               1 	(obj:10)
+C6498                                               1 	(obj:10)
+C6534                                               1 	(obj:10)
+C6543                                               1 	(obj:10)
+C6550                                               1 	(obj:1)
+C6551                                               1 	(obj:10)
+C6561                                               1 	(obj:10)
+C6562                                               1 	(obj:10)
+C6572                                               1 	(obj:10)
+C6573                                               1 	(obj:10)
+C6598                                               1 	(obj:10)
+C6625                                               1 	(obj:10)
+C6663                                               1 	(obj:10)
+C6664                                               1 	(obj:10)
+C6709                                               1 	(obj:10)
+C6710                                               1 	(obj:10)
+C6754                                               1 	(obj:10)
+C6755                                               1 	(obj:10)
+C6798                                               1 	(obj:10)
+C6799                                               1 	(obj:10)
+C6822                                               1 	(obj:10)
+C6823                                               1 	(obj:10)
+C6846                                               1 	(obj:10)
+C6847                                               1 	(obj:10)
+C6855                                               1 	(obj:10)
+C6856                                               1 	(obj:10)
+C6879                                               1 	(obj:10)
+C6913                                               1 	(obj:10)
+C6914                                               1 	(obj:10)
+C6946                                               1 	(obj:10)
+C6947                                               1 	(obj:10)
+C6974                                               1 	(obj:10)
+C6975                                               1 	(obj:10)
+C7043                                               1 	(obj:10)
+C7044                                               1 	(obj:10)
+C7094                                               1 	(obj:10)
+C7095                                               1 	(obj:10)
+C7100                                               1 	(obj:10)
+C7101                                               1 	(obj:10)
+C7109                                               1 	(obj:10)
+C7110                                               1 	(obj:10)
+C7123                                               1 	(obj:10)
+C7124                                               1 	(obj:10)
+C7149                                               1 	(obj:10)
+C7150                                               1 	(obj:10)
+C7160                                               1 	(obj:10)
+C7161                                               1 	(obj:10)
+C7180                                               1 	(obj:10)
+C7181                                               1 	(obj:10)
+C7231                                               1 	(obj:10)
+C7232                                               1 	(obj:10)
+C7251                                               1 	(obj:10)
+C7252                                               1 	(obj:10)
+C7284                                               1 	(obj:10)
+C7285                                               1 	(obj:10)
+C7295                                               1 	(obj:10)
+C7296                                               1 	(obj:10)
+C7324                                               1 	(obj:10)
+C7325                                               1 	(obj:10)
+C7340                                               1 	(obj:10)
+C7386                                               1 	(obj:10)
+C7387                                               1 	(obj:10)
+C7423                                               1 	(obj:10)
+C7426                                               1 	(obj:10)
+C7427                                               1 	(obj:10)
+C7448                                               1 	(obj:10)
+C7449                                               1 	(obj:10)
+C7501                                               1 	(obj:10)
+C7502                                               1 	(obj:10)
+C7512                                               1 	(obj:10)
+C7513                                               1 	(obj:10)
+C7516                                               1 	(obj:10)
+C7517                                               1 	(obj:10)
+C7538                                               1 	(obj:10)
+C7539                                               1 	(obj:10)
+C7571                                               1 	(obj:10)
+C7572                                               1 	(obj:10)
+C7589                                               1 	(obj:10)
+C7590                                               1 	(obj:10)
+C7604                                               1 	(obj:10)
+C7605                                               1 	(obj:10)
+C7611                                               1 	(obj:10)
+C7612                                               1 	(obj:10)
+C7634                                               1 	(obj:10)
+C7648                                               1 	(obj:10)
+C7649                                               1 	(obj:10)
+C7660                                               1 	(obj:10)
+C7661                                               1 	(obj:10)
+C7713                                               1 	(obj:10)
+C7714                                               1 	(obj:10)
+C7724                                               1 	(obj:10)
+C7725                                               1 	(obj:10)
+C7732                                               1 	(obj:10)
+C7743                                               1 	(obj:10)
+C7753                                               1 	(obj:10)
+C7754                                               1 	(obj:10)
+C7768                                               1 	(obj:5)
+C7769                                               1 	(obj:10)
+C7785                                               1 	(obj:10)
+C7790                                               1 	(obj:10)
+C7791                                               1 	(obj:10)
+C7793                                               1 	(obj:10)
+C7821                                               1 	(obj:10)
+C7822                                               1 	(obj:10)
+C7830                                               1 	(obj:10)
+C7831                                               1 	(obj:10)
+C7876                                               1 	(obj:10)
+C7878                                               1 	(obj:10)
+C7883                                               1 	(obj:10)
+C7884                                               1 	(obj:10)
+C7900                                               1 	(obj:10)
+C7910                                               1 	(obj:10)
+C7912                                               1 	(obj:10)
+C7913                                               1 	(obj:10)
+C7929                                               1 	(obj:10)
+C7930                                               1 	(obj:10)
+C7943                                               1 	(obj:10)
+C7945                                               1 	(obj:10)
+C7946                                               1 	(obj:10)
+C7965                                               1 	(obj:10)
+C7966                                               1 	(obj:10)
+C7969                                               1 	(obj:10)
+C7970                                               1 	(obj:10)
+C7993                                               1 	(obj:10)
+C8022                                               1 	(obj:10)
+C8023                                               1 	(obj:10)
+C8033                                               1 	(obj:10)
+C8034                                               1 	(obj:10)
+C8048                                               1 	(obj:10)
+C8049                                               1 	(obj:10)
+C8053                                               1 	(obj:5)
+C8054                                               1 	(obj:10)
+C8082                                               1 	(obj:10)
+C8083                                               1 	(obj:10)
+C8104                                               1 	(obj:10)
+C8105                                               1 	(obj:10)
+C8113                                               1 	(obj:10)
+C8114                                               1 	(obj:10)
+C8128                                               1 	(obj:10)
+C8129                                               1 	(obj:10)
+C8141                                               1 	(obj:10)
+C8142                                               1 	(obj:10)
+C8148                                               1 	(obj:10)
+C8149                                               1 	(obj:10)
+C8163                                               1 	(obj:10)
+C8177                                               1 	(obj:10)
+C8178                                               1 	(obj:10)
+C8185                                               1 	(obj:10)
+C8187                                               1 	(obj:10)
+C8192                                               1 	(obj:10)
+C8193                                               1 	(obj:10)
+C8203                                               1 	(obj:10)
+C8241                                               1 	(obj:10)
+C8242                                               1 	(obj:10)
+C8248                                               1 	(obj:10)
+C8249                                               1 	(obj:10)
+C8262                                               1 	(obj:10)
+C8270                                               1 	(obj:10)
+C8274                                               1 	(obj:10)
+C8275                                               1 	(obj:10)
+C8301                                               1 	(obj:10)
+C8302                                               1 	(obj:10)
+C8314                                               1 	(obj:10)
+C8317                                               1 	(obj:10)
+C8318                                               1 	(obj:10)
+C8326                                               1 	(obj:1)
+C8327                                               1 	(obj:10)
+C8339                                               1 	(obj:10)
+C8340                                               1 	(obj:10)
+C8348                                               1 	(obj:10)
+C8349                                               1 	(obj:10)
+C8359                                               1 	(obj:10)
+C8369                                               1 	(obj:10)
+C8377                                               1 	(obj:10)
+C8412                                               1 	(obj:10)
+C8419                                               1 	(obj:10)
+C8444                                               1 	(obj:10)
+C8457                                               1 	(obj:10)
+C8458                                               1 	(obj:10)
+C8481                                               1 	(obj:10)
+C8482                                               1 	(obj:10)
+C8504                                               1 	(obj:10)
+C8521                                               1 	(obj:10)
+C8522                                               1 	(obj:10)
+C8547                                               1 	(obj:10)
+C8580                                               1 	(obj:10)
+C8581                                               1 	(obj:10)
+C8582                                               1 	(obj:10)
+C8614                                               1 	(obj:10)
+C8615                                               1 	(obj:10)
+C8631                                               1 	(obj:10)
+C8636                                               1 	(obj:10)
+C8637                                               1 	(obj:10)
+C8638                                               1 	(obj:10)
+C8639                                               1 	(obj:10)
+C8664                                               1 	(obj:10)
+C8667                                               1 	(obj:10)
+C8668                                               1 	(obj:10)
+C8687                                               1 	(obj:10)
+C8689                                               1 	(obj:10)
+C8690                                               1 	(obj:10)
+C8705                                               1 	(obj:10)
+C8714                                               1 	(obj:10)
+C8728                                               1 	(obj:10)
+C8737                                               1 	(obj:10)
+C8755                                               1 	(obj:10)
+C8768                                               1 	(obj:10)
+C8769                                               1 	(obj:10)
+C8780                                               1 	(obj:10)
+C8784                                               1 	(obj:10)
+C8785                                               1 	(obj:10)
+C8791                                               1 	(obj:10)
+C8792                                               1 	(obj:10)
+C8800                                               1 	(obj:10)
+C8801                                               1 	(obj:10)
+C8814                                               1 	(obj:10)
+C8819                                               1 	(obj:10)
+C8820                                               1 	(obj:10)
+C8837                                               1 	(obj:10)
+C8838                                               1 	(obj:10)
+C8850                                               1 	(obj:10)
+C8851                                               1 	(obj:10)
+C8859                                               1 	(obj:10)
+C8860                                               1 	(obj:10)
+C8870                                               1 	(obj:10)
+C8871                                               1 	(obj:10)
+C8886                                               1 	(obj:10)
+C8887                                               1 	(obj:10)
+C8896                                               1 	(obj:10)
+C8897                                               1 	(obj:10)
+C8910                                               1 	(obj:10)
+C8911                                               1 	(obj:10)
+C8923                                               1 	(obj:10)
+C8926                                               1 	(obj:10)
+C8927                                               1 	(obj:10)
+C8947                                               1 	(obj:10)
+C8948                                               1 	(obj:10)
+C8982                                               1 	(obj:10)
+C8999                                               1 	(obj:10)
+C9018                                               1 	(obj:10)
+C9019                                               1 	(obj:10)
+C9025                                               1 	(obj:10)
+C9026                                               1 	(obj:10)
+C9033                                               1 	(obj:10)
+C9045                                               1 	(obj:10)
+C9046                                               1 	(obj:10)
+C9062                                               1 	(obj:10)
+C9063                                               1 	(obj:10)
+C9069                                               1 	(obj:10)
+C9070                                               1 	(obj:10)
+C9082                                               1 	(obj:10)
+C9092                                               1 	(obj:10)
+C9093                                               1 	(obj:10)
+C9113                                               1 	(obj:10)
+C9114                                               1 	(obj:10)
+C9164                                               1 	(obj:10)
+C9165                                               1 	(obj:10)
+C9180                                               1 	(obj:10)
+C9181                                               1 	(obj:10)
+C9215                                               1 	(obj:10)
+C9216                                               1 	(obj:10)
+C9266                                               1 	(obj:10)
+C9267                                               1 	(obj:10)
+C9286                                               1 	(obj:10)
+C9287                                               1 	(obj:10)
+C9326                                               1 	(obj:10)
+C9336                                               1 	(obj:10)
+C9372                                               1 	(obj:10)
+C9373                                               1 	(obj:10)
+C9376                                               1 	(obj:10)
+C9377                                               1 	(obj:10)
+C9424                                               1 	(obj:10)
+C9444                                               1 	(obj:10)
+C9487                                               1 	(obj:10)
+C9488                                               1 	(obj:10)
+C9524                                               1 	(obj:10)
+C9525                                               1 	(obj:10)
+C9559                                               1 	(obj:10)
+C9577                                               1 	(obj:10)
+C9593                                               1 	(obj:10)
+C9622                                               1 	(obj:10)
+C9623                                               1 	(obj:10)
+C9628                                               1 	(obj:10)
+C9629                                               1 	(obj:10)
+C9643                                               1 	(obj:10)
+C9646                                               1 	(obj:10)
+C9654                                               1 	(obj:10)
+C9655                                               1 	(obj:10)
+C9662                                               1 	(obj:10)
+C9667                                               1 	(obj:10)
+C9676                                               1 	(obj:10)
+C9677                                               1 	(obj:10)
+C9687                                               1 	(obj:10)
+C9691                                               1 	(obj:10)
+C9692                                               1 	(obj:10)
+C9693                                               1 	(obj:10)
+C9710                                               1 	(obj:10)
+C9714                                               1 	(obj:10)
+C9722                                               1 	(obj:10)
+C9756                                               1 	(obj:10)
+C9757                                               1 	(obj:10)
+C9765                                               1 	(obj:10)
+C9771                                               1 	(obj:10)
+C9772                                               1 	(obj:10)
+C2146                                               1 	(obj:1)
+C1253                                               1 	(obj:1)
+
+Statistics
+==========
+
+Master Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3285.48
+  solving          :    3285.48
+  presolving       :       0.00 (included in solving)
+  reading          :       0.00
+  copying          :       0.26 (8 #copies) (minimal 0.00, maximal 0.04, average 0.03)
+Original Problem   :
+  Problem name     : master_neos-935769
+  Variables        : 0 (0 binary, 0 integer, 0 implicit integer, 0 continuous)
+  Constraints      : 2369 initial, 2369 maximal
+  Objective        : minimize, 0 non-zeros (abs.min = 1e+20, abs.max = -1e+20)
+Presolved Problem  :
+  Problem name     : t_master_neos-935769
+  Variables        : 22093 (0 binary, 22093 integer, 0 implicit integer, 0 continuous)
+  Constraints      : 2369 initial, 2370 maximal
+  Objective        : minimize, 20725 non-zeros (abs.min = 6, abs.max = 450)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  roundbound       :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  linear           :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -        946          -          -        946          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  masterbranch     :          0+       555          0        751          0          0          0          0          0          0      42812          0          0          0          0
+  integralorig     :          0          0          0          0        308          0          0         54          0          0          0          0          0          0          0
+  integral         :          0          0          0          0        308          0          0         54          0          0          0          0          0          0        616
+  linear           :       2369       2369          3       3357          0          0          0         54          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  masterbranch     :      89.43       0.00       0.00      89.43       0.00       0.00       0.00       0.00       0.00       0.00
+  integralorig     :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.08       0.00       0.00       0.00       0.07       0.00       0.00       0.01       0.00       0.00
+  linear           :       0.12       0.00       0.00       0.01       0.00       0.00       0.00       0.10       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          1          0          0          0
+  genvbounds       :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          0          0          0          0
+  redcost          :          0          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :       3664          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.00       0.00       0.00       0.00       0.00       0.00
+  redcost          :       0.00       0.00       0.00       0.00       0.00       0.00
+  rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
+  vbounds          :       0.00       0.00       0.00       0.00       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     0          -          -          0          -          -    (maximal pool size: 0)
+  basis            :      28.57       0.00          2          0          0         10          3          0
+  master           :       1.40       0.00         13          0          0          1          1          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.26          -        991      21202
+  gcg              :     341.12       0.00        944      19039
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  generic          :       0.00       0.00          0          0          0          0          0          0          0          0
+  orig             :       0.07       0.00        308          0          0          0          0          0          0        616
+  relpsprob        :       0.00       0.00          0          0          0          0          0          0          0          0
+  ryanfoster       :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.15       0.00          1          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :      46.09       0.00          1          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  greedycolsel     :       0.01       0.00         14          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mastercoefdiving :       0.00       0.00          0          0          0
+  masterfracdiving :       0.00       0.00          0          0          0
+  masterlinesdiving:       0.00       0.00          0          0          0
+  mastervecldiving :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.03       0.00          4          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.19       0.00         17          0          0
+  relaxcolsel      :       0.17       0.00         10         20          0
+  rens             :       0.05       0.00          1          0          0
+  restmaster       :       0.01       0.00          1          0          0
+  rins             :       2.20       0.00          5          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.29       0.00        203          0          0
+  setcover         :       0.00       0.00          0          0          0
+  shiftandpropagate:       0.00       0.00          0          0          0
+  shifting         :       0.18       0.00         33          0          0
+  simplerounding   :       0.90       0.00        975          2          2
+  twoopt           :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.07       0.00        308          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :     588.57        691     994620    1539.66    1689.90       0.69         45
+  dual LP          :    2246.56       2252    2123000    6804.49     945.00      31.45       1940
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:      72.48        448     117351     261.94    1619.17
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+B&B Tree           :
+  number of runs   :          1
+  nodes            :        310 (308 internal, 2 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          1
+  objective leaves :          0
+  nodes (total)    :        310 (308 internal, 2 leaves)
+  nodes left       :        288
+  max depth        :        143
+  max depth (total):        143
+  backtracks       :          2 (0.6%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          5 (1273 domain reductions, 0 cutoffs)
+  avg switch length:       1.85
+  switching time   :       0.08
+Root Node          :
+  First LP value   :          -
+  First LP Iters   :          0
+  First LP Time    :       0.00
+  Final Dual Bound : -2.06900000000000e+04
+  Final Root Iters :     624574
+  Root LP Estimate : -2.06900000000000e+04
+Solution           :
+  Solutions found  :         37 (5 improvements)
+  First Solution   : -1.89780000000000e+04   (in run 1, after 1 nodes, 0.01 seconds, depth 0, found by <relaxation>)
+  Gap First Sol.   :       9.02 %
+  Gap Last Sol.    :       0.01 %
+  Primal Bound     : -2.06880000000000e+04   (in run 1, after 260 nodes, 2452.94 seconds, depth 143, found by <relaxation>)
+  Dual Bound       : -2.06900000000000e+04
+  Gap              :       0.01 %
+  Avg. Gap         :       2.06 % (6776.88 primal-dual integral)
+Pricing Solver     : #HeurFarkas  #OptFarkas  #HeurRedcost #OptRedcost Time: HeurFarkas  OptFarkas  HeurRedcost OptRedcost
+  knapsack         :           0           0             0           0             0.00       0.00         0.01       0.00 
+  mip              :           0           0         52602       14048             0.00       0.00       290.76      25.32 
+
+Original Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3600.33
+  solving          :    3600.24
+  presolving       :       1.15 (included in solving)
+  reading          :       0.09
+  copying          :       0.09 (5 #copies) (minimal 0.02, maximal 0.02, average 0.02)
+Original Problem   :
+  Problem name     : neos-935769
+  Variables        : 9799 (7020 binary, 0 integer, 0 implicit integer, 2779 continuous)
+  Constraints      : 6741 initial, 6741 maximal
+  Objective        : minimize, 9799 non-zeros (abs.min = 1, abs.max = 50)
+Presolved Problem  :
+  Problem name     : t_neos-935769
+  Variables        : 7638 (7020 binary, 0 integer, 618 implicit integer, 0 continuous)
+  Constraints      : 6717 initial, 6718 maximal
+  Objective        : minimize, 7638 non-zeros (abs.min = 1, abs.max = 49)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  convertinttobin  :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  domcol           :       0.01       0.00      1          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      4          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  trivial          :       0.00       0.00      7          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      7       2022          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       1.03       0.00      1          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  knapsack         :       0.01       0.00      5          0          0          0          0          0          1          2          2          6
+  setppc           :       0.02       0.00      5          0          0          0          0          0          2          0          0          0
+  linear           :       0.06       0.00     10          0        139          0        757          0         23          0        139          0
+  logicor          :       0.00       0.00      5          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -         25          -          -        635          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  origbranch       :          0+       555          0          0          0          0          0          0          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          1        307          0       1119          0          0          0          0          0          0        616
+  decomp           :          0          0          0          0          0          0          0         38          0          0          0          0          0          0          0
+  knapsack         :        189        189          8      19221          0          0          0         28          0         12       1831          0          0          0          0
+  setppc           :       5910       5910          8      19229          0          0          0         26          0          0       9657          0          0          0          0
+  linear           :        610        610          8      19210          0          0          0         26          0          0          0          0          0          0          0
+  logicor          :          8          8          8         11          0          0          0         26          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  origbranch       :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.11       0.00       0.00       0.00       0.00       0.00       0.09       0.02       0.00       0.00
+  decomp           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  knapsack         :       0.06       0.00       0.01       0.05       0.00       0.00       0.00       0.00       0.00       0.00
+  setppc           :       0.26       0.00       0.01       0.23       0.00       0.00       0.00       0.02       0.00       0.00
+  linear           :       0.35       0.00       0.32       0.01       0.00       0.00       0.00       0.01       0.00       0.00
+  logicor          :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          3          0          0          0
+  genvbounds       :          0          0          0          0
+  obbt             :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :       1143          0          0          0
+  redcost          :          4          0          0          0
+  rootredcost      :          2          0          0        635
+  vbounds          :      16551          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  obbt             :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       1.03       0.00       1.03       0.00       0.00       0.00
+  pseudoobj        :       0.04       0.00       0.00       0.04       0.00       0.00
+  redcost          :       0.00       0.00       0.00       0.00       0.00       0.00
+  rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
+  vbounds          :       0.01       0.00       0.00       0.01       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                    11          -          -         38          -          -    (maximal pool size: 78)
+  clique           :       1.93       0.00          8          0          0          0          3          0
+  closecuts        :       0.00       0.00          0          0          0          0          0          0
+  gomory           :       1.65       0.00          5          0          0          0          5          0
+  impliedbounds    :       0.01       0.00          8          0          0          0          0          0
+  intobj           :       0.00       0.00          0          0          0          0          0          0
+  mcf              :       0.00       0.00          1          0          0          0          0          0
+  oddcycle         :       0.19       0.00          8          0          0          6          1          0
+  rapidlearning    :       0.00       0.00          0          0          0          0          0          0
+  strongcg         :       1.53       0.00          5          0          0          0          0          0
+  zerohalf         :       0.25       0.00          5          0          0          0          5          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.00          -          0          0
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  empty            :       0.00       0.00          1        307          0          0          0          0          0        616
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.21       0.00          1          1          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       2.35       0.00          1          1          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  gcgcoefdiving    :      94.13       0.00          1          0          0
+  gcgdins          :       0.00       0.00          0          0          0
+  gcgfeaspump      :       0.00       0.00          0          0          0
+  gcgfracdiving    :       0.00       0.00          0          0          0
+  gcgguideddiving  :       0.00       0.00          0          0          0
+  gcglinesdiving   :       0.00       0.00          0          0          0
+  gcgpscostdiving  :       0.00       0.00          0          0          0
+  gcgrens          :       4.59       0.00          1          1          0
+  gcgrins          :       2.16       0.00          1          1          0
+  gcgrounding      :      28.87       0.00        203          0          0
+  gcgshifting      :       4.22       0.00         31          0          0
+  gcgsimplerounding:       0.02       0.00        197          1          0
+  gcgveclendiving  :       0.00       0.00          0          0          0
+  gcgzirounding    :       0.00       0.00          0          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  nlpdiving        :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       2.45       0.00          3          1          1
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.07       0.00          2          0          0
+  rens             :       1.57       0.00          1          1          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.11       0.00          2          0          0
+  shiftandpropagate:       0.00       0.00          0          0          0
+  shifting         :       0.11       0.00          2          0          0
+  simplerounding   :       0.00       0.00          2          0          0
+  subnlp           :       0.00       0.00          0          0          0
+  trivial          :       0.01       0.00          2          2          1
+  trysol           :       0.00       0.00          0          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  undercover       :       0.00       0.00          0          0          0
+  vbounds          :       5.87       0.00          1          1          1
+  veclendiving     :       0.00       0.00          0          0          0
+  xpcrossover      :      33.38       0.00          1          1          0
+  xprins           :     115.82       0.00          1          1          1
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.01       0.00          1          1          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.00          0          0       0.00          -       0.00          0
+  dual LP          :      16.63          2      23342   23342.00    1403.67       0.01          1
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:      32.30         13      64055    4927.31    1982.86
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+Relaxators         :       Time      Calls
+  gcg              :    3286.27        309
+B&B Tree           :
+  number of runs   :          1
+  nodes            :        310 (308 internal, 2 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          1
+  objective leaves :          0
+  nodes (total)    :        310 (308 internal, 2 leaves)
+  nodes left       :        288
+  max depth        :        143
+  max depth (total):        143
+  backtracks       :          2 (0.6%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          1 (0 domain reductions, 0 cutoffs)
+  avg switch length:       1.85
+  switching time   :       0.03
+Root Node          :
+  First LP value   : +3.01000000000003e+03
+  First LP Iters   :      23342 (1404.53 Iter/sec)
+  First LP Time    :      16.62
+  Final Dual Bound : +3.01000000000003e+03
+  Final Root Iters :      27992
+  Root LP Estimate : +3.01000000000002e+03
+Solution           :
+  Solutions found  :         25 (6 improvements)
+  First Solution   : +2.37000000000000e+04   (in run 1, after 1 nodes, 1.18 seconds, depth 0, found by <trivial>)
+  Gap First Sol.   :   infinite
+  Gap Last Sol.    :       0.07 %
+  Primal Bound     : +3.01200000000000e+03   (in run 1, after 260 nodes, 2760.64 seconds, depth 143, found by <relaxation>)
+  Dual Bound       : +3.01000000000003e+03
+  Gap              :       0.07 %
+  Avg. Gap         :          - (not evaluated)
+
+Simplex iterations :       iter
+  Master LP        :    3234971
+  Pricing LP       :     480501
+  Original LP      :      87397
+
+Detector statistics:       time     number     blocks
+  connected        :       0.00          0    
+  constype         :       0.00          0    
+  postproces       :       0.00          0    
+  consclass        :       6.10          0    
+  consname         :       0.00          0    
+  densemaste       :       0.00          0    
+  stairheur        :       0.00          0    
+  staircase        :       0.00          0    
+  random           :       0.00          0    
+  staircase_       :       0.00          0    
+  colors           :       0.00          0    
+  cutpacking       :       0.00          0    
+  compgreedi       :       0.00          0    
+  mastersetc       :       0.00          0    
+  mastersetp       :       0.00          0    
+  mastersetp       :       0.00          0    
+  hcgpartiti       :       0.00          0    
+  hrgpartiti       :       0.00          0    
+  hrcgpartit       :       0.00          0    
+  connectedb       :       0.00          0    
+  connected_       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  varclass         :       1.48          0    
+  isomorph         :       0.00          0    
+
+Decomp statistics  :
+  type             :   bordered
+  detector         :         cC
+  blocks           :        139
+  aggr. blocks     :        139
+Master statistics  :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros    bnzeros bintnzeros  min(dens)  max(dens) medi(dens) mean(dens)
+  master           :          0          0          0          0          0       2230      17181      17181          0          0      0.000      0.003      0.001      0.001
+Pricing statistics :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros  min(dens)  max(dens) medi(dens) mean(dens)  identical
+          1        :         49         49          0          4          0         29        118        114      0.034      0.103      0.069      0.083          1
+          2        :         49         49          0          4          0         29        118        114      0.034      0.103      0.069      0.083          1
+          3        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+          4        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+          5        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+          6        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+          7        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+          8        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+          9        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         10        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         11        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         12        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         13        :         49         49          0          4          0         30        130        126      0.033      0.100      0.100      0.088          1
+         14        :         49         49          0          4          0         30        130        126      0.033      0.100      0.100      0.088          1
+         15        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         16        :         26         26          0          2          0         16         68         66      0.062      0.188      0.188      0.163          1
+         17        :         26         26          0          2          0         15         62         60      0.067      0.200      0.133      0.159          1
+         18        :         26         26          0          2          0         15         62         60      0.067      0.200      0.133      0.159          1
+         19        :         26         26          0          2          0         15         62         60      0.067      0.200      0.133      0.159          1
+         20        :         26         26          0          2          0         15         62         60      0.067      0.200      0.133      0.159          1
+         21        :         48         48          0          3          0         29        123        120      0.034      0.103      0.103      0.088          1
+         22        :         48         48          0          3          0         29        123        120      0.034      0.103      0.103      0.088          1
+         23        :         48         48          0          3          0         28        111        108      0.036      0.107      0.071      0.083          1
+         24        :         48         48          0          3          0         28        111        108      0.036      0.107      0.071      0.083          1
+         25        :         49         49          0          4          0         29        118        114      0.034      0.103      0.069      0.083          1
+         26        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         27        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         28        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         29        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         30        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         31        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         32        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         33        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         34        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         35        :         49         49          0          4          0         29        118        114      0.034      0.103      0.069      0.083          1
+         36        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         37        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         38        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         39        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         40        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         41        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         42        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         43        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         44        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         45        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         46        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         47        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         48        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         49        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         50        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         51        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         52        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         53        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         54        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         55        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         56        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         57        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         58        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         59        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         60        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         61        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         62        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         63        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         64        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         65        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         66        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         67        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         68        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         69        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         70        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         71        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         72        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         73        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         74        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         75        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         76        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         77        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         78        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         79        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         80        :         49         49          0          4          0         30        130        126      0.033      0.100      0.100      0.088          1
+         81        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         82        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         83        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         84        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         85        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         86        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+         87        :         49         49          0          4          0         30        130        126      0.033      0.100      0.100      0.088          1
+         88        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         89        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         90        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         91        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         92        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+         93        :         26         26          0          2          0         15         62         60      0.067      0.200      0.133      0.159          1
+         94        :         26         26          0          2          0         15         62         60      0.067      0.200      0.133      0.159          1
+         95        :         26         26          0          2          0         15         62         60      0.067      0.200      0.133      0.159          1
+         96        :         26         26          0          2          0         15         62         60      0.067      0.200      0.133      0.159          1
+         97        :         26         26          0          2          0         15         62         60      0.067      0.200      0.133      0.159          1
+         98        :         26         26          0          2          0         15         62         60      0.067      0.200      0.133      0.159          1
+         99        :         49         49          0          4          0         29        118        114      0.034      0.103      0.069      0.083          1
+        100        :         49         49          0          4          0         29        118        114      0.034      0.103      0.069      0.083          1
+        101        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        102        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        103        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        104        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        105        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+        106        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+        107        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+        108        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        109        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+        110        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+        111        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+        112        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+        113        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        114        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        115        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+        116        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+        117        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        118        :         62         62          0          5          0         37        164        159      0.027      0.081      0.081      0.071          1
+        119        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        120        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        121        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        122        :         49         49          0          4          0         29        118        114      0.034      0.103      0.069      0.083          1
+        123        :         49         49          0          4          0         29        118        114      0.034      0.103      0.069      0.083          1
+        124        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        125        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        126        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        127        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        128        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        129        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        130        :         14         14          0          2          0          8         32         30      0.125      0.375      0.250      0.286          1
+        131        :         14         14          0          2          0          8         32         30      0.125      0.375      0.250      0.286          1
+        132        :         14         14          0          2          0          8         32         30      0.125      0.375      0.250      0.286          1
+        133        :         14         14          0          2          0          8         32         30      0.125      0.375      0.250      0.286          1
+        134        :         17         17          0          2          0          9         38         36      0.111      0.333      0.222      0.248          1
+        135        :         17         17          0          2          0          9         38         36      0.111      0.333      0.222      0.248          1
+        136        :         17         17          0          2          0          9         38         36      0.111      0.333      0.222      0.248          1
+        137        :         17         17          0          2          0          9         38         36      0.111      0.333      0.222      0.248          1
+        138        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+        139        :         62         62          0          5          0         36        149        144      0.028      0.083      0.056      0.067          1
+Decomp Scores      :
+  border area      :      0.332
+  avg. density     :      0.933
+  linking score    :      0.500
+Pricing time in colpool = 0.022872 sec
+
+GCGTIME= 3922.82

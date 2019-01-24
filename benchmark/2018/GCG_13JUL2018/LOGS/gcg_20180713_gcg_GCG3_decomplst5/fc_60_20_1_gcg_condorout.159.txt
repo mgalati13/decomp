@@ -1,0 +1,856 @@
+GCG version 3.0.0 [GitHash: 70e7382]
+Copyright (C) 2010-2018 Operations Research, RWTH Aachen University
+                        Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+SCIP version 6.0.0 [precision: 8 byte] [memory: block] [mode: optimized] [LP solver: SoPlex 4.0.0] [GitHash: 77d3bc8]
+Copyright (C) 2002-2018 Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+External codes: 
+  Readline 6.0         GNU library for command line editing (gnu.org/s/readline)
+  SoPlex 4.0.0         Linear Programming Solver developed at Zuse Institute Berlin (soplex.zib.de) [GitHash: 82cab95]
+  CppAD 20180000.0     Algorithmic Differentiation of C++ algorithms developed by B. Bell (www.coin-or.org/CppAD)
+  ZLIB 1.2.3           General purpose compression library by J. Gailly and M. Adler (zlib.net)
+  ZIMPL 3.3.6          Zuse Institute Mathematical Programming Language developed by T. Koch (zimpl.zib.de)
+  bliss 0.73           A Tool for Computing Automorphism Groups of Graphs by T. Junttila and P. Kaski (http://www.tcs.hut.fi/Software/bliss/)
+
+reading user parameter file </LOG_DATA/scripts/options_gcg.parm>
+
+read problem </ORDATA/miplib/fc_60_20_1.mps>
+============
+
+original problem has 708 variables (354 bin, 0 int, 0 impl, 354 cont) and 414 constraints
+presolving:
+(round 1, fast)       29 del vars, 28 del conss, 0 add conss, 339 chg bounds, 0 chg sides, 0 chg coeffs, 0 upgd conss, 0 impls, 0 clqs
+(round 2, fast)       44 del vars, 28 del conss, 0 add conss, 366 chg bounds, 0 chg sides, 30 chg coeffs, 0 upgd conss, 0 impls, 0 clqs
+(round 3, exhaustive) 44 del vars, 28 del conss, 0 add conss, 372 chg bounds, 0 chg sides, 32 chg coeffs, 0 upgd conss, 0 impls, 0 clqs
+(round 4, fast)       44 del vars, 28 del conss, 0 add conss, 372 chg bounds, 0 chg sides, 37 chg coeffs, 0 upgd conss, 0 impls, 0 clqs
+(round 5, exhaustive) 44 del vars, 28 del conss, 0 add conss, 373 chg bounds, 0 chg sides, 38 chg coeffs, 326 upgd conss, 0 impls, 0 clqs
+   (0.0s) probing: 51/338 (15.1%) - 0 fixings, 0 aggregations, 0 implications, 0 bound changes
+   (0.0s) probing aborted: 50/50 successive totally useless probings
+presolving (6 rounds: 6 fast, 3 medium, 3 exhaustive):
+ 44 deleted vars, 28 deleted constraints, 0 added constraints, 373 tightened bounds, 0 added holes, 0 changed sides, 38 changed coefficients
+ 326 implications, 0 cliques
+presolved problem has 664 variables (338 bin, 0 int, 0 impl, 326 cont) and 386 constraints
+    326 constraints of type <varbound>
+     60 constraints of type <linear>
+transformed objective value is always integral (scale: 1)
+Presolving Time: 0.01
+start creating seeedpool for current problem 
+created seeedpool for current problem, n detectors: 26 
+ Consclassifier "nonzeros" yields a classification with 14  different constraint classes 
+ Consclassifier "constypes" yields a classification with 2 different constraint classes 
+ Consclassifier "constypes according to miplib" yields a classification with 2 different constraint classes 
+ Consclassifier "constypes according to miplib" is not considered since it offers the same structure as "constypes" consclassifier
+ Varclassifier "vartypes" yields a classification with 2 different variable classes
+ Varclassifier "varobjvals" yields a classification with 50 different variable classes
+ Varclassifier "varobjvalsigns" yields a classification with 2 different variable classes
+ Varclassifier "varobjvalsigns" is not considered since it offers the same structure as "vartypes"
+ Added reduced version of consclassifier nonzeros with 9  different constraint classes 
+ the current varclass distribution includes 50 classes but only 18 are allowed for calcCandidatesNBlocks()
+Begin of detection round 0 of 1 total rounds 
+Start to propagate seeed with id 1 (0 of 1 in round 0) 
+ in dec_consclass: there are 3 different constraint classes   
+ the current consclass distribution includes 14 classes but only 9 are allowed for propagateSeeed() of cons class detector
+  the current constraint classifier "constypes" consists of 2 different classes   
+  the current constraint classifier "nonzeros-red-to-9" consists of 9 different classes   
+ dec_consclass found 514 new seeeds 
+dec_densemasterconss found 1 new seeed 
+Calling metis with: zsh -c "ulimit -t 3600;/ORDATA_NEW/SCIP/scipoptsuite-6.0.0/build/bin/hmetis gcg-r-1.metis.u4nytY 2 -seed 1 -ptype rb -ufactor 5.000000 > /dev/null"
+time left before metis started: 3599.991495, time metis spend 0.051915, remainingtime: 3599.939580
+Calling metis with: zsh -c "ulimit -t 3600;/ORDATA_NEW/SCIP/scipoptsuite-6.0.0/build/bin/hmetis gcg-r-1.metis.u4nytY 3 -seed 1 -ptype rb -ufactor 5.000000 > /dev/null"
+time left before metis started: 3599.991495, time metis spend 0.074695, remainingtime: 3599.916800
+Calling metis with: zsh -c "ulimit -t 3600;/ORDATA_NEW/SCIP/scipoptsuite-6.0.0/build/bin/hmetis gcg-r-1.metis.u4nytY 4 -seed 1 -ptype rb -ufactor 5.000000 > /dev/null"
+time left before metis started: 3599.991495, time metis spend 0.072350, remainingtime: 3599.919145
+Detecting Arrowhead structure: 2 3 4 done, 6 seeeds found.
+ the current varclass distribution includes 50 classes but only 9 are allowed for propagateSeeed() of var class detector
+Start finishing of partial decomposition 1.
+Measured running time per detector: 
+Detector consclass                 	 worked on 	 510 of 519	 and took a total time of 	0.108766
+Detector densemasterconss          	 worked on 	 0 of 519	 and took a total time of 	9.3e-05
+Detector hrgpartition              	 worked on 	 6 of 519	 and took a total time of 	0.220611
+Detector varclass                  	 worked on 	 2 of 519	 and took a total time of 	0.000601
+Started postprocessing of decompositions...
+...finished postprocessing of decompositions. Added 42 new decomps. 
+
+solve problem
+=============
+
+
+A Dantzig-Wolfe reformulation is applied to solve the original problem.
+
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+T  0.0s|     1 |     0 |      0 |      0 |     - |4539k|   0 |   0 | 386 |   0 |   0 |  0 | 0.000000e+00 | 5.959100e+04 |   --   |    Inf 
+b  0.0s|     1 |     0 |      0 |      0 |     - |4417k|   0 |   0 | 386 |   0 |   0 |  0 | 0.000000e+00 | 4.852000e+03 |   --   |    Inf 
+   0.0s|     1 |     0 |      0 |      0 |     - |4409k|   0 |   0 | 386 |   0 |   0 |  0 | 1.710000e+02 | 4.852000e+03 |   --   |2737.43%
+Chosen structure has 261 blocks, 9 master-only (static) variables, and 51 linking constraints.
+This decomposition has a maxwhite score of 0.856873.
+Warning: Discretization with continuous variables is only an experimental feature.
+Matrix has 261 blocks, using 261 pricing problems.
+
+     
+   1.2s|     1 |     0 |      0 |      0 |     - |  75M|   0 | 270 | 387 | 313 |   0 |  0 | 1.710000e+02 | 4.852000e+03 |   0.00%|2737.43%
+   1.2s|     1 |     0 |      0 |      0 |     - |  76M|   0 | 792 | 387 | 313 |   0 |  0 | 1.710000e+02 | 4.852000e+03 |   0.00%|2737.43%
+Starting reduced cost pricing...
+   2.7s|     1 |     0 |    681 |    374 |     - |  76M|   0 | 935 | 387 | 313 |   0 |  0 | 2.460000e+02 | 4.852000e+03 |   5.69%|1872.36%
+   2.9s|     1 |     0 |    773 |    466 |     - |  86M|   0 | 943 | 387 | 313 |  14 |  1 | 2.460000e+02 | 4.852000e+03 |   5.87%|1872.36%
+   4.1s|     1 |     0 |    939 |    466 |     - |  86M|   0 | 943 | 387 | 313 |  14 |  1 | 3.567326e+02 | 4.852000e+03 |   6.05%|1260.12%
+   4.2s|     1 |     0 |    948 |    475 |     - |  93M|   0 | 945 | 387 | 313 |  16 |  2 | 3.567326e+02 | 4.852000e+03 |   6.19%|1260.12%
+   5.3s|     1 |     0 |   1193 |    475 |     - |  93M|   0 | 945 | 387 | 313 |  16 |  2 | 3.636407e+02 | 4.852000e+03 |   6.30%|1234.28%
+   5.5s|     1 |     0 |   1199 |    481 |     - | 100M|   0 | 947 | 387 | 313 |  18 |  3 | 3.636407e+02 | 4.852000e+03 |   6.37%|1234.28%
+   6.5s|     1 |     0 |   1465 |    481 |     - | 100M|   0 | 947 | 387 | 313 |  18 |  3 | 3.637089e+02 | 4.852000e+03 |   6.43%|1234.03%
+   7.7s|     1 |     0 |   1755 |    485 |     - | 107M|   0 | 947 | 387 | 313 |  19 |  4 | 3.637835e+02 | 4.852000e+03 |   6.48%|1233.76%
+   7.9s|     1 |     0 |   1759 |    489 |     - | 113M|   0 | 949 | 387 | 313 |  20 |  5 | 3.637835e+02 | 4.852000e+03 |   6.53%|1233.76%
+   8.9s|     1 |     0 |   2048 |    489 |     - | 113M|   0 | 949 | 387 | 313 |  20 |  5 | 3.638688e+02 | 4.852000e+03 |   6.53%|1233.45%
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+  10.1s|     1 |     0 |   2337 |    490 |     - | 121M|   0 | 949 | 387 | 313 |  21 |  6 | 3.638827e+02 | 4.852000e+03 |   6.57%|1233.40%
+  11.3s|     1 |     0 |   2629 |    491 |     - | 121M|   0 | 949 | 387 | 313 |  22 |  7 | 3.639488e+02 | 4.852000e+03 |   6.63%|1233.15%
+  11.4s|     1 |     0 |   2630 |    492 |     - | 128M|   0 | 949 | 387 | 313 |  23 |  8 | 3.639488e+02 | 4.852000e+03 |   6.63%|1233.15%
+     
+  12.5s|     1 |     0 |   2921 |    492 |     - | 128M|   0 | 949 | 387 | 313 |  23 |  8 | 3.639594e+02 | 4.852000e+03 |   6.61%|1233.12%
+  12.6s|     1 |     0 |   2930 |    501 |     - | 129M|   0 | 949 | 387 | 313 |  24 |  9 | 3.639594e+02 | 4.852000e+03 |   6.61%|1233.12%
+  13.7s|     1 |     0 |   3223 |    503 |     - | 129M|   0 | 951 | 387 | 313 |  24 |  9 | 3.639687e+02 | 4.852000e+03 |   6.53%|1233.08%
+  14.9s|     1 |     0 |   3515 |    504 |     - | 131M|   0 | 951 | 387 | 313 |  25 | 10 | 3.639687e+02 | 4.852000e+03 |   6.49%|1233.08%
+  16.1s|     1 |     0 |   3808 |    506 |     - | 133M|   0 | 951 | 387 | 313 |  26 | 11 | 3.639705e+02 | 4.852000e+03 |   6.45%|1233.08%
+  17.2s|     1 |     0 |   4100 |    507 |     - | 133M|   0 | 951 | 387 | 313 |  27 | 12 | 3.639705e+02 | 4.852000e+03 |   6.41%|1233.08%
+  18.4s|     1 |     0 |   4393 |    512 |     - | 134M|   0 | 951 | 387 | 313 |  28 | 13 | 3.639899e+02 | 4.852000e+03 |   6.44%|1233.00%
+  19.5s|     1 |     0 |   4682 |    513 |     - | 135M|   0 | 951 | 387 | 313 |  29 | 14 | 3.640568e+02 | 4.852000e+03 |   6.45%|1232.76%
+  20.7s|     1 |     0 |   4972 |    514 |     - | 137M|   0 | 951 | 387 | 313 |  30 | 15 | 3.640642e+02 | 4.852000e+03 |   6.48%|1232.73%
+  21.3s|     1 |     0 |   5026 |    568 |     - | 142M|   0 | 951 | 387 | 313 |  36 | 17 | 3.640642e+02 | 4.852000e+03 |   6.48%|1232.73%
+  22.5s|     1 |     0 |   5314 |    592 |     - | 142M|   0 | 962 | 387 | 313 |  36 | 17 | 3.741279e+02 | 4.852000e+03 |   6.61%|1196.88%
+  23.6s|     1 |     0 |   5570 |    593 |     - | 143M|   0 | 962 | 387 | 313 |  37 | 18 | 3.741479e+02 | 4.852000e+03 |   6.62%|1196.81%
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+  23.7s|     1 |     0 |   5572 |    595 |     - | 144M|   0 | 962 | 387 | 313 |  38 | 19 | 3.741479e+02 | 4.852000e+03 |   6.62%|1196.81%
+  24.8s|     1 |     0 |   5887 |    595 |     - | 144M|   0 | 962 | 387 | 313 |  38 | 19 | 3.742464e+02 | 4.852000e+03 |   6.62%|1196.47%
+  26.0s|     1 |     0 |   6203 |    596 |     - | 145M|   0 | 962 | 387 | 313 |  39 | 20 | 3.742630e+02 | 4.852000e+03 |   6.65%|1196.41%
+     
+  27.1s|     1 |     0 |   6519 |    597 |     - | 145M|   0 | 962 | 387 | 313 |  40 | 21 | 3.742715e+02 | 4.852000e+03 |   6.67%|1196.39%
+r 27.7s|     1 |     0 |   6562 |    640 |     - | 146M|   0 |1223 | 387 | 313 |  40 | 23 | 3.742715e+02 | 1.891000e+03 |   6.67%| 405.25%
+E 27.7s|     1 |     0 |   6562 |    640 |     - | 147M|   0 |1745 | 387 | 313 |  40 | 23 | 3.742715e+02 | 1.087000e+03 |   6.67%| 190.43%
+X 28.1s|     1 |     0 |   6562 |    640 |     - | 148M|   0 |2006 | 387 | 313 |  40 | 23 | 3.742715e+02 | 5.910000e+02 |   6.67%|  57.91%
+Y 28.3s|     1 |     0 |   6562 |    640 |     - | 148M|   0 |2267 | 387 | 313 |  40 | 23 | 3.742715e+02 | 5.890000e+02 |   6.67%|  57.37%
+  28.3s|     1 |     0 |   6562 |    640 |     - | 148M|   0 |2267 | 387 | 313 |  40 | 23 | 3.742715e+02 | 5.890000e+02 |   6.67%|  57.37%
+  28.3s|     1 |     0 |   6562 |    640 |     - | 148M|   0 |2267 | 387 | 313 |  40 | 23 | 3.742715e+02 | 5.890000e+02 |   6.67%|  57.37%
+  28.3s|     1 |     0 |   6562 |    640 |     - | 148M|   0 |2267 | 387 | 313 |  40 | 23 | 3.742715e+02 | 5.890000e+02 |   6.67%|  57.37%
+  28.3s|     1 |     0 |   6562 |    640 |     - | 149M|   0 |2528 | 387 | 313 |  40 | 23 | 3.742715e+02 | 5.890000e+02 |   6.67%|  57.37%
+  28.3s|     1 |     0 |   6562 |    640 |     - | 149M|   0 |2528 | 302 | 313 |  40 | 23 | 3.742715e+02 | 5.890000e+02 |   6.67%|  57.37%
+  28.3s|     1 |     2 |   6562 |    640 |     - | 149M|   0 |2528 | 302 | 313 |  40 | 23 | 3.742715e+02 | 5.890000e+02 |   6.67%|  57.37%
+   102s|   100 |   101 |  16640 |   3559 |  29.9 | 214M|  11 |  27k| 302 | 313 |  40 |  1 | 3.798933e+02 | 5.890000e+02 |   --   |  55.04%
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+   235s|   200 |   199 |  25491 |   6832 |  31.3 | 268M|  15 |  45k| 302 | 313 |  40 |  1 | 3.808690e+02 | 5.890000e+02 |   --   |  54.65%
+N  238s|   201 |   200 |  25534 |   6838 |  31.2 | 271M|  15 |  46k| 302 | 313 |  40 |  1 | 3.808690e+02 | 5.470000e+02 |   --   |  43.62%
+   407s|   300 |   299 |  33952 |   9868 |  31.0 | 321M|  17 |  64k| 302 | 313 |  40 |  1 | 3.820612e+02 | 5.470000e+02 |   --   |  43.17%
+   520s|   400 |   399 |  41519 |  12238 |  29.2 | 355M|  17 |  75k| 302 | 313 |  40 |  1 | 3.834530e+02 | 5.470000e+02 |   --   |  42.65%
+N  521s|   401 |   400 |  41613 |  12284 |  29.2 | 356M|  17 |  75k| 302 | 313 |  40 |  1 | 3.834530e+02 | 5.390000e+02 |   --   |  40.56%
+b  522s|   402 |   401 |  41681 |  12295 |  29.2 | 356M|  17 |  75k| 302 | 313 |  40 |  1 | 3.834530e+02 | 5.290000e+02 |   --   |  37.96%
+   835s|   500 |   499 |  51057 |  16592 |  32.1 | 386M|  17 |  84k| 302 | 313 |  40 |  1 | 3.851576e+02 | 5.290000e+02 |   --   |  37.35%
+  1116s|   600 |   599 |  59818 |  20050 |  32.5 | 405M|  17 |  88k| 302 | 313 |  40 |  1 | 3.884041e+02 | 5.290000e+02 |   --   |  36.20%
+  1394s|   700 |   699 |  67881 |  23006 |  32.1 | 420M|  17 |  93k| 302 | 313 |  40 |  1 | 3.928867e+02 | 5.290000e+02 |   --   |  34.64%
+  1600s|   800 |   797 |  76589 |  26018 |  31.8 | 441M|  17 |  98k| 302 | 313 |  40 |  1 | 3.949482e+02 | 5.290000e+02 |   --   |  33.94%
+  1796s|   900 |   893 |  84301 |  28345 |  30.9 | 453M|  18 | 101k| 302 | 313 |  40 |  1 | 3.968174e+02 | 5.290000e+02 |   --   |  33.31%
+  2139s|  1000 |   985 |  93330 |  31685 |  31.1 | 473M|  18 | 107k| 302 | 313 |  40 |  1 | 3.998992e+02 | 5.290000e+02 |   --   |  32.28%
+  2440s|  1100 |  1077 | 101506 |  34405 |  30.8 | 486M|  18 | 111k| 302 | 313 |  40 |  1 | 4.030072e+02 | 5.290000e+02 |   --   |  31.26%
+  2804s|  1200 |  1175 | 110178 |  37733 |  31.0 | 503M|  23 | 116k| 302 | 313 |  40 |  1 | 4.059977e+02 | 5.290000e+02 |   --   |  30.30%
+  3424s|  1300 |  1271 | 119496 |  41707 |  31.7 | 513M|  24 | 118k| 302 | 313 |  40 |  1 | 4.087806e+02 | 5.290000e+02 |   --   |  29.41%
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 3600.76
+Solving Nodes      : 1338
+Primal Bound       : +5.29000000000000e+02 (455 solutions)
+Dual Bound         : +4.09604579644390e+02
+Gap                : 29.15 %
+
+primal solution:
+================
+
+objective value:                                  529
+x.26.1                                              1 	(obj:10)
+x.29.1                                              1 	(obj:14)
+x.31.1                                              1 	(obj:45)
+x.36.1                                              1 	(obj:10)
+x.61.1                                              1 	(obj:10)
+x.81.1                                              1 	(obj:22)
+x.82.1                                              1 	(obj:15)
+x.86.1                                              1 	(obj:10)
+x.89.1                                              1 	(obj:10)
+x.94.1                                              1 	(obj:14)
+x.111.1                                             1 	(obj:10)
+x.119.1                                             1 	(obj:10)
+x.128.1                                             1 	(obj:34)
+x.134.1                                             1 	(obj:10)
+x.147.1                                             1 	(obj:18)
+x.150.1                                             1 	(obj:37)
+x.156.1                                             1 	(obj:29)
+x.173.1                                             1 	(obj:1)
+x.218.1                                             1 	(obj:18)
+x.231.1                                             1 	(obj:16)
+x.245.1                                             1 	(obj:5)
+x.254.1                                             1 	(obj:3)
+x.256.1                                             1 	(obj:34)
+x.260.1                                             1 	(obj:12)
+x.268.1                                             1 	(obj:10)
+x.275.1                                             1 	(obj:46)
+x.306.1                                             1 	(obj:10)
+x.316.1                                             1 	(obj:9)
+x.332.1                                             1 	(obj:30)
+x.345.1                                             1 	(obj:6)
+x.348.1                                             1 	(obj:21)
+y.119                                              10 	(obj:0)
+y.134                                              10 	(obj:0)
+y.316                                               3 	(obj:0)
+y.111                                              10 	(obj:0)
+y.26                                               10 	(obj:0)
+y.94                                               10 	(obj:0)
+y.245                                               5 	(obj:0)
+y.260                                               4 	(obj:0)
+y.254                                               2 	(obj:0)
+y.29                                                6 	(obj:0)
+y.306                                               8 	(obj:0)
+y.348                                               6 	(obj:0)
+y.156                                               5 	(obj:0)
+y.173                                               1 	(obj:0)
+y.345                                               5 	(obj:0)
+y.150                                              37 	(obj:0)
+y.268                                              10 	(obj:0)
+y.81                                               19 	(obj:0)
+y.231                                              10 	(obj:0)
+y.128                                              13 	(obj:0)
+y.275                                              13 	(obj:0)
+y.31                                               45 	(obj:0)
+y.86                                                5 	(obj:0)
+y.36                                               10 	(obj:0)
+y.218                                               7 	(obj:0)
+y.256                                              34 	(obj:0)
+y.332                                               7 	(obj:0)
+y.89                                               10 	(obj:0)
+y.82                                                6 	(obj:0)
+y.147                                               2 	(obj:0)
+y.61                                                7 	(obj:0)
+
+Statistics
+==========
+
+Master Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    1535.44
+  solving          :    1535.44
+  presolving       :       0.00 (included in solving)
+  reading          :       0.00
+  copying          :       0.36 (6 #copies) (minimal 0.00, maximal 0.13, average 0.06)
+Original Problem   :
+  Problem name     : master_fc.60.20.1
+  Variables        : 9 (9 binary, 0 integer, 0 implicit integer, 0 continuous)
+  Constraints      : 312 initial, 312 maximal
+  Objective        : minimize, 9 non-zeros (abs.min = 10, abs.max = 500)
+Presolved Problem  :
+  Problem name     : t_master_fc.60.20.1
+  Variables        : 119024 (9 binary, 0 integer, 0 implicit integer, 119015 continuous)
+  Constraints      : 312 initial, 313 maximal
+  Objective        : minimize, 15911 non-zeros (abs.min = 1, abs.max = 4353)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  roundbound       :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  linear           :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -          1          -          -        198          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  masterbranch     :          0+       100          0       7800          0          0          0          0          0          0     338382          0          0          0          0
+  integralorig     :          0          0          0          0       1323          0          0       3427          0          0          0          0          0          0       2646
+  integral         :          0          0          0          0          0          0          0        454          0          0          0          0          0          0          0
+  linear           :        312        312         21      16342          0          0          0        454          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  masterbranch     :    1429.63       0.00       0.00    1429.63       0.00       0.00       0.00       0.00       0.00       0.00
+  integralorig     :      57.63       0.00       0.00       0.00       0.05       0.00       0.00      57.59       0.00       0.00
+  integral         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       2.08       0.00       0.00       0.02       0.00       0.00       0.00       2.05       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          1          0          0          0
+  genvbounds       :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          0          0          0          0
+  redcost          :          0          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :      17656          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.01       0.00       0.00       0.01       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.01       0.00       0.00       0.01       0.00       0.00
+  redcost          :       0.01       0.00       0.00       0.01       0.00       0.00
+  rootredcost      :       0.02       0.00       0.00       0.02       0.00       0.00
+  vbounds          :       0.01       0.00       0.00       0.01       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     0          -          -          0          -          -    (maximal pool size: 0)
+  basis            :       0.91       0.00          2          0          0         22          6          0
+  master           :       2.78       0.00         93          0          0       2344         34          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:      57.37          -       2200  107380536
+  gcg              :     485.77       0.00       1454       1105
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  generic          :       0.00       0.00          0          0          0          0          0          0          0          0
+  orig             :       0.00       0.00          0          0          0          0          0          0          0          0
+  relpsprob        :       0.00       0.00          0          0          0          0          0          0          0          0
+  ryanfoster       :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       1.50       0.00          1          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.01       0.00          1          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  greedycolsel     :       0.11       0.00         33          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.01       0.00          1          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mastercoefdiving :       1.11       0.00          4          0          0
+  masterfracdiving :       1.10       0.00          3          0          0
+  masterlinesdiving:       1.15       0.00          3          0          0
+  mastervecldiving :       0.98       0.00          3          0          0
+  mutation         :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.03       0.00          5          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.82       0.00         41          0          0
+  relaxcolsel      :       0.17       0.00         33          0          0
+  rens             :       0.01       0.00          1          0          0
+  restmaster       :       0.03       0.00          1          0          0
+  rins             :      10.72       0.00          3          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       5.27       0.00        466          0          0
+  setcover         :       0.00       0.00          0          0          0
+  shiftandpropagate:       0.00       0.00          1          0          0
+  shifting         :       1.94       0.00        133          0          0
+  simplerounding   :      39.85       0.00       1917          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :      14.75       0.00       1000          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       8.67        937       3546       6.01     409.15       3.04        347
+  dual LP          :      67.76      10586      16952       8.74     250.18      53.97       8647
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:     595.34       5660      22801       4.03      38.30
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+B&B Tree           :
+  number of runs   :          1
+  nodes            :       1336 (1323 internal, 13 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :         13
+  objective leaves :          0
+  nodes (total)    :       1336 (1323 internal, 13 leaves)
+  nodes left       :       1311
+  max depth        :         25
+  max depth (total):         25
+  backtracks       :        173 (12.9%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :       1220 (14858 domain reductions, 0 cutoffs)
+  avg switch length:       3.86
+  switching time   :     588.69
+Root Node          :
+  First LP value   :          -
+  First LP Iters   :          0
+  First LP Time    :       0.00
+  Final Dual Bound : +3.74271451149545e+02
+  Final Root Iters :        597
+  Root LP Estimate : +3.74271451149545e+02
+Solution           :
+  Solutions found  :        454 (8 improvements)
+  First Solution   : +4.85200000000000e+03   (in run 1, after 1 nodes, 0.00 seconds, depth 0, found by <relaxation>)
+  Gap First Sol.   :    2737.43 %
+  Gap Last Sol.    :      37.96 %
+  Primal Bound     : +5.29000000000000e+02   (in run 1, after 402 nodes, 264.60 seconds, depth 11, found by <relaxation>)
+  Dual Bound       : +4.02785304793580e+02
+  Gap              :      31.34 %
+  Avg. Gap         :      27.09 % (41595.08 primal-dual integral)
+Pricing Solver     : #HeurFarkas  #OptFarkas  #HeurRedcost #OptRedcost Time: HeurFarkas  OptFarkas  HeurRedcost OptRedcost
+  knapsack         :           0           0             0           0             0.00       0.00         0.11       0.00 
+  mip              :           0           0        387063       50359             0.00       0.00       399.16      15.46 
+
+Original Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3600.86
+  solving          :    3600.76
+  presolving       :       0.01 (included in solving)
+  reading          :       0.10
+  copying          :       0.01 (6 #copies) (minimal 0.00, maximal 0.00, average 0.00)
+Original Problem   :
+  Problem name     : fc.60.20.1
+  Variables        : 708 (354 binary, 0 integer, 0 implicit integer, 354 continuous)
+  Constraints      : 414 initial, 414 maximal
+  Objective        : minimize, 353 non-zeros (abs.min = 1, abs.max = 500)
+Presolved Problem  :
+  Problem name     : t_fc.60.20.1
+  Variables        : 664 (338 binary, 0 integer, 0 implicit integer, 326 continuous)
+  Constraints      : 386 initial, 387 maximal
+  Objective        : minimize, 338 non-zeros (abs.min = 1, abs.max = 500)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  convertinttobin  :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  domcol           :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      3          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  trivial          :       0.00       0.00      6          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      6         31          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  varbound         :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  linear           :       0.00       0.00      9          1         12          0        373          0         28          0          0         38
+  root node        :          -          -      -         86          -          -        194          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  origbranch       :          0+       100          0          0          0          0          0          0          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          1       1321          0       8833          0          0          0          0          0          0       2644
+  decomp           :          0          0          0          0          0          0          0       1467          0          0          0          0          0          0          0
+  varbound         :        326        326         23      13912          0          0          0       1394          0          0       6889          0          0          0          0
+  linear           :         60         60         23      13912          0          0          0       1391          0          4       5690         42          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  origbranch       :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.08       0.00       0.00       0.00       0.00       0.00       0.04       0.04       0.00       0.00
+  decomp           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  varbound         :       0.11       0.00       0.00       0.08       0.00       0.00       0.00       0.03       0.00       0.00
+  linear           :       0.08       0.00       0.02       0.06       0.00       0.00       0.00       0.00       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          5          0          0          0
+  genvbounds       :          0          0          0          0
+  obbt             :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :       4034          0          0       6226
+  redcost          :          9          0          0         86
+  rootredcost      :          4          0          0          0
+  vbounds          :      15178          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  obbt             :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.02       0.00       0.00       0.02       0.00       0.00
+  redcost          :       0.01       0.00       0.00       0.01       0.00       0.00
+  rootredcost      :       0.01       0.00       0.00       0.01       0.00       0.00
+  vbounds          :       0.01       0.00       0.00       0.01       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     6          -          -         38          -          -    (maximal pool size: 1168)
+  clique           :       0.00       0.00          1          0          0          0          0          0
+  closecuts        :       0.00       0.00          0          0          0          0          0          0
+  gomory           :       0.27       0.00          2          0          0          0          3          0
+  impliedbounds    :       0.00       0.00         23          0          0          0          0          0
+  intobj           :       0.00       0.00          0          0          0          0          0          0
+  mcf              :       1.15       0.00         23          0          0       2302          6          0
+  oddcycle         :       0.00       0.00         10          0          0          0          0          0
+  rapidlearning    :       0.00       0.00          0          0          0          0          0          0
+  strongcg         :       0.41       0.00          2          0          0          0          0          0
+  zerohalf         :       0.01       0.00         21          0          0          0          2          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.00          -          0          0
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  empty            :       0.02       0.00          1       1321          0          0          0          0          0       2644
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.07       0.00          1          1          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.02       0.00          1          1          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  gcgcoefdiving    :     459.62       0.00         34          6          0
+  gcgdins          :       0.00       0.00          0          0          0
+  gcgfeaspump      :       0.00       0.00          0          0          0
+  gcgfracdiving    :     259.27       0.00         15          1          0
+  gcgguideddiving  :     258.67       0.00         15          2          0
+  gcglinesdiving   :     302.27       0.00         34          8          0
+  gcgpscostdiving  :     530.82       0.00         26          4          0
+  gcgrens          :       0.03       0.00          1          1          1
+  gcgrins          :       0.17       0.00          3          3          2
+  gcgrounding      :       0.08       0.00        464          0          0
+  gcgshifting      :       0.04       0.00        122          0          0
+  gcgsimplerounding:      12.98       0.00       1335        406          1
+  gcgveclendiving  :     239.03       0.00         35         15          0
+  gcgzirounding    :       0.00       0.00          0          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.01       0.00          1          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  nlpdiving        :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.03       0.00          4          2          2
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.00       0.00          3          0          0
+  rens             :       0.01       0.00          1          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          3          0          0
+  shiftandpropagate:       0.01       0.00          1          1          1
+  shifting         :       0.00       0.00          3          0          0
+  simplerounding   :       0.02       0.00          3          2          0
+  subnlp           :       0.00       0.00          0          0          0
+  trivial          :       0.00       0.00          2          0          0
+  trysol           :       0.00       0.00          0          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  undercover       :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  xpcrossover      :       0.40       0.00          1          1          1
+  xprins           :       0.14       0.00          1          1          1
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          1          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.00          0          0       0.00          -       0.00          0
+  dual LP          :       0.01          6        630     315.00   42347.25       0.00          4
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:       0.08          9       1462     162.44   19246.72
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+Relaxators         :       Time      Calls
+  gcg              :    1536.74       1335
+B&B Tree           :
+  number of runs   :          1
+  nodes            :       1338 (1322 internal, 16 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :         15
+  objective leaves :          0
+  nodes (total)    :       1338 (1322 internal, 16 leaves)
+  nodes left       :       1308
+  max depth        :         25
+  max depth (total):         25
+  backtracks       :        173 (12.9%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          0 (0 domain reductions, 0 cutoffs)
+  avg switch length:       3.59
+  switching time   :       0.06
+Root Node          :
+  First LP value   : +1.71000000000000e+02
+  First LP Iters   :        481 (50451.02 Iter/sec)
+  First LP Time    :       0.01
+  Final Dual Bound : +3.74271451149545e+02
+  Final Root Iters :        630
+  Root LP Estimate : +2.95098353953130e+02
+Solution           :
+  Solutions found  :        455 (9 improvements)
+  First Solution   : +5.95910000000000e+04   (in run 1, after 1 nodes, 0.01 seconds, depth 340, found by <shiftandpropagate>)
+  Gap First Sol.   :   infinite
+  Gap Last Sol.    :      37.96 %
+  Primal Bound     : +5.29000000000000e+02   (in run 1, after 402 nodes, 521.61 seconds, depth 11, found by <oneopt>)
+  Dual Bound       : +4.09604579644390e+02
+  Gap              :      29.15 %
+  Avg. Gap         :          - (not evaluated)
+
+Simplex iterations :       iter
+  Master LP        :      43299
+  Pricing LP       :      80066
+  Original LP      :       2092
+
+Detector statistics:       time     number     blocks
+  connected        :       0.00          0    
+  constype         :       0.00          0    
+  postproces       :       0.00          0    
+  consclass        :       0.11          0    
+  consname         :       0.00          0    
+  densemaste       :       0.00          0    
+  stairheur        :       0.00          0    
+  staircase        :       0.00          0    
+  random           :       0.00          0    
+  staircase_       :       0.00          0    
+  colors           :       0.00          0    
+  cutpacking       :       0.00          0    
+  compgreedi       :       0.00          0    
+  mastersetc       :       0.00          0    
+  mastersetp       :       0.00          0    
+  mastersetp       :       0.00          0    
+  hcgpartiti       :       0.00          0    
+  hrgpartiti       :       0.22          0    
+  hrcgpartit       :       0.00          0    
+  connectedb       :       0.00          0    
+  connected_       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  varclass         :       0.00          0    
+  isomorph         :       0.00          0    
+
+Decomp statistics  :
+  type             :  arrowhead
+  detector         :         cC
+  blocks           :        200
+  aggr. blocks     :        200
+Master statistics  :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros    bnzeros bintnzeros  min(dens)  max(dens) medi(dens) mean(dens)
+  master           :        131         70          0          0         61         51        599         21          0          0      0.000      0.039      0.020      0.018
+Pricing statistics :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros  min(dens)  max(dens) medi(dens) mean(dens)  identical
+          1        :         16          9          0          0          7          7         21          8      0.000      0.286      0.143      0.187          1
+          2        :         16          8          0          0          8          6         18          5      0.000      0.333      0.167      0.188          1
+          3        :         43         22          0          0         21         17         52         15      0.000      0.176      0.059      0.071          1
+          4        :         18          9          0          0          9          6         19          5      0.000      0.333      0.167      0.176          1
+          5        :         34         17          0          0         17         14         42         12      0.000      0.143      0.071      0.088          1
+          6        :         18          9          0          0          9          6         19          5      0.000      0.333      0.167      0.176          1
+          7        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+          8        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+          9        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         10        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         11        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         12        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         13        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         14        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         15        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         16        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         17        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         18        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         19        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         20        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         21        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         22        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         23        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         24        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         25        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         26        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         27        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         28        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         29        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         30        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         31        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         32        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         33        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         34        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         35        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         36        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         37        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         38        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         39        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         40        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         41        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         42        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         43        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         44        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         45        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         46        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         47        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         48        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         49        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         50        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         51        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         52        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         53        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         54        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         55        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         56        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         57        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         58        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         59        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         60        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         61        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         62        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         63        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         64        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         65        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         66        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         67        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         68        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         69        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         70        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         71        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         72        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         73        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         74        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         75        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         76        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         77        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         78        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         79        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         80        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         81        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         82        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         83        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         84        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         85        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         86        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         87        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         88        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         89        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         90        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         91        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         92        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         93        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         94        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         95        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         96        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         97        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         98        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+         99        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        100        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        101        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        102        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        103        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        104        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        105        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        106        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        107        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        108        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        109        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        110        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        111        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        112        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        113        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        114        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        115        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        116        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        117        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        118        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        119        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        120        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        121        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        122        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        123        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        124        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        125        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        126        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        127        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        128        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        129        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        130        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        131        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        132        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        133        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        134        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        135        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        136        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        137        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        138        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        139        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        140        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        141        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        142        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        143        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        144        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        145        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        146        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        147        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        148        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        149        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        150        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        151        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        152        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        153        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        154        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        155        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        156        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        157        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        158        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        159        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        160        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        161        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        162        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        163        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        164        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        165        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        166        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        167        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        168        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        169        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        170        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        171        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        172        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        173        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        174        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        175        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        176        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        177        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        178        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        179        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        180        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        181        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        182        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        183        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        184        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        185        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        186        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        187        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        188        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        189        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        190        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        191        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        192        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        193        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        194        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        195        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        196        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        197        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        198        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        199        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+        200        :          2          1          0          0          1          1          2          1      1.000      1.000      1.000      1.000          1
+Decomp Scores      :
+  border area      :      0.333
+  avg. density     :      0.915
+  linking score    :      0.500
+Pricing time in colpool = 0.002835 sec
+
+GCGTIME= 3602.4

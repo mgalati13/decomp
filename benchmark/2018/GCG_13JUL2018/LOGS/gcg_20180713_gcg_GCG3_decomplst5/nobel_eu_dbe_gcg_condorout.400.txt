@@ -1,0 +1,1253 @@
+GCG version 3.0.0 [GitHash: 70e7382]
+Copyright (C) 2010-2018 Operations Research, RWTH Aachen University
+                        Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+SCIP version 6.0.0 [precision: 8 byte] [memory: block] [mode: optimized] [LP solver: SoPlex 4.0.0] [GitHash: 77d3bc8]
+Copyright (C) 2002-2018 Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+External codes: 
+  Readline 6.0         GNU library for command line editing (gnu.org/s/readline)
+  SoPlex 4.0.0         Linear Programming Solver developed at Zuse Institute Berlin (soplex.zib.de) [GitHash: 82cab95]
+  CppAD 20180000.0     Algorithmic Differentiation of C++ algorithms developed by B. Bell (www.coin-or.org/CppAD)
+  ZLIB 1.2.3           General purpose compression library by J. Gailly and M. Adler (zlib.net)
+  ZIMPL 3.3.6          Zuse Institute Mathematical Programming Language developed by T. Koch (zimpl.zib.de)
+  bliss 0.73           A Tool for Computing Automorphism Groups of Graphs by T. Junttila and P. Kaski (http://www.tcs.hut.fi/Software/bliss/)
+
+reading user parameter file </LOG_DATA/scripts/options_gcg.parm>
+
+read problem </ORDATA/miplib/nobel_eu_dbe.mps>
+============
+
+original problem has 3771 variables (1639 bin, 0 int, 0 impl, 2132 cont) and 879 constraints
+presolving:
+(round 1, fast)       9 del vars, 9 del conss, 0 add conss, 2219 chg bounds, 0 chg sides, 0 chg coeffs, 0 upgd conss, 0 impls, 41 clqs
+(round 2, exhaustive) 9 del vars, 9 del conss, 0 add conss, 2219 chg bounds, 0 chg sides, 0 chg coeffs, 41 upgd conss, 0 impls, 41 clqs
+(round 3, exhaustive) 23 del vars, 9 del conss, 0 add conss, 2219 chg bounds, 0 chg sides, 0 chg coeffs, 41 upgd conss, 0 impls, 41 clqs
+   (0.3s) probing: 1000/1625 (61.5%) - 0 fixings, 0 aggregations, 50139 implications, 50 bound changes
+   (0.3s) probing: 1001/1625 (61.6%) - 0 fixings, 0 aggregations, 50189 implications, 50 bound changes
+   (0.3s) probing aborted: 1000/1000 successive useless probings
+(round 4, exhaustive) 23 del vars, 9 del conss, 0 add conss, 2269 chg bounds, 0 chg sides, 0 chg coeffs, 41 upgd conss, 50189 impls, 53 clqs
+   (0.4s) probing: 1101/1625 (67.8%) - 0 fixings, 0 aggregations, 55201 implications, 50 bound changes
+   (0.4s) probing aborted: 1000/1000 successive useless probings
+presolving (5 rounds: 5 fast, 4 medium, 4 exhaustive):
+ 23 deleted vars, 9 deleted constraints, 0 added constraints, 2269 tightened bounds, 0 added holes, 0 changed sides, 0 changed coefficients
+ 55201 implications, 53 cliques
+presolved problem has 3748 variables (1625 bin, 0 int, 0 impl, 2123 cont) and 870 constraints
+     41 constraints of type <setppc>
+    829 constraints of type <linear>
+transformed objective value is always integral (scale: 10)
+Presolving Time: 0.36
+start creating seeedpool for current problem 
+created seeedpool for current problem, n detectors: 26 
+ Consclassifier "nonzeros" yields a classification with 15  different constraint classes 
+ Consclassifier "constypes" yields a classification with 2 different constraint classes 
+ Consclassifier "constypes according to miplib" yields a classification with 2 different constraint classes 
+ Consclassifier "constypes according to miplib" is not considered since it offers the same structure as "constypes" consclassifier
+ Varclassifier "vartypes" yields a classification with 2 different variable classes
+ Varclassifier "varobjvals" yields a classification with 500 different variable classes
+ Varclassifier "varobjvalsigns" yields a classification with 2 different variable classes
+ Varclassifier "varobjvalsigns" is not considered since it offers the same structure as "vartypes"
+ Added reduced version of consclassifier nonzeros with 9  different constraint classes 
+ the current varclass distribution includes 500 classes but only 18 are allowed for calcCandidatesNBlocks()
+Begin of detection round 0 of 1 total rounds 
+Start to propagate seeed with id 1 (0 of 1 in round 0) 
+ in dec_consclass: there are 3 different constraint classes   
+ the current consclass distribution includes 15 classes but only 9 are allowed for propagateSeeed() of cons class detector
+  the current constraint classifier "constypes" consists of 2 different classes   
+  the current constraint classifier "nonzeros-red-to-9" consists of 9 different classes   
+ dec_consclass found 514 new seeeds 
+dec_densemasterconss found 1 new seeed 
+Calling metis with: zsh -c "ulimit -t 3600;/ORDATA_NEW/SCIP/scipoptsuite-6.0.0/build/bin/hmetis gcg-r-1.metis.9Pbn4T 2 -seed 1 -ptype rb -ufactor 5.000000 > /dev/null"
+time left before metis started: 3599.642596, time metis spend 0.319718, remainingtime: 3599.322878
+Calling metis with: zsh -c "ulimit -t 3600;/ORDATA_NEW/SCIP/scipoptsuite-6.0.0/build/bin/hmetis gcg-r-1.metis.9Pbn4T 4 -seed 1 -ptype rb -ufactor 5.000000 > /dev/null"
+time left before metis started: 3599.642596, time metis spend 0.487086, remainingtime: 3599.155510
+Calling metis with: zsh -c "ulimit -t 3600;/ORDATA_NEW/SCIP/scipoptsuite-6.0.0/build/bin/hmetis gcg-r-1.metis.9Pbn4T 3 -seed 1 -ptype rb -ufactor 5.000000 > /dev/null"
+time left before metis started: 3599.642596, time metis spend 0.462420, remainingtime: 3599.180176
+Detecting Arrowhead structure: 2 4 3 done, 6 seeeds found.
+ the current varclass distribution includes 500 classes but only 9 are allowed for propagateSeeed() of var class detector
+Start finishing of partial decomposition 1.
+Measured running time per detector: 
+Detector consclass                 	 worked on 	 512 of 521	 and took a total time of 	0.876737
+Detector densemasterconss          	 worked on 	 1 of 521	 and took a total time of 	0.003659
+Detector hrgpartition              	 worked on 	 5 of 521	 and took a total time of 	1.68043
+Detector varclass                  	 worked on 	 2 of 521	 and took a total time of 	0.010939
+Started postprocessing of decompositions...
+...finished postprocessing of decompositions. Added 238 new decomps. 
+
+solve problem
+=============
+
+
+A Dantzig-Wolfe reformulation is applied to solve the original problem.
+
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+   0.6s|     1 |     0 |      0 |      0 |     - |  22M|   0 |   0 | 870 |   0 |   0 |  0 | 5.706875e+05 |      --      |   --   |    Inf 
+R  0.6s|     1 |     0 |      0 |      0 |     - |  22M|   0 |   0 | 870 |   0 |   0 |  0 | 5.706875e+05 | 9.064800e+06 |   --   |1488.40%
+Chosen structure has 68 blocks and 82 linking constraints.
+This decomposition has a maxwhite score of 0.887237.
+Warning: Discretization with continuous variables is only an experimental feature.
+Matrix has 68 blocks, using 68 pricing problems.
+
+     
+   1.0s|     1 |     0 |      0 |      0 |     - |  47M|   0 |  68 | 871 | 151 |   0 |  0 | 5.706875e+05 | 9.064800e+06 |   0.00%|1488.40%
+   1.0s|     1 |     0 |      0 |      0 |     - |  47M|   0 |  68 | 871 | 151 |   0 |  0 | 5.706875e+05 | 9.064800e+06 |   0.00%|1488.40%
+Starting reduced cost pricing...
+   2.9s|     1 |     0 |   8473 |    279 |     - |  49M|   0 | 246 | 871 | 151 |   0 |  0 | 5.706875e+05 | 9.064800e+06 |   4.36%|1488.40%
+   3.3s|     1 |     0 |   8526 |    332 |     - |  60M|   0 | 276 | 871 | 151 |   7 |  1 | 5.706875e+05 | 9.064800e+06 |   4.23%|1488.40%
+   3.9s|     1 |     0 |  11327 |    355 |     - |  60M|   0 | 292 | 871 | 151 |   7 |  1 | 5.706875e+05 | 9.064800e+06 |   4.07%|1488.40%
+   4.1s|     1 |     0 |  11345 |    373 |     - |  63M|   0 | 295 | 871 | 151 |  10 |  2 | 5.706875e+05 | 9.064800e+06 |   3.83%|1488.40%
+   4.9s|     1 |     0 |  14134 |    388 |     - |  63M|   0 | 319 | 871 | 151 |  10 |  2 | 5.706972e+05 | 9.064800e+06 |   3.53%|1488.37%
+   5.2s|     1 |     0 |  14312 |    566 |     - |  66M|   0 | 319 | 871 | 151 |  13 |  3 | 5.706972e+05 | 9.064800e+06 |   3.53%|1488.37%
+   5.9s|     1 |     0 |  17089 |    572 |     - |  66M|   0 | 343 | 871 | 151 |  13 |  3 | 5.706972e+05 | 9.064800e+06 |   3.07%|1488.37%
+   6.2s|     1 |     0 |  17106 |    589 |     - |  69M|   0 | 343 | 871 | 151 |  18 |  4 | 5.706972e+05 | 9.064800e+06 |   3.07%|1488.37%
+   6.9s|     1 |     0 |  19892 |    603 |     - |  69M|   0 | 350 | 871 | 151 |  18 |  4 | 5.706972e+05 | 9.064800e+06 |   2.72%|1488.37%
+   7.4s|     1 |     0 |  19899 |    610 |     - |  72M|   0 | 350 | 871 | 151 |  21 |  5 | 5.706972e+05 | 9.064800e+06 |   2.72%|1488.37%
+   7.9s|     1 |     0 |  22672 |    611 |     - |  72M|   0 | 351 | 871 | 151 |  21 |  5 | 5.706972e+05 | 9.064800e+06 |   2.58%|1488.37%
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+   8.2s|     1 |     0 |  22677 |    616 |     - |  74M|   0 | 351 | 871 | 151 |  24 |  6 | 5.706972e+05 | 9.064800e+06 |   2.58%|1488.37%
+   9.0s|     1 |     0 |  26168 |    634 |     - |  74M|   0 | 354 | 871 | 151 |  24 |  6 | 5.714562e+05 | 9.064800e+06 |   2.42%|1486.26%
+     
+   9.4s|     1 |     0 |  26223 |    689 |     - |  76M|   0 | 354 | 871 | 151 |  26 |  7 | 5.714562e+05 | 9.064800e+06 |   2.42%|1486.26%
+  10.1s|     1 |     0 |  27680 |    762 |     - |  76M|   0 | 372 | 871 | 151 |  26 |  7 | 5.714562e+05 | 9.064800e+06 |   2.23%|1486.26%
+  10.5s|     1 |     0 |  27735 |    817 |     - |  79M|   0 | 372 | 871 | 151 |  29 |  8 | 5.714562e+05 | 9.064800e+06 |   2.23%|1486.26%
+  10.9s|     1 |     0 |  28449 |    834 |     - |  79M|   0 | 378 | 871 | 151 |  29 |  8 | 5.714739e+05 | 9.064800e+06 |   2.15%|1486.21%
+  11.3s|     1 |     0 |  28466 |    851 |     - |  83M|   0 | 378 | 871 | 151 |  32 |  9 | 5.714739e+05 | 9.064800e+06 |   2.15%|1486.21%
+  12.0s|     1 |     0 |  31267 |    853 |     - |  83M|   0 | 379 | 871 | 151 |  32 |  9 | 5.714739e+05 | 9.064800e+06 |   2.10%|1486.21%
+  12.7s|     1 |     0 |  33375 |    857 |     - |  84M|   0 | 379 | 871 | 151 |  34 | 10 | 5.714739e+05 | 9.064800e+06 |   2.05%|1486.21%
+  13.4s|     1 |     0 |  35477 |    859 |     - |  85M|   0 | 379 | 871 | 151 |  36 | 11 | 5.714739e+05 | 9.064800e+06 |   2.02%|1486.21%
+  14.2s|     1 |     0 |  37584 |    860 |     - |  85M|   0 | 379 | 871 | 151 |  37 | 12 | 5.714739e+05 | 9.064800e+06 |   1.97%|1486.21%
+  14.6s|     1 |     0 |  37585 |    861 |     - |  86M|   0 | 379 | 871 | 151 |  38 | 13 | 5.714739e+05 | 9.064800e+06 |   1.97%|1486.21%
+  15.0s|     1 |     0 |  39694 |    861 |     - |  86M|   0 | 379 | 871 | 151 |  38 | 13 | 5.714739e+05 | 9.064800e+06 |   1.94%|1486.21%
+  15.8s|     1 |     0 |  41796 |    862 |     - |  86M|   0 | 379 | 871 | 151 |  39 | 14 | 5.714739e+05 | 9.064800e+06 |   1.91%|1486.21%
+  16.5s|     1 |     0 |  43903 |    863 |     - |  87M|   0 | 379 | 871 | 151 |  40 | 15 | 5.714739e+05 | 9.064800e+06 |   1.87%|1486.21%
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+  17.5s|     1 |     0 |  44087 |   1047 |     - |  98M|   0 | 379 | 871 | 151 |  47 | 17 | 5.714739e+05 | 9.064800e+06 |   1.87%|1486.21%
+  18.6s|     1 |     0 |  46427 |   1152 |     - |  98M|   0 | 420 | 871 | 151 |  47 | 17 | 5.721704e+05 | 9.064800e+06 |   1.97%|1484.28%
+     
+  19.2s|     1 |     0 |  47124 |   1153 |     - | 100M|   0 | 420 | 871 | 151 |  48 | 18 | 5.721704e+05 | 9.064800e+06 |   1.98%|1484.28%
+  19.7s|     1 |     0 |  47821 |   1154 |     - | 102M|   0 | 420 | 871 | 151 |  49 | 19 | 5.721704e+05 | 9.064800e+06 |   1.97%|1484.28%
+  20.2s|     1 |     0 |  48520 |   1156 |     - | 104M|   0 | 420 | 871 | 151 |  50 | 20 | 5.721704e+05 | 9.064800e+06 |   1.96%|1484.28%
+  21.2s|     1 |     0 |  48627 |   1263 |     - | 107M|   0 | 420 | 871 | 151 |  53 | 22 | 5.721704e+05 | 9.064800e+06 |   1.96%|1484.28%
+  22.8s|     1 |     0 |  53952 |   1367 |     - | 107M|   0 | 449 | 871 | 151 |  53 | 22 | 5.723613e+05 | 9.064800e+06 |   1.92%|1483.75%
+  24.4s|     1 |     0 |  56161 |   1371 |     - | 108M|   0 | 449 | 871 | 151 |  54 | 24 | 5.724467e+05 | 9.064800e+06 |   1.91%|1483.52%
+  25.5s|     1 |     0 |  56172 |   1382 |     - | 108M|   0 | 449 | 871 | 151 |  55 | 26 | 5.724467e+05 | 9.064800e+06 |   1.91%|1483.52%
+  25.9s|     1 |     0 |  57646 |   1389 |     - | 108M|   0 | 451 | 871 | 151 |  55 | 26 | 5.726626e+05 | 9.064800e+06 |   1.90%|1482.92%
+  27.1s|     1 |     0 |  57769 |   1512 |     - | 108M|   0 | 451 | 871 | 151 |  56 | 28 | 5.726626e+05 | 9.064800e+06 |   1.90%|1482.92%
+  28.1s|     1 |     0 |  61566 |   1639 |     - | 109M|   0 | 485 | 871 | 151 |  56 | 28 | 5.726630e+05 | 9.064800e+06 |   1.85%|1482.92%
+i 28.9s|     1 |     0 |  61566 |   1639 |     - | 109M|   0 | 553 | 871 | 151 |  56 | 30 | 5.726630e+05 | 5.194800e+06 |   1.85%| 807.13%
+F 29.0s|     1 |     0 |  61566 |   1639 |     - | 110M|   0 | 621 | 871 | 151 |  56 | 30 | 5.726630e+05 | 3.493600e+06 |   1.85%| 510.06%
+X 30.5s|     1 |     0 |  61566 |   1639 |     - | 110M|   0 | 825 | 871 | 151 |  56 | 30 | 5.726630e+05 | 1.678250e+06 |   1.85%| 193.06%
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+  31.3s|     1 |     0 |  61566 |   1639 |     - | 110M|   0 | 893 | 871 | 151 |  56 | 30 | 5.726630e+05 | 1.678250e+06 |   1.85%| 193.06%
+  31.3s|     1 |     0 |  61566 |   1639 |     - | 110M|   0 | 893 | 871 | 151 |  56 | 30 | 5.726630e+05 | 1.678250e+06 |   1.85%| 193.06%
+  31.3s|     1 |     2 |  61566 |   1639 |     - | 110M|   0 | 893 | 871 | 151 |  56 | 30 | 5.726630e+05 | 1.678250e+06 |   1.85%| 193.06%
+   165s|   100 |    91 | 336145 |  30549 | 298.0 | 117M|  21 |2022 | 871 | 151 |  56 |  1 | 5.726669e+05 | 1.678250e+06 |   --   | 193.06%
+   278s|   200 |   187 | 595454 |  55394 | 275.7 | 123M|  32 |2968 | 871 | 151 |  56 |  1 | 5.727120e+05 | 1.678250e+06 |   --   | 193.04%
+   395s|   300 |   281 | 825768 |  84360 | 283.3 | 129M|  39 |3952 | 871 | 151 |  56 |  1 | 5.727120e+05 | 1.678250e+06 |   --   | 193.04%
+   499s|   400 |   381 |1040298 | 111010 | 279.0 | 133M|  49 |4606 | 871 | 151 |  56 |  1 | 5.727120e+05 | 1.678250e+06 |   --   | 193.04%
+   604s|   500 |   481 |1264112 | 132062 | 265.1 | 138M|  53 |5308 | 871 | 151 |  56 |  1 | 5.727312e+05 | 1.678250e+06 |   --   | 193.03%
+   753s|   600 |   581 |1536342 | 161296 | 269.7 | 143M|  59 |6256 | 871 | 151 |  56 |  1 | 5.727312e+05 | 1.678250e+06 |   --   | 193.03%
+   885s|   700 |   681 |1764102 | 192122 | 275.3 | 149M|  67 |7078 | 871 | 151 |  56 |  1 | 5.727312e+05 | 1.678250e+06 |   --   | 193.03%
+   999s|   800 |   781 |1973819 | 228152 | 286.0 | 152M|  71 |7613 | 871 | 151 |  56 |  1 | 5.727312e+05 | 1.678250e+06 |   --   | 193.03%
+  1275s|   900 |   881 |2273888 | 262965 | 293.0 | 161M|  71 |9067 | 871 | 151 |  56 |  1 | 5.727312e+05 | 1.678250e+06 |   --   | 193.03%
+  1551s|  1000 |   981 |2531045 | 295609 | 296.3 | 169M|  71 |  10k| 871 | 151 |  56 |  1 | 5.727312e+05 | 1.678250e+06 |   --   | 193.03%
+  1856s|  1100 |  1081 |2833213 | 329912 | 300.6 | 177M|  75 |  11k| 871 | 151 |  56 |  1 | 5.727312e+05 | 1.678250e+06 |   --   | 193.03%
+  2146s|  1200 |  1181 |3106968 | 361176 | 301.6 | 184M|  86 |  13k| 871 | 151 |  56 |  1 | 5.727312e+05 | 1.678250e+06 |   --   | 193.03%
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+  2469s|  1300 |  1281 |3354916 | 387341 | 298.5 | 191M|  97 |  14k| 871 | 151 |  56 |  1 | 5.727312e+05 | 1.678250e+06 |   --   | 193.03%
+  2736s|  1400 |  1381 |3627320 | 409090 | 292.7 | 199M| 106 |  15k| 871 | 151 |  56 |  1 | 5.727312e+05 | 1.678250e+06 |   --   | 193.03%
+  3058s|  1500 |  1481 |3943648 | 434547 | 290.2 | 208M| 115 |  16k| 871 | 151 |  56 |  1 | 5.727312e+05 | 1.678250e+06 |   --   | 193.03%
+  3350s|  1600 |  1579 |4254570 | 460451 | 288.2 | 216M| 122 |  18k| 871 | 151 |  56 |  1 | 5.729400e+05 | 1.678250e+06 |   --   | 192.92%
+  3599s|  1700 |  1671 |4527667 | 492536 | 290.3 | 224M| 122 |  19k| 871 | 151 |  56 |  1 | 5.729420e+05 | 1.678250e+06 |   --   | 192.92%
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 3600.04
+Solving Nodes      : 1701
+Primal Bound       : +1.67825000000000e+06 (109 solutions)
+Dual Bound         : +5.72942047987617e+05
+Gap                : 192.92 %
+
+primal solution:
+================
+
+objective value:                              1678250
+XHC(LD_LD_400.000000__L1)                           1 	(obj:45800)
+XHC(LD_LD_240.000000__L2)                           1 	(obj:53280)
+XHC(LD_LD_240.000000__L3)                           1 	(obj:35220)
+XHC(LD_LD_80.000000__L4)                            1 	(obj:11740)
+XHC(LD_LD_40.000000__L5)                            1 	(obj:9740)
+XHC(LD_LD_80.000000__L6)                            1 	(obj:22060)
+XHC(LD_LD_120.000000__L7)                           1 	(obj:21480)
+XHC(LD_LD_40.000000__L8)                            1 	(obj:7160)
+XHC(LD_LD_40.000000__L9)                            1 	(obj:5440)
+XHC(LD_LD_40.000000__L10)                           1 	(obj:5870)
+XHC(LD_LD_800.000000__L11)                          1 	(obj:117400)
+XHC(LD_LD_800.000000__L12)                          1 	(obj:100200)
+XHC(LD_LD_40.000000__L13)                           1 	(obj:7160)
+XHC(LD_LD_40.000000__L14)                           1 	(obj:5440)
+XHC(LD_LD_800.000000__L15)                          1 	(obj:143200)
+XHC(LD_LD_40.000000__L16)                           1 	(obj:7590)
+XHC(LD_LD_800.000000__L17)                          1 	(obj:143200)
+XHC(LD_LD_800.000000__L18)                          1 	(obj:108800)
+XHC(LD_LD_40.000000__L19)                           1 	(obj:7160)
+XHC(LD_LD_40.000000__L20)                           1 	(obj:6730)
+XHC(LD_LD_40.000000__L21)                           1 	(obj:7590)
+XHC(LD_LD_800.000000__L22)                          1 	(obj:143200)
+XHC(LD_LD_400.000000__L23)                          1 	(obj:54400)
+XHC(LD_LD_80.000000__L24)                           1 	(obj:13460)
+XHC(LD_LD_80.000000__L25)                           1 	(obj:12600)
+XHC(LD_LD_240.000000__L26)                          1 	(obj:32640)
+XHC(LD_LD_400.000000__L27)                          1 	(obj:45800)
+XHC(LD_LD_40.000000__L28)                           1 	(obj:5870)
+XHC(LD_LD_40.000000__L29)                           1 	(obj:6300)
+XHC(LD_LD_40.000000__L30)                           1 	(obj:5870)
+XHC(LD_LD_120.000000__L31)                          1 	(obj:21480)
+XHC(LD_LD_800.000000__L32)                          1 	(obj:100200)
+XHC(LD_LD_800.000000__L33)                          1 	(obj:117400)
+XHC(LD_LD_800.000000__L34)                          1 	(obj:126000)
+XHC(LD_LD_40.000000__L35)                           1 	(obj:6300)
+XHC(LD_LD_40.000000__L36)                           1 	(obj:5010)
+XHC(LD_LD_420.000000__L39)                          1 	(obj:21020)
+XHC(LD_LD_800.000000__L40)                          1 	(obj:83000)
+XHC(LD_LD_40.000000__L41)                           1 	(obj:5440)
+EF(NOS__CSAmsterdam_IntDS__FL1)                   184 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL2)                    30 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL3)                    68 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL4)                    36 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL18)                  148 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL19)                   20 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL1)                       28 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL1)                      50 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL1)                       76 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL1)                      36 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL1)                    2 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL1)                       22 	(obj:0)
+EF(NOS__CSOslo_IntDS__FL1)                          2 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__BL23)                    4 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL2)                    34 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL2)                       10 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__FL2)                     6 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL2)                      2 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL2)                      6 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL2)                        4 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL2)                      4 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL2)                      4 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL2)                    4 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__BL12)                   62 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL25)                   22 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL3)                    74 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL3)                      28 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL3)                       28 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__FL3)                    20 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL3)                     12 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL3)                       10 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__BL28)                    2 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL4)                       12 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL4)                     10 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL4)                      14 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL4)                      4 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL4)                    4 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__BL6)                     6 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL9)                     2 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__BL10)                    4 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__FL5)                     2 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL5)                      2 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL5)                       20 	(obj:0)
+EF(NOS__CSRome_IntDS__FL5)                          2 	(obj:0)
+EF(NOS__CSBudapest_IntDS__BL5)                      6 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__BL5)                     32 	(obj:0)
+EF(NOS__CSPrague_IntDS__BL5)                        2 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL31)                   20 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL6)                       40 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL6)                      6 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL6)                     32 	(obj:0)
+EF(NOS__CSPrague_IntDS__FL6)                        2 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__BL6)                     2 	(obj:0)
+EF(NOS__CSBrussels_IntDS__BL6)                      2 	(obj:0)
+EF(NOS__CSRome_IntDS__BL6)                          2 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__BL8)                     6 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL29)                    8 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL39)                   16 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__FL7)                    94 	(obj:0)
+EF(NOS__CSMadrid_IntDS__FL7)                       12 	(obj:0)
+EF(NOS__CSBerlin_IntDS__BL7)                        4 	(obj:0)
+EF(NOS__CSLondon_IntDS__BL7)                       14 	(obj:0)
+EF(NOS__CSBrussels_IntDS__BL7)                      6 	(obj:0)
+EF(NOS__CSAthens_IntDS__BL7)                        4 	(obj:0)
+EF(NOS__CSBudapest_IntDS__BL7)                      2 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__BL7)                    2 	(obj:0)
+EF(NOS__CSLyon_IntDS__BL7)                          2 	(obj:0)
+EF(NOS__CSDublin_IntDS__BL7)                        2 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL16)                   12 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL8)                        4 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL8)                       14 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__FL8)                     6 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL8)                      6 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL8)                        2 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL8)                      2 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL8)                    2 	(obj:0)
+EF(NOS__CSLyon_IntDS__FL8)                          2 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL8)                        2 	(obj:0)
+EF(NOS__CSMadrid_IntDS__BL8)                       12 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL20)                    8 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__BL21)                   10 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL9)                     6 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL9)                       16 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL9)                     16 	(obj:0)
+EF(NOS__CSBerlin_IntDS__BL9)                        2 	(obj:0)
+EF(NOS__CSHamburg_IntDS__BL9)                       2 	(obj:0)
+EF(NOS__CSBudapest_IntDS__BL9)                     24 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__BL9)                    2 	(obj:0)
+EF(NOS__CSPrague_IntDS__BL9)                        4 	(obj:0)
+EF(NOS__CSOslo_IntDS__BL9)                          2 	(obj:0)
+EF(NOS__CSStockholm_IntDS__BL9)                     2 	(obj:0)
+EF(NOS__CSWarsaw_IntDS__BL9)                        2 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL41)                    6 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL10)                       2 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL10)                     2 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL10)                      2 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL10)                       2 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL10)                    18 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL10)                     2 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL10)                    2 	(obj:0)
+EF(NOS__CSPrague_IntDS__FL10)                       2 	(obj:0)
+EF(NOS__CSRome_IntDS__FL10)                         2 	(obj:0)
+EF(NOS__CSOslo_IntDS__FL10)                         2 	(obj:0)
+EF(NOS__CSStockholm_IntDS__FL10)                    2 	(obj:0)
+EF(NOS__CSWarsaw_IntDS__FL10)                       2 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__BL10)                    6 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL11)                   28 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__BL13)                   10 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL15)                   28 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL22)                   20 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL11)                   12 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL11)                      10 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL11)                      8 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL11)                      10 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__FL11)                    6 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL11)                     6 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL11)                     6 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL11)                      6 	(obj:0)
+EF(NOS__CSMilan_IntDS__FL11)                        4 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL11)                       6 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL11)                     6 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL11)                     6 	(obj:0)
+EF(NOS__CSMunich_IntDS__FL11)                       4 	(obj:0)
+EF(NOS__CSLyon_IntDS__FL11)                         4 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL11)                       4 	(obj:0)
+EF(NOS__CSMadrid_IntDS__FL11)                       4 	(obj:0)
+EF(NOS__CSParis_IntDS__FL11)                        2 	(obj:0)
+EF(NOS__CSPrague_IntDS__FL11)                       2 	(obj:0)
+EF(NOS__CSRome_IntDS__FL11)                         2 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__BL11)                   42 	(obj:0)
+EF(NOS__CSOslo_IntDS__BL11)                        16 	(obj:0)
+EF(NOS__CSStockholm_IntDS__BL11)                   12 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL12)                      98 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL12)                       2 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL12)                    10 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL12)                     2 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL12)                   34 	(obj:0)
+EF(NOS__CSOslo_IntDS__FL12)                         6 	(obj:0)
+EF(NOS__CSStockholm_IntDS__FL12)                    4 	(obj:0)
+EF(NOS__CSWarsaw_IntDS__FL12)                       4 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__BL12)                   54 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__BL12)                     20 	(obj:0)
+EF(NOS__CSLondon_IntDS__BL12)                      28 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__BL12)                   16 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__BL12)                    10 	(obj:0)
+EF(NOS__CSBrussels_IntDS__BL12)                    12 	(obj:0)
+EF(NOS__CSHamburg_IntDS__BL12)                     20 	(obj:0)
+EF(NOS__CSMilan_IntDS__BL12)                       14 	(obj:0)
+EF(NOS__CSLyon_IntDS__BL12)                        10 	(obj:0)
+EF(NOS__CSDublin_IntDS__BL12)                       8 	(obj:0)
+EF(NOS__CSParis_IntDS__BL12)                        6 	(obj:0)
+EF(NOS__CSRome_IntDS__BL12)                         8 	(obj:0)
+EF(NOS__CSStrasbourg_IntDS__BL12)                    4 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL26)                   60 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__BL30)                   24 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL33)                   12 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL13)                      12 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL13)                     8 	(obj:0)
+EF(NOS__CSOslo_IntDS__FL13)                         4 	(obj:0)
+EF(NOS__CSStockholm_IntDS__FL13)                    2 	(obj:0)
+EF(NOS__CSMunich_IntDS__BL13)                      18 	(obj:0)
+EF(NOS__CSMadrid_IntDS__BL13)                       8 	(obj:0)
+EF(NOS__CSVienna_IntDS__BL13)                       4 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL14)                    8 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL14)                       8 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL14)                      4 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL14)                       6 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL14)                      4 	(obj:0)
+EF(NOS__CSMilan_IntDS__FL14)                        4 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL14)                    2 	(obj:0)
+EF(NOS__CSLyon_IntDS__FL14)                         2 	(obj:0)
+EF(NOS__CSOslo_IntDS__FL14)                         2 	(obj:0)
+EF(NOS__CSAthens_IntDS__BL14)                       2 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__BL14)                    10 	(obj:0)
+EF(NOS__CSPrague_IntDS__BL14)                       8 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL15)                   34 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL15)                      16 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL15)                      8 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL15)                      12 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__FL15)                    6 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL15)                     4 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL15)                     6 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL15)                     10 	(obj:0)
+EF(NOS__CSMilan_IntDS__FL15)                        6 	(obj:0)
+EF(NOS__CSMunich_IntDS__FL15)                      14 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL15)                    6 	(obj:0)
+EF(NOS__CSLyon_IntDS__FL15)                         4 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL15)                       4 	(obj:0)
+EF(NOS__CSMadrid_IntDS__FL15)                       4 	(obj:0)
+EF(NOS__CSParis_IntDS__FL15)                        4 	(obj:0)
+EF(NOS__CSPrague_IntDS__FL15)                       6 	(obj:0)
+EF(NOS__CSRome_IntDS__FL15)                         6 	(obj:0)
+EF(NOS__CSOslo_IntDS__FL15)                         4 	(obj:0)
+EF(NOS__CSStrasbourg_IntDS__FL15)                    4 	(obj:0)
+EF(NOS__CSStockholm_IntDS__FL15)                    6 	(obj:0)
+EF(NOS__CSVienna_IntDS__FL15)                       4 	(obj:0)
+EF(NOS__CSAthens_IntDS__BL15)                       8 	(obj:0)
+EF(NOS__CSBudapest_IntDS__BL15)                    24 	(obj:0)
+EF(NOS__CSWarsaw_IntDS__BL15)                       4 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__BL17)                   16 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL16)                   10 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL16)                      4 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL16)                       6 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL16)                     4 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL16)                      2 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL16)                     2 	(obj:0)
+EF(NOS__CSBerlin_IntDS__BL16)                       2 	(obj:0)
+EF(NOS__CSBrussels_IntDS__BL16)                     4 	(obj:0)
+EF(NOS__CSMadrid_IntDS__BL16)                      20 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL17)                    74 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL17)                     4 	(obj:0)
+EF(NOS__CSMadrid_IntDS__FL17)                      20 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__BL17)                   10 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__BL17)                      4 	(obj:0)
+EF(NOS__CSLondon_IntDS__BL17)                       6 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__BL17)                    4 	(obj:0)
+EF(NOS__CSHamburg_IntDS__BL17)                      2 	(obj:0)
+EF(NOS__CSAthens_IntDS__BL17)                       2 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__BL17)                     4 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL27)                   46 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL18)                      20 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL18)                     50 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL18)                      76 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL18)                     8 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL18)                    56 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL18)                     30 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL18)                      20 	(obj:0)
+EF(NOS__CSMadrid_IntDS__FL18)                      16 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__BL18)                  108 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__BL18)                   28 	(obj:0)
+EF(NOS__CSMilan_IntDS__BL18)                        4 	(obj:0)
+EF(NOS__CSAthens_IntDS__BL18)                       6 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__BL18)                     6 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL19)                       4 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL19)                      6 	(obj:0)
+EF(NOS__CSMilan_IntDS__FL19)                        4 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL19)                    2 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL19)                       2 	(obj:0)
+EF(NOS__CSOslo_IntDS__FL19)                         2 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__BL19)                    24 	(obj:0)
+EF(NOS__CSMadrid_IntDS__BL19)                      16 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL20)                    6 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL20)                       4 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL20)                     2 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL20)                    12 	(obj:0)
+EF(NOS__CSMunich_IntDS__FL20)                       6 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL20)                       2 	(obj:0)
+EF(NOS__CSPrague_IntDS__BL20)                       4 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL21)                      10 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL21)                    28 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL21)                     2 	(obj:0)
+EF(NOS__CSBerlin_IntDS__BL21)                       4 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__BL21)                    2 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__BL21)                     2 	(obj:0)
+EF(NOS__CSBrussels_IntDS__BL21)                     2 	(obj:0)
+EF(NOS__CSHamburg_IntDS__BL21)                      2 	(obj:0)
+EF(NOS__CSMunich_IntDS__BL21)                       6 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__BL21)                    2 	(obj:0)
+EF(NOS__CSDublin_IntDS__BL21)                       2 	(obj:0)
+EF(NOS__CSOslo_IntDS__BL21)                         2 	(obj:0)
+EF(NOS__CSStockholm_IntDS__BL21)                    2 	(obj:0)
+EF(NOS__CSWarsaw_IntDS__BL21)                       2 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL34)                   12 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL22)                   12 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL22)                       6 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL22)                      8 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL22)                      10 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__FL22)                    4 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL22)                     4 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL22)                     4 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL22)                      6 	(obj:0)
+EF(NOS__CSMilan_IntDS__FL22)                        4 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL22)                       4 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL22)                     4 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL22)                     4 	(obj:0)
+EF(NOS__CSMunich_IntDS__FL22)                       4 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL22)                    4 	(obj:0)
+EF(NOS__CSLyon_IntDS__FL22)                         4 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL22)                       4 	(obj:0)
+EF(NOS__CSMadrid_IntDS__FL22)                       4 	(obj:0)
+EF(NOS__CSParis_IntDS__FL22)                        2 	(obj:0)
+EF(NOS__CSPrague_IntDS__FL22)                       2 	(obj:0)
+EF(NOS__CSRome_IntDS__FL22)                         2 	(obj:0)
+EF(NOS__CSOslo_IntDS__BL22)                        16 	(obj:0)
+EF(NOS__CSStockholm_IntDS__BL22)                   12 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL23)                      76 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL23)                     2 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL23)                      36 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__BL23)                   20 	(obj:0)
+EF(NOS__CSBerlin_IntDS__BL23)                       2 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__BL23)                     54 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__BL23)                    2 	(obj:0)
+EF(NOS__CSBrussels_IntDS__BL23)                     2 	(obj:0)
+EF(NOS__CSAthens_IntDS__BL23)                       2 	(obj:0)
+EF(NOS__CSBudapest_IntDS__BL23)                     2 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__BL23)                     2 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__BL23)                    2 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL24)                   20 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL24)                     54 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL24)                       6 	(obj:0)
+EF(NOS__CSLondon_IntDS__BL24)                      76 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__BL24)                     4 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL25)                    16 	(obj:0)
+EF(NOS__CSMilan_IntDS__FL25)                       14 	(obj:0)
+EF(NOS__CSLyon_IntDS__FL25)                        10 	(obj:0)
+EF(NOS__CSParis_IntDS__FL25)                        6 	(obj:0)
+EF(NOS__CSRome_IntDS__FL25)                         8 	(obj:0)
+EF(NOS__CSStrasbourg_IntDS__FL25)                    4 	(obj:0)
+EF(NOS__CSBerlin_IntDS__BL25)                      34 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__BL25)                   20 	(obj:0)
+EF(NOS__CSOslo_IntDS__BL25)                         4 	(obj:0)
+EF(NOS__CSStockholm_IntDS__BL25)                    4 	(obj:0)
+EF(NOS__CSWarsaw_IntDS__BL25)                       4 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL26)                   52 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL26)                     14 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL26)                      18 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__FL26)                   10 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL26)                    10 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL26)                     8 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL26)                      8 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL26)                       4 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL26)                     4 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL26)                    4 	(obj:0)
+EF(NOS__CSLyon_IntDS__FL26)                         8 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL26)                       6 	(obj:0)
+EF(NOS__CSMadrid_IntDS__FL26)                      16 	(obj:0)
+EF(NOS__CSParis_IntDS__FL26)                        6 	(obj:0)
+EF(NOS__CSRome_IntDS__FL26)                         4 	(obj:0)
+EF(NOS__CSStrasbourg_IntDS__FL26)                    4 	(obj:0)
+EF(NOS__CSBudapest_IntDS__BL26)                     8 	(obj:0)
+EF(NOS__CSMunich_IntDS__BL26)                      24 	(obj:0)
+EF(NOS__CSVienna_IntDS__BL26)                       2 	(obj:0)
+EF(NOS__CSZagreb_IntDS__BL26)                       2 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__FL40)                   36 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL27)                  126 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL27)                      26 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL27)                     36 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL27)                      58 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL27)                    22 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL27)                     22 	(obj:0)
+EF(NOS__CSMunich_IntDS__FL27)                      24 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL27)                   12 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL27)                      12 	(obj:0)
+EF(NOS__CSOslo_IntDS__FL27)                         4 	(obj:0)
+EF(NOS__CSStockholm_IntDS__FL27)                    4 	(obj:0)
+EF(NOS__CSVienna_IntDS__FL27)                       2 	(obj:0)
+EF(NOS__CSWarsaw_IntDS__FL27)                       4 	(obj:0)
+EF(NOS__CSZagreb_IntDS__FL27)                       2 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__BL27)                   56 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__BL27)                    10 	(obj:0)
+EF(NOS__CSMilan_IntDS__BL27)                       18 	(obj:0)
+EF(NOS__CSAthens_IntDS__BL27)                      18 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__BL27)                    14 	(obj:0)
+EF(NOS__CSLyon_IntDS__BL27)                        18 	(obj:0)
+EF(NOS__CSParis_IntDS__BL27)                       12 	(obj:0)
+EF(NOS__CSRome_IntDS__BL27)                        12 	(obj:0)
+EF(NOS__CSStrasbourg_IntDS__BL27)                    8 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL28)                      28 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__BL28)                   12 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__BL28)                    20 	(obj:0)
+EF(NOS__CSAthens_IntDS__BL28)                       4 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__BL28)                     2 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__FL29)                   18 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL29)                       8 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL29)                     2 	(obj:0)
+EF(NOS__CSLyon_IntDS__FL29)                         4 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__BL29)                     4 	(obj:0)
+EF(NOS__CSParis_IntDS__BL29)                        6 	(obj:0)
+EF(NOS__CSAmsterdam_IntDS__BL32)                   12 	(obj:0)
+EF(NOS__CSMilan_IntDS__FL30)                       18 	(obj:0)
+EF(NOS__CSMadrid_IntDS__FL30)                       2 	(obj:0)
+EF(NOS__CSBudapest_IntDS__BL30)                     8 	(obj:0)
+EF(NOS__CSPrague_IntDS__BL30)                       6 	(obj:0)
+EF(NOS__CSOslo_IntDS__BL30)                         2 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL31)                   26 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL31)                       4 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL31)                      6 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL31)                      10 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__FL31)                    6 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL31)                     4 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL31)                     4 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL31)                      4 	(obj:0)
+EF(NOS__CSMilan_IntDS__FL31)                       10 	(obj:0)
+EF(NOS__CSMunich_IntDS__FL31)                       6 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL31)                    2 	(obj:0)
+EF(NOS__CSLyon_IntDS__FL31)                         4 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL31)                       2 	(obj:0)
+EF(NOS__CSMadrid_IntDS__FL31)                       4 	(obj:0)
+EF(NOS__CSParis_IntDS__FL31)                        4 	(obj:0)
+EF(NOS__CSPrague_IntDS__FL31)                       2 	(obj:0)
+EF(NOS__CSOslo_IntDS__FL31)                         2 	(obj:0)
+EF(NOS__CSAthens_IntDS__BL31)                      38 	(obj:0)
+EF(NOS__CSBudapest_IntDS__BL31)                     4 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__BL31)                    30 	(obj:0)
+EF(NOS__CSRome_IntDS__BL31)                        20 	(obj:0)
+EF(NOS__CSMilan_IntDS__FL32)                       34 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL32)                      36 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL32)                    10 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL32)                    28 	(obj:0)
+EF(NOS__CSPrague_IntDS__FL32)                       4 	(obj:0)
+EF(NOS__CSRome_IntDS__FL32)                        20 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__BL32)                   54 	(obj:0)
+EF(NOS__CSBerlin_IntDS__BL32)                      10 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__BL32)                     14 	(obj:0)
+EF(NOS__CSLondon_IntDS__BL32)                      22 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__BL32)                   12 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__BL32)                     8 	(obj:0)
+EF(NOS__CSBrussels_IntDS__BL32)                     8 	(obj:0)
+EF(NOS__CSHamburg_IntDS__BL32)                     10 	(obj:0)
+EF(NOS__CSMunich_IntDS__BL32)                       6 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__BL32)                    4 	(obj:0)
+EF(NOS__CSLyon_IntDS__BL32)                        12 	(obj:0)
+EF(NOS__CSDublin_IntDS__BL32)                       4 	(obj:0)
+EF(NOS__CSMadrid_IntDS__BL32)                      10 	(obj:0)
+EF(NOS__CSParis_IntDS__BL32)                        4 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL33)                   20 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL33)                       4 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL33)                      6 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL33)                       6 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__FL33)                    6 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL33)                     6 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL33)                     4 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL33)                      2 	(obj:0)
+EF(NOS__CSMilan_IntDS__FL33)                        6 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL33)                       2 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL33)                     2 	(obj:0)
+EF(NOS__CSMunich_IntDS__FL33)                       6 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL33)                    2 	(obj:0)
+EF(NOS__CSLyon_IntDS__FL33)                         4 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL33)                       4 	(obj:0)
+EF(NOS__CSMadrid_IntDS__FL33)                       6 	(obj:0)
+EF(NOS__CSParis_IntDS__FL33)                        6 	(obj:0)
+EF(NOS__CSRome_IntDS__FL33)                         4 	(obj:0)
+EF(NOS__CSOslo_IntDS__FL33)                         2 	(obj:0)
+EF(NOS__CSStrasbourg_IntDS__FL33)                    4 	(obj:0)
+EF(NOS__CSStockholm_IntDS__FL33)                    2 	(obj:0)
+EF(NOS__CSBudapest_IntDS__BL33)                    12 	(obj:0)
+EF(NOS__CSPrague_IntDS__BL33)                       6 	(obj:0)
+EF(NOS__CSVienna_IntDS__BL33)                       6 	(obj:0)
+EF(NOS__CSZagreb_IntDS__BL33)                       2 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL34)                    8 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL34)                       4 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL34)                      4 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL34)                       6 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__FL34)                    2 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL34)                     2 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL34)                     2 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL34)                      4 	(obj:0)
+EF(NOS__CSMilan_IntDS__FL34)                        2 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL34)                       2 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL34)                     2 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL34)                     2 	(obj:0)
+EF(NOS__CSMunich_IntDS__FL34)                       2 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL34)                    2 	(obj:0)
+EF(NOS__CSLyon_IntDS__FL34)                         2 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL34)                       2 	(obj:0)
+EF(NOS__CSMadrid_IntDS__FL34)                       2 	(obj:0)
+EF(NOS__CSParis_IntDS__FL34)                        2 	(obj:0)
+EF(NOS__CSPrague_IntDS__FL34)                       2 	(obj:0)
+EF(NOS__CSRome_IntDS__FL34)                         2 	(obj:0)
+EF(NOS__CSOslo_IntDS__FL34)                         2 	(obj:0)
+EF(NOS__CSStockholm_IntDS__BL34)                   12 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL35)                    22 	(obj:0)
+EF(NOS__CSMadrid_IntDS__FL35)                       2 	(obj:0)
+EF(NOS__CSParis_IntDS__FL35)                       16 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__BL35)                   18 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__BL35)                     10 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__BL35)                     8 	(obj:0)
+EF(NOS__CSMunich_IntDS__BL35)                       4 	(obj:0)
+EF(NOS__CSPrague_IntDS__FL36)                      10 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__BL36)                    2 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__BL36)                     2 	(obj:0)
+EF(NOS__CSBrussels_IntDS__BL36)                     2 	(obj:0)
+EF(NOS__CSMadrid_IntDS__BL36)                       2 	(obj:0)
+EF(NOS__CSParis_IntDS__BL36)                        2 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL39)                   16 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL39)                       8 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL39)                      4 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL39)                      22 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL39)                     8 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL39)                      4 	(obj:0)
+EF(NOS__CSAthens_IntDS__FL39)                      14 	(obj:0)
+EF(NOS__CSBudapest_IntDS__FL39)                     6 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__FL39)                     2 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL39)                    4 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL39)                       4 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__BL39)                   72 	(obj:0)
+EF(NOS__CSLyon_IntDS__BL39)                        38 	(obj:0)
+EF(NOS__CSMadrid_IntDS__BL39)                      12 	(obj:0)
+EF(NOS__CSParis_IntDS__BL39)                        6 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL40)                   84 	(obj:0)
+EF(NOS__CSBerlin_IntDS__FL40)                      22 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL40)                     22 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL40)                      50 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL40)                    10 	(obj:0)
+EF(NOS__CSBrussels_IntDS__FL40)                    18 	(obj:0)
+EF(NOS__CSHamburg_IntDS__FL40)                     18 	(obj:0)
+EF(NOS__CSMunich_IntDS__FL40)                      12 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__FL40)                   10 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL40)                      10 	(obj:0)
+EF(NOS__CSOslo_IntDS__FL40)                         2 	(obj:0)
+EF(NOS__CSStrasbourg_IntDS__FL40)                    8 	(obj:0)
+EF(NOS__CSStockholm_IntDS__FL40)                    2 	(obj:0)
+EF(NOS__CSVienna_IntDS__FL40)                       2 	(obj:0)
+EF(NOS__CSWarsaw_IntDS__FL40)                       4 	(obj:0)
+EF(NOS__CSZagreb_IntDS__FL40)                       2 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__BL40)                   58 	(obj:0)
+EF(NOS__CSMilan_IntDS__BL40)                       26 	(obj:0)
+EF(NOS__CSAthens_IntDS__BL40)                      20 	(obj:0)
+EF(NOS__CSBudapest_IntDS__BL40)                     2 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__BL40)                    24 	(obj:0)
+EF(NOS__CSLyon_IntDS__BL40)                        22 	(obj:0)
+EF(NOS__CSPrague_IntDS__BL40)                       2 	(obj:0)
+EF(NOS__CSRome_IntDS__BL40)                        16 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__FL41)                   10 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__FL41)                      2 	(obj:0)
+EF(NOS__CSLondon_IntDS__FL41)                       2 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__FL41)                    2 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__FL41)                     2 	(obj:0)
+EF(NOS__CSMilan_IntDS__FL41)                        2 	(obj:0)
+EF(NOS__CSMunich_IntDS__FL41)                       2 	(obj:0)
+EF(NOS__CSLyon_IntDS__FL41)                         2 	(obj:0)
+EF(NOS__CSDublin_IntDS__FL41)                       2 	(obj:0)
+EF(NOS__CSMadrid_IntDS__FL41)                       2 	(obj:0)
+EF(NOS__CSParis_IntDS__FL41)                        2 	(obj:0)
+EF(NOS__CSStrasbourg_IntDS__FL41)                    2 	(obj:0)
+EF(NOS__CSVienna_IntDS__FL41)                       2 	(obj:0)
+EF(NOS__CSBudapest_IntDS__BL41)                    16 	(obj:0)
+EF(NOS__CSZagreb_IntDS__BL41)                       2 	(obj:0)
+EF(NOS__CSFrankfurt_IntDS__BL1)                   108 	(obj:0)
+EF(NOS__CSBarcelona_IntDS__BL1)                    26 	(obj:0)
+EF(NOS__CSBordeaux_IntDS__BL1)                     14 	(obj:0)
+EF(NOS__CSBrussels_IntDS__BL1)                     16 	(obj:0)
+EF(NOS__CSAthens_IntDS__BL1)                        4 	(obj:0)
+EF(NOS__CSBelgrade_IntDS__BL1)                      4 	(obj:0)
+EF(NOS__CSGlasgow_IntDS__BL2)                      78 	(obj:0)
+EF(NOS__CSLondon_IntDS__BL2)                       76 	(obj:0)
+EF(NOS__CSDublin_IntDS__BL2)                       32 	(obj:0)
+EF(NOS__CSBerlin_IntDS__BL3)                       50 	(obj:0)
+EF(NOS__CSHamburg_IntDS__BL3)                      50 	(obj:0)
+EF(NOS__CSBudapest_IntDS__BL3)                      8 	(obj:0)
+EF(NOS__CSCopenhagen_IntDS__BL3)                   10 	(obj:0)
+EF(NOS__CSOslo_IntDS__BL3)                          2 	(obj:0)
+EF(NOS__CSLondon_IntDS__BL4)                       28 	(obj:0)
+
+Statistics
+==========
+
+Master Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    1999.28
+  solving          :    1999.28
+  presolving       :       0.00 (included in solving)
+  reading          :       0.00
+  copying          :       0.03 (9 #copies) (minimal 0.00, maximal 0.02, average 0.00)
+Original Problem   :
+  Problem name     : master_nobel-eu-DBE
+  Variables        : 0 (0 binary, 0 integer, 0 implicit integer, 0 continuous)
+  Constraints      : 150 initial, 150 maximal
+  Objective        : minimize, 0 non-zeros (abs.min = 1e+20, abs.max = -1e+20)
+Presolved Problem  :
+  Problem name     : t_master_nobel-eu-DBE
+  Variables        : 19251 (0 binary, 0 integer, 0 implicit integer, 19251 continuous)
+  Constraints      : 150 initial, 151 maximal
+  Objective        : minimize, 4545 non-zeros (abs.min = 415, abs.max = 387000)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  roundbound       :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  linear           :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -          0          -          -      17922          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  masterbranch     :          0+       186          0       8585          0          0          0          0          0          0      81854          0          0          0          0
+  integralorig     :          0          0          0          0       1685          0          0       9275          0          0          0          0          0          0       3370
+  integral         :          0          0          0          0          0          0          0        109          0          0          0          0          0          0          0
+  linear           :        150        150         24      17790          0          0          0        109          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  masterbranch     :    1273.11       0.00       0.00    1273.11       0.00       0.00       0.00       0.00       0.00       0.00
+  integralorig     :     857.47       0.00       0.00       0.00       0.05       0.00       0.00     857.41       0.00       0.00
+  integral         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       0.43       0.00       0.00       0.02       0.00       0.00       0.00       0.41       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          1          0          0          0
+  genvbounds       :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          0          0          0          0
+  redcost          :          0          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :      19474          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.01       0.00       0.00       0.01       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.00       0.00       0.00       0.00       0.00       0.00
+  redcost          :       0.01       0.00       0.00       0.01       0.00       0.00
+  rootredcost      :       0.01       0.00       0.00       0.01       0.00       0.00
+  vbounds          :       0.01       0.00       0.00       0.01       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     0          -          -          0          -          -    (maximal pool size: 0)
+  basis            :       3.92       0.00          6          0          0        250         13          0
+  master           :      11.08       0.00         65          0          0       2721         43          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:      17.78          -       9898    5058458
+  gcg              :     717.57       0.00       5932      29826
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  generic          :       0.00       0.00          0          0          0          0          0          0          0          0
+  orig             :       0.00       0.00          0          0          0          0          0          0          0          0
+  relpsprob        :       0.00       0.00          0          0          0          0          0          0          0          0
+  ryanfoster       :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.00       0.00          0          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  greedycolsel     :       0.04       0.00         13          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mastercoefdiving :       0.00       0.00          0          0          0
+  masterfracdiving :       0.00       0.00          0          0          0
+  masterlinesdiving:       0.00       0.00          0          0          0
+  mastervecldiving :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.00       0.00          0          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.00       0.00          0          0          0
+  relaxcolsel      :       0.11       0.00         13          0          0
+  rens             :       0.00       0.00          0          0          0
+  restmaster       :       0.36       0.00          2          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          0          0          0
+  setcover         :       0.00       0.00          0          0          0
+  shiftandpropagate:       0.00       0.00          0          0          0
+  shifting         :       0.00       0.00          0          0          0
+  simplerounding   :     860.66       0.00       9164          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          0          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :      23.07       8907     179307      23.98    7772.43       0.96       1430
+  dual LP          :      40.05      19997     176202      85.00    4400.00       9.66      17924
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:      17.68       6863     137079      19.97    7752.05
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+B&B Tree           :
+  number of runs   :          1
+  nodes            :       1693 (1685 internal, 8 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          7
+  objective leaves :          0
+  nodes (total)    :       1693 (1685 internal, 8 leaves)
+  nodes left       :       1679
+  max depth        :        122
+  max depth (total):        122
+  backtracks       :        117 (6.9%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :        622 (163 domain reductions, 0 cutoffs)
+  avg switch length:      40.52
+  switching time   :      18.47
+Root Node          :
+  First LP value   :          -
+  First LP Iters   :          0
+  First LP Time    :       0.00
+  Final Dual Bound : +5.72662996414526e+04
+  Final Root Iters :       1639
+  Root LP Estimate : +5.72662996414526e+04
+Solution           :
+  Solutions found  :        109 (4 improvements)
+  First Solution   : +9.06480000000000e+05   (in run 1, after 1 nodes, 0.00 seconds, depth 0, found by <relaxation>)
+  Gap First Sol.   :    1488.40 %
+  Gap Last Sol.    :     193.06 %
+  Primal Bound     : +1.67825000000000e+05   (in run 1, after 1 nodes, 27.88 seconds, depth 0, found by <relaxation>)
+  Dual Bound       : +5.72942047987616e+04
+  Gap              :     192.92 %
+  Avg. Gap         :      66.26 % (132473.14 primal-dual integral)
+Pricing Solver     : #HeurFarkas  #OptFarkas  #HeurRedcost #OptRedcost Time: HeurFarkas  OptFarkas  HeurRedcost OptRedcost
+  knapsack         :        1189        1179        228165      227731             0.01       0.00         1.60       0.69 
+  mip              :         849           0        185831           0             2.68       0.00       595.66       0.00 
+
+Original Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3600.11
+  solving          :    3600.04
+  presolving       :       0.36 (included in solving)
+  reading          :       0.06
+  copying          :       0.04 (6 #copies) (minimal 0.01, maximal 0.01, average 0.01)
+Original Problem   :
+  Problem name     : nobel-eu-DBE
+  Variables        : 3771 (1639 binary, 0 integer, 0 implicit integer, 2132 continuous)
+  Constraints      : 879 initial, 879 maximal
+  Objective        : minimize, 1639 non-zeros (abs.min = 3150, abs.max = 3.87e+06)
+Presolved Problem  :
+  Problem name     : t_nobel-eu-DBE
+  Variables        : 3748 (1625 binary, 0 integer, 0 implicit integer, 2123 continuous)
+  Constraints      : 870 initial, 871 maximal
+  Objective        : minimize, 1625 non-zeros (abs.min = 315, abs.max = 387000)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  convertinttobin  :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  domcol           :       0.01       0.00      3         14          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      4          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  trivial          :       0.00       0.00      5          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      5          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.32       0.00      2          0          0          0         50          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  setppc           :       0.00       0.00      9          0          0          0          0          0          0          0          0          0
+  linear           :       0.02       0.00      9          0          9          0       2219          0          9          0          0          0
+  root node        :          -          -      -         16          -          -       1147          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  origbranch       :          0+       186          0          0          0          0          0          0          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          1       1684          0      10155          0          0          0          0          0          0       3370
+  decomp           :          0          0          0          0          0          0          0        825          0          0          0          0          0          0          0
+  setppc           :         41         41         30      27525          0          0          0        719          0          0      49756          0          0          0          0
+  linear           :        829        829         30      27532          0          0          0        717          0         33     101693         23          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  origbranch       :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.21       0.00       0.00       0.00       0.00       0.00       0.11       0.10       0.00       0.00
+  decomp           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  setppc           :       0.24       0.00       0.00       0.22       0.00       0.00       0.00       0.02       0.00       0.00
+  linear           :       1.71       0.00       0.83       0.84       0.00       0.00       0.00       0.05       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          3          0          0          0
+  genvbounds       :          0          0          0          0
+  obbt             :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :       6887          0          0         16
+  redcost          :          5          0          0          0
+  rootredcost      :          1          0          0       1081
+  vbounds          :      25890          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  obbt             :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.32       0.00       0.32       0.00       0.00       0.00
+  pseudoobj        :       0.01       0.00       0.00       0.01       0.00       0.00
+  redcost          :       0.00       0.00       0.00       0.00       0.00       0.00
+  rootredcost      :       0.01       0.00       0.00       0.01       0.00       0.00
+  vbounds          :       0.02       0.00       0.00       0.01       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.01                    13          -          -        330          -          -    (maximal pool size: 690)
+  clique           :       0.01       0.00         30          0          0          0          0          0
+  closecuts        :       0.00       0.00          0          0          0          0          0          0
+  gomory           :       1.14       0.00          5          0          0          0          8          0
+  impliedbounds    :       0.00       0.00         30          0          0          0          0          0
+  intobj           :       0.00       0.00          0          0          0          0          0          0
+  mcf              :       4.31       0.00         30          0          0       2698          3          0
+  oddcycle         :       0.05       0.00         14          0          0          0          0          0
+  rapidlearning    :       0.00       0.00          0          0          0          0          0          0
+  strongcg         :       0.73       0.00          5          0          0          0          0          0
+  zerohalf         :       0.03       0.00         24          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.00          -          0          0
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  empty            :       0.02       0.00          1       1684          0          0          0          0          0       3370
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.68       0.00          2          1          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.06       0.00          1          1          1
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  gcgcoefdiving    :     163.30       0.00         20         20          0
+  gcgdins          :       0.00       0.00          0          0          0
+  gcgfeaspump      :       0.00       0.00          0          0          0
+  gcgfracdiving    :     365.53       0.00         19         15          0
+  gcgguideddiving  :     352.05       0.00         19         17          0
+  gcglinesdiving   :     182.84       0.00         19         10          0
+  gcgpscostdiving  :     371.45       0.00         20         18          0
+  gcgrens          :       0.43       0.00          1          1          0
+  gcgrins          :       0.92       0.00          2          2          0
+  gcgrounding      :       0.26       0.00        532          0          0
+  gcgshifting      :       0.44       0.00        137          0          0
+  gcgsimplerounding:       0.00       0.00          0          0          0
+  gcgveclendiving  :     158.95       0.00         19         19          0
+  gcgzirounding    :       0.00       0.00          0          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.08       0.00          1          1          1
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  nlpdiving        :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.00       0.00          1          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.00       0.00          3          0          0
+  rens             :       0.25       0.00          1          1          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          3          1          1
+  shiftandpropagate:       0.08       0.00          1          0          0
+  shifting         :       0.00       0.00          3          0          0
+  simplerounding   :       0.00       0.00          0          0          0
+  subnlp           :       0.00       0.00          0          0          0
+  trivial          :       0.01       0.00          2          0          0
+  trysol           :       0.00       0.00          0          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  undercover       :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  xpcrossover      :       0.86       0.00          1          1          1
+  xprins           :       0.73       0.00          1          1          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          1          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.00          1          0       0.00          -       0.00          1
+  dual LP          :       0.17          4       3204    1068.00   18385.69       0.00          1
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:       0.42         12       3829     319.08    9053.12
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+Relaxators         :       Time      Calls
+  gcg              :    1999.86       1692
+B&B Tree           :
+  number of runs   :          1
+  nodes            :       1701 (1685 internal, 16 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :         15
+  objective leaves :          0
+  nodes (total)    :       1701 (1685 internal, 16 leaves)
+  nodes left       :       1671
+  max depth        :        122
+  max depth (total):        122
+  backtracks       :        117 (6.9%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          1 (0 domain reductions, 0 cutoffs)
+  avg switch length:       1.99
+  switching time   :       0.13
+Root Node          :
+  First LP value   : +5.70687500000000e+05
+  First LP Iters   :       3149 (18773.55 Iter/sec)
+  First LP Time    :       0.17
+  Final Dual Bound : +5.72662996414526e+05
+  Final Root Iters :       3204
+  Root LP Estimate : +2.26040241829504e+06
+Solution           :
+  Solutions found  :        109 (4 improvements)
+  First Solution   : +9.06480000000000e+06   (in run 1, after 1 nodes, 0.62 seconds, depth 0, found by <rounding>)
+  Gap First Sol.   :    1488.40 %
+  Gap Last Sol.    :     193.06 %
+  Primal Bound     : +1.67825000000000e+06   (in run 1, after 1 nodes, 30.49 seconds, depth 0, found by <xpcrossover>)
+  Dual Bound       : +5.72942047987617e+05
+  Gap              :     192.92 %
+  Avg. Gap         :          - (not evaluated)
+
+Simplex iterations :       iter
+  Master LP        :     492588
+  Pricing LP       :    4035852
+  Original LP      :       7033
+
+Detector statistics:       time     number     blocks
+  connected        :       0.00          0    
+  constype         :       0.00          0    
+  postproces       :       0.00          0    
+  consclass        :       0.88          0    
+  consname         :       0.00          0    
+  densemaste       :       0.00          0    
+  stairheur        :       0.00          0    
+  staircase        :       0.00          0    
+  random           :       0.00          0    
+  staircase_       :       0.00          0    
+  colors           :       0.00          0    
+  cutpacking       :       0.00          0    
+  compgreedi       :       0.00          0    
+  mastersetc       :       0.00          0    
+  mastersetp       :       0.00          0    
+  mastersetp       :       0.00          0    
+  hcgpartiti       :       0.00          0    
+  hrgpartiti       :       1.68          0    
+  hrcgpartit       :       0.00          0    
+  connectedb       :       0.00          0    
+  connected_       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  varclass         :       0.01          0    
+  isomorph         :       0.00          0    
+
+Decomp statistics  :
+  type             :   bordered
+  detector         :         rC
+  blocks           :         68
+  aggr. blocks     :         68
+Master statistics  :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros    bnzeros bintnzeros  min(dens)  max(dens) medi(dens) mean(dens)
+  master           :          0          0          0          0          0         82       5382       3250          0          0      0.012      0.024      0.012      0.018
+Pricing statistics :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros  min(dens)  max(dens) medi(dens) mean(dens)  identical
+          1        :         78          0          0          0         78         28        156          0      0.071      0.071      0.071      0.071          1
+          2        :         78          0          0          0         78         28        156          0      0.071      0.071      0.071      0.071          1
+          3        :         77          0          0          0         77         28        154          0      0.071      0.071      0.071      0.071          1
+          4        :         79          0          0          0         79         27        158          0      0.074      0.074      0.074      0.074          1
+          5        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+          6        :         79          0          0          0         79         28        158          0      0.071      0.071      0.071      0.071          1
+          7        :         79          0          0          0         79         27        158          0      0.074      0.074      0.074      0.074          1
+          8        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+          9        :         79          0          0          0         79         27        158          0      0.074      0.074      0.074      0.074          1
+         10        :         25         25          0          0          0          1         25         25      1.000      1.000      1.000      1.000          1
+         11        :         79          0          0          0         79         28        158          0      0.071      0.071      0.071      0.071          1
+         12        :         79          0          0          0         79         28        158          0      0.071      0.071      0.071      0.071          1
+         13        :         79          0          0          0         79         28        158          0      0.071      0.071      0.071      0.071          1
+         14        :         79          0          0          0         79         27        158          0      0.074      0.074      0.074      0.074          1
+         15        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         16        :         79          0          0          0         79         28        158          0      0.071      0.071      0.071      0.071          1
+         17        :         79          0          0          0         79         28        158          0      0.071      0.071      0.071      0.071          1
+         18        :         78          0          0          0         78         28        156          0      0.071      0.071      0.071      0.071          1
+         19        :         79          0          0          0         79         27        158          0      0.074      0.074      0.074      0.074          1
+         20        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         21        :         79          0          0          0         79         28        158          0      0.071      0.071      0.071      0.071          1
+         22        :         79          0          0          0         79         27        158          0      0.074      0.074      0.074      0.074          1
+         23        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         24        :         79          0          0          0         79         27        158          0      0.074      0.074      0.074      0.074          1
+         25        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         26        :         77          0          0          0         77         28        154          0      0.071      0.071      0.071      0.071          1
+         27        :         79          0          0          0         79         28        158          0      0.071      0.071      0.071      0.071          1
+         28        :         79          0          0          0         79         28        158          0      0.071      0.071      0.071      0.071          1
+         29        :         79          0          0          0         79         27        158          0      0.074      0.074      0.074      0.074          1
+         30        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         31        :         79          0          0          0         79         28        158          0      0.071      0.071      0.071      0.071          1
+         32        :         79          0          0          0         79         27        158          0      0.074      0.074      0.074      0.074          1
+         33        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         34        :         79          0          0          0         79         28        158          0      0.071      0.071      0.071      0.071          1
+         35        :         79          0          0          0         79         28        158          0      0.071      0.071      0.071      0.071          1
+         36        :         76          0          0          0         76         28        152          0      0.071      0.071      0.071      0.071          1
+         37        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         38        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         39        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         40        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         41        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         42        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         43        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         44        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         45        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         46        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         47        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         48        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         49        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         50        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         51        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         52        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         53        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         54        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         55        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         56        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         57        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         58        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         59        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         60        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         61        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         62        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         63        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         64        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         65        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         66        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         67        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+         68        :         40         40          0          0          0          1         40         40      1.000      1.000      1.000      1.000          1
+Decomp Scores      :
+  border area      :      0.094
+  avg. density     :      0.929
+  linking score    :      0.500
+Pricing time in colpool = 0.013500 sec
+
+GCGTIME= 3605.47

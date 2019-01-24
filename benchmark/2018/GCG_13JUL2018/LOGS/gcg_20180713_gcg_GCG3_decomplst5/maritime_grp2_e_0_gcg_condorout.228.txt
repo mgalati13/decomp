@@ -1,0 +1,2575 @@
+GCG version 3.0.0 [GitHash: 70e7382]
+Copyright (C) 2010-2018 Operations Research, RWTH Aachen University
+                        Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+SCIP version 6.0.0 [precision: 8 byte] [memory: block] [mode: optimized] [LP solver: SoPlex 4.0.0] [GitHash: 77d3bc8]
+Copyright (C) 2002-2018 Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+External codes: 
+  Readline 6.0         GNU library for command line editing (gnu.org/s/readline)
+  SoPlex 4.0.0         Linear Programming Solver developed at Zuse Institute Berlin (soplex.zib.de) [GitHash: 82cab95]
+  CppAD 20180000.0     Algorithmic Differentiation of C++ algorithms developed by B. Bell (www.coin-or.org/CppAD)
+  ZLIB 1.2.3           General purpose compression library by J. Gailly and M. Adler (zlib.net)
+  ZIMPL 3.3.6          Zuse Institute Mathematical Programming Language developed by T. Koch (zimpl.zib.de)
+  bliss 0.73           A Tool for Computing Automorphism Groups of Graphs by T. Junttila and P. Kaski (http://www.tcs.hut.fi/Software/bliss/)
+
+reading user parameter file </LOG_DATA/scripts/options_gcg.parm>
+
+read problem </ORDATA/miplib/maritime_grp2_e_0.mps>
+============
+
+original problem has 4399 variables (405 bin, 0 int, 0 impl, 3994 cont) and 7003 constraints
+presolving:
+(round 1, fast)       951 del vars, 1488 del conss, 0 add conss, 4492 chg bounds, 0 chg sides, 0 chg coeffs, 0 upgd conss, 1503 impls, 30 clqs
+(round 2, fast)       970 del vars, 1618 del conss, 0 add conss, 4553 chg bounds, 317 chg sides, 404 chg coeffs, 0 upgd conss, 1503 impls, 30 clqs
+(round 3, fast)       1017 del vars, 1664 del conss, 0 add conss, 4585 chg bounds, 498 chg sides, 585 chg coeffs, 0 upgd conss, 1503 impls, 30 clqs
+(round 4, fast)       1023 del vars, 1670 del conss, 0 add conss, 4594 chg bounds, 588 chg sides, 672 chg coeffs, 0 upgd conss, 1503 impls, 30 clqs
+(round 5, fast)       1023 del vars, 1670 del conss, 0 add conss, 4597 chg bounds, 660 chg sides, 744 chg coeffs, 0 upgd conss, 1503 impls, 30 clqs
+(round 6, fast)       1023 del vars, 1670 del conss, 0 add conss, 4597 chg bounds, 741 chg sides, 825 chg coeffs, 0 upgd conss, 1503 impls, 30 clqs
+(round 7, exhaustive) 1023 del vars, 1679 del conss, 0 add conss, 4597 chg bounds, 741 chg sides, 825 chg coeffs, 0 upgd conss, 1503 impls, 30 clqs
+(round 8, exhaustive) 1023 del vars, 1679 del conss, 0 add conss, 4597 chg bounds, 741 chg sides, 825 chg coeffs, 3051 upgd conss, 1503 impls, 30 clqs
+(round 9, medium)     1023 del vars, 1682 del conss, 3 add conss, 4597 chg bounds, 744 chg sides, 834 chg coeffs, 3051 upgd conss, 2993 impls, 30 clqs
+   (0.3s) probing cycle finished: starting next cycle
+(round 10, exhaustive) 1039 del vars, 1685 del conss, 3 add conss, 5103 chg bounds, 744 chg sides, 834 chg coeffs, 3051 upgd conss, 58400 impls, 335 clqs
+(round 11, fast)       1052 del vars, 1730 del conss, 3 add conss, 5103 chg bounds, 744 chg sides, 1330 chg coeffs, 3051 upgd conss, 58400 impls, 335 clqs
+   (0.4s) probing: 57/291 (19.6%) - 16 fixings, 0 aggregations, 55556 implications, 506 bound changes
+   (0.4s) probing aborted: 50/50 successive totally useless probings
+presolving (12 rounds: 12 fast, 5 medium, 4 exhaustive):
+ 1052 deleted vars, 1730 deleted constraints, 3 added constraints, 5103 tightened bounds, 0 added holes, 744 changed sides, 1335 changed coefficients
+ 58421 implications, 335 cliques
+presolved problem has 3347 variables (291 bin, 0 int, 0 impl, 3056 cont) and 5276 constraints
+   2954 constraints of type <varbound>
+     33 constraints of type <knapsack>
+     30 constraints of type <setppc>
+   2254 constraints of type <linear>
+      5 constraints of type <logicor>
+Presolving Time: 0.36
+start creating seeedpool for current problem 
+created seeedpool for current problem, n detectors: 26 
+ Consclassifier "nonzeros" yields a classification with 27  different constraint classes 
+ Consclassifier "constypes" yields a classification with 5 different constraint classes 
+ Consclassifier "constypes according to miplib" yields a classification with 6 different constraint classes 
+ Varclassifier "vartypes" yields a classification with 2 different variable classes
+ Varclassifier "varobjvals" yields a classification with 14 different variable classes
+ Varclassifier "varobjvalsigns" yields a classification with 3 different variable classes
+ Added reduced version of varclassifier varobjvals with 9 different variable classes
+ the current consclass distribution includes 27 classes but only 18 are allowed for calcCandidatesNBlocks()
+Begin of detection round 0 of 1 total rounds 
+Start to propagate seeed with id 1 (0 of 1 in round 0) 
+ in dec_consclass: there are 3 different constraint classes   
+ the current consclass distribution includes 27 classes but only 9 are allowed for propagateSeeed() of cons class detector
+  the current constraint classifier "constypes" consists of 5 different classes   
+  the current constraint classifier "constypes according to miplib" consists of 6 different classes   
+ dec_consclass found 94 new seeeds 
+dec_densemasterconss found 1 new seeed 
+Calling metis with: zsh -c "ulimit -t 3600;/ORDATA_NEW/SCIP/scipoptsuite-6.0.0/build/bin/hmetis gcg-r-1.metis.i7qneS 2 -seed 1 -ptype rb -ufactor 5.000000 > /dev/null"
+time left before metis started: 3599.636476, time metis spend 0.249640, remainingtime: 3599.386836
+Calling metis with: zsh -c "ulimit -t 3600;/ORDATA_NEW/SCIP/scipoptsuite-6.0.0/build/bin/hmetis gcg-r-1.metis.i7qneS 3 -seed 1 -ptype rb -ufactor 5.000000 > /dev/null"
+time left before metis started: 3599.636476, time metis spend 0.439644, remainingtime: 3599.196832
+Calling metis with: zsh -c "ulimit -t 3600;/ORDATA_NEW/SCIP/scipoptsuite-6.0.0/build/bin/hmetis gcg-r-1.metis.i7qneS 6 -seed 1 -ptype rb -ufactor 5.000000 > /dev/null"
+time left before metis started: 3599.636476, time metis spend 0.744967, remainingtime: 3598.891509
+Detecting Arrowhead structure: 2 3 6 done, 6 seeeds found.
+ the current varclass distribution includes 14 classes but only 9 are allowed for propagateSeeed() of var class detector
+Start finishing of partial decomposition 1.
+Measured running time per detector: 
+Detector consclass                 	 worked on 	 78 of 599	 and took a total time of 	0.635614
+Detector densemasterconss          	 worked on 	 1 of 599	 and took a total time of 	0.000703
+Detector hrgpartition              	 worked on 	 4 of 599	 and took a total time of 	1.91256
+Detector varclass                  	 worked on 	 515 of 599	 and took a total time of 	1.39121
+Started postprocessing of decompositions...
+...finished postprocessing of decompositions. Added 0 new decomps. 
+
+solve problem
+=============
+
+
+A Dantzig-Wolfe reformulation is applied to solve the original problem.
+
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+   0.4s|     1 |     0 |      0 |      0 |     - |  26M|   0 |   0 |5276 |   0 |   0 |  0 | 2.721000e+03 |      --      |   --   |    Inf 
+Chosen structure has 11 blocks, 21 linking variables, and 0 linking constraints.
+This decomposition has a maxwhite score of 0.759369.
+Warning: Discretization with continuous variables is only an experimental feature.
+
+     
+   5.0s|     1 |     0 |  18828 |      3 |     - |  41M|   0 |  22 |5277 |  54 |   0 |  0 | 2.721000e+03 |      --      |   0.00%|    Inf 
+Starting reduced cost pricing...
+   129s|     1 |     0 | 912980 |    131 |     - |  42M|   0 | 105 |5277 |  54 |   0 |  0 | 1.320080e+04 |      --      |   4.62%|    Inf 
+E  130s|     1 |     0 | 912980 |    131 |     - |  44M|   0 | 116 |5277 |  54 |   0 |  2 | 1.320080e+04 | 1.329935e+04 |   4.62%|   0.75%
+   130s|     1 |     0 | 912980 |    131 |     - |  44M|   0 | 116 |5277 |  54 |   0 |  2 | 1.320080e+04 | 1.329935e+04 |   4.62%|   0.75%
+   130s|     1 |     0 | 912980 |    131 |     - |  44M|   0 | 116 |5277 |  54 |   0 |  2 | 1.320080e+04 | 1.329935e+04 |   4.62%|   0.75%
+   130s|     1 |     2 | 912980 |    131 |     - |  44M|   0 | 116 |5277 |  54 |   0 |  2 | 1.320080e+04 | 1.329935e+04 |   4.62%|   0.75%
+  1730s|   100 |   101 |  11484k|   2004 |  18.9 |  48M|  12 | 250 |5277 |  54 |   0 |  1 | 1.320080e+04 | 1.329935e+04 |   --   |   0.75%
+  2903s|   200 |   199 |  19451k|   3843 |  18.7 |  51M|  21 | 398 |5277 |  54 |   0 |  1 | 1.320080e+04 | 1.329935e+04 |   --   |   0.75%
+C 2914s|   201 |   139 |  19485k|   3851 |  18.6 |  51M|  22 | 414 |5277 |  54 |   0 |  0 | 1.320080e+04 | 1.324610e+04 |   --   |   0.34%
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 3600.20
+Solving Nodes      : 267
+Primal Bound       : +1.32461000000000e+04 (10 solutions)
+Dual Bound         : +1.32008000000000e+04
+Gap                : 0.34 %
+
+primal solution:
+================
+
+objective value:                              13246.1
+b7                                                  1 	(obj:0)
+b14                                                 1 	(obj:0)
+b19                                                 1 	(obj:0)
+b37                                                 1 	(obj:0)
+b42                                                 1 	(obj:0)
+b54                                                 1 	(obj:0)
+b55                                                 1 	(obj:0)
+b66                                                 1 	(obj:0)
+b76                                                 1 	(obj:0)
+b85                                                 1 	(obj:0)
+b91                                                 1 	(obj:0)
+b108                                                1 	(obj:0)
+b115                                                1 	(obj:0)
+b118                                                1 	(obj:0)
+b125                                                1 	(obj:0)
+b136                                                1 	(obj:0)
+b153                                                1 	(obj:0)
+b156                                                1 	(obj:0)
+b174                                                1 	(obj:0)
+b179                                                1 	(obj:0)
+b189                                                1 	(obj:0)
+b190                                                1 	(obj:0)
+b203                                                1 	(obj:0)
+b213                                                1 	(obj:0)
+b221                                                1 	(obj:0)
+b226                                                1 	(obj:0)
+b243                                                1 	(obj:0)
+b252                                                1 	(obj:0)
+b255                                                1 	(obj:0)
+b261                                                1 	(obj:0)
+b271                                                1 	(obj:0)
+b286                                                1 	(obj:0)
+b290                                                1 	(obj:0)
+b308                                                1 	(obj:0)
+b313                                                1 	(obj:0)
+b324                                                1 	(obj:0)
+b325                                                1 	(obj:0)
+b337                                                1 	(obj:0)
+b347                                                1 	(obj:0)
+b357                                                1 	(obj:0)
+b368                                                1 	(obj:0)
+b378                                                1 	(obj:0)
+b386                                                1 	(obj:0)
+b389                                                1 	(obj:0)
+b396                                                1 	(obj:0)
+x406                                 2.86346153846154 	(obj:0)
+x407                                 2.86346153846154 	(obj:0)
+x408                                 2.86346153846154 	(obj:0)
+x409                                 2.86346153846154 	(obj:0)
+x410                                 2.86346153846154 	(obj:0)
+x411                                 2.86346153846154 	(obj:0)
+x412                                 2.86346153846154 	(obj:0)
+x413                                 2.86346153846154 	(obj:0)
+x414                                 8.18846153846155 	(obj:0)
+x415                                 59.0384615384615 	(obj:0)
+x416                                 59.0384615384615 	(obj:0)
+x417                                 59.0384615384615 	(obj:0)
+x418                                 59.0384615384615 	(obj:0)
+x419                                 61.6634615384615 	(obj:0)
+x420                                 61.6634615384615 	(obj:0)
+x421                                 61.6634615384615 	(obj:0)
+x422                                 61.6634615384615 	(obj:0)
+x423                                 61.6634615384615 	(obj:0)
+x424                                 2.86346153846154 	(obj:0)
+x425                                 3.36346153846154 	(obj:0)
+x426                                 8.18846153846155 	(obj:0)
+x427                                 8.68846153846155 	(obj:0)
+x428                                 11.3634615384615 	(obj:0)
+x429                                 11.3634615384615 	(obj:0)
+x430                                 11.2134615384615 	(obj:0)
+x431                                 11.7134615384615 	(obj:0)
+x432                                 13.6884615384615 	(obj:0)
+x433                                 29.6884615384615 	(obj:0)
+x434                                 30.1884615384615 	(obj:0)
+x435                                 32.1634615384615 	(obj:0)
+x436                                 23.3634615384615 	(obj:0)
+x437                                 23.8634615384615 	(obj:0)
+x438                                 26.5384615384615 	(obj:0)
+x439                                 26.5384615384615 	(obj:0)
+x440                                 49.1634615384615 	(obj:0)
+x441                                 49.6634615384615 	(obj:0)
+x442                                 25.8384615384615 	(obj:0)
+x443                                 26.3384615384615 	(obj:0)
+x444                                 29.0384615384615 	(obj:0)
+x445                                 38.5384615384615 	(obj:0)
+x446                                 39.0384615384615 	(obj:0)
+x447                                 39.0384615384615 	(obj:0)
+x448                                 39.5384615384615 	(obj:0)
+x449                                 41.6634615384615 	(obj:0)
+x450                                 41.6634615384615 	(obj:0)
+x451                                 2.86346153846154 	(obj:0)
+x452                                 61.6634615384615 	(obj:0)
+x453                                 2.86346153846154 	(obj:0)
+x457                                 25.8384615384615 	(obj:0)
+x458                                 39.0384615384615 	(obj:0)
+x459                                 8.18846153846155 	(obj:0)
+x460                                 59.0384615384615 	(obj:0)
+x461                                 8.18846153846155 	(obj:0)
+x464                                 23.3634615384615 	(obj:0)
+x466                                 38.5384615384615 	(obj:0)
+x467                                 2.86346153846154 	(obj:0)
+x468                                 61.6634615384615 	(obj:0)
+x470                                 11.2134615384615 	(obj:0)
+x471                                 29.6884615384615 	(obj:0)
+x472                                 49.1634615384615 	(obj:0)
+x475                                 2.86346153846154 	(obj:0)
+x476                                 61.6634615384615 	(obj:0)
+x477                                 3.36346153846154 	(obj:0)
+x481                                 26.3384615384615 	(obj:0)
+x482                                 39.5384615384615 	(obj:0)
+x483                                 8.18846153846155 	(obj:0)
+x484                                 59.0384615384615 	(obj:0)
+x485                                 8.68846153846155 	(obj:0)
+x488                                 23.8634615384615 	(obj:0)
+x490                                 39.0384615384615 	(obj:0)
+x491                                 2.86346153846154 	(obj:0)
+x492                                 61.6634615384615 	(obj:0)
+x494                                 11.7134615384615 	(obj:0)
+x495                                 30.1884615384615 	(obj:0)
+x496                                 49.6634615384615 	(obj:0)
+x500                                 61.6634615384615 	(obj:0)
+x501                                 2.86346153846154 	(obj:0)
+x505                                 23.1884615384615 	(obj:0)
+x506                                 39.0384615384615 	(obj:0)
+x508                                 59.0384615384615 	(obj:0)
+x509                                 8.18846153846155 	(obj:0)
+x512                                 23.3634615384615 	(obj:0)
+x514                                 38.5384615384615 	(obj:0)
+x516                                 61.6634615384615 	(obj:0)
+x518                                 9.86346153846154 	(obj:0)
+x519                                 29.6884615384615 	(obj:0)
+x520                                 49.1634615384615 	(obj:0)
+x523                                 2.86346153846154 	(obj:0)
+x529                                 2.64999999999999 	(obj:0)
+x531                                 8.18846153846155 	(obj:0)
+x539                                 2.86346153846154 	(obj:0)
+x542                                 1.34999999999999 	(obj:0)
+x547                                 2.86346153846154 	(obj:0)
+x548                                 61.6634615384615 	(obj:0)
+x549                                 8.18846153846155 	(obj:0)
+x553                                 29.0384615384615 	(obj:0)
+x554                                 41.6634615384615 	(obj:0)
+x555                                 8.18846153846155 	(obj:0)
+x556                                 59.0384615384615 	(obj:0)
+x557                                 11.3634615384615 	(obj:0)
+x560                                 26.5384615384615 	(obj:0)
+x562                                 39.0384615384615 	(obj:0)
+x563                                 2.86346153846154 	(obj:0)
+x564                                 61.6634615384615 	(obj:0)
+x566                                 13.6884615384615 	(obj:0)
+x567                                 32.1634615384615 	(obj:0)
+x568                                 49.6634615384615 	(obj:0)
+x571                                 965.000000000001 	(obj:0)
+x573                                 534.999999999999 	(obj:0)
+x576                                 395.000000000001 	(obj:0)
+x579                                              540 	(obj:0)
+x580                                 425.000000000001 	(obj:0)
+x582                                 534.999999999999 	(obj:0)
+x585                                 395.000000000001 	(obj:0)
+x607                                 1400.22115384615 	(obj:0)
+x608                                 1417.72115384615 	(obj:0)
+x609                                 621.596153846153 	(obj:0)
+x610                                 639.096153846153 	(obj:0)
+x611                                 197.721153846154 	(obj:0)
+x612                                 197.721153846154 	(obj:0)
+x613                                 524.269230769231 	(obj:0)
+x614                                 534.269230769231 	(obj:0)
+x615                                  178.76923076923 	(obj:0)
+x616                                 93.7384615384616 	(obj:0)
+x617                                 87.7384615384616 	(obj:0)
+x618                                 459.038461538462 	(obj:0)
+x619                                 76.2749999999999 	(obj:0)
+x620                                 69.7749999999999 	(obj:0)
+x621                                              570 	(obj:0)
+x622                                              570 	(obj:0)
+x623                                          275.875 	(obj:0)
+x624                                          269.375 	(obj:0)
+x625                                 312.423076923077 	(obj:0)
+x626                                 304.923076923077 	(obj:0)
+x627                                 804.423076923077 	(obj:0)
+x628                                 51.9230769230769 	(obj:0)
+x629                                 44.4230769230769 	(obj:0)
+x630                                 44.4230769230769 	(obj:0)
+x631                                 36.9230769230769 	(obj:0)
+x632                                 430.048076923077 	(obj:0)
+x633                                 430.048076923077 	(obj:0)
+x638                                 965.000000000001 	(obj:0)
+x639                                 425.000000000001 	(obj:0)
+x643                                 534.999999999999 	(obj:0)
+x648                                 395.000000000001 	(obj:0)
+x653                                 965.000000000001 	(obj:0)
+x657                                 425.000000000001 	(obj:0)
+x660                                 534.999999999999 	(obj:0)
+x668                                 395.000000000001 	(obj:0)
+x673                                 2.86346153846154 	(obj:0)
+x674                                 2.86346153846154 	(obj:0)
+x675                                 2.86346153846154 	(obj:0)
+x676                                 2.86346153846154 	(obj:0)
+x677                                 2.86346153846154 	(obj:0)
+x678                                 2.86346153846154 	(obj:0)
+x679                                 2.86346153846154 	(obj:0)
+x680                                 2.86346153846154 	(obj:0)
+x681                                 8.18846153846155 	(obj:0)
+x808                                 59.0384615384615 	(obj:0)
+x809                                 59.0384615384615 	(obj:0)
+x810                                 59.0384615384615 	(obj:0)
+x811                                 59.0384615384615 	(obj:0)
+x812                                 61.6634615384615 	(obj:0)
+x813                                 61.6634615384615 	(obj:0)
+x814                                 61.6634615384615 	(obj:0)
+x815                                 61.6634615384615 	(obj:0)
+x816                                 61.6634615384615 	(obj:0)
+x841                                 2.86346153846154 	(obj:0)
+x842                                 3.36346153846154 	(obj:0)
+x843                                 8.18846153846155 	(obj:0)
+x844                                 8.68846153846155 	(obj:0)
+x845                                 11.3634615384615 	(obj:0)
+x846                                 11.3634615384615 	(obj:0)
+x928                                 25.8384615384615 	(obj:0)
+x929                                 26.3384615384615 	(obj:0)
+x930                                 29.0384615384615 	(obj:0)
+x952                                 38.5384615384615 	(obj:0)
+x953                                 39.0384615384615 	(obj:0)
+x954                                 39.0384615384615 	(obj:0)
+x955                                 39.5384615384615 	(obj:0)
+x956                                 41.6634615384615 	(obj:0)
+x957                                 41.6634615384615 	(obj:0)
+x1042                                2.86346153846154 	(obj:0)
+x1043                                2.86346153846154 	(obj:0)
+x1044                                2.86346153846154 	(obj:0)
+x1045                                2.86346153846154 	(obj:0)
+x1046                                2.86346153846154 	(obj:0)
+x1047                                2.86346153846154 	(obj:0)
+x1048                                2.86346153846154 	(obj:0)
+x1049                                2.86346153846154 	(obj:0)
+x1050                                8.18846153846155 	(obj:0)
+x1051                                59.0384615384615 	(obj:0)
+x1052                                59.0384615384615 	(obj:0)
+x1053                                59.0384615384615 	(obj:0)
+x1054                                59.0384615384615 	(obj:0)
+x1055                                61.6634615384615 	(obj:0)
+x1056                                61.6634615384615 	(obj:0)
+x1057                                61.6634615384615 	(obj:0)
+x1058                                61.6634615384615 	(obj:0)
+x1059                                61.6634615384615 	(obj:0)
+x1150                                2.86346153846154 	(obj:0)
+x1151                                3.36346153846154 	(obj:0)
+x1152                                8.18846153846155 	(obj:0)
+x1153                                8.68846153846155 	(obj:0)
+x1154                                11.3634615384615 	(obj:0)
+x1155                                11.3634615384615 	(obj:0)
+x1192                                23.3634615384615 	(obj:0)
+x1193                                23.8634615384615 	(obj:0)
+x1194                                26.5384615384615 	(obj:0)
+x1195                                26.5384615384615 	(obj:0)
+x1196                                49.1634615384615 	(obj:0)
+x1197                                49.6634615384615 	(obj:0)
+x1243                                38.5384615384615 	(obj:0)
+x1244                                39.0384615384615 	(obj:0)
+x1245                                39.0384615384615 	(obj:0)
+x1246                                39.5384615384615 	(obj:0)
+x1247                                41.6634615384615 	(obj:0)
+x1248                                41.6634615384615 	(obj:0)
+x1330                                2.86346153846154 	(obj:0)
+x1331                                2.86346153846154 	(obj:0)
+x1332                                2.86346153846154 	(obj:0)
+x1333                                2.86346153846154 	(obj:0)
+x1334                                2.86346153846154 	(obj:0)
+x1335                                2.86346153846154 	(obj:0)
+x1336                                2.86346153846154 	(obj:0)
+x1337                                2.86346153846154 	(obj:0)
+x1338                                8.18846153846155 	(obj:0)
+x1420                                59.0384615384615 	(obj:0)
+x1421                                59.0384615384615 	(obj:0)
+x1422                                59.0384615384615 	(obj:0)
+x1423                                59.0384615384615 	(obj:0)
+x1424                                61.6634615384615 	(obj:0)
+x1425                                61.6634615384615 	(obj:0)
+x1426                                61.6634615384615 	(obj:0)
+x1427                                61.6634615384615 	(obj:0)
+x1428                                61.6634615384615 	(obj:0)
+x1468                                11.2134615384615 	(obj:0)
+x1469                                11.7134615384615 	(obj:0)
+x1470                                13.6884615384615 	(obj:0)
+x1477                                29.6884615384615 	(obj:0)
+x1478                                30.1884615384615 	(obj:0)
+x1479                                32.1634615384615 	(obj:0)
+x1513                                23.3634615384615 	(obj:0)
+x1514                                23.8634615384615 	(obj:0)
+x1515                                26.5384615384615 	(obj:0)
+x1516                                26.5384615384615 	(obj:0)
+x1517                                49.1634615384615 	(obj:0)
+x1518                                49.6634615384615 	(obj:0)
+x1573                                2.86346153846154 	(obj:0)
+x1574                                2.86346153846154 	(obj:0)
+x1575                                2.86346153846154 	(obj:0)
+x1576                                2.86346153846154 	(obj:0)
+x1577                                2.86346153846154 	(obj:0)
+x1578                                2.86346153846154 	(obj:0)
+x1579                                2.86346153846154 	(obj:0)
+x1580                                2.86346153846154 	(obj:0)
+x1581                                8.18846153846155 	(obj:0)
+x1582                                2.86346153846154 	(obj:0)
+x1583                                2.86346153846154 	(obj:0)
+x1584                                2.86346153846154 	(obj:0)
+x1585                                2.86346153846154 	(obj:0)
+x1586                                2.86346153846154 	(obj:0)
+x1587                                2.86346153846154 	(obj:0)
+x1588                                2.86346153846154 	(obj:0)
+x1589                                2.86346153846154 	(obj:0)
+x1590                                8.18846153846155 	(obj:0)
+x1591                                2.86346153846154 	(obj:0)
+x1592                                2.86346153846154 	(obj:0)
+x1593                                2.86346153846154 	(obj:0)
+x1594                                2.86346153846154 	(obj:0)
+x1595                                2.86346153846154 	(obj:0)
+x1596                                2.86346153846154 	(obj:0)
+x1597                                2.86346153846154 	(obj:0)
+x1598                                2.86346153846154 	(obj:0)
+x1599                                8.18846153846155 	(obj:0)
+x1600                                2.86346153846154 	(obj:0)
+x1601                                2.86346153846154 	(obj:0)
+x1602                                2.86346153846154 	(obj:0)
+x1603                                2.86346153846154 	(obj:0)
+x1604                                2.86346153846154 	(obj:0)
+x1605                                2.86346153846154 	(obj:0)
+x1606                                2.86346153846154 	(obj:0)
+x1607                                2.86346153846154 	(obj:0)
+x1608                                8.18846153846155 	(obj:0)
+x1609                                2.86346153846154 	(obj:0)
+x1610                                2.86346153846154 	(obj:0)
+x1611                                2.86346153846154 	(obj:0)
+x1612                                2.86346153846154 	(obj:0)
+x1613                                2.86346153846154 	(obj:0)
+x1614                                2.86346153846154 	(obj:0)
+x1615                                2.86346153846154 	(obj:0)
+x1616                                2.86346153846154 	(obj:0)
+x1617                                8.18846153846155 	(obj:0)
+x1618                                2.86346153846154 	(obj:0)
+x1619                                2.86346153846154 	(obj:0)
+x1620                                2.86346153846154 	(obj:0)
+x1621                                2.86346153846154 	(obj:0)
+x1622                                2.86346153846154 	(obj:0)
+x1623                                2.86346153846154 	(obj:0)
+x1624                                2.86346153846154 	(obj:0)
+x1625                                2.86346153846154 	(obj:0)
+x1626                                8.18846153846155 	(obj:0)
+x1627                                2.86346153846154 	(obj:0)
+x1628                                2.86346153846154 	(obj:0)
+x1629                                2.86346153846154 	(obj:0)
+x1630                                2.86346153846154 	(obj:0)
+x1631                                2.86346153846154 	(obj:0)
+x1632                                2.86346153846154 	(obj:0)
+x1633                                2.86346153846154 	(obj:0)
+x1634                                2.86346153846154 	(obj:0)
+x1635                                8.18846153846155 	(obj:0)
+x1636                                2.86346153846154 	(obj:0)
+x1637                                2.86346153846154 	(obj:0)
+x1638                                2.86346153846154 	(obj:0)
+x1639                                2.86346153846154 	(obj:0)
+x1640                                2.86346153846154 	(obj:0)
+x1641                                2.86346153846154 	(obj:0)
+x1642                                2.86346153846154 	(obj:0)
+x1643                                2.86346153846154 	(obj:0)
+x1644                                8.18846153846155 	(obj:0)
+x1645                                59.0384615384615 	(obj:0)
+x1646                                59.0384615384615 	(obj:0)
+x1647                                59.0384615384615 	(obj:0)
+x1648                                59.0384615384615 	(obj:0)
+x1649                                61.6634615384615 	(obj:0)
+x1650                                61.6634615384615 	(obj:0)
+x1651                                61.6634615384615 	(obj:0)
+x1652                                61.6634615384615 	(obj:0)
+x1653                                61.6634615384615 	(obj:0)
+x1654                                59.0384615384615 	(obj:0)
+x1655                                59.0384615384615 	(obj:0)
+x1656                                59.0384615384615 	(obj:0)
+x1657                                59.0384615384615 	(obj:0)
+x1658                                61.6634615384615 	(obj:0)
+x1659                                61.6634615384615 	(obj:0)
+x1660                                61.6634615384615 	(obj:0)
+x1661                                61.6634615384615 	(obj:0)
+x1662                                61.6634615384615 	(obj:0)
+x1663                                59.0384615384615 	(obj:0)
+x1664                                59.0384615384615 	(obj:0)
+x1665                                59.0384615384615 	(obj:0)
+x1666                                59.0384615384615 	(obj:0)
+x1667                                61.6634615384615 	(obj:0)
+x1668                                61.6634615384615 	(obj:0)
+x1669                                61.6634615384615 	(obj:0)
+x1670                                61.6634615384615 	(obj:0)
+x1671                                61.6634615384615 	(obj:0)
+x1672                                59.0384615384615 	(obj:0)
+x1673                                59.0384615384615 	(obj:0)
+x1674                                59.0384615384615 	(obj:0)
+x1675                                59.0384615384615 	(obj:0)
+x1676                                61.6634615384615 	(obj:0)
+x1677                                61.6634615384615 	(obj:0)
+x1678                                61.6634615384615 	(obj:0)
+x1679                                61.6634615384615 	(obj:0)
+x1680                                61.6634615384615 	(obj:0)
+x1681                                59.0384615384615 	(obj:0)
+x1682                                59.0384615384615 	(obj:0)
+x1683                                59.0384615384615 	(obj:0)
+x1684                                59.0384615384615 	(obj:0)
+x1685                                61.6634615384615 	(obj:0)
+x1686                                61.6634615384615 	(obj:0)
+x1687                                61.6634615384615 	(obj:0)
+x1688                                61.6634615384615 	(obj:0)
+x1689                                61.6634615384615 	(obj:0)
+x1690                                59.0384615384615 	(obj:0)
+x1691                                59.0384615384615 	(obj:0)
+x1692                                59.0384615384615 	(obj:0)
+x1693                                59.0384615384615 	(obj:0)
+x1694                                61.6634615384615 	(obj:0)
+x1695                                61.6634615384615 	(obj:0)
+x1696                                61.6634615384615 	(obj:0)
+x1697                                61.6634615384615 	(obj:0)
+x1698                                61.6634615384615 	(obj:0)
+x1708                                59.0384615384615 	(obj:0)
+x1709                                59.0384615384615 	(obj:0)
+x1710                                59.0384615384615 	(obj:0)
+x1711                                59.0384615384615 	(obj:0)
+x1712                                61.6634615384615 	(obj:0)
+x1713                                61.6634615384615 	(obj:0)
+x1714                                61.6634615384615 	(obj:0)
+x1715                                61.6634615384615 	(obj:0)
+x1716                                61.6634615384615 	(obj:0)
+x1717                                59.0384615384615 	(obj:0)
+x1718                                59.0384615384615 	(obj:0)
+x1719                                59.0384615384615 	(obj:0)
+x1720                                59.0384615384615 	(obj:0)
+x1721                                61.6634615384615 	(obj:0)
+x1722                                61.6634615384615 	(obj:0)
+x1723                                61.6634615384615 	(obj:0)
+x1724                                61.6634615384615 	(obj:0)
+x1725                                61.6634615384615 	(obj:0)
+x1726                                2.86346153846154 	(obj:0)
+x1727                                3.36346153846154 	(obj:0)
+x1728                                8.18846153846155 	(obj:0)
+x1729                                8.68846153846155 	(obj:0)
+x1730                                11.3634615384615 	(obj:0)
+x1731                                11.3634615384615 	(obj:0)
+x1738                                2.86346153846154 	(obj:0)
+x1739                                3.36346153846154 	(obj:0)
+x1740                                8.18846153846155 	(obj:0)
+x1741                                8.68846153846155 	(obj:0)
+x1742                                11.3634615384615 	(obj:0)
+x1743                                11.3634615384615 	(obj:0)
+x1744                                2.86346153846154 	(obj:0)
+x1745                                3.36346153846154 	(obj:0)
+x1746                                8.18846153846155 	(obj:0)
+x1747                                8.68846153846155 	(obj:0)
+x1748                                11.3634615384615 	(obj:0)
+x1749                                11.3634615384615 	(obj:0)
+x1750                                2.86346153846154 	(obj:0)
+x1751                                3.36346153846154 	(obj:0)
+x1752                                8.18846153846155 	(obj:0)
+x1753                                8.68846153846155 	(obj:0)
+x1754                                11.3634615384615 	(obj:0)
+x1755                                11.3634615384615 	(obj:0)
+x1756                                2.86346153846154 	(obj:0)
+x1757                                3.36346153846154 	(obj:0)
+x1758                                8.18846153846155 	(obj:0)
+x1759                                8.68846153846155 	(obj:0)
+x1760                                11.3634615384615 	(obj:0)
+x1761                                11.3634615384615 	(obj:0)
+x1762                                11.2134615384615 	(obj:0)
+x1763                                11.7134615384615 	(obj:0)
+x1764                                13.6884615384615 	(obj:0)
+x1765                                11.2134615384615 	(obj:0)
+x1766                                11.7134615384615 	(obj:0)
+x1767                                13.6884615384615 	(obj:0)
+x1768                                11.2134615384615 	(obj:0)
+x1769                                11.7134615384615 	(obj:0)
+x1770                                13.6884615384615 	(obj:0)
+x1771                                29.6884615384615 	(obj:0)
+x1772                                30.1884615384615 	(obj:0)
+x1773                                32.1634615384615 	(obj:0)
+x1774                                29.6884615384615 	(obj:0)
+x1775                                30.1884615384615 	(obj:0)
+x1776                                32.1634615384615 	(obj:0)
+x1777                                29.6884615384615 	(obj:0)
+x1778                                30.1884615384615 	(obj:0)
+x1779                                32.1634615384615 	(obj:0)
+x1780                                23.3634615384615 	(obj:0)
+x1781                                23.8634615384615 	(obj:0)
+x1782                                26.5384615384615 	(obj:0)
+x1783                                26.5384615384615 	(obj:0)
+x1784                                49.1634615384615 	(obj:0)
+x1785                                49.6634615384615 	(obj:0)
+x1786                                23.3634615384615 	(obj:0)
+x1787                                23.8634615384615 	(obj:0)
+x1788                                26.5384615384615 	(obj:0)
+x1789                                26.5384615384615 	(obj:0)
+x1790                                49.1634615384615 	(obj:0)
+x1791                                49.6634615384615 	(obj:0)
+x1792                                23.3634615384615 	(obj:0)
+x1793                                23.8634615384615 	(obj:0)
+x1794                                26.5384615384615 	(obj:0)
+x1795                                26.5384615384615 	(obj:0)
+x1796                                49.1634615384615 	(obj:0)
+x1797                                49.6634615384615 	(obj:0)
+x1798                                23.3634615384615 	(obj:0)
+x1799                                23.8634615384615 	(obj:0)
+x1800                                26.5384615384615 	(obj:0)
+x1801                                26.5384615384615 	(obj:0)
+x1802                                49.1634615384615 	(obj:0)
+x1803                                49.6634615384615 	(obj:0)
+x1804                                23.3634615384615 	(obj:0)
+x1805                                23.8634615384615 	(obj:0)
+x1806                                26.5384615384615 	(obj:0)
+x1807                                26.5384615384615 	(obj:0)
+x1808                                49.1634615384615 	(obj:0)
+x1809                                49.6634615384615 	(obj:0)
+x1810                                23.3634615384615 	(obj:0)
+x1811                                23.8634615384615 	(obj:0)
+x1812                                26.5384615384615 	(obj:0)
+x1813                                26.5384615384615 	(obj:0)
+x1814                                49.1634615384615 	(obj:0)
+x1815                                49.6634615384615 	(obj:0)
+x1816                                25.8384615384615 	(obj:0)
+x1817                                26.3384615384615 	(obj:0)
+x1818                                29.0384615384615 	(obj:0)
+x1822                                25.8384615384615 	(obj:0)
+x1823                                26.3384615384615 	(obj:0)
+x1824                                29.0384615384615 	(obj:0)
+x1825                                38.5384615384615 	(obj:0)
+x1826                                39.0384615384615 	(obj:0)
+x1827                                39.0384615384615 	(obj:0)
+x1828                                39.5384615384615 	(obj:0)
+x1829                                41.6634615384615 	(obj:0)
+x1830                                41.6634615384615 	(obj:0)
+x1831                                38.5384615384615 	(obj:0)
+x1832                                39.0384615384615 	(obj:0)
+x1833                                39.0384615384615 	(obj:0)
+x1834                                39.5384615384615 	(obj:0)
+x1835                                41.6634615384615 	(obj:0)
+x1836                                41.6634615384615 	(obj:0)
+x1837                                38.5384615384615 	(obj:0)
+x1838                                39.0384615384615 	(obj:0)
+x1839                                39.0384615384615 	(obj:0)
+x1840                                39.5384615384615 	(obj:0)
+x1841                                41.6634615384615 	(obj:0)
+x1842                                41.6634615384615 	(obj:0)
+x1849                                38.5384615384615 	(obj:0)
+x1850                                39.0384615384615 	(obj:0)
+x1851                                39.0384615384615 	(obj:0)
+x1852                                39.5384615384615 	(obj:0)
+x1853                                41.6634615384615 	(obj:0)
+x1854                                41.6634615384615 	(obj:0)
+x1855                                38.5384615384615 	(obj:0)
+x1856                                39.0384615384615 	(obj:0)
+x1857                                39.0384615384615 	(obj:0)
+x1858                                39.5384615384615 	(obj:0)
+x1859                                41.6634615384615 	(obj:0)
+x1860                                41.6634615384615 	(obj:0)
+x1861                                2.86346153846154 	(obj:0)
+x1862                                2.86346153846154 	(obj:0)
+x1863                                2.86346153846154 	(obj:0)
+x1864                                2.86346153846154 	(obj:0)
+x1865                                2.86346153846154 	(obj:0)
+x1866                                2.86346153846154 	(obj:0)
+x1867                                2.86346153846154 	(obj:0)
+x1868                                2.86346153846154 	(obj:0)
+x1869                                8.18846153846155 	(obj:0)
+x1870                                2.86346153846154 	(obj:0)
+x1871                                2.86346153846154 	(obj:0)
+x1872                                2.86346153846154 	(obj:0)
+x1873                                2.86346153846154 	(obj:0)
+x1874                                2.86346153846154 	(obj:0)
+x1875                                2.86346153846154 	(obj:0)
+x1876                                2.86346153846154 	(obj:0)
+x1877                                2.86346153846154 	(obj:0)
+x1878                                8.18846153846155 	(obj:0)
+x1879                                2.86346153846154 	(obj:0)
+x1880                                2.86346153846154 	(obj:0)
+x1881                                2.86346153846154 	(obj:0)
+x1882                                2.86346153846154 	(obj:0)
+x1883                                2.86346153846154 	(obj:0)
+x1884                                2.86346153846154 	(obj:0)
+x1885                                2.86346153846154 	(obj:0)
+x1886                                2.86346153846154 	(obj:0)
+x1887                                8.18846153846155 	(obj:0)
+x1888                                2.86346153846154 	(obj:0)
+x1889                                2.86346153846154 	(obj:0)
+x1890                                2.86346153846154 	(obj:0)
+x1891                                2.86346153846154 	(obj:0)
+x1892                                2.86346153846154 	(obj:0)
+x1893                                2.86346153846154 	(obj:0)
+x1894                                2.86346153846154 	(obj:0)
+x1895                                2.86346153846154 	(obj:0)
+x1896                                8.18846153846155 	(obj:0)
+x1897                                2.86346153846154 	(obj:0)
+x1898                                2.86346153846154 	(obj:0)
+x1899                                2.86346153846154 	(obj:0)
+x1900                                2.86346153846154 	(obj:0)
+x1901                                2.86346153846154 	(obj:0)
+x1902                                2.86346153846154 	(obj:0)
+x1903                                2.86346153846154 	(obj:0)
+x1904                                2.86346153846154 	(obj:0)
+x1905                                8.18846153846155 	(obj:0)
+x1906                                2.86346153846154 	(obj:0)
+x1907                                2.86346153846154 	(obj:0)
+x1908                                2.86346153846154 	(obj:0)
+x1909                                2.86346153846154 	(obj:0)
+x1910                                2.86346153846154 	(obj:0)
+x1911                                2.86346153846154 	(obj:0)
+x1912                                2.86346153846154 	(obj:0)
+x1913                                2.86346153846154 	(obj:0)
+x1914                                8.18846153846155 	(obj:0)
+x1915                                2.86346153846154 	(obj:0)
+x1916                                2.86346153846154 	(obj:0)
+x1917                                2.86346153846154 	(obj:0)
+x1918                                2.86346153846154 	(obj:0)
+x1919                                2.86346153846154 	(obj:0)
+x1920                                2.86346153846154 	(obj:0)
+x1921                                2.86346153846154 	(obj:0)
+x1922                                2.86346153846154 	(obj:0)
+x1923                                8.18846153846155 	(obj:0)
+x1924                                2.86346153846154 	(obj:0)
+x1925                                2.86346153846154 	(obj:0)
+x1926                                2.86346153846154 	(obj:0)
+x1927                                2.86346153846154 	(obj:0)
+x1928                                2.86346153846154 	(obj:0)
+x1929                                2.86346153846154 	(obj:0)
+x1930                                2.86346153846154 	(obj:0)
+x1931                                2.86346153846154 	(obj:0)
+x1932                                8.18846153846155 	(obj:0)
+x1951                                59.0384615384615 	(obj:0)
+x1952                                59.0384615384615 	(obj:0)
+x1953                                59.0384615384615 	(obj:0)
+x1954                                59.0384615384615 	(obj:0)
+x1955                                61.6634615384615 	(obj:0)
+x1956                                61.6634615384615 	(obj:0)
+x1957                                61.6634615384615 	(obj:0)
+x1958                                61.6634615384615 	(obj:0)
+x1959                                61.6634615384615 	(obj:0)
+x1960                                59.0384615384615 	(obj:0)
+x1961                                59.0384615384615 	(obj:0)
+x1962                                59.0384615384615 	(obj:0)
+x1963                                59.0384615384615 	(obj:0)
+x1964                                61.6634615384615 	(obj:0)
+x1965                                61.6634615384615 	(obj:0)
+x1966                                61.6634615384615 	(obj:0)
+x1967                                61.6634615384615 	(obj:0)
+x1968                                61.6634615384615 	(obj:0)
+x1969                                59.0384615384615 	(obj:0)
+x1970                                59.0384615384615 	(obj:0)
+x1971                                59.0384615384615 	(obj:0)
+x1972                                59.0384615384615 	(obj:0)
+x1973                                61.6634615384615 	(obj:0)
+x1974                                61.6634615384615 	(obj:0)
+x1975                                61.6634615384615 	(obj:0)
+x1976                                61.6634615384615 	(obj:0)
+x1977                                61.6634615384615 	(obj:0)
+x1978                                59.0384615384615 	(obj:0)
+x1979                                59.0384615384615 	(obj:0)
+x1980                                59.0384615384615 	(obj:0)
+x1981                                59.0384615384615 	(obj:0)
+x1982                                61.6634615384615 	(obj:0)
+x1983                                61.6634615384615 	(obj:0)
+x1984                                61.6634615384615 	(obj:0)
+x1985                                61.6634615384615 	(obj:0)
+x1986                                61.6634615384615 	(obj:0)
+x1987                                59.0384615384615 	(obj:0)
+x1988                                59.0384615384615 	(obj:0)
+x1989                                59.0384615384615 	(obj:0)
+x1990                                59.0384615384615 	(obj:0)
+x1991                                61.6634615384615 	(obj:0)
+x1992                                61.6634615384615 	(obj:0)
+x1993                                61.6634615384615 	(obj:0)
+x1994                                61.6634615384615 	(obj:0)
+x1995                                61.6634615384615 	(obj:0)
+x1996                                59.0384615384615 	(obj:0)
+x1997                                59.0384615384615 	(obj:0)
+x1998                                59.0384615384615 	(obj:0)
+x1999                                59.0384615384615 	(obj:0)
+x2000                                61.6634615384615 	(obj:0)
+x2001                                61.6634615384615 	(obj:0)
+x2002                                61.6634615384615 	(obj:0)
+x2003                                61.6634615384615 	(obj:0)
+x2004                                61.6634615384615 	(obj:0)
+x2005                                59.0384615384615 	(obj:0)
+x2006                                59.0384615384615 	(obj:0)
+x2007                                59.0384615384615 	(obj:0)
+x2008                                59.0384615384615 	(obj:0)
+x2009                                61.6634615384615 	(obj:0)
+x2010                                61.6634615384615 	(obj:0)
+x2011                                61.6634615384615 	(obj:0)
+x2012                                61.6634615384615 	(obj:0)
+x2013                                61.6634615384615 	(obj:0)
+x2014                                59.0384615384615 	(obj:0)
+x2015                                59.0384615384615 	(obj:0)
+x2016                                59.0384615384615 	(obj:0)
+x2017                                59.0384615384615 	(obj:0)
+x2018                                61.6634615384615 	(obj:0)
+x2019                                61.6634615384615 	(obj:0)
+x2020                                61.6634615384615 	(obj:0)
+x2021                                61.6634615384615 	(obj:0)
+x2022                                61.6634615384615 	(obj:0)
+x2023                                2.86346153846154 	(obj:0)
+x2024                                3.36346153846154 	(obj:0)
+x2025                                8.18846153846155 	(obj:0)
+x2026                                8.68846153846155 	(obj:0)
+x2027                                11.3634615384615 	(obj:0)
+x2028                                11.3634615384615 	(obj:0)
+x2029                                2.86346153846154 	(obj:0)
+x2030                                3.36346153846154 	(obj:0)
+x2031                                8.18846153846155 	(obj:0)
+x2032                                8.68846153846155 	(obj:0)
+x2033                                11.3634615384615 	(obj:0)
+x2034                                11.3634615384615 	(obj:0)
+x2035                                2.86346153846154 	(obj:0)
+x2036                                3.36346153846154 	(obj:0)
+x2037                                8.18846153846155 	(obj:0)
+x2038                                8.68846153846155 	(obj:0)
+x2039                                11.3634615384615 	(obj:0)
+x2040                                11.3634615384615 	(obj:0)
+x2047                                2.86346153846154 	(obj:0)
+x2048                                3.36346153846154 	(obj:0)
+x2049                                8.18846153846155 	(obj:0)
+x2050                                8.68846153846155 	(obj:0)
+x2051                                11.3634615384615 	(obj:0)
+x2052                                11.3634615384615 	(obj:0)
+x2053                                2.86346153846154 	(obj:0)
+x2054                                3.36346153846154 	(obj:0)
+x2055                                8.18846153846155 	(obj:0)
+x2056                                8.68846153846155 	(obj:0)
+x2057                                11.3634615384615 	(obj:0)
+x2058                                11.3634615384615 	(obj:0)
+x2059                                11.2134615384615 	(obj:0)
+x2060                                11.7134615384615 	(obj:0)
+x2061                                13.6884615384615 	(obj:0)
+x2062                                11.2134615384615 	(obj:0)
+x2063                                11.7134615384615 	(obj:0)
+x2064                                13.6884615384615 	(obj:0)
+x2065                                11.2134615384615 	(obj:0)
+x2066                                11.7134615384615 	(obj:0)
+x2067                                13.6884615384615 	(obj:0)
+x2068                                29.6884615384615 	(obj:0)
+x2069                                30.1884615384615 	(obj:0)
+x2070                                32.1634615384615 	(obj:0)
+x2071                                29.6884615384615 	(obj:0)
+x2072                                30.1884615384615 	(obj:0)
+x2073                                32.1634615384615 	(obj:0)
+x2074                                29.6884615384615 	(obj:0)
+x2075                                30.1884615384615 	(obj:0)
+x2076                                32.1634615384615 	(obj:0)
+x2077                                23.3634615384615 	(obj:0)
+x2078                                23.8634615384615 	(obj:0)
+x2079                                26.5384615384615 	(obj:0)
+x2080                                26.5384615384615 	(obj:0)
+x2081                                49.1634615384615 	(obj:0)
+x2082                                49.6634615384615 	(obj:0)
+x2089                                23.3634615384615 	(obj:0)
+x2090                                23.8634615384615 	(obj:0)
+x2091                                26.5384615384615 	(obj:0)
+x2092                                26.5384615384615 	(obj:0)
+x2093                                49.1634615384615 	(obj:0)
+x2094                                49.6634615384615 	(obj:0)
+x2095                                23.3634615384615 	(obj:0)
+x2096                                23.8634615384615 	(obj:0)
+x2097                                26.5384615384615 	(obj:0)
+x2098                                26.5384615384615 	(obj:0)
+x2099                                49.1634615384615 	(obj:0)
+x2100                                49.6634615384615 	(obj:0)
+x2101                                23.3634615384615 	(obj:0)
+x2102                                23.8634615384615 	(obj:0)
+x2103                                26.5384615384615 	(obj:0)
+x2104                                26.5384615384615 	(obj:0)
+x2105                                49.1634615384615 	(obj:0)
+x2106                                49.6634615384615 	(obj:0)
+x2107                                23.3634615384615 	(obj:0)
+x2108                                23.8634615384615 	(obj:0)
+x2109                                26.5384615384615 	(obj:0)
+x2110                                26.5384615384615 	(obj:0)
+x2111                                49.1634615384615 	(obj:0)
+x2112                                49.6634615384615 	(obj:0)
+x2113                                25.8384615384615 	(obj:0)
+x2114                                26.3384615384615 	(obj:0)
+x2115                                29.0384615384615 	(obj:0)
+x2116                                25.8384615384615 	(obj:0)
+x2117                                26.3384615384615 	(obj:0)
+x2118                                29.0384615384615 	(obj:0)
+x2119                                25.8384615384615 	(obj:0)
+x2120                                26.3384615384615 	(obj:0)
+x2121                                29.0384615384615 	(obj:0)
+x2122                                38.5384615384615 	(obj:0)
+x2123                                39.0384615384615 	(obj:0)
+x2124                                39.0384615384615 	(obj:0)
+x2125                                39.5384615384615 	(obj:0)
+x2126                                41.6634615384615 	(obj:0)
+x2127                                41.6634615384615 	(obj:0)
+x2128                                38.5384615384615 	(obj:0)
+x2129                                39.0384615384615 	(obj:0)
+x2130                                39.0384615384615 	(obj:0)
+x2131                                39.5384615384615 	(obj:0)
+x2132                                41.6634615384615 	(obj:0)
+x2133                                41.6634615384615 	(obj:0)
+x2140                                38.5384615384615 	(obj:0)
+x2141                                39.0384615384615 	(obj:0)
+x2142                                39.0384615384615 	(obj:0)
+x2143                                39.5384615384615 	(obj:0)
+x2144                                41.6634615384615 	(obj:0)
+x2145                                41.6634615384615 	(obj:0)
+x2146                                38.5384615384615 	(obj:0)
+x2147                                39.0384615384615 	(obj:0)
+x2148                                39.0384615384615 	(obj:0)
+x2149                                39.5384615384615 	(obj:0)
+x2150                                41.6634615384615 	(obj:0)
+x2151                                41.6634615384615 	(obj:0)
+x2152                                38.5384615384615 	(obj:0)
+x2153                                39.0384615384615 	(obj:0)
+x2154                                39.0384615384615 	(obj:0)
+x2155                                39.5384615384615 	(obj:0)
+x2156                                41.6634615384615 	(obj:0)
+x2157                                41.6634615384615 	(obj:0)
+x2158                                2.86346153846154 	(obj:0)
+x2159                                2.86346153846154 	(obj:0)
+x2160                                2.86346153846154 	(obj:0)
+x2161                                2.86346153846154 	(obj:0)
+x2162                                2.86346153846154 	(obj:0)
+x2163                                2.86346153846154 	(obj:0)
+x2164                                2.86346153846154 	(obj:0)
+x2165                                2.86346153846154 	(obj:0)
+x2166                                8.18846153846155 	(obj:0)
+x2167                                2.86346153846154 	(obj:0)
+x2168                                2.86346153846154 	(obj:0)
+x2169                                2.86346153846154 	(obj:0)
+x2170                                2.86346153846154 	(obj:0)
+x2171                                2.86346153846154 	(obj:0)
+x2172                                2.86346153846154 	(obj:0)
+x2173                                2.86346153846154 	(obj:0)
+x2174                                2.86346153846154 	(obj:0)
+x2175                                8.18846153846155 	(obj:0)
+x2176                                2.86346153846154 	(obj:0)
+x2177                                2.86346153846154 	(obj:0)
+x2178                                2.86346153846154 	(obj:0)
+x2179                                2.86346153846154 	(obj:0)
+x2180                                2.86346153846154 	(obj:0)
+x2181                                2.86346153846154 	(obj:0)
+x2182                                2.86346153846154 	(obj:0)
+x2183                                2.86346153846154 	(obj:0)
+x2184                                8.18846153846155 	(obj:0)
+x2185                                2.86346153846154 	(obj:0)
+x2186                                2.86346153846154 	(obj:0)
+x2187                                2.86346153846154 	(obj:0)
+x2188                                2.86346153846154 	(obj:0)
+x2189                                2.86346153846154 	(obj:0)
+x2190                                2.86346153846154 	(obj:0)
+x2191                                2.86346153846154 	(obj:0)
+x2192                                2.86346153846154 	(obj:0)
+x2193                                8.18846153846155 	(obj:0)
+x2194                                2.86346153846154 	(obj:0)
+x2195                                2.86346153846154 	(obj:0)
+x2196                                2.86346153846154 	(obj:0)
+x2197                                2.86346153846154 	(obj:0)
+x2198                                2.86346153846154 	(obj:0)
+x2199                                2.86346153846154 	(obj:0)
+x2200                                2.86346153846154 	(obj:0)
+x2201                                2.86346153846154 	(obj:0)
+x2202                                8.18846153846155 	(obj:0)
+x2203                                2.86346153846154 	(obj:0)
+x2204                                2.86346153846154 	(obj:0)
+x2205                                2.86346153846154 	(obj:0)
+x2206                                2.86346153846154 	(obj:0)
+x2207                                2.86346153846154 	(obj:0)
+x2208                                2.86346153846154 	(obj:0)
+x2209                                2.86346153846154 	(obj:0)
+x2210                                2.86346153846154 	(obj:0)
+x2211                                8.18846153846155 	(obj:0)
+x2212                                2.86346153846154 	(obj:0)
+x2213                                2.86346153846154 	(obj:0)
+x2214                                2.86346153846154 	(obj:0)
+x2215                                2.86346153846154 	(obj:0)
+x2216                                2.86346153846154 	(obj:0)
+x2217                                2.86346153846154 	(obj:0)
+x2218                                2.86346153846154 	(obj:0)
+x2219                                2.86346153846154 	(obj:0)
+x2220                                8.18846153846155 	(obj:0)
+x2230                                2.86346153846154 	(obj:0)
+x2231                                2.86346153846154 	(obj:0)
+x2232                                2.86346153846154 	(obj:0)
+x2233                                2.86346153846154 	(obj:0)
+x2234                                2.86346153846154 	(obj:0)
+x2235                                2.86346153846154 	(obj:0)
+x2236                                2.86346153846154 	(obj:0)
+x2237                                2.86346153846154 	(obj:0)
+x2238                                8.18846153846155 	(obj:0)
+x2239                                59.0384615384615 	(obj:0)
+x2240                                59.0384615384615 	(obj:0)
+x2241                                59.0384615384615 	(obj:0)
+x2242                                59.0384615384615 	(obj:0)
+x2243                                61.6634615384615 	(obj:0)
+x2244                                61.6634615384615 	(obj:0)
+x2245                                61.6634615384615 	(obj:0)
+x2246                                61.6634615384615 	(obj:0)
+x2247                                61.6634615384615 	(obj:0)
+x2248                                59.0384615384615 	(obj:0)
+x2249                                59.0384615384615 	(obj:0)
+x2250                                59.0384615384615 	(obj:0)
+x2251                                59.0384615384615 	(obj:0)
+x2252                                61.6634615384615 	(obj:0)
+x2253                                61.6634615384615 	(obj:0)
+x2254                                61.6634615384615 	(obj:0)
+x2255                                61.6634615384615 	(obj:0)
+x2256                                61.6634615384615 	(obj:0)
+x2257                                59.0384615384615 	(obj:0)
+x2258                                59.0384615384615 	(obj:0)
+x2259                                59.0384615384615 	(obj:0)
+x2260                                59.0384615384615 	(obj:0)
+x2261                                61.6634615384615 	(obj:0)
+x2262                                61.6634615384615 	(obj:0)
+x2263                                61.6634615384615 	(obj:0)
+x2264                                61.6634615384615 	(obj:0)
+x2265                                61.6634615384615 	(obj:0)
+x2266                                59.0384615384615 	(obj:0)
+x2267                                59.0384615384615 	(obj:0)
+x2268                                59.0384615384615 	(obj:0)
+x2269                                59.0384615384615 	(obj:0)
+x2270                                61.6634615384615 	(obj:0)
+x2271                                61.6634615384615 	(obj:0)
+x2272                                61.6634615384615 	(obj:0)
+x2273                                61.6634615384615 	(obj:0)
+x2274                                61.6634615384615 	(obj:0)
+x2275                                59.0384615384615 	(obj:0)
+x2276                                59.0384615384615 	(obj:0)
+x2277                                59.0384615384615 	(obj:0)
+x2278                                59.0384615384615 	(obj:0)
+x2279                                61.6634615384615 	(obj:0)
+x2280                                61.6634615384615 	(obj:0)
+x2281                                61.6634615384615 	(obj:0)
+x2282                                61.6634615384615 	(obj:0)
+x2283                                61.6634615384615 	(obj:0)
+x2284                                59.0384615384615 	(obj:0)
+x2285                                59.0384615384615 	(obj:0)
+x2286                                59.0384615384615 	(obj:0)
+x2287                                59.0384615384615 	(obj:0)
+x2288                                61.6634615384615 	(obj:0)
+x2289                                61.6634615384615 	(obj:0)
+x2290                                61.6634615384615 	(obj:0)
+x2291                                61.6634615384615 	(obj:0)
+x2292                                61.6634615384615 	(obj:0)
+x2293                                59.0384615384615 	(obj:0)
+x2294                                59.0384615384615 	(obj:0)
+x2295                                59.0384615384615 	(obj:0)
+x2296                                59.0384615384615 	(obj:0)
+x2297                                61.6634615384615 	(obj:0)
+x2298                                61.6634615384615 	(obj:0)
+x2299                                61.6634615384615 	(obj:0)
+x2300                                61.6634615384615 	(obj:0)
+x2301                                61.6634615384615 	(obj:0)
+x2302                                59.0384615384615 	(obj:0)
+x2303                                59.0384615384615 	(obj:0)
+x2304                                59.0384615384615 	(obj:0)
+x2305                                59.0384615384615 	(obj:0)
+x2306                                61.6634615384615 	(obj:0)
+x2307                                61.6634615384615 	(obj:0)
+x2308                                61.6634615384615 	(obj:0)
+x2309                                61.6634615384615 	(obj:0)
+x2310                                61.6634615384615 	(obj:0)
+x2320                                2.86346153846154 	(obj:0)
+x2321                                3.36346153846154 	(obj:0)
+x2322                                8.18846153846155 	(obj:0)
+x2323                                8.68846153846155 	(obj:0)
+x2324                                11.3634615384615 	(obj:0)
+x2325                                11.3634615384615 	(obj:0)
+x2326                                2.86346153846154 	(obj:0)
+x2327                                3.36346153846154 	(obj:0)
+x2328                                8.18846153846155 	(obj:0)
+x2329                                8.68846153846155 	(obj:0)
+x2330                                11.3634615384615 	(obj:0)
+x2331                                11.3634615384615 	(obj:0)
+x2332                                2.86346153846154 	(obj:0)
+x2333                                3.36346153846154 	(obj:0)
+x2334                                8.18846153846155 	(obj:0)
+x2335                                8.68846153846155 	(obj:0)
+x2336                                11.3634615384615 	(obj:0)
+x2337                                11.3634615384615 	(obj:0)
+x2338                                2.86346153846154 	(obj:0)
+x2339                                3.36346153846154 	(obj:0)
+x2340                                8.18846153846155 	(obj:0)
+x2341                                8.68846153846155 	(obj:0)
+x2342                                11.3634615384615 	(obj:0)
+x2343                                11.3634615384615 	(obj:0)
+x2344                                2.86346153846154 	(obj:0)
+x2345                                3.36346153846154 	(obj:0)
+x2346                                8.18846153846155 	(obj:0)
+x2347                                8.68846153846155 	(obj:0)
+x2348                                11.3634615384615 	(obj:0)
+x2349                                11.3634615384615 	(obj:0)
+x2350                                2.86346153846154 	(obj:0)
+x2351                                3.36346153846154 	(obj:0)
+x2352                                8.18846153846155 	(obj:0)
+x2353                                8.68846153846155 	(obj:0)
+x2354                                11.3634615384615 	(obj:0)
+x2355                                11.3634615384615 	(obj:0)
+x2356                                11.2134615384615 	(obj:0)
+x2357                                11.7134615384615 	(obj:0)
+x2358                                13.6884615384615 	(obj:0)
+x2362                                11.2134615384615 	(obj:0)
+x2363                                11.7134615384615 	(obj:0)
+x2364                                13.6884615384615 	(obj:0)
+x2365                                29.6884615384615 	(obj:0)
+x2366                                30.1884615384615 	(obj:0)
+x2367                                32.1634615384615 	(obj:0)
+x2371                                29.6884615384615 	(obj:0)
+x2372                                30.1884615384615 	(obj:0)
+x2373                                32.1634615384615 	(obj:0)
+x2374                                23.3634615384615 	(obj:0)
+x2375                                23.8634615384615 	(obj:0)
+x2376                                26.5384615384615 	(obj:0)
+x2377                                26.5384615384615 	(obj:0)
+x2378                                49.1634615384615 	(obj:0)
+x2379                                49.6634615384615 	(obj:0)
+x2380                                23.3634615384615 	(obj:0)
+x2381                                23.8634615384615 	(obj:0)
+x2382                                26.5384615384615 	(obj:0)
+x2383                                26.5384615384615 	(obj:0)
+x2384                                49.1634615384615 	(obj:0)
+x2385                                49.6634615384615 	(obj:0)
+x2386                                23.3634615384615 	(obj:0)
+x2387                                23.8634615384615 	(obj:0)
+x2388                                26.5384615384615 	(obj:0)
+x2389                                26.5384615384615 	(obj:0)
+x2390                                49.1634615384615 	(obj:0)
+x2391                                49.6634615384615 	(obj:0)
+x2392                                23.3634615384615 	(obj:0)
+x2393                                23.8634615384615 	(obj:0)
+x2394                                26.5384615384615 	(obj:0)
+x2395                                26.5384615384615 	(obj:0)
+x2396                                49.1634615384615 	(obj:0)
+x2397                                49.6634615384615 	(obj:0)
+x2398                                23.3634615384615 	(obj:0)
+x2399                                23.8634615384615 	(obj:0)
+x2400                                26.5384615384615 	(obj:0)
+x2401                                26.5384615384615 	(obj:0)
+x2402                                49.1634615384615 	(obj:0)
+x2403                                49.6634615384615 	(obj:0)
+x2410                                25.8384615384615 	(obj:0)
+x2411                                26.3384615384615 	(obj:0)
+x2412                                29.0384615384615 	(obj:0)
+x2413                                25.8384615384615 	(obj:0)
+x2414                                26.3384615384615 	(obj:0)
+x2415                                29.0384615384615 	(obj:0)
+x2416                                25.8384615384615 	(obj:0)
+x2417                                26.3384615384615 	(obj:0)
+x2418                                29.0384615384615 	(obj:0)
+x2419                                38.5384615384615 	(obj:0)
+x2420                                39.0384615384615 	(obj:0)
+x2421                                39.0384615384615 	(obj:0)
+x2422                                39.5384615384615 	(obj:0)
+x2423                                41.6634615384615 	(obj:0)
+x2424                                41.6634615384615 	(obj:0)
+x2425                                38.5384615384615 	(obj:0)
+x2426                                39.0384615384615 	(obj:0)
+x2427                                39.0384615384615 	(obj:0)
+x2428                                39.5384615384615 	(obj:0)
+x2429                                41.6634615384615 	(obj:0)
+x2430                                41.6634615384615 	(obj:0)
+x2431                                38.5384615384615 	(obj:0)
+x2432                                39.0384615384615 	(obj:0)
+x2433                                39.0384615384615 	(obj:0)
+x2434                                39.5384615384615 	(obj:0)
+x2435                                41.6634615384615 	(obj:0)
+x2436                                41.6634615384615 	(obj:0)
+x2437                                38.5384615384615 	(obj:0)
+x2438                                39.0384615384615 	(obj:0)
+x2439                                39.0384615384615 	(obj:0)
+x2440                                39.5384615384615 	(obj:0)
+x2441                                41.6634615384615 	(obj:0)
+x2442                                41.6634615384615 	(obj:0)
+x2443                                38.5384615384615 	(obj:0)
+x2444                                39.0384615384615 	(obj:0)
+x2445                                39.0384615384615 	(obj:0)
+x2446                                39.5384615384615 	(obj:0)
+x2447                                41.6634615384615 	(obj:0)
+x2448                                41.6634615384615 	(obj:0)
+x2449                                38.5384615384615 	(obj:0)
+x2450                                39.0384615384615 	(obj:0)
+x2451                                39.0384615384615 	(obj:0)
+x2452                                39.5384615384615 	(obj:0)
+x2453                                41.6634615384615 	(obj:0)
+x2454                                41.6634615384615 	(obj:0)
+x2455                                2.86346153846154 	(obj:0)
+x2456                                2.86346153846154 	(obj:0)
+x2457                                2.86346153846154 	(obj:0)
+x2458                                2.86346153846154 	(obj:0)
+x2459                                2.86346153846154 	(obj:0)
+x2460                                2.86346153846154 	(obj:0)
+x2461                                2.86346153846154 	(obj:0)
+x2462                                2.86346153846154 	(obj:0)
+x2463                                8.18846153846155 	(obj:0)
+x2608                                59.0384615384615 	(obj:0)
+x2609                                59.0384615384615 	(obj:0)
+x2610                                59.0384615384615 	(obj:0)
+x2611                                59.0384615384615 	(obj:0)
+x2612                                61.6634615384615 	(obj:0)
+x2613                                61.6634615384615 	(obj:0)
+x2614                                61.6634615384615 	(obj:0)
+x2615                                61.6634615384615 	(obj:0)
+x2616                                61.6634615384615 	(obj:0)
+x2629                                2.86346153846154 	(obj:0)
+x2630                                3.36346153846154 	(obj:0)
+x2631                                8.18846153846155 	(obj:0)
+x2632                                8.68846153846155 	(obj:0)
+x2633                                11.3634615384615 	(obj:0)
+x2634                                11.3634615384615 	(obj:0)
+x2713                                25.8384615384615 	(obj:0)
+x2714                                26.3384615384615 	(obj:0)
+x2715                                29.0384615384615 	(obj:0)
+x2740                                38.5384615384615 	(obj:0)
+x2741                                39.0384615384615 	(obj:0)
+x2742                                39.0384615384615 	(obj:0)
+x2743                                39.5384615384615 	(obj:0)
+x2744                                41.6634615384615 	(obj:0)
+x2745                                41.6634615384615 	(obj:0)
+x2824                                2.86346153846154 	(obj:0)
+x2825                                2.86346153846154 	(obj:0)
+x2826                                2.86346153846154 	(obj:0)
+x2827                                2.86346153846154 	(obj:0)
+x2828                                2.86346153846154 	(obj:0)
+x2829                                2.86346153846154 	(obj:0)
+x2830                                2.86346153846154 	(obj:0)
+x2831                                2.86346153846154 	(obj:0)
+x2832                                8.18846153846155 	(obj:0)
+x2833                                59.0384615384615 	(obj:0)
+x2834                                59.0384615384615 	(obj:0)
+x2835                                59.0384615384615 	(obj:0)
+x2836                                59.0384615384615 	(obj:0)
+x2837                                61.6634615384615 	(obj:0)
+x2838                                61.6634615384615 	(obj:0)
+x2839                                61.6634615384615 	(obj:0)
+x2840                                61.6634615384615 	(obj:0)
+x2841                                61.6634615384615 	(obj:0)
+x2938                                2.86346153846154 	(obj:0)
+x2939                                3.36346153846154 	(obj:0)
+x2940                                8.18846153846155 	(obj:0)
+x2941                                8.68846153846155 	(obj:0)
+x2942                                11.3634615384615 	(obj:0)
+x2943                                11.3634615384615 	(obj:0)
+x2980                                23.3634615384615 	(obj:0)
+x2981                                23.8634615384615 	(obj:0)
+x2982                                26.5384615384615 	(obj:0)
+x2983                                26.5384615384615 	(obj:0)
+x2984                                49.1634615384615 	(obj:0)
+x2985                                49.6634615384615 	(obj:0)
+x3019                                38.5384615384615 	(obj:0)
+x3020                                39.0384615384615 	(obj:0)
+x3021                                39.0384615384615 	(obj:0)
+x3022                                39.5384615384615 	(obj:0)
+x3023                                41.6634615384615 	(obj:0)
+x3024                                41.6634615384615 	(obj:0)
+x3049                                2.86346153846154 	(obj:0)
+x3050                                2.86346153846154 	(obj:0)
+x3051                                2.86346153846154 	(obj:0)
+x3052                                2.86346153846154 	(obj:0)
+x3053                                2.86346153846154 	(obj:0)
+x3054                                2.86346153846154 	(obj:0)
+x3055                                2.86346153846154 	(obj:0)
+x3056                                2.86346153846154 	(obj:0)
+x3057                                8.18846153846155 	(obj:0)
+x3202                                59.0384615384615 	(obj:0)
+x3203                                59.0384615384615 	(obj:0)
+x3204                                59.0384615384615 	(obj:0)
+x3205                                59.0384615384615 	(obj:0)
+x3206                                61.6634615384615 	(obj:0)
+x3207                                61.6634615384615 	(obj:0)
+x3208                                61.6634615384615 	(obj:0)
+x3209                                61.6634615384615 	(obj:0)
+x3210                                61.6634615384615 	(obj:0)
+x3253                                11.2134615384615 	(obj:0)
+x3254                                11.7134615384615 	(obj:0)
+x3255                                13.6884615384615 	(obj:0)
+x3262                                29.6884615384615 	(obj:0)
+x3263                                30.1884615384615 	(obj:0)
+x3264                                32.1634615384615 	(obj:0)
+x3295                                23.3634615384615 	(obj:0)
+x3296                                23.8634615384615 	(obj:0)
+x3297                                26.5384615384615 	(obj:0)
+x3298                                26.5384615384615 	(obj:0)
+x3299                                49.1634615384615 	(obj:0)
+x3300                                49.6634615384615 	(obj:0)
+x3355                                2.86346153846154 	(obj:0)
+x3356                                2.86346153846154 	(obj:0)
+x3357                                2.86346153846154 	(obj:0)
+x3358                                2.86346153846154 	(obj:0)
+x3359                                2.86346153846154 	(obj:0)
+x3360                                2.86346153846154 	(obj:0)
+x3361                                2.86346153846154 	(obj:0)
+x3362                                2.86346153846154 	(obj:0)
+x3363                                8.18846153846155 	(obj:0)
+x3364                                2.86346153846154 	(obj:0)
+x3365                                2.86346153846154 	(obj:0)
+x3366                                2.86346153846154 	(obj:0)
+x3367                                2.86346153846154 	(obj:0)
+x3368                                2.86346153846154 	(obj:0)
+x3369                                2.86346153846154 	(obj:0)
+x3370                                2.86346153846154 	(obj:0)
+x3371                                2.86346153846154 	(obj:0)
+x3372                                8.18846153846155 	(obj:0)
+x3373                                2.86346153846154 	(obj:0)
+x3374                                2.86346153846154 	(obj:0)
+x3375                                2.86346153846154 	(obj:0)
+x3376                                2.86346153846154 	(obj:0)
+x3377                                2.86346153846154 	(obj:0)
+x3378                                2.86346153846154 	(obj:0)
+x3379                                2.86346153846154 	(obj:0)
+x3380                                2.86346153846154 	(obj:0)
+x3381                                8.18846153846155 	(obj:0)
+x3382                                2.86346153846154 	(obj:0)
+x3383                                2.86346153846154 	(obj:0)
+x3384                                2.86346153846154 	(obj:0)
+x3385                                2.86346153846154 	(obj:0)
+x3386                                2.86346153846154 	(obj:0)
+x3387                                2.86346153846154 	(obj:0)
+x3388                                2.86346153846154 	(obj:0)
+x3389                                2.86346153846154 	(obj:0)
+x3390                                8.18846153846155 	(obj:0)
+x3391                                2.86346153846154 	(obj:0)
+x3392                                2.86346153846154 	(obj:0)
+x3393                                2.86346153846154 	(obj:0)
+x3394                                2.86346153846154 	(obj:0)
+x3395                                2.86346153846154 	(obj:0)
+x3396                                2.86346153846154 	(obj:0)
+x3397                                2.86346153846154 	(obj:0)
+x3398                                2.86346153846154 	(obj:0)
+x3399                                8.18846153846155 	(obj:0)
+x3400                                2.86346153846154 	(obj:0)
+x3401                                2.86346153846154 	(obj:0)
+x3402                                2.86346153846154 	(obj:0)
+x3403                                2.86346153846154 	(obj:0)
+x3404                                2.86346153846154 	(obj:0)
+x3405                                2.86346153846154 	(obj:0)
+x3406                                2.86346153846154 	(obj:0)
+x3407                                2.86346153846154 	(obj:0)
+x3408                                8.18846153846155 	(obj:0)
+x3409                                2.86346153846154 	(obj:0)
+x3410                                2.86346153846154 	(obj:0)
+x3411                                2.86346153846154 	(obj:0)
+x3412                                2.86346153846154 	(obj:0)
+x3413                                2.86346153846154 	(obj:0)
+x3414                                2.86346153846154 	(obj:0)
+x3415                                2.86346153846154 	(obj:0)
+x3416                                2.86346153846154 	(obj:0)
+x3417                                8.18846153846155 	(obj:0)
+x3418                                2.86346153846154 	(obj:0)
+x3419                                2.86346153846154 	(obj:0)
+x3420                                2.86346153846154 	(obj:0)
+x3421                                2.86346153846154 	(obj:0)
+x3422                                2.86346153846154 	(obj:0)
+x3423                                2.86346153846154 	(obj:0)
+x3424                                2.86346153846154 	(obj:0)
+x3425                                2.86346153846154 	(obj:0)
+x3426                                8.18846153846155 	(obj:0)
+x3427                                59.0384615384615 	(obj:0)
+x3428                                59.0384615384615 	(obj:0)
+x3429                                59.0384615384615 	(obj:0)
+x3430                                59.0384615384615 	(obj:0)
+x3431                                61.6634615384615 	(obj:0)
+x3432                                61.6634615384615 	(obj:0)
+x3433                                61.6634615384615 	(obj:0)
+x3434                                61.6634615384615 	(obj:0)
+x3435                                61.6634615384615 	(obj:0)
+x3436                                59.0384615384615 	(obj:0)
+x3437                                59.0384615384615 	(obj:0)
+x3438                                59.0384615384615 	(obj:0)
+x3439                                59.0384615384615 	(obj:0)
+x3440                                61.6634615384615 	(obj:0)
+x3441                                61.6634615384615 	(obj:0)
+x3442                                61.6634615384615 	(obj:0)
+x3443                                61.6634615384615 	(obj:0)
+x3444                                61.6634615384615 	(obj:0)
+x3445                                59.0384615384615 	(obj:0)
+x3446                                59.0384615384615 	(obj:0)
+x3447                                59.0384615384615 	(obj:0)
+x3448                                59.0384615384615 	(obj:0)
+x3449                                61.6634615384615 	(obj:0)
+x3450                                61.6634615384615 	(obj:0)
+x3451                                61.6634615384615 	(obj:0)
+x3452                                61.6634615384615 	(obj:0)
+x3453                                61.6634615384615 	(obj:0)
+x3454                                59.0384615384615 	(obj:0)
+x3455                                59.0384615384615 	(obj:0)
+x3456                                59.0384615384615 	(obj:0)
+x3457                                59.0384615384615 	(obj:0)
+x3458                                61.6634615384615 	(obj:0)
+x3459                                61.6634615384615 	(obj:0)
+x3460                                61.6634615384615 	(obj:0)
+x3461                                61.6634615384615 	(obj:0)
+x3462                                61.6634615384615 	(obj:0)
+x3463                                59.0384615384615 	(obj:0)
+x3464                                59.0384615384615 	(obj:0)
+x3465                                59.0384615384615 	(obj:0)
+x3466                                59.0384615384615 	(obj:0)
+x3467                                61.6634615384615 	(obj:0)
+x3468                                61.6634615384615 	(obj:0)
+x3469                                61.6634615384615 	(obj:0)
+x3470                                61.6634615384615 	(obj:0)
+x3471                                61.6634615384615 	(obj:0)
+x3472                                59.0384615384615 	(obj:0)
+x3473                                59.0384615384615 	(obj:0)
+x3474                                59.0384615384615 	(obj:0)
+x3475                                59.0384615384615 	(obj:0)
+x3476                                61.6634615384615 	(obj:0)
+x3477                                61.6634615384615 	(obj:0)
+x3478                                61.6634615384615 	(obj:0)
+x3479                                61.6634615384615 	(obj:0)
+x3480                                61.6634615384615 	(obj:0)
+x3481                                59.0384615384615 	(obj:0)
+x3482                                59.0384615384615 	(obj:0)
+x3483                                59.0384615384615 	(obj:0)
+x3484                                59.0384615384615 	(obj:0)
+x3485                                61.6634615384615 	(obj:0)
+x3486                                61.6634615384615 	(obj:0)
+x3487                                61.6634615384615 	(obj:0)
+x3488                                61.6634615384615 	(obj:0)
+x3489                                61.6634615384615 	(obj:0)
+x3490                                59.0384615384615 	(obj:0)
+x3491                                59.0384615384615 	(obj:0)
+x3492                                59.0384615384615 	(obj:0)
+x3493                                59.0384615384615 	(obj:0)
+x3494                                61.6634615384615 	(obj:0)
+x3495                                61.6634615384615 	(obj:0)
+x3496                                61.6634615384615 	(obj:0)
+x3497                                61.6634615384615 	(obj:0)
+x3498                                61.6634615384615 	(obj:0)
+x3508                                2.86346153846154 	(obj:0)
+x3509                                3.36346153846154 	(obj:0)
+x3510                                8.18846153846155 	(obj:0)
+x3511                                8.68846153846155 	(obj:0)
+x3512                                11.3634615384615 	(obj:0)
+x3513                                11.3634615384615 	(obj:0)
+x3514                                2.86346153846154 	(obj:0)
+x3515                                3.36346153846154 	(obj:0)
+x3516                                8.18846153846155 	(obj:0)
+x3517                                8.68846153846155 	(obj:0)
+x3518                                11.3634615384615 	(obj:0)
+x3519                                11.3634615384615 	(obj:0)
+x3526                                2.86346153846154 	(obj:0)
+x3527                                3.36346153846154 	(obj:0)
+x3528                                8.18846153846155 	(obj:0)
+x3529                                8.68846153846155 	(obj:0)
+x3530                                11.3634615384615 	(obj:0)
+x3531                                11.3634615384615 	(obj:0)
+x3532                                2.86346153846154 	(obj:0)
+x3533                                3.36346153846154 	(obj:0)
+x3534                                8.18846153846155 	(obj:0)
+x3535                                8.68846153846155 	(obj:0)
+x3536                                11.3634615384615 	(obj:0)
+x3537                                11.3634615384615 	(obj:0)
+x3538                                2.86346153846154 	(obj:0)
+x3539                                3.36346153846154 	(obj:0)
+x3540                                8.18846153846155 	(obj:0)
+x3541                                8.68846153846155 	(obj:0)
+x3542                                11.3634615384615 	(obj:0)
+x3543                                11.3634615384615 	(obj:0)
+x3544                                11.2134615384615 	(obj:0)
+x3545                                11.7134615384615 	(obj:0)
+x3546                                13.6884615384615 	(obj:0)
+x3547                                11.2134615384615 	(obj:0)
+x3548                                11.7134615384615 	(obj:0)
+x3549                                13.6884615384615 	(obj:0)
+x3550                                11.2134615384615 	(obj:0)
+x3551                                11.7134615384615 	(obj:0)
+x3552                                13.6884615384615 	(obj:0)
+x3553                                29.6884615384615 	(obj:0)
+x3554                                30.1884615384615 	(obj:0)
+x3555                                32.1634615384615 	(obj:0)
+x3556                                29.6884615384615 	(obj:0)
+x3557                                30.1884615384615 	(obj:0)
+x3558                                32.1634615384615 	(obj:0)
+x3559                                29.6884615384615 	(obj:0)
+x3560                                30.1884615384615 	(obj:0)
+x3561                                32.1634615384615 	(obj:0)
+x3562                                23.3634615384615 	(obj:0)
+x3563                                23.8634615384615 	(obj:0)
+x3564                                26.5384615384615 	(obj:0)
+x3565                                26.5384615384615 	(obj:0)
+x3566                                49.1634615384615 	(obj:0)
+x3567                                49.6634615384615 	(obj:0)
+x3568                                23.3634615384615 	(obj:0)
+x3569                                23.8634615384615 	(obj:0)
+x3570                                26.5384615384615 	(obj:0)
+x3571                                26.5384615384615 	(obj:0)
+x3572                                49.1634615384615 	(obj:0)
+x3573                                49.6634615384615 	(obj:0)
+x3574                                23.3634615384615 	(obj:0)
+x3575                                23.8634615384615 	(obj:0)
+x3576                                26.5384615384615 	(obj:0)
+x3577                                26.5384615384615 	(obj:0)
+x3578                                49.1634615384615 	(obj:0)
+x3579                                49.6634615384615 	(obj:0)
+x3580                                23.3634615384615 	(obj:0)
+x3581                                23.8634615384615 	(obj:0)
+x3582                                26.5384615384615 	(obj:0)
+x3583                                26.5384615384615 	(obj:0)
+x3584                                49.1634615384615 	(obj:0)
+x3585                                49.6634615384615 	(obj:0)
+x3586                                23.3634615384615 	(obj:0)
+x3587                                23.8634615384615 	(obj:0)
+x3588                                26.5384615384615 	(obj:0)
+x3589                                26.5384615384615 	(obj:0)
+x3590                                49.1634615384615 	(obj:0)
+x3591                                49.6634615384615 	(obj:0)
+x3592                                23.3634615384615 	(obj:0)
+x3593                                23.8634615384615 	(obj:0)
+x3594                                26.5384615384615 	(obj:0)
+x3595                                26.5384615384615 	(obj:0)
+x3596                                49.1634615384615 	(obj:0)
+x3597                                49.6634615384615 	(obj:0)
+x3598                                25.8384615384615 	(obj:0)
+x3599                                26.3384615384615 	(obj:0)
+x3600                                29.0384615384615 	(obj:0)
+x3601                                25.8384615384615 	(obj:0)
+x3602                                26.3384615384615 	(obj:0)
+x3603                                29.0384615384615 	(obj:0)
+x3607                                38.5384615384615 	(obj:0)
+x3608                                39.0384615384615 	(obj:0)
+x3609                                39.0384615384615 	(obj:0)
+x3610                                39.5384615384615 	(obj:0)
+x3611                                41.6634615384615 	(obj:0)
+x3612                                41.6634615384615 	(obj:0)
+x3613                                38.5384615384615 	(obj:0)
+x3614                                39.0384615384615 	(obj:0)
+x3615                                39.0384615384615 	(obj:0)
+x3616                                39.5384615384615 	(obj:0)
+x3617                                41.6634615384615 	(obj:0)
+x3618                                41.6634615384615 	(obj:0)
+x3619                                38.5384615384615 	(obj:0)
+x3620                                39.0384615384615 	(obj:0)
+x3621                                39.0384615384615 	(obj:0)
+x3622                                39.5384615384615 	(obj:0)
+x3623                                41.6634615384615 	(obj:0)
+x3624                                41.6634615384615 	(obj:0)
+x3625                                38.5384615384615 	(obj:0)
+x3626                                39.0384615384615 	(obj:0)
+x3627                                39.0384615384615 	(obj:0)
+x3628                                39.5384615384615 	(obj:0)
+x3629                                41.6634615384615 	(obj:0)
+x3630                                41.6634615384615 	(obj:0)
+x3637                                38.5384615384615 	(obj:0)
+x3638                                39.0384615384615 	(obj:0)
+x3639                                39.0384615384615 	(obj:0)
+x3640                                39.5384615384615 	(obj:0)
+x3641                                41.6634615384615 	(obj:0)
+x3642                                41.6634615384615 	(obj:0)
+x3643                                2.86346153846154 	(obj:0)
+x3644                                2.86346153846154 	(obj:0)
+x3645                                2.86346153846154 	(obj:0)
+x3646                                2.86346153846154 	(obj:0)
+x3647                                2.86346153846154 	(obj:0)
+x3648                                2.86346153846154 	(obj:0)
+x3649                                2.86346153846154 	(obj:0)
+x3650                                2.86346153846154 	(obj:0)
+x3651                                8.18846153846155 	(obj:0)
+x3652                                2.86346153846154 	(obj:0)
+x3653                                2.86346153846154 	(obj:0)
+x3654                                2.86346153846154 	(obj:0)
+x3655                                2.86346153846154 	(obj:0)
+x3656                                2.86346153846154 	(obj:0)
+x3657                                2.86346153846154 	(obj:0)
+x3658                                2.86346153846154 	(obj:0)
+x3659                                2.86346153846154 	(obj:0)
+x3660                                8.18846153846155 	(obj:0)
+x3661                                2.86346153846154 	(obj:0)
+x3662                                2.86346153846154 	(obj:0)
+x3663                                2.86346153846154 	(obj:0)
+x3664                                2.86346153846154 	(obj:0)
+x3665                                2.86346153846154 	(obj:0)
+x3666                                2.86346153846154 	(obj:0)
+x3667                                2.86346153846154 	(obj:0)
+x3668                                2.86346153846154 	(obj:0)
+x3669                                8.18846153846155 	(obj:0)
+x3670                                2.86346153846154 	(obj:0)
+x3671                                2.86346153846154 	(obj:0)
+x3672                                2.86346153846154 	(obj:0)
+x3673                                2.86346153846154 	(obj:0)
+x3674                                2.86346153846154 	(obj:0)
+x3675                                2.86346153846154 	(obj:0)
+x3676                                2.86346153846154 	(obj:0)
+x3677                                2.86346153846154 	(obj:0)
+x3678                                8.18846153846155 	(obj:0)
+x3679                                2.86346153846154 	(obj:0)
+x3680                                2.86346153846154 	(obj:0)
+x3681                                2.86346153846154 	(obj:0)
+x3682                                2.86346153846154 	(obj:0)
+x3683                                2.86346153846154 	(obj:0)
+x3684                                2.86346153846154 	(obj:0)
+x3685                                2.86346153846154 	(obj:0)
+x3686                                2.86346153846154 	(obj:0)
+x3687                                8.18846153846155 	(obj:0)
+x3688                                2.86346153846154 	(obj:0)
+x3689                                2.86346153846154 	(obj:0)
+x3690                                2.86346153846154 	(obj:0)
+x3691                                2.86346153846154 	(obj:0)
+x3692                                2.86346153846154 	(obj:0)
+x3693                                2.86346153846154 	(obj:0)
+x3694                                2.86346153846154 	(obj:0)
+x3695                                2.86346153846154 	(obj:0)
+x3696                                8.18846153846155 	(obj:0)
+x3697                                2.86346153846154 	(obj:0)
+x3698                                2.86346153846154 	(obj:0)
+x3699                                2.86346153846154 	(obj:0)
+x3700                                2.86346153846154 	(obj:0)
+x3701                                2.86346153846154 	(obj:0)
+x3702                                2.86346153846154 	(obj:0)
+x3703                                2.86346153846154 	(obj:0)
+x3704                                2.86346153846154 	(obj:0)
+x3705                                8.18846153846155 	(obj:0)
+x3706                                2.86346153846154 	(obj:0)
+x3707                                2.86346153846154 	(obj:0)
+x3708                                2.86346153846154 	(obj:0)
+x3709                                2.86346153846154 	(obj:0)
+x3710                                2.86346153846154 	(obj:0)
+x3711                                2.86346153846154 	(obj:0)
+x3712                                2.86346153846154 	(obj:0)
+x3713                                2.86346153846154 	(obj:0)
+x3714                                8.18846153846155 	(obj:0)
+x3733                                59.0384615384615 	(obj:0)
+x3734                                59.0384615384615 	(obj:0)
+x3735                                59.0384615384615 	(obj:0)
+x3736                                59.0384615384615 	(obj:0)
+x3737                                61.6634615384615 	(obj:0)
+x3738                                61.6634615384615 	(obj:0)
+x3739                                61.6634615384615 	(obj:0)
+x3740                                61.6634615384615 	(obj:0)
+x3741                                61.6634615384615 	(obj:0)
+x3742                                59.0384615384615 	(obj:0)
+x3743                                59.0384615384615 	(obj:0)
+x3744                                59.0384615384615 	(obj:0)
+x3745                                59.0384615384615 	(obj:0)
+x3746                                61.6634615384615 	(obj:0)
+x3747                                61.6634615384615 	(obj:0)
+x3748                                61.6634615384615 	(obj:0)
+x3749                                61.6634615384615 	(obj:0)
+x3750                                61.6634615384615 	(obj:0)
+x3751                                59.0384615384615 	(obj:0)
+x3752                                59.0384615384615 	(obj:0)
+x3753                                59.0384615384615 	(obj:0)
+x3754                                59.0384615384615 	(obj:0)
+x3755                                61.6634615384615 	(obj:0)
+x3756                                61.6634615384615 	(obj:0)
+x3757                                61.6634615384615 	(obj:0)
+x3758                                61.6634615384615 	(obj:0)
+x3759                                61.6634615384615 	(obj:0)
+x3760                                59.0384615384615 	(obj:0)
+x3761                                59.0384615384615 	(obj:0)
+x3762                                59.0384615384615 	(obj:0)
+x3763                                59.0384615384615 	(obj:0)
+x3764                                61.6634615384615 	(obj:0)
+x3765                                61.6634615384615 	(obj:0)
+x3766                                61.6634615384615 	(obj:0)
+x3767                                61.6634615384615 	(obj:0)
+x3768                                61.6634615384615 	(obj:0)
+x3769                                59.0384615384615 	(obj:0)
+x3770                                59.0384615384615 	(obj:0)
+x3771                                59.0384615384615 	(obj:0)
+x3772                                59.0384615384615 	(obj:0)
+x3773                                61.6634615384615 	(obj:0)
+x3774                                61.6634615384615 	(obj:0)
+x3775                                61.6634615384615 	(obj:0)
+x3776                                61.6634615384615 	(obj:0)
+x3777                                61.6634615384615 	(obj:0)
+x3778                                59.0384615384615 	(obj:0)
+x3779                                59.0384615384615 	(obj:0)
+x3780                                59.0384615384615 	(obj:0)
+x3781                                59.0384615384615 	(obj:0)
+x3782                                61.6634615384615 	(obj:0)
+x3783                                61.6634615384615 	(obj:0)
+x3784                                61.6634615384615 	(obj:0)
+x3785                                61.6634615384615 	(obj:0)
+x3786                                61.6634615384615 	(obj:0)
+x3787                                59.0384615384615 	(obj:0)
+x3788                                59.0384615384615 	(obj:0)
+x3789                                59.0384615384615 	(obj:0)
+x3790                                59.0384615384615 	(obj:0)
+x3791                                61.6634615384615 	(obj:0)
+x3792                                61.6634615384615 	(obj:0)
+x3793                                61.6634615384615 	(obj:0)
+x3794                                61.6634615384615 	(obj:0)
+x3795                                61.6634615384615 	(obj:0)
+x3796                                59.0384615384615 	(obj:0)
+x3797                                59.0384615384615 	(obj:0)
+x3798                                59.0384615384615 	(obj:0)
+x3799                                59.0384615384615 	(obj:0)
+x3800                                61.6634615384615 	(obj:0)
+x3801                                61.6634615384615 	(obj:0)
+x3802                                61.6634615384615 	(obj:0)
+x3803                                61.6634615384615 	(obj:0)
+x3804                                61.6634615384615 	(obj:0)
+x3805                                2.86346153846154 	(obj:0)
+x3806                                3.36346153846154 	(obj:0)
+x3807                                8.18846153846155 	(obj:0)
+x3808                                8.68846153846155 	(obj:0)
+x3809                                11.3634615384615 	(obj:0)
+x3810                                11.3634615384615 	(obj:0)
+x3811                                2.86346153846154 	(obj:0)
+x3812                                3.36346153846154 	(obj:0)
+x3813                                8.18846153846155 	(obj:0)
+x3814                                8.68846153846155 	(obj:0)
+x3815                                11.3634615384615 	(obj:0)
+x3816                                11.3634615384615 	(obj:0)
+x3817                                2.86346153846154 	(obj:0)
+x3818                                3.36346153846154 	(obj:0)
+x3819                                8.18846153846155 	(obj:0)
+x3820                                8.68846153846155 	(obj:0)
+x3821                                11.3634615384615 	(obj:0)
+x3822                                11.3634615384615 	(obj:0)
+x3823                                2.86346153846154 	(obj:0)
+x3824                                3.36346153846154 	(obj:0)
+x3825                                8.18846153846155 	(obj:0)
+x3826                                8.68846153846155 	(obj:0)
+x3827                                11.3634615384615 	(obj:0)
+x3828                                11.3634615384615 	(obj:0)
+x3835                                2.86346153846154 	(obj:0)
+x3836                                3.36346153846154 	(obj:0)
+x3837                                8.18846153846155 	(obj:0)
+x3838                                8.68846153846155 	(obj:0)
+x3839                                11.3634615384615 	(obj:0)
+x3840                                11.3634615384615 	(obj:0)
+x3841                                11.2134615384615 	(obj:0)
+x3842                                11.7134615384615 	(obj:0)
+x3843                                13.6884615384615 	(obj:0)
+x3844                                11.2134615384615 	(obj:0)
+x3845                                11.7134615384615 	(obj:0)
+x3846                                13.6884615384615 	(obj:0)
+x3847                                11.2134615384615 	(obj:0)
+x3848                                11.7134615384615 	(obj:0)
+x3849                                13.6884615384615 	(obj:0)
+x3850                                29.6884615384615 	(obj:0)
+x3851                                30.1884615384615 	(obj:0)
+x3852                                32.1634615384615 	(obj:0)
+x3853                                29.6884615384615 	(obj:0)
+x3854                                30.1884615384615 	(obj:0)
+x3855                                32.1634615384615 	(obj:0)
+x3856                                29.6884615384615 	(obj:0)
+x3857                                30.1884615384615 	(obj:0)
+x3858                                32.1634615384615 	(obj:0)
+x3859                                23.3634615384615 	(obj:0)
+x3860                                23.8634615384615 	(obj:0)
+x3861                                26.5384615384615 	(obj:0)
+x3862                                26.5384615384615 	(obj:0)
+x3863                                49.1634615384615 	(obj:0)
+x3864                                49.6634615384615 	(obj:0)
+x3865                                23.3634615384615 	(obj:0)
+x3866                                23.8634615384615 	(obj:0)
+x3867                                26.5384615384615 	(obj:0)
+x3868                                26.5384615384615 	(obj:0)
+x3869                                49.1634615384615 	(obj:0)
+x3870                                49.6634615384615 	(obj:0)
+x3877                                23.3634615384615 	(obj:0)
+x3878                                23.8634615384615 	(obj:0)
+x3879                                26.5384615384615 	(obj:0)
+x3880                                26.5384615384615 	(obj:0)
+x3881                                49.1634615384615 	(obj:0)
+x3882                                49.6634615384615 	(obj:0)
+x3883                                23.3634615384615 	(obj:0)
+x3884                                23.8634615384615 	(obj:0)
+x3885                                26.5384615384615 	(obj:0)
+x3886                                26.5384615384615 	(obj:0)
+x3887                                49.1634615384615 	(obj:0)
+x3888                                49.6634615384615 	(obj:0)
+x3889                                23.3634615384615 	(obj:0)
+x3890                                23.8634615384615 	(obj:0)
+x3891                                26.5384615384615 	(obj:0)
+x3892                                26.5384615384615 	(obj:0)
+x3893                                49.1634615384615 	(obj:0)
+x3894                                49.6634615384615 	(obj:0)
+x3895                                25.8384615384615 	(obj:0)
+x3896                                26.3384615384615 	(obj:0)
+x3897                                29.0384615384615 	(obj:0)
+x3898                                25.8384615384615 	(obj:0)
+x3899                                26.3384615384615 	(obj:0)
+x3900                                29.0384615384615 	(obj:0)
+x3901                                25.8384615384615 	(obj:0)
+x3902                                26.3384615384615 	(obj:0)
+x3903                                29.0384615384615 	(obj:0)
+x3904                                38.5384615384615 	(obj:0)
+x3905                                39.0384615384615 	(obj:0)
+x3906                                39.0384615384615 	(obj:0)
+x3907                                39.5384615384615 	(obj:0)
+x3908                                41.6634615384615 	(obj:0)
+x3909                                41.6634615384615 	(obj:0)
+x3916                                38.5384615384615 	(obj:0)
+x3917                                39.0384615384615 	(obj:0)
+x3918                                39.0384615384615 	(obj:0)
+x3919                                39.5384615384615 	(obj:0)
+x3920                                41.6634615384615 	(obj:0)
+x3921                                41.6634615384615 	(obj:0)
+x3922                                38.5384615384615 	(obj:0)
+x3923                                39.0384615384615 	(obj:0)
+x3924                                39.0384615384615 	(obj:0)
+x3925                                39.5384615384615 	(obj:0)
+x3926                                41.6634615384615 	(obj:0)
+x3927                                41.6634615384615 	(obj:0)
+x3928                                38.5384615384615 	(obj:0)
+x3929                                39.0384615384615 	(obj:0)
+x3930                                39.0384615384615 	(obj:0)
+x3931                                39.5384615384615 	(obj:0)
+x3932                                41.6634615384615 	(obj:0)
+x3933                                41.6634615384615 	(obj:0)
+x3934                                38.5384615384615 	(obj:0)
+x3935                                39.0384615384615 	(obj:0)
+x3936                                39.0384615384615 	(obj:0)
+x3937                                39.5384615384615 	(obj:0)
+x3938                                41.6634615384615 	(obj:0)
+x3939                                41.6634615384615 	(obj:0)
+x3949                                2.86346153846154 	(obj:0)
+x3950                                2.86346153846154 	(obj:0)
+x3951                                2.86346153846154 	(obj:0)
+x3952                                2.86346153846154 	(obj:0)
+x3953                                2.86346153846154 	(obj:0)
+x3954                                2.86346153846154 	(obj:0)
+x3955                                2.86346153846154 	(obj:0)
+x3956                                2.86346153846154 	(obj:0)
+x3957                                8.18846153846155 	(obj:0)
+x3958                                2.86346153846154 	(obj:0)
+x3959                                2.86346153846154 	(obj:0)
+x3960                                2.86346153846154 	(obj:0)
+x3961                                2.86346153846154 	(obj:0)
+x3962                                2.86346153846154 	(obj:0)
+x3963                                2.86346153846154 	(obj:0)
+x3964                                2.86346153846154 	(obj:0)
+x3965                                2.86346153846154 	(obj:0)
+x3966                                8.18846153846155 	(obj:0)
+x3967                                2.86346153846154 	(obj:0)
+x3968                                2.86346153846154 	(obj:0)
+x3969                                2.86346153846154 	(obj:0)
+x3970                                2.86346153846154 	(obj:0)
+x3971                                2.86346153846154 	(obj:0)
+x3972                                2.86346153846154 	(obj:0)
+x3973                                2.86346153846154 	(obj:0)
+x3974                                2.86346153846154 	(obj:0)
+x3975                                8.18846153846155 	(obj:0)
+x3976                                2.86346153846154 	(obj:0)
+x3977                                2.86346153846154 	(obj:0)
+x3978                                2.86346153846154 	(obj:0)
+x3979                                2.86346153846154 	(obj:0)
+x3980                                2.86346153846154 	(obj:0)
+x3981                                2.86346153846154 	(obj:0)
+x3982                                2.86346153846154 	(obj:0)
+x3983                                2.86346153846154 	(obj:0)
+x3984                                8.18846153846155 	(obj:0)
+x3985                                2.86346153846154 	(obj:0)
+x3986                                2.86346153846154 	(obj:0)
+x3987                                2.86346153846154 	(obj:0)
+x3988                                2.86346153846154 	(obj:0)
+x3989                                2.86346153846154 	(obj:0)
+x3990                                2.86346153846154 	(obj:0)
+x3991                                2.86346153846154 	(obj:0)
+x3992                                2.86346153846154 	(obj:0)
+x3993                                8.18846153846155 	(obj:0)
+x3994                                2.86346153846154 	(obj:0)
+x3995                                2.86346153846154 	(obj:0)
+x3996                                2.86346153846154 	(obj:0)
+x3997                                2.86346153846154 	(obj:0)
+x3998                                2.86346153846154 	(obj:0)
+x3999                                2.86346153846154 	(obj:0)
+x4000                                2.86346153846154 	(obj:0)
+x4001                                2.86346153846154 	(obj:0)
+x4002                                8.18846153846155 	(obj:0)
+x4003                                2.86346153846154 	(obj:0)
+x4004                                2.86346153846154 	(obj:0)
+x4005                                2.86346153846154 	(obj:0)
+x4006                                2.86346153846154 	(obj:0)
+x4007                                2.86346153846154 	(obj:0)
+x4008                                2.86346153846154 	(obj:0)
+x4009                                2.86346153846154 	(obj:0)
+x4010                                2.86346153846154 	(obj:0)
+x4011                                8.18846153846155 	(obj:0)
+x4012                                2.86346153846154 	(obj:0)
+x4013                                2.86346153846154 	(obj:0)
+x4014                                2.86346153846154 	(obj:0)
+x4015                                2.86346153846154 	(obj:0)
+x4016                                2.86346153846154 	(obj:0)
+x4017                                2.86346153846154 	(obj:0)
+x4018                                2.86346153846154 	(obj:0)
+x4019                                2.86346153846154 	(obj:0)
+x4020                                8.18846153846155 	(obj:0)
+x4021                                59.0384615384615 	(obj:0)
+x4022                                59.0384615384615 	(obj:0)
+x4023                                59.0384615384615 	(obj:0)
+x4024                                59.0384615384615 	(obj:0)
+x4025                                61.6634615384615 	(obj:0)
+x4026                                61.6634615384615 	(obj:0)
+x4027                                61.6634615384615 	(obj:0)
+x4028                                61.6634615384615 	(obj:0)
+x4029                                61.6634615384615 	(obj:0)
+x4030                                59.0384615384615 	(obj:0)
+x4031                                59.0384615384615 	(obj:0)
+x4032                                59.0384615384615 	(obj:0)
+x4033                                59.0384615384615 	(obj:0)
+x4034                                61.6634615384615 	(obj:0)
+x4035                                61.6634615384615 	(obj:0)
+x4036                                61.6634615384615 	(obj:0)
+x4037                                61.6634615384615 	(obj:0)
+x4038                                61.6634615384615 	(obj:0)
+x4039                                59.0384615384615 	(obj:0)
+x4040                                59.0384615384615 	(obj:0)
+x4041                                59.0384615384615 	(obj:0)
+x4042                                59.0384615384615 	(obj:0)
+x4043                                61.6634615384615 	(obj:0)
+x4044                                61.6634615384615 	(obj:0)
+x4045                                61.6634615384615 	(obj:0)
+x4046                                61.6634615384615 	(obj:0)
+x4047                                61.6634615384615 	(obj:0)
+x4048                                59.0384615384615 	(obj:0)
+x4049                                59.0384615384615 	(obj:0)
+x4050                                59.0384615384615 	(obj:0)
+x4051                                59.0384615384615 	(obj:0)
+x4052                                61.6634615384615 	(obj:0)
+x4053                                61.6634615384615 	(obj:0)
+x4054                                61.6634615384615 	(obj:0)
+x4055                                61.6634615384615 	(obj:0)
+x4056                                61.6634615384615 	(obj:0)
+x4057                                59.0384615384615 	(obj:0)
+x4058                                59.0384615384615 	(obj:0)
+x4059                                59.0384615384615 	(obj:0)
+x4060                                59.0384615384615 	(obj:0)
+x4061                                61.6634615384615 	(obj:0)
+x4062                                61.6634615384615 	(obj:0)
+x4063                                61.6634615384615 	(obj:0)
+x4064                                61.6634615384615 	(obj:0)
+x4065                                61.6634615384615 	(obj:0)
+x4066                                59.0384615384615 	(obj:0)
+x4067                                59.0384615384615 	(obj:0)
+x4068                                59.0384615384615 	(obj:0)
+x4069                                59.0384615384615 	(obj:0)
+x4070                                61.6634615384615 	(obj:0)
+x4071                                61.6634615384615 	(obj:0)
+x4072                                61.6634615384615 	(obj:0)
+x4073                                61.6634615384615 	(obj:0)
+x4074                                61.6634615384615 	(obj:0)
+x4075                                59.0384615384615 	(obj:0)
+x4076                                59.0384615384615 	(obj:0)
+x4077                                59.0384615384615 	(obj:0)
+x4078                                59.0384615384615 	(obj:0)
+x4079                                61.6634615384615 	(obj:0)
+x4080                                61.6634615384615 	(obj:0)
+x4081                                61.6634615384615 	(obj:0)
+x4082                                61.6634615384615 	(obj:0)
+x4083                                61.6634615384615 	(obj:0)
+x4084                                59.0384615384615 	(obj:0)
+x4085                                59.0384615384615 	(obj:0)
+x4086                                59.0384615384615 	(obj:0)
+x4087                                59.0384615384615 	(obj:0)
+x4088                                61.6634615384615 	(obj:0)
+x4089                                61.6634615384615 	(obj:0)
+x4090                                61.6634615384615 	(obj:0)
+x4091                                61.6634615384615 	(obj:0)
+x4092                                61.6634615384615 	(obj:0)
+x4102                                2.86346153846154 	(obj:0)
+x4103                                3.36346153846154 	(obj:0)
+x4104                                8.18846153846155 	(obj:0)
+x4105                                8.68846153846155 	(obj:0)
+x4106                                11.3634615384615 	(obj:0)
+x4107                                11.3634615384615 	(obj:0)
+x4108                                2.86346153846154 	(obj:0)
+x4109                                3.36346153846154 	(obj:0)
+x4110                                8.18846153846155 	(obj:0)
+x4111                                8.68846153846155 	(obj:0)
+x4112                                11.3634615384615 	(obj:0)
+x4113                                11.3634615384615 	(obj:0)
+x4114                                2.86346153846154 	(obj:0)
+x4115                                3.36346153846154 	(obj:0)
+x4116                                8.18846153846155 	(obj:0)
+x4117                                8.68846153846155 	(obj:0)
+x4118                                11.3634615384615 	(obj:0)
+x4119                                11.3634615384615 	(obj:0)
+x4120                                2.86346153846154 	(obj:0)
+x4121                                3.36346153846154 	(obj:0)
+x4122                                8.18846153846155 	(obj:0)
+x4123                                8.68846153846155 	(obj:0)
+x4124                                11.3634615384615 	(obj:0)
+x4125                                11.3634615384615 	(obj:0)
+x4126                                2.86346153846154 	(obj:0)
+x4127                                3.36346153846154 	(obj:0)
+x4128                                8.18846153846155 	(obj:0)
+x4129                                8.68846153846155 	(obj:0)
+x4130                                11.3634615384615 	(obj:0)
+x4131                                11.3634615384615 	(obj:0)
+x4132                                2.86346153846154 	(obj:0)
+x4133                                3.36346153846154 	(obj:0)
+x4134                                8.18846153846155 	(obj:0)
+x4135                                8.68846153846155 	(obj:0)
+x4136                                11.3634615384615 	(obj:0)
+x4137                                11.3634615384615 	(obj:0)
+x4138                                11.2134615384615 	(obj:0)
+x4139                                11.7134615384615 	(obj:0)
+x4140                                13.6884615384615 	(obj:0)
+x4141                                11.2134615384615 	(obj:0)
+x4142                                11.7134615384615 	(obj:0)
+x4143                                13.6884615384615 	(obj:0)
+x4147                                29.6884615384615 	(obj:0)
+x4148                                30.1884615384615 	(obj:0)
+x4149                                32.1634615384615 	(obj:0)
+x4150                                29.6884615384615 	(obj:0)
+x4151                                30.1884615384615 	(obj:0)
+x4152                                32.1634615384615 	(obj:0)
+x4156                                23.3634615384615 	(obj:0)
+x4157                                23.8634615384615 	(obj:0)
+x4158                                26.5384615384615 	(obj:0)
+x4159                                26.5384615384615 	(obj:0)
+x4160                                49.1634615384615 	(obj:0)
+x4161                                49.6634615384615 	(obj:0)
+x4162                                23.3634615384615 	(obj:0)
+x4163                                23.8634615384615 	(obj:0)
+x4164                                26.5384615384615 	(obj:0)
+x4165                                26.5384615384615 	(obj:0)
+x4166                                49.1634615384615 	(obj:0)
+x4167                                49.6634615384615 	(obj:0)
+x4168                                23.3634615384615 	(obj:0)
+x4169                                23.8634615384615 	(obj:0)
+x4170                                26.5384615384615 	(obj:0)
+x4171                                26.5384615384615 	(obj:0)
+x4172                                49.1634615384615 	(obj:0)
+x4173                                49.6634615384615 	(obj:0)
+x4174                                23.3634615384615 	(obj:0)
+x4175                                23.8634615384615 	(obj:0)
+x4176                                26.5384615384615 	(obj:0)
+x4177                                26.5384615384615 	(obj:0)
+x4178                                49.1634615384615 	(obj:0)
+x4179                                49.6634615384615 	(obj:0)
+x4180                                23.3634615384615 	(obj:0)
+x4181                                23.8634615384615 	(obj:0)
+x4182                                26.5384615384615 	(obj:0)
+x4183                                26.5384615384615 	(obj:0)
+x4184                                49.1634615384615 	(obj:0)
+x4185                                49.6634615384615 	(obj:0)
+x4192                                25.8384615384615 	(obj:0)
+x4193                                26.3384615384615 	(obj:0)
+x4194                                29.0384615384615 	(obj:0)
+x4195                                25.8384615384615 	(obj:0)
+x4196                                26.3384615384615 	(obj:0)
+x4197                                29.0384615384615 	(obj:0)
+x4198                                25.8384615384615 	(obj:0)
+x4199                                26.3384615384615 	(obj:0)
+x4200                                29.0384615384615 	(obj:0)
+x4201                                38.5384615384615 	(obj:0)
+x4202                                39.0384615384615 	(obj:0)
+x4203                                39.0384615384615 	(obj:0)
+x4204                                39.5384615384615 	(obj:0)
+x4205                                41.6634615384615 	(obj:0)
+x4206                                41.6634615384615 	(obj:0)
+x4207                                38.5384615384615 	(obj:0)
+x4208                                39.0384615384615 	(obj:0)
+x4209                                39.0384615384615 	(obj:0)
+x4210                                39.5384615384615 	(obj:0)
+x4211                                41.6634615384615 	(obj:0)
+x4212                                41.6634615384615 	(obj:0)
+x4213                                38.5384615384615 	(obj:0)
+x4214                                39.0384615384615 	(obj:0)
+x4215                                39.0384615384615 	(obj:0)
+x4216                                39.5384615384615 	(obj:0)
+x4217                                41.6634615384615 	(obj:0)
+x4218                                41.6634615384615 	(obj:0)
+x4219                                38.5384615384615 	(obj:0)
+x4220                                39.0384615384615 	(obj:0)
+x4221                                39.0384615384615 	(obj:0)
+x4222                                39.5384615384615 	(obj:0)
+x4223                                41.6634615384615 	(obj:0)
+x4224                                41.6634615384615 	(obj:0)
+x4225                                38.5384615384615 	(obj:0)
+x4226                                39.0384615384615 	(obj:0)
+x4227                                39.0384615384615 	(obj:0)
+x4228                                39.5384615384615 	(obj:0)
+x4229                                41.6634615384615 	(obj:0)
+x4230                                41.6634615384615 	(obj:0)
+x4231                                38.5384615384615 	(obj:0)
+x4232                                39.0384615384615 	(obj:0)
+x4233                                39.0384615384615 	(obj:0)
+x4234                                39.5384615384615 	(obj:0)
+x4235                                41.6634615384615 	(obj:0)
+x4236                                41.6634615384615 	(obj:0)
+x4238                                965.000000000001 	(obj:0)
+x4249                                534.999999999999 	(obj:0)
+x4262                                395.000000000001 	(obj:0)
+x4264                                965.000000000001 	(obj:0)
+x4266                                965.000000000001 	(obj:0)
+x4267                                965.000000000001 	(obj:0)
+x4268                                965.000000000001 	(obj:0)
+x4269                                965.000000000001 	(obj:0)
+x4273                                534.999999999999 	(obj:0)
+x4274                                534.999999999999 	(obj:0)
+x4275                                534.999999999999 	(obj:0)
+x4277                                534.999999999999 	(obj:0)
+x4278                                534.999999999999 	(obj:0)
+x4288                                395.000000000001 	(obj:0)
+x4290                                395.000000000001 	(obj:0)
+x4301                                             540 	(obj:0)
+x4306                                425.000000000001 	(obj:0)
+x4313                                534.999999999999 	(obj:0)
+x4328                                395.000000000001 	(obj:0)
+x4354                                             540 	(obj:0)
+x4356                                             540 	(obj:0)
+x4357                                425.000000000001 	(obj:0)
+x4358                                425.000000000001 	(obj:0)
+x4359                                425.000000000001 	(obj:0)
+x4361                                425.000000000001 	(obj:0)
+x4362                                425.000000000001 	(obj:0)
+x4366                                534.999999999999 	(obj:0)
+x4368                                534.999999999999 	(obj:0)
+x4369                                534.999999999999 	(obj:0)
+x4370                                534.999999999999 	(obj:0)
+x4371                                534.999999999999 	(obj:0)
+x4381                                395.000000000001 	(obj:0)
+x4383                                395.000000000001 	(obj:0)
+x4399                                         13246.1 	(obj:1)
+
+Statistics
+==========
+
+Master Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3594.45
+  solving          :    3594.45
+  presolving       :       0.00 (included in solving)
+  reading          :       0.00
+  copying          :       0.00 (4 #copies) (minimal 0.00, maximal 0.00, average 0.00)
+Original Problem   :
+  Problem name     : master_Convert
+  Variables        : 21 (0 binary, 0 integer, 0 implicit integer, 21 continuous)
+  Constraints      : 53 initial, 53 maximal
+  Objective        : minimize, 21 non-zeros (abs.min = 4.5, abs.max = 22)
+Presolved Problem  :
+  Problem name     : t_master_Convert
+  Variables        : 453 (0 binary, 0 integer, 0 implicit integer, 453 continuous)
+  Constraints      : 53 initial, 54 maximal
+  Objective        : minimize, 248 non-zeros (abs.min = 4.5, abs.max = 5756.76)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  roundbound       :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  linear           :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -          0          -          -        375          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  masterbranch     :          0+        26          0        625          0          0          0          0          0          0       4386          0          0          0          0
+  integralorig     :          0          0          0          0        258          0          0        377          0          0          0          0          0          0        516
+  integral         :          0          0          0          0          0          0          0         10          0          0          0          0          0          0          0
+  linear           :         53         53          1       1465          0          0          0         10          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  masterbranch     :       0.96       0.00       0.00       0.96       0.00       0.00       0.00       0.00       0.00       0.00
+  integralorig     :       2.50       0.00       0.00       0.00       0.01       0.00       0.00       2.49       0.00       0.00
+  integral         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          1          0          0          0
+  genvbounds       :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          0          0          0          0
+  redcost          :          0          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :       1723          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.00       0.00       0.00       0.00       0.00       0.00
+  redcost          :       0.00       0.00       0.00       0.00       0.00       0.00
+  rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
+  vbounds          :       0.00       0.00       0.00       0.00       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     0          -          -          0          -          -    (maximal pool size: 0)
+  basis            :       0.45       0.00          1          0          0          0          0          0
+  master           :       0.20       0.00         21          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.01          -        343      36688
+  gcg              :    3588.23       0.00        495        697
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  generic          :       0.00       0.00          0          0          0          0          0          0          0          0
+  orig             :       0.00       0.00          0          0          0          0          0          0          0          0
+  relpsprob        :       0.00       0.00          0          0          0          0          0          0          0          0
+  ryanfoster       :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.00       0.00          0          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  greedycolsel     :       0.00       0.00          1          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mastercoefdiving :       0.00       0.00          0          0          0
+  masterfracdiving :       0.00       0.00          0          0          0
+  masterlinesdiving:       0.00       0.00          0          0          0
+  mastervecldiving :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.00       0.00          0          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.00       0.00          0          0          0
+  relaxcolsel      :       0.00       0.00          1          0          0
+  rens             :       0.00       0.00          0          0          0
+  restmaster       :       0.02       0.00          1          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          0          0          0
+  setcover         :       0.00       0.00          0          0          0
+  shiftandpropagate:       0.00       0.00          0          0          0
+  shifting         :       0.00       0.00          0          0          0
+  simplerounding   :       2.48       0.00        366          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          0          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.04        196        449       3.01   10176.10       0.01         47
+  dual LP          :       0.31       2391       4024       7.65   13003.63       0.16       1865
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:       0.06        242        661       2.73   11390.86
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+B&B Tree           :
+  number of runs   :          1
+  nodes            :        267 (258 internal, 9 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          8
+  objective leaves :          0
+  nodes (total)    :        267 (258 internal, 9 leaves)
+  nodes left       :        192
+  max depth        :         22
+  max depth (total):         22
+  backtracks       :         44 (16.5%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :        319 (466 domain reductions, 0 cutoffs)
+  avg switch length:       6.04
+  switching time   :       0.12
+Root Node          :
+  First LP value   :          -
+  First LP Iters   :          0
+  First LP Time    :       0.00
+  Final Dual Bound : +1.14678000000000e+04
+  Final Root Iters :        131
+  Root LP Estimate : +1.14678000000000e+04
+Solution           :
+  Solutions found  :         10 (2 improvements)
+  First Solution   : +1.15663500000000e+04   (in run 1, after 1 nodes, 127.31 seconds, depth 0, found by <relaxation>)
+  Gap First Sol.   :       0.86 %
+  Gap Last Sol.    :       0.40 %
+  Primal Bound     : +1.15131000000000e+04   (in run 1, after 201 nodes, 2908.95 seconds, depth 22, found by <relaxation>)
+  Dual Bound       : +1.14678000000000e+04
+  Gap              :       0.40 %
+  Avg. Gap         :       4.28 % (15371.09 primal-dual integral)
+Pricing Solver     : #HeurFarkas  #OptFarkas  #HeurRedcost #OptRedcost Time: HeurFarkas  OptFarkas  HeurRedcost OptRedcost
+  knapsack         :           0           0             0           0             0.00       0.00         0.00       0.00 
+  mip              :         962         167          4235        1938           282.00      94.52      1665.28    1427.60 
+
+Original Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3600.24
+  solving          :    3600.20
+  presolving       :       0.36 (included in solving)
+  reading          :       0.04
+  copying          :       0.02 (2 #copies) (minimal 0.01, maximal 0.01, average 0.01)
+Original Problem   :
+  Problem name     : Convert
+  Variables        : 4399 (405 binary, 0 integer, 0 implicit integer, 3994 continuous)
+  Constraints      : 7003 initial, 7003 maximal
+  Objective        : minimize, 1 non-zeros (abs.min = 1, abs.max = 1)
+Presolved Problem  :
+  Problem name     : t_Convert
+  Variables        : 3347 (291 binary, 0 integer, 0 implicit integer, 3056 continuous)
+  Constraints      : 5276 initial, 5277 maximal
+  Objective        : minimize, 44 non-zeros (abs.min = 3.6, abs.max = 22)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  convertinttobin  :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  domcol           :       0.01       0.00      2          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      5          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  trivial          :       0.00       0.00     12          3          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00     12         21          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.29       0.00      2         16          0          0        506          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  varbound         :       0.00       0.00      7          0          0          0          0          0         26          0          0        496
+  knapsack         :       0.00       0.00      9          0          0          0          0          0          3          3          3         14
+  setppc           :       0.00       0.00      9          0          0          0          0          0          3          0          0          0
+  linear           :       0.06       0.00     16        532        480          0       4597          0       1698          0        741        825
+  logicor          :       0.00       0.00      9          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -          0          -          -          0          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  origbranch       :          0+        26          0          0          0          0          0          0          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          1        257          0        745          0          0          0          0          0          0        516
+  decomp           :          0          0          0          0          0          0          0         28          0          0          0          0          0          0          0
+  varbound         :       2954       2954          6       3632          0          0          0         13          0          0       5625          0          0          0          0
+  knapsack         :         33         33          6       3632          0          0          0         12          0          0        444          0          0          0          0
+  setppc           :         30         30          6       3632          0          0          0         12          0          3        779          0          0          0          0
+  linear           :       2254       2254          6       3629          0          0          0         10          0          5      28120          0          0          0          0
+  logicor          :          5          5          6        119          0          0          0         10          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  origbranch       :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.01       0.00       0.00       0.00       0.00       0.00       0.01       0.00       0.00       0.00
+  decomp           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  varbound         :       0.06       0.00       0.00       0.06       0.00       0.00       0.00       0.00       0.00       0.00
+  knapsack         :       0.03       0.00       0.00       0.03       0.00       0.00       0.00       0.00       0.00       0.00
+  setppc           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       0.30       0.00       0.09       0.20       0.00       0.00       0.00       0.01       0.00       0.00
+  logicor          :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          2          0          0          0
+  genvbounds       :          0          0          0          0
+  obbt             :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :       1144          0          0          0
+  redcost          :          5          0          0          0
+  rootredcost      :          2          0          0          0
+  vbounds          :       2222          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  obbt             :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.29       0.00       0.29       0.00       0.00       0.00
+  pseudoobj        :       0.00       0.00       0.00       0.00       0.00       0.00
+  redcost          :       0.00       0.00       0.00       0.00       0.00       0.00
+  rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
+  vbounds          :       0.01       0.00       0.00       0.01       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                    11          -          -         98          -          -    (maximal pool size: 193)
+  clique           :       0.00       0.00          6          0          0          0          0          0
+  closecuts        :       0.00       0.00          0          0          0          0          0          0
+  gomory           :       0.05       0.00          5          0          0          0          5          0
+  impliedbounds    :       0.00       0.00          6          0          0          0         26          0
+  intobj           :       0.00       0.00          0          0          0          0          0          0
+  mcf              :       0.00       0.00          6          0          0          0          0          0
+  oddcycle         :       0.00       0.00          5          0          0          0          0          0
+  rapidlearning    :       0.00       0.00          0          0          0          0          0          0
+  strongcg         :       0.04       0.00          5          0          0          0          0          0
+  zerohalf         :       0.01       0.00          5          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.00          -          0          0
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  empty            :       0.00       0.00          1        257          0          0          0          0          0        516
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.32       0.00          1          1          1
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       1.38       0.00          1          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  gcgcoefdiving    :       0.17       0.00          6          0          0
+  gcgdins          :       0.00       0.00          0          0          0
+  gcgfeaspump      :       0.00       0.00          0          0          0
+  gcgfracdiving    :       0.25       0.00          6          0          0
+  gcgguideddiving  :       0.62       0.00          9          5          0
+  gcglinesdiving   :       0.34       0.00         10          0          0
+  gcgpscostdiving  :       0.31       0.00          6          1          0
+  gcgrens          :       0.50       0.00          1          1          1
+  gcgrins          :       0.00       0.00          0          0          0
+  gcgrounding      :       0.17       0.00        180          0          0
+  gcgshifting      :       0.06       0.00         20          0          0
+  gcgsimplerounding:       0.00       0.00          0          0          0
+  gcgveclendiving  :       0.16       0.00          6          2          0
+  gcgzirounding    :       0.00       0.00          0          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.05       0.00          1          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  nlpdiving        :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.00       0.00          2          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.04       0.00          3          0          0
+  rens             :       0.00       0.00          0          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          3          0          0
+  shiftandpropagate:       0.04       0.00          1          0          0
+  shifting         :       0.01       0.00          3          0          0
+  simplerounding   :       0.00       0.00          0          0          0
+  subnlp           :       0.00       0.00          0          0          0
+  trivial          :       0.01       0.00          2          0          0
+  trysol           :       0.00       0.00          0          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  undercover       :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  xpcrossover      :       0.31       0.00          1          0          0
+  xprins           :       0.27       0.00          1          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          1          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.00          0          0       0.00          -       0.00          0
+  dual LP          :       0.04          4        786     393.00   22417.43       0.00          2
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:       1.67         31       6934     223.68    4141.30
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+Relaxators         :       Time      Calls
+  gcg              :    3594.60        266
+B&B Tree           :
+  number of runs   :          1
+  nodes            :        267 (258 internal, 9 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          8
+  objective leaves :          0
+  nodes (total)    :        267 (258 internal, 9 leaves)
+  nodes left       :        192
+  max depth        :         22
+  max depth (total):         22
+  backtracks       :         44 (16.5%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          0 (0 domain reductions, 0 cutoffs)
+  avg switch length:       2.93
+  switching time   :       0.06
+Root Node          :
+  First LP value   : +2.72100000000000e+03
+  First LP Iters   :        770 (27115.54 Iter/sec)
+  First LP Time    :       0.03
+  Final Dual Bound : +1.32008000000000e+04
+  Final Root Iters :       4960
+  Root LP Estimate : +2.73724615991692e+03
+Solution           :
+  Solutions found  :         10 (2 improvements)
+  First Solution   : +1.32993500000000e+04   (in run 1, after 1 nodes, 129.80 seconds, depth 0, found by <gcgrens>)
+  Gap First Sol.   :       0.75 %
+  Gap Last Sol.    :       0.34 %
+  Primal Bound     : +1.32461000000000e+04   (in run 1, after 201 nodes, 2914.22 seconds, depth 22, found by <crossover>)
+  Dual Bound       : +1.32008000000000e+04
+  Gap              :       0.34 %
+  Avg. Gap         :          - (not evaluated)
+
+Simplex iterations :       iter
+  Master LP        :       5134
+  Pricing LP       :   23563439
+  Original LP      :       7720
+
+Detector statistics:       time     number     blocks
+  connected        :       0.00          0    
+  constype         :       0.00          0    
+  postproces       :       0.00          0    
+  consclass        :       0.64          0    
+  consname         :       0.00          0    
+  densemaste       :       0.00          0    
+  stairheur        :       0.00          0    
+  staircase        :       0.00          0    
+  random           :       0.00          0    
+  staircase_       :       0.00          0    
+  colors           :       0.00          0    
+  cutpacking       :       0.00          0    
+  compgreedi       :       0.00          0    
+  mastersetc       :       0.00          0    
+  mastersetp       :       0.00          0    
+  mastersetp       :       0.00          0    
+  hcgpartiti       :       0.00          0    
+  hrgpartiti       :       1.91          0    
+  hrcgpartit       :       0.00          0    
+  connectedb       :       0.00          0    
+  connected_       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  varclass         :       1.39          0    
+  isomorph         :       0.00          0    
+
+Decomp statistics  :
+  type             :  arrowhead
+  detector         :         vC
+  blocks           :         11
+  aggr. blocks     :         11
+Master statistics  :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros    bnzeros bintnzeros  min(dens)  max(dens) medi(dens) mean(dens)
+  master           :         21          0          0          0         21          0          0          0        566          0       -nan       -nan       -nan       -nan
+Pricing statistics :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros  min(dens)  max(dens) medi(dens) mean(dens)  identical
+          1        :       1062         81          0          0        981       1674       4176       1512      0.001      0.048      0.001      0.002          1
+          2        :        304         30          0          0        274        487       1313        429      0.004      0.080      0.004      0.009          1
+          3        :       1062         81          0          0        981       1674       4176       1512      0.001      0.048      0.001      0.002          1
+          4        :         58          9          0          0         49         94        237         76      0.021      0.170      0.021      0.043          1
+          5        :        361         36          0          0        325        577       1552        516      0.003      0.075      0.003      0.007          1
+          6        :         58          9          0          0         49         94        237         76      0.021      0.170      0.021      0.043          1
+          7        :        363         36          0          0        327        579       1580        516      0.003      0.074      0.003      0.008          1
+          8        :         58          9          0          0         49         94        237         76      0.021      0.170      0.021      0.043          1
+          9        :          0          0          0          0          0          1          0          0      1.000      0.000      0.000      0.000          1
+         10        :          0          0          0          0          0          1          0          0      1.000      0.000      0.000      0.000          1
+         11        :          0          0          0          0          0          1          0          0      1.000      0.000      0.000      0.000          1
+Decomp Scores      :
+  border area      :      0.006
+  avg. density     :      0.998
+  linking score    :      0.500
+Pricing time in colpool = 0.000244 sec
+
+GCGTIME= 3985.14

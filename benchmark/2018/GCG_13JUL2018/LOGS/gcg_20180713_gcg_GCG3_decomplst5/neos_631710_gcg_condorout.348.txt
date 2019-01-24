@@ -1,0 +1,1590 @@
+GCG version 3.0.0 [GitHash: 70e7382]
+Copyright (C) 2010-2018 Operations Research, RWTH Aachen University
+                        Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+SCIP version 6.0.0 [precision: 8 byte] [memory: block] [mode: optimized] [LP solver: SoPlex 4.0.0] [GitHash: 77d3bc8]
+Copyright (C) 2002-2018 Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+External codes: 
+  Readline 6.0         GNU library for command line editing (gnu.org/s/readline)
+  SoPlex 4.0.0         Linear Programming Solver developed at Zuse Institute Berlin (soplex.zib.de) [GitHash: 82cab95]
+  CppAD 20180000.0     Algorithmic Differentiation of C++ algorithms developed by B. Bell (www.coin-or.org/CppAD)
+  ZLIB 1.2.3           General purpose compression library by J. Gailly and M. Adler (zlib.net)
+  ZIMPL 3.3.6          Zuse Institute Mathematical Programming Language developed by T. Koch (zimpl.zib.de)
+  bliss 0.73           A Tool for Computing Automorphism Groups of Graphs by T. Junttila and P. Kaski (http://www.tcs.hut.fi/Software/bliss/)
+
+reading user parameter file </LOG_DATA/scripts/options_gcg.parm>
+
+read problem </ORDATA/miplib/neos_631710.mps>
+============
+
+original problem has 167056 variables (167056 bin, 0 int, 0 impl, 0 cont) and 169576 constraints
+presolving:
+(round 1, exhaustive) 0 del vars, 0 del conss, 0 add conss, 0 chg bounds, 0 chg sides, 0 chg coeffs, 169576 upgd conss, 0 impls, 251698 clqs
+   (85.7s) probing: 1000/167056 (0.6%) - 0 fixings, 0 aggregations, 282650 implications, 0 bound changes
+   (85.8s) probing: 1001/167056 (0.6%) - 0 fixings, 0 aggregations, 283178 implications, 0 bound changes
+   (85.8s) probing aborted: 1000/1000 successive useless probings
+presolving (2 rounds: 2 fast, 2 medium, 2 exhaustive):
+ 0 deleted vars, 1 deleted constraints, 2 added constraints, 0 tightened bounds, 0 added holes, 2 changed sides, 248 changed coefficients
+ 0 implications, 537101 cliques
+presolved problem has 167056 variables (167056 bin, 0 int, 0 impl, 0 cont) and 169577 constraints
+    555 constraints of type <knapsack>
+ 169022 constraints of type <setppc>
+transformed objective value is always integral (scale: 1)
+Presolving Time: 85.84
+start creating seeedpool for current problem 
+created seeedpool for current problem, n detectors: 26 
+ Consclassifier "nonzeros" yields a classification with 9  different constraint classes 
+ Consclassifier "constypes" yields a classification with 3 different constraint classes 
+ Consclassifier "constypes according to miplib" yields a classification with 4 different constraint classes 
+ Varclassifier "vartypes" yields a classification with 1 different variable classes
+ Varclassifier "varobjvals" yields a classification with 2 different variable classes
+ Varclassifier "varobjvalsigns" yields a classification with 2 different variable classes
+ Varclassifier "varobjvalsigns" is not considered since it offers the same structure as "varobjvals"
+ Added reduced version of consclassifier nonzeros with 5  different constraint classes 
+Begin of detection round 0 of 1 total rounds 
+Start to propagate seeed with id 1 (0 of 1 in round 0) 
+ in dec_consclass: there are 4 different constraint classes   
+ the current consclass distribution includes 9 classes but only 5 are allowed for propagateSeeed() of cons class detector
+  the current constraint classifier "constypes" consists of 3 different classes   
+  the current constraint classifier "constypes according to miplib" consists of 4 different classes   
+  the current constraint classifier "nonzeros-red-to-5" consists of 5 different classes   
+ dec_consclass found 53 new seeeds 
+dec_densemasterconss found 1 new seeed 
+Start finishing of partial decomposition 1.
+Measured running time per detector: 
+Detector consclass                 	 worked on 	 42 of 46	 and took a total time of 	314.463
+Detector densemasterconss          	 worked on 	 1 of 46	 and took a total time of 	0.035725
+Detector hrgpartition              	 worked on 	 0 of 46	 and took a total time of 	4e-06
+Detector varclass                  	 worked on 	 2 of 46	 and took a total time of 	28.6504
+Started postprocessing of decompositions...
+...finished postprocessing of decompositions. Added 0 new decomps. 
+
+solve problem
+=============
+
+
+A Dantzig-Wolfe reformulation is applied to solve the original problem.
+
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+V 98.1s|     1 |     0 |      0 |      0 |     - |1214M|   0 |   0 | 169k|   0 |   0 |  0 | 0.000000e+00 | 5.560000e+02 |   --   |    Inf 
+  1220s|     1 |     0 |      0 |      0 |     - |1204M|   0 |   0 | 169k|   0 |   0 |  0 | 1.882500e+02 | 5.560000e+02 |   --   | 195.35%
+Chosen structure has 556 blocks and 167355 linking constraints.
+This decomposition has a maxwhite score of 0.013080.
+Matrix has 556 blocks, using 556 pricing problems.
+
+     
+  1241s|     1 |     0 |      0 |      0 |     - |2006M|   0 | 556 | 169k| 167k|   0 |  0 | 1.882500e+02 | 5.560000e+02 |   0.00%| 195.35%
+  1241s|     1 |     0 |      0 |      0 |     - |2006M|   0 | 556 | 169k| 167k|   0 |  0 | 1.882500e+02 | 5.560000e+02 |   0.00%| 195.35%
+Starting reduced cost pricing...
+  1561s|     1 |     0 |   9519 |   2171 |     - |3055M|   0 |5409 | 169k| 167k|   0 |  0 | 1.882500e+02 | 5.560000e+02 |  33.18%| 195.35%
+  2123s|     1 |     0 |  45648 |   4027 |     - |3311M|   0 |  11k| 169k| 167k|   0 |  0 | 1.882500e+02 | 5.560000e+02 |  25.95%| 195.35%
+  2150s|     1 |     0 |  47943 |   6202 |     - |3337M|   0 |  12k| 169k| 167k|   0 |  0 | 2.025000e+02 | 5.560000e+02 |  26.33%| 174.57%
+  2165s|     1 |     0 |  53937 |  12196 |     - |3939M|   0 |  12k| 169k| 167k|   1 |  1 | 2.025000e+02 | 5.560000e+02 |  26.33%| 174.57%
+  2533s|     1 |     0 |  54721 |  12980 |     - |3941M|   0 |  12k| 169k| 167k|   3 |  3 | 2.025000e+02 | 5.560000e+02 |  26.33%| 174.57%
+  2536s|     1 |     0 |  55290 |  13549 |     - |3942M|   0 |  12k| 169k| 167k|   4 |  4 | 2.025000e+02 | 5.560000e+02 |  26.33%| 174.57%
+  2539s|     1 |     0 |  56211 |  14470 |     - |3942M|   0 |  12k| 169k| 167k|   5 |  5 | 2.025000e+02 | 5.560000e+02 |  26.33%| 174.57%
+E 3040s|     1 |     0 |  56219 |  14478 |     - |3986M|   0 |  12k| 169k| 167k|   5 |  7 | 2.025000e+02 | 5.180000e+02 |  26.33%| 155.80%
+E 3043s|     1 |     0 |  56219 |  14478 |     - |3999M|   0 |  13k| 169k| 167k|   5 |  7 | 2.025000e+02 | 2.030000e+02 |  26.33%|   0.25%
+  3044s|     1 |     0 |  56219 |  14478 |     - |3997M|   0 |  13k| 169k| 167k|   5 |  7 | 2.030000e+02 | 2.030000e+02 |  26.33%|   0.00%
+
+SCIP Status        : problem is solved [optimal solution found]
+Solving Time (sec) : 3043.66
+Solving Nodes      : 1
+Primal Bound       : +2.03000000000000e+02 (3 solutions)
+Dual Bound         : +2.03000000000000e+02
+Gap                : 0.00 %
+
+primal solution:
+================
+
+objective value:                                  203
+C0058                                               1 	(obj:0)
+C0625                                               1 	(obj:0)
+C1208                                               1 	(obj:0)
+C1666                                               1 	(obj:0)
+C2230                                               1 	(obj:0)
+C2782                                               1 	(obj:0)
+C3382                                               1 	(obj:0)
+C4078                                               1 	(obj:0)
+C4454                                               1 	(obj:0)
+C5002                                               1 	(obj:0)
+C5744                                               1 	(obj:0)
+C6302                                               1 	(obj:0)
+C6859                                               1 	(obj:0)
+C7315                                               1 	(obj:0)
+C7962                                               1 	(obj:0)
+C8329                                               1 	(obj:0)
+C9062                                               1 	(obj:0)
+C9620                                               1 	(obj:0)
+C9995                                               1 	(obj:0)
+C10724                                              1 	(obj:0)
+C11278                                              1 	(obj:0)
+C11661                                              1 	(obj:0)
+C12311                                              1 	(obj:0)
+C12797                                              1 	(obj:0)
+C13339                                              1 	(obj:0)
+C13877                                              1 	(obj:0)
+C14531                                              1 	(obj:0)
+C15094                                              1 	(obj:0)
+C15553                                              1 	(obj:0)
+C16121                                              1 	(obj:0)
+C16659                                              1 	(obj:0)
+C17241                                              1 	(obj:0)
+C17800                                              1 	(obj:0)
+C18515                                              1 	(obj:0)
+C18917                                              1 	(obj:0)
+C19606                                              1 	(obj:0)
+C19982                                              1 	(obj:0)
+C20716                                              1 	(obj:0)
+C21280                                              1 	(obj:0)
+C21657                                              1 	(obj:0)
+C22206                                              1 	(obj:0)
+C22857                                              1 	(obj:0)
+C23323                                              1 	(obj:0)
+C23913                                              1 	(obj:0)
+C24523                                              1 	(obj:0)
+C24989                                              1 	(obj:0)
+C25534                                              1 	(obj:0)
+C26280                                              1 	(obj:0)
+C26678                                              1 	(obj:0)
+C27305                                              1 	(obj:0)
+C27768                                              1 	(obj:0)
+C28321                                              1 	(obj:0)
+C29057                                              1 	(obj:0)
+C29481                                              1 	(obj:0)
+C29987                                              1 	(obj:0)
+C30587                                              1 	(obj:0)
+C31145                                              1 	(obj:0)
+C31653                                              1 	(obj:0)
+C32382                                              1 	(obj:0)
+C32751                                              1 	(obj:0)
+C33503                                              1 	(obj:0)
+C34046                                              1 	(obj:0)
+C34478                                              1 	(obj:0)
+C34985                                              1 	(obj:0)
+C35625                                              1 	(obj:0)
+C36157                                              1 	(obj:0)
+C36651                                              1 	(obj:0)
+C37373                                              1 	(obj:0)
+C37830                                              1 	(obj:0)
+C38317                                              1 	(obj:0)
+C39037                                              1 	(obj:0)
+C39510                                              1 	(obj:0)
+C39983                                              1 	(obj:0)
+C40622                                              1 	(obj:0)
+C41161                                              1 	(obj:0)
+C41649                                              1 	(obj:0)
+C42185                                              1 	(obj:0)
+C42768                                              1 	(obj:0)
+C43315                                              1 	(obj:0)
+C44029                                              1 	(obj:0)
+C44451                                              1 	(obj:0)
+C44981                                              1 	(obj:0)
+C45548                                              1 	(obj:0)
+C46254                                              1 	(obj:0)
+C46647                                              1 	(obj:0)
+C47358                                              1 	(obj:0)
+C47837                                              1 	(obj:0)
+C48313                                              1 	(obj:0)
+C49039                                              1 	(obj:0)
+C49581                                              1 	(obj:0)
+C49979                                              1 	(obj:0)
+C50563                                              1 	(obj:0)
+C51243                                              1 	(obj:0)
+C51645                                              1 	(obj:0)
+C52230                                              1 	(obj:0)
+C52835                                              1 	(obj:0)
+C53311                                              1 	(obj:0)
+C53947                                              1 	(obj:0)
+C54502                                              1 	(obj:0)
+C54977                                              1 	(obj:0)
+C55614                                              1 	(obj:0)
+C56235                                              1 	(obj:0)
+C56643                                              1 	(obj:0)
+C57174                                              1 	(obj:0)
+C57921                                              1 	(obj:0)
+C58309                                              1 	(obj:0)
+C58945                                              1 	(obj:0)
+C59500                                              1 	(obj:0)
+C59975                                              1 	(obj:0)
+C60612                                              1 	(obj:0)
+C61250                                              1 	(obj:0)
+C61641                                              1 	(obj:0)
+C62335                                              1 	(obj:0)
+C62788                                              1 	(obj:0)
+C63307                                              1 	(obj:0)
+C63943                                              1 	(obj:0)
+C64553                                              1 	(obj:0)
+C65137                                              1 	(obj:0)
+C65609                                              1 	(obj:0)
+C66137                                              1 	(obj:0)
+C66639                                              1 	(obj:0)
+C67275                                              1 	(obj:0)
+C67830                                              1 	(obj:0)
+C68305                                              1 	(obj:0)
+C68942                                              1 	(obj:0)
+C69497                                              1 	(obj:0)
+C69971                                              1 	(obj:0)
+C70609                                              1 	(obj:0)
+C71125                                              1 	(obj:0)
+C71796                                              1 	(obj:0)
+C72234                                              1 	(obj:0)
+C72784                                              1 	(obj:0)
+C73303                                              1 	(obj:0)
+C73940                                              1 	(obj:0)
+C74495                                              1 	(obj:0)
+C74969                                              1 	(obj:0)
+C75553                                              1 	(obj:0)
+C76161                                              1 	(obj:0)
+C76635                                              1 	(obj:0)
+C77208                                              1 	(obj:0)
+C77827                                              1 	(obj:0)
+C78301                                              1 	(obj:0)
+C78855                                              1 	(obj:0)
+C79408                                              1 	(obj:0)
+C79967                                              1 	(obj:0)
+C80497                                              1 	(obj:0)
+C81158                                              1 	(obj:0)
+C81633                                              1 	(obj:0)
+C82151                                              1 	(obj:0)
+C82824                                              1 	(obj:0)
+C83324                                              1 	(obj:0)
+C83817                                              1 	(obj:0)
+C84490                                              1 	(obj:0)
+C84965                                              1 	(obj:0)
+C85630                                              1 	(obj:0)
+C86079                                              1 	(obj:0)
+C86631                                              1 	(obj:0)
+C87267                                              1 	(obj:0)
+C87822                                              1 	(obj:0)
+C88323                                              1 	(obj:0)
+C88835                                              1 	(obj:0)
+C89394                                              1 	(obj:0)
+C89963                                              1 	(obj:0)
+C90599                                              1 	(obj:0)
+C91069                                              1 	(obj:0)
+C91629                                              1 	(obj:0)
+C92184                                              1 	(obj:0)
+C92740                                              1 	(obj:0)
+C93295                                              1 	(obj:0)
+C93867                                              1 	(obj:0)
+C94406                                              1 	(obj:0)
+C94961                                              1 	(obj:0)
+C95475                                              1 	(obj:0)
+C96149                                              1 	(obj:0)
+C96627                                              1 	(obj:0)
+C97206                                              1 	(obj:0)
+C97815                                              1 	(obj:0)
+C98238                                              1 	(obj:0)
+C98857                                              1 	(obj:0)
+C99481                                              1 	(obj:0)
+C99959                                              1 	(obj:0)
+C100593                                             1 	(obj:0)
+C101148                                             1 	(obj:0)
+C101625                                             1 	(obj:0)
+C102260                                             1 	(obj:0)
+C102849                                             1 	(obj:0)
+C103279                                             1 	(obj:0)
+C103959                                             1 	(obj:0)
+C104516                                             1 	(obj:0)
+C104957                                             1 	(obj:0)
+C105626                                             1 	(obj:0)
+C106182                                             1 	(obj:0)
+C106623                                             1 	(obj:0)
+C107256                                             1 	(obj:0)
+C107811                                             1 	(obj:0)
+C108289                                             1 	(obj:0)
+C108958                                             1 	(obj:0)
+C109514                                             1 	(obj:0)
+C109955                                             1 	(obj:0)
+C110588                                             1 	(obj:0)
+C111077                                             1 	(obj:0)
+C111621                                             1 	(obj:0)
+C112290                                             1 	(obj:0)
+C112847                                             1 	(obj:0)
+C113281                                             1 	(obj:0)
+C113791                                             1 	(obj:0)
+C114514                                             1 	(obj:0)
+C114953                                             1 	(obj:0)
+C115458                                             1 	(obj:0)
+C116182                                             1 	(obj:0)
+C116619                                             1 	(obj:0)
+C117249                                             1 	(obj:0)
+C117848                                             1 	(obj:0)
+C118257                                             1 	(obj:0)
+C118790                                             1 	(obj:0)
+C119469                                             1 	(obj:0)
+C119951                                             1 	(obj:0)
+C120620                                             1 	(obj:0)
+C121135                                             1 	(obj:0)
+C121617                                             1 	(obj:0)
+C122247                                             1 	(obj:0)
+C122846                                             1 	(obj:0)
+C123283                                             1 	(obj:0)
+C123791                                             1 	(obj:0)
+C124389                                             1 	(obj:0)
+C124883                                             1 	(obj:0)
+C125619                                             1 	(obj:0)
+C126132                                             1 	(obj:0)
+C126615                                             1 	(obj:0)
+C127285                                             1 	(obj:0)
+C127844                                             1 	(obj:0)
+C128281                                             1 	(obj:0)
+C128909                                             1 	(obj:0)
+C129511                                             1 	(obj:0)
+C129947                                             1 	(obj:0)
+C130575                                             1 	(obj:0)
+C131043                                             1 	(obj:0)
+C131733                                             1 	(obj:0)
+C132241                                             1 	(obj:0)
+C132796                                             1 	(obj:0)
+C133279                                             1 	(obj:0)
+C133950                                             1 	(obj:0)
+C134462                                             1 	(obj:0)
+C134945                                             1 	(obj:0)
+C135616                                             1 	(obj:0)
+C136177                                             1 	(obj:0)
+C136611                                             1 	(obj:0)
+C137239                                             1 	(obj:0)
+C137688                                             1 	(obj:0)
+C138277                                             1 	(obj:0)
+C138905                                             1 	(obj:0)
+C139315                                             1 	(obj:0)
+C139943                                             1 	(obj:0)
+C140571                                             1 	(obj:0)
+C141079                                             1 	(obj:0)
+C141609                                             1 	(obj:0)
+C142237                                             1 	(obj:0)
+C142792                                             1 	(obj:0)
+C143275                                             1 	(obj:0)
+C143904                                             1 	(obj:0)
+C144408                                             1 	(obj:0)
+C144941                                             1 	(obj:0)
+C145610                                             1 	(obj:0)
+C146125                                             1 	(obj:0)
+C146607                                             1 	(obj:0)
+C147104                                             1 	(obj:0)
+C147791                                             1 	(obj:0)
+C148273                                             1 	(obj:0)
+C148903                                             1 	(obj:0)
+C149458                                             1 	(obj:0)
+C149939                                             1 	(obj:0)
+C150570                                             1 	(obj:0)
+C151018                                             1 	(obj:0)
+C151605                                             1 	(obj:0)
+C152236                                             1 	(obj:0)
+C152641                                             1 	(obj:0)
+C153271                                             1 	(obj:0)
+C153902                                             1 	(obj:0)
+C154457                                             1 	(obj:0)
+C154937                                             1 	(obj:0)
+C155430                                             1 	(obj:0)
+C155986                                             1 	(obj:0)
+C156603                                             1 	(obj:0)
+C157154                                             1 	(obj:0)
+C157795                                             1 	(obj:0)
+C158269                                             1 	(obj:0)
+C158907                                             1 	(obj:0)
+C159453                                             1 	(obj:0)
+C159935                                             1 	(obj:0)
+C160565                                             1 	(obj:0)
+C160991                                             1 	(obj:0)
+C161601                                             1 	(obj:0)
+C162091                                             1 	(obj:0)
+C162785                                             1 	(obj:0)
+C163267                                             1 	(obj:0)
+C163911                                             1 	(obj:0)
+C164451                                             1 	(obj:0)
+C164933                                             1 	(obj:0)
+C165563                                             1 	(obj:0)
+C166138                                             1 	(obj:0)
+C166501                                             1 	(obj:1)
+C166502                                             1 	(obj:1)
+C166503                                             1 	(obj:1)
+C166504                                             1 	(obj:1)
+C166505                                             1 	(obj:1)
+C166506                                             1 	(obj:1)
+C166507                                             1 	(obj:1)
+C166508                                             1 	(obj:1)
+C166509                                             1 	(obj:1)
+C166510                                             1 	(obj:1)
+C166511                                             1 	(obj:1)
+C166512                                             1 	(obj:1)
+C166513                                             1 	(obj:1)
+C166514                                             1 	(obj:1)
+C166515                                             1 	(obj:1)
+C166516                                             1 	(obj:1)
+C166517                                             1 	(obj:1)
+C166518                                             1 	(obj:1)
+C166519                                             1 	(obj:1)
+C166520                                             1 	(obj:1)
+C166521                                             1 	(obj:1)
+C166522                                             1 	(obj:1)
+C166523                                             1 	(obj:1)
+C166524                                             1 	(obj:1)
+C166525                                             1 	(obj:1)
+C166526                                             1 	(obj:1)
+C166527                                             1 	(obj:1)
+C166528                                             1 	(obj:1)
+C166529                                             1 	(obj:1)
+C166530                                             1 	(obj:1)
+C166531                                             1 	(obj:1)
+C166532                                             1 	(obj:1)
+C166533                                             1 	(obj:1)
+C166534                                             1 	(obj:1)
+C166535                                             1 	(obj:1)
+C166536                                             1 	(obj:1)
+C166537                                             1 	(obj:1)
+C166538                                             1 	(obj:1)
+C166539                                             1 	(obj:1)
+C166540                                             1 	(obj:1)
+C166541                                             1 	(obj:1)
+C166542                                             1 	(obj:1)
+C166543                                             1 	(obj:1)
+C166544                                             1 	(obj:1)
+C166545                                             1 	(obj:1)
+C166546                                             1 	(obj:1)
+C166547                                             1 	(obj:1)
+C166548                                             1 	(obj:1)
+C166549                                             1 	(obj:1)
+C166550                                             1 	(obj:1)
+C166551                                             1 	(obj:1)
+C166552                                             1 	(obj:1)
+C166553                                             1 	(obj:1)
+C166554                                             1 	(obj:1)
+C166555                                             1 	(obj:1)
+C166556                                             1 	(obj:1)
+C166557                                             1 	(obj:1)
+C166558                                             1 	(obj:1)
+C166559                                             1 	(obj:1)
+C166560                                             1 	(obj:1)
+C166561                                             1 	(obj:1)
+C166562                                             1 	(obj:1)
+C166563                                             1 	(obj:1)
+C166564                                             1 	(obj:1)
+C166565                                             1 	(obj:1)
+C166566                                             1 	(obj:1)
+C166567                                             1 	(obj:1)
+C166568                                             1 	(obj:1)
+C166569                                             1 	(obj:1)
+C166570                                             1 	(obj:1)
+C166571                                             1 	(obj:1)
+C166572                                             1 	(obj:1)
+C166573                                             1 	(obj:1)
+C166574                                             1 	(obj:1)
+C166575                                             1 	(obj:1)
+C166576                                             1 	(obj:1)
+C166577                                             1 	(obj:1)
+C166578                                             1 	(obj:1)
+C166579                                             1 	(obj:1)
+C166580                                             1 	(obj:1)
+C166581                                             1 	(obj:1)
+C166582                                             1 	(obj:1)
+C166583                                             1 	(obj:1)
+C166584                                             1 	(obj:1)
+C166585                                             1 	(obj:1)
+C166586                                             1 	(obj:1)
+C166587                                             1 	(obj:1)
+C166588                                             1 	(obj:1)
+C166589                                             1 	(obj:1)
+C166590                                             1 	(obj:1)
+C166591                                             1 	(obj:1)
+C166592                                             1 	(obj:1)
+C166593                                             1 	(obj:1)
+C166594                                             1 	(obj:1)
+C166595                                             1 	(obj:1)
+C166596                                             1 	(obj:1)
+C166597                                             1 	(obj:1)
+C166598                                             1 	(obj:1)
+C166599                                             1 	(obj:1)
+C166600                                             1 	(obj:1)
+C166601                                             1 	(obj:1)
+C166602                                             1 	(obj:1)
+C166603                                             1 	(obj:1)
+C166604                                             1 	(obj:1)
+C166605                                             1 	(obj:1)
+C166606                                             1 	(obj:1)
+C166607                                             1 	(obj:1)
+C166608                                             1 	(obj:1)
+C166609                                             1 	(obj:1)
+C166610                                             1 	(obj:1)
+C166611                                             1 	(obj:1)
+C166612                                             1 	(obj:1)
+C166613                                             1 	(obj:1)
+C166614                                             1 	(obj:1)
+C166615                                             1 	(obj:1)
+C166616                                             1 	(obj:1)
+C166617                                             1 	(obj:1)
+C166618                                             1 	(obj:1)
+C166619                                             1 	(obj:1)
+C166620                                             1 	(obj:1)
+C166621                                             1 	(obj:1)
+C166622                                             1 	(obj:1)
+C166623                                             1 	(obj:1)
+C166624                                             1 	(obj:1)
+C166625                                             1 	(obj:1)
+C166626                                             1 	(obj:1)
+C166627                                             1 	(obj:1)
+C166628                                             1 	(obj:1)
+C166629                                             1 	(obj:1)
+C166630                                             1 	(obj:1)
+C166631                                             1 	(obj:1)
+C166632                                             1 	(obj:1)
+C166633                                             1 	(obj:1)
+C166634                                             1 	(obj:1)
+C166635                                             1 	(obj:1)
+C166636                                             1 	(obj:1)
+C166637                                             1 	(obj:1)
+C166638                                             1 	(obj:1)
+C166639                                             1 	(obj:1)
+C166640                                             1 	(obj:1)
+C166641                                             1 	(obj:1)
+C166642                                             1 	(obj:1)
+C166643                                             1 	(obj:1)
+C166644                                             1 	(obj:1)
+C166645                                             1 	(obj:1)
+C166646                                             1 	(obj:1)
+C166647                                             1 	(obj:1)
+C166648                                             1 	(obj:1)
+C166649                                             1 	(obj:1)
+C166650                                             1 	(obj:1)
+C166651                                             1 	(obj:1)
+C166652                                             1 	(obj:1)
+C166653                                             1 	(obj:1)
+C166654                                             1 	(obj:1)
+C166655                                             1 	(obj:1)
+C166656                                             1 	(obj:1)
+C166657                                             1 	(obj:1)
+C166658                                             1 	(obj:1)
+C166659                                             1 	(obj:1)
+C166660                                             1 	(obj:1)
+C166661                                             1 	(obj:1)
+C166662                                             1 	(obj:1)
+C166663                                             1 	(obj:1)
+C166664                                             1 	(obj:1)
+C166665                                             1 	(obj:1)
+C166666                                             1 	(obj:1)
+C166667                                             1 	(obj:1)
+C166668                                             1 	(obj:1)
+C166669                                             1 	(obj:1)
+C166670                                             1 	(obj:1)
+C166671                                             1 	(obj:1)
+C166672                                             1 	(obj:1)
+C166673                                             1 	(obj:1)
+C166674                                             1 	(obj:1)
+C166675                                             1 	(obj:1)
+C166676                                             1 	(obj:1)
+C166677                                             1 	(obj:1)
+C166678                                             1 	(obj:1)
+C166679                                             1 	(obj:1)
+C166680                                             1 	(obj:1)
+C166681                                             1 	(obj:1)
+C166682                                             1 	(obj:1)
+C166683                                             1 	(obj:1)
+C166684                                             1 	(obj:1)
+C166685                                             1 	(obj:1)
+C166686                                             1 	(obj:1)
+C166687                                             1 	(obj:1)
+C166688                                             1 	(obj:1)
+C166689                                             1 	(obj:1)
+C166690                                             1 	(obj:1)
+C166691                                             1 	(obj:1)
+C166692                                             1 	(obj:1)
+C166693                                             1 	(obj:1)
+C166694                                             1 	(obj:1)
+C166695                                             1 	(obj:1)
+C166696                                             1 	(obj:1)
+C166697                                             1 	(obj:1)
+C166698                                             1 	(obj:1)
+C166699                                             1 	(obj:1)
+C166700                                             1 	(obj:1)
+C166701                                             1 	(obj:1)
+C166702                                             1 	(obj:1)
+C166703                                             1 	(obj:1)
+
+Statistics
+==========
+
+Master Program statistics:
+SCIP Status        : solving was interrupted [node limit reached]
+Total Time         :    1674.25
+  solving          :    1674.25
+  presolving       :       0.04 (included in solving)
+  reading          :       0.00
+  copying          :       2.73 (9 #copies) (minimal 0.25, maximal 0.62, average 0.30)
+Original Problem   :
+  Problem name     : master_neos-631710
+  Variables        : 0 (0 binary, 0 integer, 0 implicit integer, 0 continuous)
+  Constraints      : 167911 initial, 167911 maximal
+  Objective        : minimize, 0 non-zeros (abs.min = 1e+20, abs.max = -1e+20)
+Presolved Problem  :
+  Problem name     : t_master_neos-631710
+  Variables        : 13507 (0 binary, 13507 integer, 0 implicit integer, 0 continuous)
+  Constraints      : 167911 initial, 167912 maximal
+  Objective        : minimize, 12696 non-zeros (abs.min = 1, abs.max = 1)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  roundbound       :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  linear           :       0.03       0.01      2          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -          0          -          -          0          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  masterbranch     :          0+         1          0          1          0          0          0          0          0          0          0          0          0          0          0
+  integralorig     :          0          0          0          0          1          0          0          8          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          1          0          0          8          0          0          0          0          0          0          2
+  linear           :     167911     167911          5       1731          0          0          0          8          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  masterbranch     :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integralorig     :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       1.53       0.01       0.07       0.06       0.00       0.00       0.00       1.38       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          1          0          0          0
+  genvbounds       :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          0          0          0          0
+  redcost          :          0          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :       1731          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.00       0.00       0.00       0.00       0.00       0.00
+  redcost          :       0.00       0.00       0.00       0.00       0.00       0.00
+  rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
+  vbounds          :       0.00       0.00       0.00       0.00       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     0          -          -          0          -          -    (maximal pool size: 0)
+  basis            :     714.37       0.00          2          0          0          6          2          0
+  master           :       8.21       0.00          5          0          0          5          3          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.43          -        214      10679
+  gcg              :     864.51       0.03        174      12395
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  generic          :       0.00       0.00          0          0          0          0          0          0          0          0
+  orig             :       0.00       0.00          1          0          0          0          0          0          0          2
+  relpsprob        :       0.00       0.00          0          0          0          0          0          0          0          0
+  ryanfoster       :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :      10.11       0.00          1          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  greedycolsel     :       0.03       0.00         10          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mastercoefdiving :       0.00       0.00          0          0          0
+  masterfracdiving :       0.00       0.00          0          0          0
+  masterlinesdiving:       0.00       0.00          0          0          0
+  mastervecldiving :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.15       0.00          1          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       2.53       0.00          5          0          0
+  relaxcolsel      :      22.77       0.00          1          0          0
+  rens             :       1.12       0.00          1          0          0
+  restmaster       :       3.10       0.00          1          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.05       0.00          5          0          0
+  setcover         :       0.00       0.00          0          0          0
+  shiftandpropagate:       0.00       0.00          0          0          0
+  shifting         :       0.07       0.00          5          0          0
+  simplerounding   :       0.10       0.00        146          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.01       0.00          1          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :      19.74        219       5646      31.90     286.04       2.07         42
+  dual LP          :      16.28        267       2844     568.80     174.73      11.33        262
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:      11.14         10       5988     598.80     537.64
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+B&B Tree           :
+  number of runs   :          1
+  nodes            :          1 (1 internal, 0 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          0
+  objective leaves :          0
+  nodes (total)    :          1 (1 internal, 0 leaves)
+  nodes left       :          0
+  max depth        :          0
+  max depth (total):          0
+  backtracks       :          0 (0.0%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          0 (0 domain reductions, 0 cutoffs)
+  avg switch length:       1.00
+  switching time   :       0.00
+Root Node          :
+  First LP value   :          -
+  First LP Iters   :          0
+  First LP Time    :       0.09
+  Final Dual Bound : +2.02500000000000e+02
+  Final Root Iters :      14478
+  Root LP Estimate : +2.02500000000003e+02
+Solution           :
+  Solutions found  :          3 (3 improvements)
+  First Solution   : +5.56000000000000e+02   (in run 1, after 1 nodes, 0.72 seconds, depth 0, found by <relaxation>)
+  Gap First Sol.   :     195.35 %
+  Gap Last Sol.    :       0.25 %
+  Primal Bound     : +2.03000000000000e+02   (in run 1, after 1 nodes, 1674.25 seconds, depth 0, found by <relaxation>)
+  Dual Bound       : +2.02500000000000e+02
+  Gap              :       0.25 %
+  Avg. Gap         :      64.99 % (108802.41 primal-dual integral)
+Pricing Solver     : #HeurFarkas  #OptFarkas  #HeurRedcost #OptRedcost Time: HeurFarkas  OptFarkas  HeurRedcost OptRedcost
+  knapsack         :           0           0             0           0             0.00       0.00         0.02       0.00 
+  mip              :           0           0         48282        1415             0.00       0.00       699.83       1.89 
+
+Original Program statistics:
+SCIP Status        : problem is solved [optimal solution found]
+Total Time         :    3045.49
+  solving          :    3043.66
+  presolving       :      85.84 (included in solving)
+  reading          :       1.84
+  copying          :       1.07 (2 #copies) (minimal 0.52, maximal 0.54, average 0.53)
+Original Problem   :
+  Problem name     : neos-631710
+  Variables        : 167056 (167056 binary, 0 integer, 0 implicit integer, 0 continuous)
+  Constraints      : 169576 initial, 169576 maximal
+  Objective        : minimize, 556 non-zeros (abs.min = 1, abs.max = 1)
+Presolved Problem  :
+  Problem name     : t_neos-631710
+  Variables        : 167056 (167056 binary, 0 integer, 0 implicit integer, 0 continuous)
+  Constraints      : 169577 initial, 169578 maximal
+  Objective        : minimize, 556 non-zeros (abs.min = 1, abs.max = 1)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  convertinttobin  :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  domcol           :       1.23       0.00      1          0          0          0          0          0          0          0          0          0
+  implics          :       0.01       0.00      2          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  trivial          :       0.02       0.00      2          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.02       0.00      2          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :      78.28       0.01      1          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.39       0.00      1          0          0          0          0          0          0          0          0          0
+  knapsack         :       1.38       0.01      3          0          0          0          0          0          1          2          2        248
+  setppc           :       0.47       0.03      3          0          0          0          0          0          0          0          0          0
+  linear           :       3.45       0.20      2          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -          0          -          -          0          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  origbranch       :          0+         1          0          0          0          0          0          0          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          0          0          0        405          0          0          0          0          0          0          0
+  decomp           :          0          0          0          0          0          0          0        395          0          0          0          0          0          0          0
+  knapsack         :        555        555          8     169585          0          0          0        390          0          2          0          0          0          0          0
+  setppc           :     169022     169022          8     169584          0          0          0        389          0          5          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  origbranch       :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       4.59       0.00       0.00       0.00       0.00       0.00       0.00       4.59       0.00       0.00
+  decomp           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  knapsack         :       4.40       0.01       0.12       0.90       0.00       0.00       0.00       3.37       0.00       0.00
+  setppc           :      29.16       0.03       0.52      16.66       0.00       0.00       0.00      11.95       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          2          0          0          0
+  genvbounds       :          0          0          0          0
+  obbt             :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          4          0          0          0
+  redcost          :          2          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :     166588          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.04       0.00       0.02       0.02       0.00       0.00
+  genvbounds       :       0.01       0.00       0.00       0.01       0.00       0.00
+  obbt             :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :      78.29       0.01      78.28       0.00       0.00       0.00
+  pseudoobj        :       7.48       0.00       0.00       7.48       0.00       0.00
+  redcost          :       0.04       0.00       0.00       0.04       0.00       0.00
+  rootredcost      :       0.02       0.00       0.00       0.02       0.00       0.00
+  vbounds          :       0.48       0.00       0.39       0.08       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     6          -          -          6          -          -    (maximal pool size: 21)
+  clique           :       5.86       0.00          8          0          0          0          0          0
+  closecuts        :       0.00       0.00          0          0          0          0          0          0
+  gomory           :      18.28       0.00          3          0          0          0          0          0
+  impliedbounds    :       0.29       0.00          8          0          0          0          0          0
+  intobj           :       0.00       0.00          0          0          0          0          0          0
+  mcf              :       0.54       0.00          1          0          0          0          0          0
+  oddcycle         :       4.12       0.00          8          0          0          9          1          0
+  rapidlearning    :       0.00       0.00          0          0          0          0          0          0
+  strongcg         :       4.66       0.00          3          0          0          0          0          0
+  zerohalf         :       0.77       0.00          6          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.00          -          0          0
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  empty            :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :     120.62       0.00          1          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  gcgcoefdiving    :       0.00       0.00          0          0          0
+  gcgdins          :       0.00       0.00          0          0          0
+  gcgfeaspump      :       0.00       0.00          0          0          0
+  gcgfracdiving    :       0.00       0.00          0          0          0
+  gcgguideddiving  :       0.00       0.00          0          0          0
+  gcglinesdiving   :       0.00       0.00          0          0          0
+  gcgpscostdiving  :       0.00       0.00          0          0          0
+  gcgrens          :       3.87       0.00          1          1          1
+  gcgrins          :       0.00       0.00          0          0          0
+  gcgrounding      :       0.09       0.00          1          0          0
+  gcgshifting      :       0.12       0.00          1          0          0
+  gcgsimplerounding:       0.01       0.00          0          0          0
+  gcgveclendiving  :       0.00       0.00          0          0          0
+  gcgzirounding    :       0.00       0.00          0          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  nlpdiving        :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.11       0.00          1          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.13       0.00          1          0          0
+  rens             :       3.83       0.00          1          1          1
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.09       0.00          1          0          0
+  shiftandpropagate:       0.00       0.00          0          0          0
+  shifting         :       0.35       0.00          1          0          0
+  simplerounding   :       0.01       0.00          1          0          0
+  subnlp           :       0.00       0.00          0          0          0
+  trivial          :       0.43       0.00          2          0          0
+  trysol           :       0.00       0.00          0          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  undercover       :       0.00       0.00          0          0          0
+  vbounds          :       4.72       0.00          1          1          1
+  veclendiving     :       0.00       0.00          0          0          0
+  xpcrossover      :       0.00       0.00          0          0          0
+  xprins           :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.02       0.00          1          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.00          0          0       0.00          -       0.00          0
+  dual LP          :    1120.51          1      55057   55057.00      49.14       0.00          0
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:     803.27         36     108348    3009.67     134.88
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+Relaxators         :       Time      Calls
+  gcg              :    1694.72          1
+B&B Tree           :
+  number of runs   :          1
+  nodes            :          1 (0 internal, 1 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          1
+  objective leaves :          0
+  nodes (total)    :          1 (0 internal, 1 leaves)
+  nodes left       :          0
+  max depth        :          0
+  max depth (total):          0
+  backtracks       :          0 (0.0%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          0 (0 domain reductions, 0 cutoffs)
+  avg switch length:       2.00
+  switching time   :       0.00
+Root Node          :
+  First LP value   : +1.88250000000000e+02
+  First LP Iters   :      55057 (49.13 Iter/sec)
+  First LP Time    :    1120.54
+  Final Dual Bound : +2.03000000000000e+02
+  Final Root Iters :      55057
+  Root LP Estimate :                     -
+Solution           :
+  Solutions found  :          3 (3 improvements)
+  First Solution   : +5.56000000000000e+02   (in run 1, after 1 nodes, 98.04 seconds, depth 301, found by <vbounds>)
+  Gap First Sol.   :   infinite
+  Gap Last Sol.    :       0.25 %
+  Primal Bound     : +2.03000000000000e+02   (in run 1, after 1 nodes, 3042.81 seconds, depth 0, found by <gcgrens>)
+  Dual Bound       : +2.03000000000000e+02
+  Gap              :       0.00 %
+  Avg. Gap         :          - (not evaluated)
+
+Simplex iterations :       iter
+  Master LP        :      14478
+  Pricing LP       :      41741
+  Original LP      :     163405
+
+Detector statistics:       time     number     blocks
+  connected        :       0.00          0    
+  constype         :       0.00          0    
+  postproces       :       0.00          0    
+  consclass        :     314.46          0    
+  consname         :       0.00          0    
+  densemaste       :       0.04          0    
+  stairheur        :       0.00          0    
+  staircase        :       0.00          0    
+  random           :       0.00          0    
+  staircase_       :       0.00          0    
+  colors           :       0.00          0    
+  cutpacking       :       0.00          0    
+  compgreedi       :       0.00          0    
+  mastersetc       :       0.00          0    
+  mastersetp       :       0.00          0    
+  mastersetp       :       0.00          0    
+  hcgpartiti       :       0.00          0    
+  hrgpartiti       :       0.00          0    
+  hrcgpartit       :       0.00          0    
+  connectedb       :       0.00          0    
+  connected_       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  varclass         :      28.65          0    
+  isomorph         :       0.00          0    
+
+Decomp statistics  :
+  type             :   bordered
+  detector         :         cC
+  blocks           :        556
+  aggr. blocks     :        556
+Master statistics  :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros    bnzeros bintnzeros  min(dens)  max(dens) medi(dens) mean(dens)
+  master           :          0          0          0          0          0     167355     500610     500610          0          0      0.000      0.002      0.000      0.000
+Pricing statistics :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros  min(dens)  max(dens) medi(dens) mean(dens)  identical
+          1        :        101        101          0          0          0          2        201        201      0.500      1.000      1.000      0.995          1
+          2        :        201        201          0          0          0          4        548        548      0.500      0.750      0.750      0.682          1
+          3        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+          4        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+          5        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+          6        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+          7        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+          8        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+          9        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         10        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         11        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         12        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         13        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         14        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         15        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         16        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         17        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         18        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         19        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         20        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         21        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         22        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         23        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         24        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         25        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         26        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         27        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         28        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         29        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         30        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         31        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         32        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         33        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         34        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         35        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         36        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         37        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         38        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         39        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         40        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         41        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         42        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         43        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         44        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         45        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         46        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         47        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         48        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         49        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         50        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         51        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         52        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         53        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         54        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         55        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         56        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         57        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         58        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         59        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         60        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         61        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         62        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         63        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         64        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         65        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         66        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         67        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         68        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         69        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         70        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         71        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         72        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         73        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         74        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         75        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         76        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         77        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         78        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         79        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         80        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         81        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         82        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         83        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         84        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         85        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         86        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         87        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         88        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         89        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         90        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         91        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         92        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         93        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         94        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         95        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         96        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         97        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         98        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+         99        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        100        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        101        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        102        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        103        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        104        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        105        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        106        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        107        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        108        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        109        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        110        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        111        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        112        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        113        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        114        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        115        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        116        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        117        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        118        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        119        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        120        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        121        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        122        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        123        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        124        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        125        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        126        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        127        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        128        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        129        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        130        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        131        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        132        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        133        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        134        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        135        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        136        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        137        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        138        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        139        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        140        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        141        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        142        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        143        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        144        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        145        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        146        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        147        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        148        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        149        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        150        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        151        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        152        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        153        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        154        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        155        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        156        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        157        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        158        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        159        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        160        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        161        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        162        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        163        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        164        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        165        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        166        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        167        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        168        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        169        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        170        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        171        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        172        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        173        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        174        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        175        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        176        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        177        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        178        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        179        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        180        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        181        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        182        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        183        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        184        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        185        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        186        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        187        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        188        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        189        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        190        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        191        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        192        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        193        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        194        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        195        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        196        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        197        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        198        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        199        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        200        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        201        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        202        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        203        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        204        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        205        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        206        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        207        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        208        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        209        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        210        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        211        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        212        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        213        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        214        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        215        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        216        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        217        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        218        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        219        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        220        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        221        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        222        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        223        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        224        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        225        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        226        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        227        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        228        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        229        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        230        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        231        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        232        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        233        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        234        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        235        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        236        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        237        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        238        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        239        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        240        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        241        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        242        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        243        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        244        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        245        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        246        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        247        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        248        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        249        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        250        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        251        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        252        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        253        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        254        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        255        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        256        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        257        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        258        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        259        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        260        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        261        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        262        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        263        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        264        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        265        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        266        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        267        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        268        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        269        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        270        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        271        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        272        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        273        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        274        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        275        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        276        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        277        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        278        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        279        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        280        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        281        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        282        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        283        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        284        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        285        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        286        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        287        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        288        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        289        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        290        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        291        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        292        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        293        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        294        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        295        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        296        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        297        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        298        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        299        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        300        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        301        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        302        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        303        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        304        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        305        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        306        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        307        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        308        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        309        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        310        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        311        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        312        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        313        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        314        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        315        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        316        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        317        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        318        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        319        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        320        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        321        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        322        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        323        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        324        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        325        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        326        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        327        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        328        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        329        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        330        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        331        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        332        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        333        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        334        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        335        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        336        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        337        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        338        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        339        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        340        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        341        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        342        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        343        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        344        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        345        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        346        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        347        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        348        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        349        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        350        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        351        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        352        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        353        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        354        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        355        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        356        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        357        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        358        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        359        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        360        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        361        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        362        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        363        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        364        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        365        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        366        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        367        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        368        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        369        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        370        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        371        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        372        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        373        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        374        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        375        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        376        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        377        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        378        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        379        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        380        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        381        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        382        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        383        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        384        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        385        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        386        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        387        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        388        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        389        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        390        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        391        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        392        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        393        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        394        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        395        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        396        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        397        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        398        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        399        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        400        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        401        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        402        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        403        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        404        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        405        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        406        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        407        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        408        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        409        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        410        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        411        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        412        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        413        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        414        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        415        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        416        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        417        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        418        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        419        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        420        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        421        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        422        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        423        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        424        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        425        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        426        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        427        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        428        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        429        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        430        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        431        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        432        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        433        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        434        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        435        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        436        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        437        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        438        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        439        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        440        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        441        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        442        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        443        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        444        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        445        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        446        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        447        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        448        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        449        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        450        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        451        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        452        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        453        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        454        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        455        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        456        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        457        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        458        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        459        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        460        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        461        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        462        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        463        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        464        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        465        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        466        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        467        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        468        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        469        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        470        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        471        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        472        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        473        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        474        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        475        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        476        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        477        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        478        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        479        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        480        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        481        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        482        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        483        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        484        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        485        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        486        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        487        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        488        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        489        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        490        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        491        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        492        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        493        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        494        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        495        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        496        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        497        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        498        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        499        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        500        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        501        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        502        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        503        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        504        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        505        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        506        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        507        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        508        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        509        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        510        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        511        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        512        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        513        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        514        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        515        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        516        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        517        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        518        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        519        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        520        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        521        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        522        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        523        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        524        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        525        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        526        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        527        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        528        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        529        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        530        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        531        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        532        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        533        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        534        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        535        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        536        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        537        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        538        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        539        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        540        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        541        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        542        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        543        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        544        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        545        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        546        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        547        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        548        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        549        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        550        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        551        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        552        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        553        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        554        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        555        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+        556        :        301        301          0          0          0          4        601        601      0.250      0.500      0.500      0.499          1
+Decomp Scores      :
+  border area      :      0.987
+  avg. density     :      0.501
+  linking score    :      0.500
+Pricing time in colpool = 9.708117 sec
+
+GCGTIME= 6154.09

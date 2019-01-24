@@ -1,0 +1,1827 @@
+GCG version 3.0.0 [GitHash: 70e7382]
+Copyright (C) 2010-2018 Operations Research, RWTH Aachen University
+                        Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+SCIP version 6.0.0 [precision: 8 byte] [memory: block] [mode: optimized] [LP solver: SoPlex 4.0.0] [GitHash: 77d3bc8]
+Copyright (C) 2002-2018 Konrad-Zuse-Zentrum fuer Informationstechnik Berlin (ZIB)
+
+External codes: 
+  Readline 6.0         GNU library for command line editing (gnu.org/s/readline)
+  SoPlex 4.0.0         Linear Programming Solver developed at Zuse Institute Berlin (soplex.zib.de) [GitHash: 82cab95]
+  CppAD 20180000.0     Algorithmic Differentiation of C++ algorithms developed by B. Bell (www.coin-or.org/CppAD)
+  ZLIB 1.2.3           General purpose compression library by J. Gailly and M. Adler (zlib.net)
+  ZIMPL 3.3.6          Zuse Institute Mathematical Programming Language developed by T. Koch (zimpl.zib.de)
+  bliss 0.73           A Tool for Computing Automorphism Groups of Graphs by T. Junttila and P. Kaski (http://www.tcs.hut.fi/Software/bliss/)
+
+reading user parameter file </LOG_DATA/scripts/options_gcg.parm>
+
+read problem </ORDATA/miplib/msc98_ip.mps>
+============
+
+original problem has 21143 variables (20237 bin, 53 int, 0 impl, 853 cont) and 15850 constraints
+presolving:
+(round 1, fast)       8225 del vars, 546 del conss, 0 add conss, 179 chg bounds, 137 chg sides, 225 chg coeffs, 0 upgd conss, 0 impls, 1800 clqs
+(round 2, fast)       8294 del vars, 560 del conss, 0 add conss, 179 chg bounds, 137 chg sides, 225 chg coeffs, 0 upgd conss, 0 impls, 1803 clqs
+(round 3, fast)       8350 del vars, 563 del conss, 0 add conss, 179 chg bounds, 137 chg sides, 225 chg coeffs, 0 upgd conss, 0 impls, 1803 clqs
+(round 4, exhaustive) 8371 del vars, 670 del conss, 0 add conss, 191 chg bounds, 137 chg sides, 227 chg coeffs, 0 upgd conss, 12 impls, 1798 clqs
+(round 5, exhaustive) 8372 del vars, 672 del conss, 0 add conss, 224 chg bounds, 139 chg sides, 247 chg coeffs, 8279 upgd conss, 12 impls, 1798 clqs
+(round 6, fast)       8386 del vars, 847 del conss, 0 add conss, 224 chg bounds, 139 chg sides, 247 chg coeffs, 8279 upgd conss, 812 impls, 1798 clqs
+(round 7, medium)     8386 del vars, 860 del conss, 13 add conss, 224 chg bounds, 148 chg sides, 278 chg coeffs, 8279 upgd conss, 812 impls, 1801 clqs
+   (0.7s) probing: 299/11945 (2.5%) - 5 fixings, 0 aggregations, 482 implications, 0 bound changes
+   (0.7s) probing aborted: 50/50 successive totally useless probings
+presolving (8 rounds: 8 fast, 4 medium, 3 exhaustive):
+ 8391 deleted vars, 865 deleted constraints, 13 added constraints, 224 tightened bounds, 0 added holes, 148 changed sides, 435 changed coefficients
+ 1190 implications, 1905 cliques
+presolved problem has 12752 variables (11940 bin, 0 int, 0 impl, 812 cont) and 14998 constraints
+    812 constraints of type <varbound>
+   1217 constraints of type <knapsack>
+   1679 constraints of type <setppc>
+   6898 constraints of type <linear>
+   4392 constraints of type <logicor>
+Presolving Time: 0.68
+start creating seeedpool for current problem 
+created seeedpool for current problem, n detectors: 26 
+ Consclassifier "nonzeros" yields a classification with 40  different constraint classes 
+ Consclassifier "constypes" yields a classification with 6 different constraint classes 
+ Consclassifier "constypes according to miplib" yields a classification with 10 different constraint classes 
+ Varclassifier "vartypes" yields a classification with 2 different variable classes
+ Varclassifier "varobjvals" yields a classification with 1685 different variable classes
+ Varclassifier "varobjvalsigns" yields a classification with 3 different variable classes
+ Added reduced version of consclassifier constypes according to miplib with 9  different constraint classes 
+ the current consclass distribution includes 40 classes but only 18 are allowed for calcCandidatesNBlocks()
+ the current varclass distribution includes 1685 classes but only 18 are allowed for calcCandidatesNBlocks()
+Begin of detection round 0 of 1 total rounds 
+Start to propagate seeed with id 1 (0 of 1 in round 0) 
+ in dec_consclass: there are 4 different constraint classes   
+ the current consclass distribution includes 40 classes but only 9 are allowed for propagateSeeed() of cons class detector
+  the current constraint classifier "constypes" consists of 6 different classes   
+ the current consclass distribution includes 10 classes but only 9 are allowed for propagateSeeed() of cons class detector
+  the current constraint classifier "constypes according to miplib-red-to-9" consists of 9 different classes   
+ dec_consclass found 574 new seeeds 
+dec_densemasterconss found 1 new seeed 
+ the current varclass distribution includes 1685 classes but only 9 are allowed for propagateSeeed() of var class detector
+Start finishing of partial decomposition 1.
+Measured running time per detector: 
+Detector consclass                 	 worked on 	 570 of 577	 and took a total time of 	31.1162
+Detector densemasterconss          	 worked on 	 1 of 577	 and took a total time of 	0.003462
+Detector hrgpartition              	 worked on 	 0 of 577	 and took a total time of 	3e-06
+Detector varclass                  	 worked on 	 5 of 577	 and took a total time of 	0.540234
+Started postprocessing of decompositions...
+...finished postprocessing of decompositions. Added 0 new decomps. 
+
+solve problem
+=============
+
+
+A Dantzig-Wolfe reformulation is applied to solve the original problem.
+
+  time | node  | left  |SLP iter|MLP iter|LP it/n| mem |mdpt |mvars|ocons|mcons|mcuts|sepa|  dualbound   | primalbound  |  deg   |  gap   
+   7.0s|     1 |     0 |      0 |      0 |     - |  88M|   0 |   0 |  14k|   0 |   0 |  0 | 1.953090e+07 |      --      |   --   |    Inf 
+F 10.6s|     1 |     0 |      0 |      0 |     - |  91M|   0 |   0 |  14k|   0 |   0 |  0 | 1.953090e+07 | 2.924588e+07 |   --   |  49.74%
+Chosen structure has 28 blocks and 5314 linking constraints.
+This decomposition has a maxwhite score of 0.074863.
+Warning: Discretization with continuous variables is only an experimental feature.
+Master problem is a set covering problem.
+Matrix has 28 blocks, using 28 pricing problems.
+
+     
+  10.9s|     1 |     0 |      0 |      0 |     - | 138M|   0 |  28 |  14k|5343 |   0 |  0 | 1.953090e+07 | 2.924588e+07 |   0.00%|  49.74%
+  10.9s|     1 |     0 |      0 |      0 |     - | 138M|   0 |  28 |  14k|5343 |   0 |  0 | 1.953090e+07 | 2.924588e+07 |   0.00%|  49.74%
+Starting reduced cost pricing...
+   280s|     1 |     0 |  78809 |    398 |     - | 154M|   0 |  98 |  14k|5343 |   0 |  0 | 1.966868e+07 | 2.924588e+07 |  43.74%|  48.69%
+  3672s|     1 |     0 |2956670 |   2389 |     - | 177M|   0 | 240 |  14k|5343 |   0 |  0 | 1.966868e+07 | 2.924588e+07 |  21.05%|  48.69%
+(node 1) LP solver hit time limit in LP 82 -- using pseudo solution instead
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 3661.63
+Solving Nodes      : 1
+Primal Bound       : +2.80515620049427e+07 (2 solutions)
+Dual Bound         : +1.84743570045507e+07
+Gap                : 51.84 %
+
+SCIP Status        : solving was interrupted [time limit reached]
+Solving Time (sec) : 3672.58
+Solving Nodes      : 1
+Primal Bound       : +2.92458820062059e+07 (1 solutions)
+Dual Bound         : +1.95308977122512e+07
+Gap                : 49.74 %
+
+primal solution:
+================
+
+objective value:                     29245882.0062059
+x3                                                  1 	(obj:2243790)
+x6                                                  1 	(obj:1873440)
+x8                                                  1 	(obj:1712110)
+x11                                                 1 	(obj:1940400)
+x15                                                 1 	(obj:23444)
+x18                                                 1 	(obj:46888)
+x21                                                 1 	(obj:23444)
+x24                                                 1 	(obj:1194320)
+x27                                                 1 	(obj:1262300)
+x30                                                 1 	(obj:2224880)
+x33                                                 1 	(obj:1323550)
+x35                                                 1 	(obj:1046680)
+x39                                                 1 	(obj:756312)
+x42                                                 1 	(obj:1134470)
+x44                                                 1 	(obj:1221120)
+x48                                                 1 	(obj:378156)
+x50                                                 1 	(obj:697784)
+x53                                                 1 	(obj:1914900)
+x57                                                 1 	(obj:567234)
+x60                                                 1 	(obj:1776310)
+x63                                                 1 	(obj:1776310)
+x65                                                 1 	(obj:1894500)
+x69                                                 1 	(obj:2213540)
+x76                                                 1 	(obj:6.15036e-06)
+x79                                                 1 	(obj:3.32922e-06)
+x85                                                 1 	(obj:5.12667e-06)
+x101                                                1 	(obj:6.15036e-06)
+x106                                                1 	(obj:3.32922e-06)
+x128                                                1 	(obj:5.96381e-06)
+x134                                                1 	(obj:5.35874e-06)
+x139                                                1 	(obj:1.23007e-05)
+x143                                                1 	(obj:6.65845e-06)
+x160                                                1 	(obj:1.30198e-05)
+x175                                                1 	(obj:1.13237e-05)
+x179                                                1 	(obj:1.53759e-05)
+x191                                                1 	(obj:3.32922e-06)
+x201                                                1 	(obj:6.50992e-06)
+x205                                                1 	(obj:1.23007e-05)
+x207                                                1 	(obj:6.65845e-06)
+x225                                                1 	(obj:1.538e-05)
+x242                                                1 	(obj:1.78914e-05)
+x255                                                1 	(obj:1.30198e-05)
+x258                                                1 	(obj:1.83107e-05)
+x268                                                1 	(obj:3.70051e-05)
+x280                                                1 	(obj:1.63966e-05)
+x287                                                1 	(obj:1.33335e-05)
+x288                                                1 	(obj:1.28167e-05)
+x309                                                1 	(obj:1.33335e-05)
+x322                                                1 	(obj:1.49095e-05)
+x324                                                1 	(obj:9.33876e-06)
+x337                                                1 	(obj:1.14524e-05)
+x349                                                1 	(obj:1.66461e-05)
+x352                                                1 	(obj:2.66671e-05)
+x367                                                1 	(obj:3.20005e-05)
+x377                                                1 	(obj:2.80163e-05)
+x389                                                1 	(obj:1.85026e-05)
+x392                                                1 	(obj:3.43573e-05)
+x406                                                1 	(obj:3.75869e-06)
+x411                                                1 	(obj:5.72621e-06)
+x414                                                1 	(obj:1.85464e-06)
+x424                                                1 	(obj:2.86311e-05)
+x508                                                1 	(obj:6.46008e-06)
+x564                                                1 	(obj:1.3651e-05)
+x586                                                1 	(obj:1.00336e-05)
+x590                                                1 	(obj:1.60739e-05)
+x609                                                1 	(obj:1.09814e-05)
+x618                                                1 	(obj:4.01345e-06)
+x633                                                1 	(obj:7.84784e-06)
+x683                                                1 	(obj:1.85409e-05)
+x712                                                1 	(obj:1.85409e-05)
+x718                                                1 	(obj:3.23004e-06)
+x748                                                1 	(obj:1.56957e-05)
+x764                                                1 	(obj:2.2074e-05)
+x800                                                1 	(obj:4.46105e-05)
+x844                                                1 	(obj:1.97665e-05)
+x858                                                1 	(obj:1.60739e-05)
+x859                                                1 	(obj:1.54508e-05)
+x879                                                1 	(obj:1.40726e-05)
+x891                                                1 	(obj:1.3651e-05)
+x892                                                1 	(obj:1.72577e-05)
+x936                                                1 	(obj:2.00673e-05)
+x939                                                1 	(obj:3.21477e-05)
+x969                                                1 	(obj:3.85773e-05)
+x995                                                1 	(obj:2.71871e-05)
+x1002                                               1 	(obj:4.14184e-05)
+x1012                                               1 	(obj:4.55797e-05)
+x1062                                               1 	(obj:3.45154e-05)
+x1087                                               1 	(obj:7.24852e-05)
+x1088                                               1 	(obj:6.40988e-05)
+x1104                                               1 	(obj:4.37913e-05)
+x1192                                               1 	(obj:6.44032e-06)
+x1248                                               1 	(obj:1.36092e-05)
+x1260                                               1 	(obj:1.84793e-05)
+x1298                                               1 	(obj:4.00118e-06)
+x1313                                               1 	(obj:7.82384e-06)
+x1363                                               1 	(obj:1.84842e-05)
+x1405                                               1 	(obj:2.15025e-05)
+x1424                                               1 	(obj:1.56477e-05)
+x1439                                               1 	(obj:2.20065e-05)
+x1476                                               1 	(obj:4.44741e-05)
+x1517                                               1 	(obj:1.97061e-05)
+x1524                                               1 	(obj:1.23316e-05)
+x1525                                               1 	(obj:1.40296e-05)
+x1541                                               1 	(obj:1.72049e-05)
+x1555                                               1 	(obj:1.40296e-05)
+x1569                                               1 	(obj:1.36092e-05)
+x1570                                               1 	(obj:1.72049e-05)
+x1608                                               1 	(obj:2.46631e-05)
+x1609                                               1 	(obj:2.80591e-05)
+x1613                                               1 	(obj:2.00059e-05)
+x1619                                               1 	(obj:3.0807e-05)
+x1625                                               1 	(obj:3.44098e-05)
+x1648                                               1 	(obj:3.84593e-05)
+x1673                                               1 	(obj:2.7104e-05)
+x1682                                               1 	(obj:4.12918e-05)
+x1689                                               1 	(obj:4.54404e-05)
+x1744                                               1 	(obj:3.44098e-05)
+x1775                                               1 	(obj:6.46008e-06)
+x1803                                               1 	(obj:1.3651e-05)
+x1822                                               1 	(obj:4.01345e-06)
+x1839                                               1 	(obj:7.84784e-06)
+x1860                                               1 	(obj:1.85409e-05)
+x1906                                               1 	(obj:2.15685e-05)
+x1927                                               1 	(obj:1.56957e-05)
+x1942                                               1 	(obj:2.2074e-05)
+x1981                                               1 	(obj:4.46105e-05)
+x2010                                               1 	(obj:1.60739e-05)
+x2011                                               1 	(obj:1.54508e-05)
+x2041                                               1 	(obj:1.60739e-05)
+x2057                                               1 	(obj:1.79738e-05)
+x2094                                               1 	(obj:2.00673e-05)
+x2099                                               1 	(obj:3.21477e-05)
+x2131                                               1 	(obj:3.85773e-05)
+x2152                                               1 	(obj:3.37742e-05)
+x2164                                               1 	(obj:2.23052e-05)
+x2167                                               1 	(obj:4.14184e-05)
+x2232                                               1 	(obj:3.45154e-05)
+x2348                                               1 	(obj:1.28248e-05)
+x2363                                               1 	(obj:1.74142e-05)
+x2398                                               1 	(obj:3.77056e-06)
+x2411                                               1 	(obj:7.3729e-06)
+x2476                                               1 	(obj:2.02632e-05)
+x2493                                               1 	(obj:1.47458e-05)
+x2508                                               1 	(obj:2.07381e-05)
+x2543                                               1 	(obj:4.19107e-05)
+x2582                                               1 	(obj:1.85318e-05)
+x2599                                               1 	(obj:1.51011e-05)
+x2613                                               1 	(obj:1.6886e-05)
+x2644                                               1 	(obj:1.88528e-05)
+x2649                                               1 	(obj:3.02022e-05)
+x2676                                               1 	(obj:3.62426e-05)
+x2693                                               1 	(obj:3.17303e-05)
+x2703                                               1 	(obj:2.09554e-05)
+x2706                                               1 	(obj:3.89118e-05)
+x2762                                               1 	(obj:3.24265e-05)
+x2859                                               1 	(obj:1.77727e-05)
+x2891                                               1 	(obj:3.84819e-06)
+x2905                                               1 	(obj:7.5247e-06)
+x2950                                               1 	(obj:1.77775e-05)
+x2981                                               1 	(obj:1.50494e-05)
+x2995                                               1 	(obj:2.1165e-05)
+x3030                                               1 	(obj:4.27736e-05)
+x3066                                               1 	(obj:1.89134e-05)
+x3081                                               1 	(obj:1.5412e-05)
+x3082                                               1 	(obj:1.48146e-05)
+x3123                                               1 	(obj:1.9241e-05)
+x3128                                               1 	(obj:3.0824e-05)
+x3153                                               1 	(obj:3.69888e-05)
+x3170                                               1 	(obj:3.23835e-05)
+x3181                                               1 	(obj:2.13868e-05)
+x3182                                               1 	(obj:3.9713e-05)
+x3234                                               1 	(obj:3.30941e-05)
+x3358                                               1 	(obj:5.73838e-06)
+x3414                                               1 	(obj:1.21259e-05)
+x3426                                               1 	(obj:1.64652e-05)
+x3464                                               1 	(obj:3.56508e-06)
+x3477                                               1 	(obj:6.97111e-06)
+x3527                                               1 	(obj:1.64696e-05)
+x3555                                               1 	(obj:1.64696e-05)
+x3561                                               1 	(obj:2.86919e-06)
+x3588                                               1 	(obj:1.39422e-05)
+x3603                                               1 	(obj:1.96079e-05)
+x3640                                               1 	(obj:3.96268e-05)
+x3681                                               1 	(obj:1.75583e-05)
+x3699                                               1 	(obj:1.42781e-05)
+x3700                                               1 	(obj:1.37247e-05)
+x3728                                               1 	(obj:1.42781e-05)
+x3730                                               1 	(obj:1.37247e-05)
+x3735                                               1 	(obj:2.39099e-06)
+x3777                                               1 	(obj:1.78254e-05)
+x3782                                               1 	(obj:2.85563e-05)
+x3812                                               1 	(obj:3.42676e-05)
+x3831                                               1 	(obj:3.00011e-05)
+x3843                                               1 	(obj:1.98134e-05)
+x3846                                               1 	(obj:3.67913e-05)
+x3875                                               1 	(obj:3.06594e-05)
+x3980                                               1 	(obj:7.54834e-06)
+x3992                                               1 	(obj:2.16585e-05)
+x4052                                               1 	(obj:2.16643e-05)
+x4089                                               1 	(obj:2.52019e-05)
+x4093                                               1 	(obj:2.57925e-05)
+x4134                                               1 	(obj:2.30964e-05)
+x4149                                               1 	(obj:1.87816e-05)
+x4150                                               1 	(obj:1.80536e-05)
+x4171                                               1 	(obj:1.87816e-05)
+x4183                                               1 	(obj:2.10016e-05)
+x4184                                               1 	(obj:4.3317e-05)
+x4201                                               1 	(obj:2.56095e-05)
+x4215                                               1 	(obj:4.5076e-05)
+x4230                                               1 	(obj:5.70808e-05)
+x4237                                               1 	(obj:4.5076e-05)
+x4239                                               1 	(obj:4.33286e-05)
+x4241                                               1 	(obj:7.54834e-06)
+x4289                                               1 	(obj:4.03298e-05)
+x4414                                               1 	(obj:6.24922e-06)
+x4470                                               1 	(obj:1.32054e-05)
+x4525                                               1 	(obj:1.79357e-05)
+x4572                                               1 	(obj:2.08645e-05)
+x4590                                               1 	(obj:1.51834e-05)
+x4611                                               1 	(obj:4.31544e-05)
+x4654                                               1 	(obj:1.90818e-05)
+x4669                                               1 	(obj:1.55492e-05)
+x4670                                               1 	(obj:1.49464e-05)
+x4697                                               1 	(obj:1.55492e-05)
+x4714                                               1 	(obj:1.73871e-05)
+x4750                                               1 	(obj:3.73181e-05)
+x4770                                               1 	(obj:3.26718e-05)
+x4780                                               1 	(obj:2.15772e-05)
+x4783                                               1 	(obj:4.00665e-05)
+x4843                                               1 	(obj:3.33887e-05)
+x4945                                               1 	(obj:6.46008e-06)
+x4987                                               1 	(obj:1.3651e-05)
+x5001                                               1 	(obj:1.8536e-05)
+x5027                                               1 	(obj:7.41439e-06)
+x5029                                               1 	(obj:5.62904e-06)
+x5036                                               1 	(obj:6.90307e-06)
+x5044                                               1 	(obj:4.38347e-06)
+x5057                                               1 	(obj:4.46105e-05)
+x5093                                               1 	(obj:1.97665e-05)
+x5098                                               1 	(obj:1.23694e-05)
+x5104                                               1 	(obj:1.1328e-05)
+x5105                                               1 	(obj:9.29385e-06)
+x5109                                               1 	(obj:1.72577e-05)
+x5117                                               1 	(obj:1.89916e-05)
+x5122                                               1 	(obj:1.40726e-05)
+x5129                                               1 	(obj:1.3651e-05)
+x5130                                               1 	(obj:1.72577e-05)
+x5159                                               1 	(obj:3.70719e-05)
+x5178                                               1 	(obj:2.19174e-05)
+x5190                                               1 	(obj:2.71871e-05)
+x5194                                               1 	(obj:4.14184e-05)
+x5202                                               1 	(obj:4.55797e-05)
+x5239                                               1 	(obj:3.45154e-05)
+x5357                                               1 	(obj:6.36249e-06)
+x5412                                               1 	(obj:1.34448e-05)
+x5426                                               1 	(obj:1.8256e-05)
+x5460                                               1 	(obj:3.95282e-06)
+x5476                                               1 	(obj:7.7293e-06)
+x5522                                               1 	(obj:1.82608e-05)
+x5563                                               1 	(obj:2.12427e-05)
+x5581                                               1 	(obj:1.54586e-05)
+x5594                                               1 	(obj:2.17405e-05)
+x5642                                               1 	(obj:1.94679e-05)
+x5656                                               1 	(obj:1.58311e-05)
+x5657                                               1 	(obj:1.52174e-05)
+x5683                                               1 	(obj:1.58311e-05)
+x5696                                               1 	(obj:1.77022e-05)
+x5700                                               1 	(obj:1.1088e-05)
+x5711                                               1 	(obj:1.35976e-05)
+x5727                                               1 	(obj:1.97641e-05)
+x5732                                               1 	(obj:3.16621e-05)
+x5759                                               1 	(obj:3.79945e-05)
+x5819                                               1 	(obj:3.3994e-05)
+x5928                                               1 	(obj:7.49461e-06)
+x5975                                               1 	(obj:1.58371e-05)
+x5983                                               1 	(obj:2.15044e-05)
+x6016                                               1 	(obj:4.65617e-06)
+x6029                                               1 	(obj:9.10462e-06)
+x6070                                               1 	(obj:2.15101e-05)
+x6093                                               1 	(obj:2.15101e-05)
+x6097                                               1 	(obj:3.74731e-06)
+x6121                                               1 	(obj:1.82092e-05)
+x6132                                               1 	(obj:2.5609e-05)
+x6162                                               1 	(obj:5.17545e-05)
+x6311                                               1 	(obj:5.72279e-06)
+x6367                                               1 	(obj:1.2093e-05)
+x6381                                               1 	(obj:1.64205e-05)
+x6419                                               1 	(obj:3.55539e-06)
+x6432                                               1 	(obj:6.95217e-06)
+x6480                                               1 	(obj:1.64248e-05)
+x6508                                               1 	(obj:1.64248e-05)
+x6514                                               1 	(obj:2.86139e-06)
+x6543                                               1 	(obj:1.39043e-05)
+x6558                                               1 	(obj:1.95547e-05)
+x6593                                               1 	(obj:3.95191e-05)
+x6638                                               1 	(obj:1.75106e-05)
+x6652                                               1 	(obj:1.42393e-05)
+x6653                                               1 	(obj:1.36874e-05)
+x6680                                               1 	(obj:1.42393e-05)
+x6682                                               1 	(obj:1.36874e-05)
+x6687                                               1 	(obj:2.38449e-06)
+x6729                                               1 	(obj:1.7777e-05)
+x6732                                               1 	(obj:2.84787e-05)
+x6761                                               1 	(obj:3.41744e-05)
+x6781                                               1 	(obj:2.99196e-05)
+x6791                                               1 	(obj:1.97595e-05)
+x6794                                               1 	(obj:3.66913e-05)
+x6824                                               1 	(obj:3.05761e-05)
+x6938                                               1 	(obj:5.72279e-06)
+x6994                                               1 	(obj:1.2093e-05)
+x7008                                               1 	(obj:1.64205e-05)
+x7040                                               1 	(obj:4.38306e-06)
+x7043                                               1 	(obj:3.55539e-06)
+x7049                                               1 	(obj:5.47495e-06)
+x7100                                               1 	(obj:1.64248e-05)
+x7142                                               1 	(obj:1.91069e-05)
+x7158                                               1 	(obj:1.39043e-05)
+x7173                                               1 	(obj:1.95547e-05)
+x7207                                               1 	(obj:3.95191e-05)
+x7248                                               1 	(obj:1.75106e-05)
+x7262                                               1 	(obj:1.42393e-05)
+x7263                                               1 	(obj:1.36874e-05)
+x7289                                               1 	(obj:1.42393e-05)
+x7291                                               1 	(obj:1.36874e-05)
+x7295                                               1 	(obj:2.38449e-06)
+x7332                                               1 	(obj:3.28409e-05)
+x7354                                               1 	(obj:1.94159e-05)
+x7368                                               1 	(obj:3.41744e-05)
+x7394                                               1 	(obj:3.41744e-05)
+x7397                                               1 	(obj:1.97595e-05)
+x7405                                               1 	(obj:4.1713e-05)
+x8371                                               1 	(obj:0)
+x8372                                               1 	(obj:0)
+x8373                                               1 	(obj:0)
+x8374                                               1 	(obj:0)
+x8376                                               1 	(obj:0)
+x8377                                               1 	(obj:0)
+x8378                                               1 	(obj:0)
+x8379                                               1 	(obj:0)
+x8382                                               1 	(obj:0)
+x8383                                               1 	(obj:0)
+x8393                                               1 	(obj:0)
+x8416                                               1 	(obj:0)
+x8426                                               1 	(obj:0)
+x8429                                               1 	(obj:0)
+x8431                                               1 	(obj:0)
+x8433                                               1 	(obj:0)
+x8437                                               1 	(obj:0)
+x8439                                               1 	(obj:0)
+x8441                                               1 	(obj:0)
+x8451                                               1 	(obj:0)
+x8453                                               1 	(obj:0)
+x8455                                               1 	(obj:0)
+x8456                                               1 	(obj:0)
+x8461                                               1 	(obj:0)
+x8463                                               1 	(obj:0)
+x8464                                               1 	(obj:0)
+x8489                                               1 	(obj:0)
+x8500                                               1 	(obj:0)
+x8502                                               1 	(obj:0)
+x8506                                               1 	(obj:0)
+x8508                                               1 	(obj:0)
+x8510                                               1 	(obj:0)
+x8516                                               1 	(obj:0)
+x8518                                               1 	(obj:0)
+x8533                                               1 	(obj:0)
+x8534                                               1 	(obj:0)
+x8536                                               1 	(obj:0)
+x8537                                               1 	(obj:0)
+x8538                                               1 	(obj:0)
+x8539                                               1 	(obj:0)
+x8541                                               1 	(obj:0)
+x8542                                               1 	(obj:0)
+x8543                                               1 	(obj:0)
+x8544                                               1 	(obj:0)
+x8549                                               1 	(obj:0)
+x8554                                               1 	(obj:0)
+x8614                                               1 	(obj:0)
+x8619                                               1 	(obj:0)
+x8620                                               1 	(obj:0)
+x8636                                               1 	(obj:0)
+x8661                                               1 	(obj:0)
+x8662                                               1 	(obj:0)
+x8694                                               1 	(obj:0)
+x8695                                               1 	(obj:0)
+x8696                                               1 	(obj:0)
+x8700                                               1 	(obj:0)
+x8701                                               1 	(obj:0)
+x8721                                               1 	(obj:0)
+x8722                                               1 	(obj:0)
+x8736                                               1 	(obj:0)
+x8737                                               1 	(obj:0)
+x8738                                               1 	(obj:0)
+x8739                                               1 	(obj:0)
+x8795                                               1 	(obj:0)
+x8796                                               1 	(obj:0)
+x8809                                               1 	(obj:0)
+x8816                                               1 	(obj:0)
+x8817                                               1 	(obj:0)
+x8825                                               1 	(obj:0)
+x8843                                               1 	(obj:0)
+x8846                                               1 	(obj:0)
+x8855                                               1 	(obj:0)
+x8864                                               1 	(obj:0)
+x8876                                               1 	(obj:0)
+x8877                                               1 	(obj:0)
+x8878                                               1 	(obj:0)
+x8879                                               1 	(obj:0)
+x8882                                               1 	(obj:0)
+x8884                                               1 	(obj:0)
+x8885                                               1 	(obj:0)
+x8886                                               1 	(obj:0)
+x8896                                               1 	(obj:0)
+x8900                                               1 	(obj:0)
+x8905                                               1 	(obj:0)
+x8911                                               1 	(obj:0)
+x8918                                               1 	(obj:0)
+x8919                                               1 	(obj:0)
+x8929                                               1 	(obj:0)
+x8933                                               1 	(obj:0)
+x8934                                               1 	(obj:0)
+x8939                                               1 	(obj:0)
+x8940                                               1 	(obj:0)
+x8941                                               1 	(obj:0)
+x8944                                               1 	(obj:0)
+x8945                                               1 	(obj:0)
+x8956                                               1 	(obj:0)
+x8957                                               1 	(obj:0)
+x8961                                               1 	(obj:0)
+x8964                                               1 	(obj:0)
+x8972                                               1 	(obj:0)
+x8973                                               1 	(obj:0)
+x8990                                               1 	(obj:0)
+x9003                                               1 	(obj:0)
+x9004                                               1 	(obj:0)
+x9007                                               1 	(obj:0)
+x9008                                               1 	(obj:0)
+x9012                                               1 	(obj:0)
+x9013                                               1 	(obj:0)
+x9017                                               1 	(obj:0)
+x9019                                               1 	(obj:0)
+x9020                                               1 	(obj:0)
+x9021                                               1 	(obj:0)
+x9030                                               1 	(obj:0)
+x9047                                               1 	(obj:0)
+x9059                                               1 	(obj:0)
+x9062                                               1 	(obj:0)
+x9064                                               1 	(obj:0)
+x9068                                               1 	(obj:0)
+x9075                                               1 	(obj:0)
+x9076                                               1 	(obj:0)
+x9080                                               1 	(obj:0)
+x9083                                               1 	(obj:0)
+x9091                                               1 	(obj:0)
+x9092                                               1 	(obj:0)
+x9101                                               1 	(obj:0)
+x9102                                               1 	(obj:0)
+x9113                                               1 	(obj:0)
+x9114                                               1 	(obj:0)
+x9115                                               1 	(obj:0)
+x9117                                               1 	(obj:0)
+x9118                                               1 	(obj:0)
+x9122                                               1 	(obj:0)
+x9132                                               1 	(obj:0)
+x9140                                               1 	(obj:0)
+x9141                                               1 	(obj:0)
+x9142                                               1 	(obj:0)
+x9143                                               1 	(obj:0)
+x9154                                               1 	(obj:0)
+x9158                                               1 	(obj:0)
+x9159                                               1 	(obj:0)
+x9163                                               1 	(obj:0)
+x9172                                               1 	(obj:0)
+x9180                                               1 	(obj:0)
+x9182                                               1 	(obj:0)
+x9184                                               1 	(obj:0)
+x9185                                               1 	(obj:0)
+x9189                                               1 	(obj:0)
+x9198                                               1 	(obj:0)
+x9213                                               1 	(obj:0)
+x9214                                               1 	(obj:0)
+x9220                                               1 	(obj:0)
+x9239                                               1 	(obj:0)
+x9251                                               1 	(obj:0)
+x9279                                               1 	(obj:0)
+x9292                                               1 	(obj:0)
+x9300                                               1 	(obj:0)
+x9320                                               1 	(obj:0)
+x9323                                               1 	(obj:0)
+x9325                                               1 	(obj:0)
+x9331                                               1 	(obj:0)
+x9333                                               1 	(obj:0)
+x9344                                               1 	(obj:0)
+x9346                                               1 	(obj:0)
+x9350                                               1 	(obj:0)
+x9351                                               1 	(obj:0)
+x9356                                               1 	(obj:0)
+x9366                                               1 	(obj:0)
+x9374                                               1 	(obj:0)
+x9375                                               1 	(obj:0)
+x9376                                               1 	(obj:0)
+x9381                                               1 	(obj:0)
+x9405                                               1 	(obj:0)
+x9420                                               1 	(obj:0)
+x9446                                               1 	(obj:0)
+x9450                                               1 	(obj:0)
+x9488                                               1 	(obj:0)
+x9498                                               1 	(obj:0)
+x9501                                               1 	(obj:0)
+x9502                                               1 	(obj:0)
+x9504                                               1 	(obj:0)
+x9507                                               1 	(obj:0)
+x9508                                               1 	(obj:0)
+x9511                                               1 	(obj:0)
+x9536                                               1 	(obj:0)
+x9537                                               1 	(obj:0)
+x9544                                               1 	(obj:0)
+x9545                                               1 	(obj:0)
+x9546                                               1 	(obj:0)
+x9547                                               1 	(obj:0)
+x9568                                               1 	(obj:0)
+x9577                                               1 	(obj:0)
+x9593                                               1 	(obj:0)
+x9594                                               1 	(obj:0)
+x9606                                               1 	(obj:0)
+x9607                                               1 	(obj:0)
+x9608                                               1 	(obj:0)
+x9609                                               1 	(obj:0)
+x9610                                               1 	(obj:0)
+x9611                                               1 	(obj:0)
+x9612                                               1 	(obj:0)
+x9617                                               1 	(obj:0)
+x9618                                               1 	(obj:0)
+x9619                                               1 	(obj:0)
+x9644                                               1 	(obj:0)
+x9647                                               1 	(obj:0)
+x9656                                               1 	(obj:0)
+x9679                                               1 	(obj:0)
+x9680                                               1 	(obj:0)
+x9681                                               1 	(obj:0)
+x9682                                               1 	(obj:0)
+x9685                                               1 	(obj:0)
+x9687                                               1 	(obj:0)
+x9688                                               1 	(obj:0)
+x9689                                               1 	(obj:0)
+x9699                                               1 	(obj:0)
+x9702                                               1 	(obj:0)
+x9715                                               1 	(obj:0)
+x9716                                               1 	(obj:0)
+x9723                                               1 	(obj:0)
+x9724                                               1 	(obj:0)
+x9733                                               1 	(obj:0)
+x9734                                               1 	(obj:0)
+x9740                                               1 	(obj:0)
+x9741                                               1 	(obj:0)
+x9745                                               1 	(obj:0)
+x9767                                               1 	(obj:0)
+x9770                                               1 	(obj:0)
+x9799                                               1 	(obj:0)
+x9800                                               1 	(obj:0)
+x9804                                               1 	(obj:0)
+x9808                                               1 	(obj:0)
+x9818                                               1 	(obj:0)
+x9854                                               1 	(obj:0)
+x9857                                               1 	(obj:0)
+x9888                                               1 	(obj:0)
+x9889                                               1 	(obj:0)
+x9904                                               1 	(obj:0)
+x9965                                               1 	(obj:0)
+x9999                                               1 	(obj:0)
+x10037                                              1 	(obj:0)
+x10060                                              1 	(obj:0)
+x10124                                              1 	(obj:0)
+x10156                                              1 	(obj:0)
+x10210                                              1 	(obj:0)
+x10240                                              1 	(obj:0)
+x10243                                              1 	(obj:0)
+x10258                                              1 	(obj:0)
+x10328                                              1 	(obj:0)
+x10371                                              1 	(obj:0)
+x10459                                              1 	(obj:0)
+x10489                                              1 	(obj:0)
+x10525                                              1 	(obj:0)
+x10526                                              1 	(obj:0)
+x10527                                              1 	(obj:0)
+x10594                                              1 	(obj:0)
+x10598                                              1 	(obj:0)
+x10616                                              1 	(obj:0)
+x10625                                              1 	(obj:0)
+x10668                                              1 	(obj:0)
+x10674                                              1 	(obj:0)
+x10727                                              1 	(obj:0)
+x10728                                              1 	(obj:0)
+x10738                                              1 	(obj:0)
+x10740                                              1 	(obj:0)
+x10755                                              1 	(obj:0)
+x10772                                              1 	(obj:0)
+x10805                                              1 	(obj:0)
+x10809                                              1 	(obj:0)
+x10828                                              1 	(obj:0)
+x10854                                              1 	(obj:0)
+x10939                                              1 	(obj:0)
+x10940                                              1 	(obj:0)
+x10968                                              1 	(obj:0)
+x10971                                              1 	(obj:0)
+x10972                                              1 	(obj:0)
+x10985                                              1 	(obj:0)
+x11035                                              1 	(obj:0)
+x11050                                              1 	(obj:0)
+x11098                                              1 	(obj:0)
+x11114                                              1 	(obj:0)
+x11166                                              1 	(obj:0)
+x11182                                              1 	(obj:0)
+x11183                                              1 	(obj:0)
+x11184                                              1 	(obj:0)
+x11216                                              1 	(obj:0)
+x11247                                              1 	(obj:0)
+x11248                                              1 	(obj:0)
+x11285                                              1 	(obj:0)
+x11318                                              1 	(obj:0)
+x11365                                              1 	(obj:0)
+x11405                                              1 	(obj:0)
+x11410                                              1 	(obj:0)
+x11422                                              1 	(obj:0)
+x11454                                              1 	(obj:0)
+x11551                                              1 	(obj:0)
+x11589                                              1 	(obj:0)
+x11592                                              1 	(obj:0)
+x11637                                              1 	(obj:0)
+x11656                                              1 	(obj:0)
+x11750                                              1 	(obj:0)
+x11861                                              1 	(obj:0)
+x11970                                              1 	(obj:0)
+x11990                                              1 	(obj:0)
+x12035                                              1 	(obj:0)
+x12078                                              1 	(obj:0)
+x12079                                              1 	(obj:0)
+x12080                                              1 	(obj:0)
+x12161                                              1 	(obj:0)
+x12167                                              1 	(obj:0)
+x12169                                              1 	(obj:0)
+x12231                                              1 	(obj:0)
+x12267                                              1 	(obj:0)
+x12272                                              1 	(obj:0)
+x12276                                              1 	(obj:0)
+x12286                                              1 	(obj:0)
+x12304                                              1 	(obj:0)
+x12313                                              1 	(obj:0)
+x12318                                              1 	(obj:0)
+x12326                                              1 	(obj:0)
+x12419                                              1 	(obj:0)
+x12455                                              1 	(obj:0)
+x12466                                              1 	(obj:0)
+x12475                                              1 	(obj:0)
+x12499                                              1 	(obj:0)
+x12523                                              1 	(obj:0)
+x12525                                              1 	(obj:0)
+x12542                                              1 	(obj:0)
+x12552                                              1 	(obj:0)
+x12563                                              1 	(obj:0)
+x12584                                              1 	(obj:0)
+x12594                                              1 	(obj:0)
+x12648                                              1 	(obj:0)
+x12650                                              1 	(obj:0)
+x12693                                              1 	(obj:0)
+x12734                                              1 	(obj:0)
+x12753                                              1 	(obj:0)
+x12777                                              1 	(obj:0)
+x12783                                              1 	(obj:0)
+x12808                                              1 	(obj:0)
+x12854                                              1 	(obj:0)
+x12912                                              1 	(obj:0)
+x12930                                              1 	(obj:0)
+x12993                                              1 	(obj:0)
+x12994                                              1 	(obj:0)
+x12995                                              1 	(obj:0)
+x13071                                              1 	(obj:0)
+x13072                                              1 	(obj:0)
+x13076                                              1 	(obj:0)
+x13175                                              1 	(obj:0)
+x13179                                              1 	(obj:0)
+x13181                                              1 	(obj:0)
+x13190                                              1 	(obj:0)
+x13215                                              1 	(obj:0)
+x13221                                              1 	(obj:0)
+x13230                                              1 	(obj:0)
+x13244                                              1 	(obj:0)
+x13320                                              1 	(obj:0)
+x13348                                              1 	(obj:0)
+x13354                                              1 	(obj:0)
+x13366                                              1 	(obj:0)
+x13374                                              1 	(obj:0)
+x13382                                              1 	(obj:0)
+x13422                                              1 	(obj:0)
+x13451                                              1 	(obj:0)
+x13461                                              1 	(obj:0)
+x13470                                              1 	(obj:0)
+x13530                                              1 	(obj:0)
+x13543                                              1 	(obj:0)
+x13547                                              1 	(obj:0)
+x13562                                              1 	(obj:0)
+x13606                                              1 	(obj:0)
+x13635                                              1 	(obj:0)
+x13648                                              1 	(obj:0)
+x13684                                              1 	(obj:0)
+x13754                                              1 	(obj:0)
+x13771                                              1 	(obj:0)
+x13812                                              1 	(obj:0)
+x13895                                              1 	(obj:0)
+x13896                                              1 	(obj:0)
+x13908                                              1 	(obj:0)
+x13929                                              1 	(obj:0)
+x13940                                              1 	(obj:0)
+x13962                                              1 	(obj:0)
+x14032                                              1 	(obj:0)
+x14068                                              1 	(obj:0)
+x14071                                              1 	(obj:0)
+x14075                                              1 	(obj:0)
+x14115                                              1 	(obj:0)
+x14119                                              1 	(obj:0)
+x14129                                              1 	(obj:0)
+x14137                                              1 	(obj:0)
+x14226                                              1 	(obj:0)
+x14259                                              1 	(obj:0)
+x14263                                              1 	(obj:0)
+x14277                                              1 	(obj:0)
+x14337                                              1 	(obj:0)
+x14536                                              1 	(obj:0)
+x14571                                              1 	(obj:0)
+x14696                                              1 	(obj:0)
+x14713                                              1 	(obj:0)
+x14714                                              1 	(obj:0)
+x14773                                              1 	(obj:0)
+x14793                                              1 	(obj:0)
+x14794                                              1 	(obj:0)
+x14795                                              1 	(obj:0)
+x14866                                              1 	(obj:0)
+x14873                                              1 	(obj:0)
+x14927                                              1 	(obj:0)
+x14934                                              1 	(obj:0)
+x14959                                              1 	(obj:0)
+x14968                                              1 	(obj:0)
+x14977                                              1 	(obj:0)
+x15065                                              1 	(obj:0)
+x15093                                              1 	(obj:0)
+x15105                                              1 	(obj:0)
+x15162                                              1 	(obj:0)
+x15189                                              1 	(obj:0)
+x15210                                              1 	(obj:0)
+x15224                                              1 	(obj:0)
+x15283                                              1 	(obj:0)
+x15327                                              1 	(obj:0)
+x15347                                              1 	(obj:0)
+x15386                                              1 	(obj:0)
+x15458                                              1 	(obj:0)
+x15497                                              1 	(obj:0)
+x15574                                              1 	(obj:0)
+x15616                                              1 	(obj:0)
+x15716                                              1 	(obj:0)
+x15718                                              1 	(obj:0)
+x15752                                              1 	(obj:0)
+x15755                                              1 	(obj:0)
+x15759                                              1 	(obj:0)
+x15764                                              1 	(obj:0)
+x15798                                              1 	(obj:0)
+x15804                                              1 	(obj:0)
+x15829                                              1 	(obj:0)
+x15907                                              1 	(obj:0)
+x15941                                              1 	(obj:0)
+x15963                                              1 	(obj:0)
+x15997                                              1 	(obj:0)
+x16018                                              1 	(obj:0)
+x16031                                              1 	(obj:0)
+x16034                                              1 	(obj:0)
+x16076                                              1 	(obj:0)
+x16093                                              1 	(obj:0)
+x16110                                              1 	(obj:0)
+x16139                                              1 	(obj:0)
+x16155                                              1 	(obj:0)
+x16219                                              1 	(obj:0)
+x16282                                              1 	(obj:0)
+x16382                                              1 	(obj:0)
+x16399                                              1 	(obj:0)
+x16440                                              1 	(obj:0)
+x16521                                              1 	(obj:0)
+x16522                                              1 	(obj:0)
+x16564                                              1 	(obj:0)
+x16580                                              1 	(obj:0)
+x16602                                              1 	(obj:0)
+x16603                                              1 	(obj:0)
+x16641                                              1 	(obj:0)
+x16697                                              1 	(obj:0)
+x16719                                              1 	(obj:0)
+x16759                                              1 	(obj:0)
+x16768                                              1 	(obj:0)
+x16782                                              1 	(obj:0)
+x16787                                              1 	(obj:0)
+x16798                                              1 	(obj:0)
+x16801                                              1 	(obj:0)
+x16808                                              1 	(obj:0)
+x16820                                              1 	(obj:0)
+x16894                                              1 	(obj:0)
+x16903                                              1 	(obj:0)
+x16911                                              1 	(obj:0)
+x16938                                              1 	(obj:0)
+x16945                                              1 	(obj:0)
+x16961                                              1 	(obj:0)
+x17003                                              1 	(obj:0)
+x17067                                              1 	(obj:0)
+x17068                                              1 	(obj:0)
+x17134                                              1 	(obj:0)
+x17260                                              1 	(obj:0)
+x17305                                              1 	(obj:0)
+x17345                                              1 	(obj:0)
+x17394                                              1 	(obj:0)
+x17395                                              1 	(obj:0)
+x17396                                              1 	(obj:0)
+x17434                                              1 	(obj:0)
+x17435                                              1 	(obj:0)
+x17441                                              1 	(obj:0)
+x17442                                              1 	(obj:0)
+x17550                                              1 	(obj:0)
+x17552                                              1 	(obj:0)
+x17566                                              1 	(obj:0)
+x17580                                              1 	(obj:0)
+x17582                                              1 	(obj:0)
+x17584                                              1 	(obj:0)
+x17593                                              1 	(obj:0)
+x17596                                              1 	(obj:0)
+x17608                                              1 	(obj:0)
+x17617                                              1 	(obj:0)
+x17626                                              1 	(obj:0)
+x17691                                              1 	(obj:0)
+x17707                                              1 	(obj:0)
+x17744                                              1 	(obj:0)
+x17760                                              1 	(obj:0)
+x17822                                              1 	(obj:0)
+x17823                                              1 	(obj:0)
+x17874                                              1 	(obj:0)
+x17875                                              1 	(obj:0)
+x17959                                              1 	(obj:0)
+x17960                                              1 	(obj:0)
+x17961                                              1 	(obj:0)
+x17975                                              1 	(obj:0)
+x17976                                              1 	(obj:0)
+x18000                                              1 	(obj:0)
+x18001                                              1 	(obj:0)
+x18020                                              1 	(obj:0)
+x18050                                              1 	(obj:0)
+x18073                                              1 	(obj:0)
+x18074                                              1 	(obj:0)
+x18109                                              1 	(obj:0)
+x18151                                              1 	(obj:0)
+x18178                                              1 	(obj:0)
+x18330                                              1 	(obj:0)
+x18378                                              1 	(obj:0)
+x18418                                              1 	(obj:0)
+x18419                                              1 	(obj:0)
+x18423                                              1 	(obj:0)
+x18453                                              1 	(obj:0)
+x18523                                              1 	(obj:0)
+x18568                                              1 	(obj:0)
+x18582                                              1 	(obj:0)
+x18588                                              1 	(obj:0)
+x18603                                              1 	(obj:0)
+x18605                                              1 	(obj:0)
+x18617                                              1 	(obj:0)
+x18629                                              1 	(obj:0)
+x18695                                              1 	(obj:0)
+x18726                                              1 	(obj:0)
+x18742                                              1 	(obj:0)
+x18792                                              1 	(obj:0)
+x18960                                              1 	(obj:0)
+x18961                                              1 	(obj:0)
+x18981                                              1 	(obj:0)
+x19140                                              1 	(obj:0)
+x19141                                              1 	(obj:0)
+x19220                                              1 	(obj:0)
+x19221                                              1 	(obj:0)
+x19229                                              1 	(obj:0)
+x19254                                              1 	(obj:0)
+x19275                                              1 	(obj:0)
+x19281                                              1 	(obj:0)
+x19328                                              1 	(obj:0)
+x19373                                              1 	(obj:0)
+x19387                                              1 	(obj:0)
+x19404                                              1 	(obj:0)
+x19408                                              1 	(obj:0)
+x19417                                              1 	(obj:0)
+x19429                                              1 	(obj:0)
+x19437                                              1 	(obj:0)
+x19524                                              1 	(obj:0)
+x19561                                              1 	(obj:0)
+x19577                                              1 	(obj:0)
+x19586                                              1 	(obj:0)
+x19637                                              1 	(obj:0)
+x19656                                              1 	(obj:0)
+x19660                                              1 	(obj:0)
+x19718                                              1 	(obj:0)
+x19719                                              1 	(obj:0)
+x19739                                              1 	(obj:0)
+x19801                                              1 	(obj:0)
+x19817                                              1 	(obj:0)
+x19823                                              1 	(obj:0)
+x19901                                              1 	(obj:0)
+x19940                                              1 	(obj:0)
+x19966                                              1 	(obj:0)
+x20007                                              1 	(obj:0)
+x20107                                              1 	(obj:0)
+x20186                                              1 	(obj:0)
+x20187                                              1 	(obj:0)
+x20197                                              1 	(obj:0)
+x20198                                              1 	(obj:0)
+x20222                                              1 	(obj:0)
+x20250                                              1 	(obj:0)
+x20268                                              1 	(obj:0)
+x20295                                              1 	(obj:0)
+x20296                                              1 	(obj:0)
+x20300                                              1 	(obj:0)
+x20301                                              1 	(obj:0)
+x20315                                              1 	(obj:0)
+x20339                                              1 	(obj:0)
+x20345                                              1 	(obj:0)
+x20346                                              1 	(obj:0)
+x20358                                              1 	(obj:0)
+x20442                                              1 	(obj:0)
+x20456                                              1 	(obj:0)
+x20493                                              1 	(obj:0)
+x20494                                              1 	(obj:0)
+x20510                                              1 	(obj:0)
+x20574                                              1 	(obj:0)
+x20575                                              1 	(obj:0)
+x20592                                              1 	(obj:0)
+x20615                                              1 	(obj:0)
+x20704                                              1 	(obj:0)
+x20723                                              1 	(obj:0)
+x20737                                              1 	(obj:0)
+x20747                                              1 	(obj:0)
+x20759                                              1 	(obj:0)
+x20809                                              1 	(obj:0)
+x20815                                              1 	(obj:0)
+x20845                                              1 	(obj:0)
+x20939                                              1 	(obj:0)
+x20983                                              1 	(obj:0)
+x21020                                              1 	(obj:0)
+x21045                                              1 	(obj:0)
+x21067                                              1 	(obj:0)
+x21068                                              1 	(obj:0)
+x21069                                              1 	(obj:0)
+x8368                                               2 	(obj:0)
+x8366                                               1 	(obj:0)
+x8365                                               1 	(obj:0)
+x8363                                               4 	(obj:0)
+x8362                                               1 	(obj:0)
+x8360                                               1 	(obj:0)
+x8359                                               2 	(obj:0)
+x8357                                               4 	(obj:0)
+x8356                                               2 	(obj:0)
+x8354                                               2 	(obj:0)
+x8351                                               3 	(obj:0)
+x8350                                               2 	(obj:0)
+x8348                                               1 	(obj:0)
+x8347                                               1 	(obj:0)
+x8345                                               3 	(obj:0)
+x8344                                               1 	(obj:0)
+x8342                                               2 	(obj:0)
+x8341                                               1 	(obj:0)
+x8339                                               3 	(obj:0)
+x8336                                               3 	(obj:0)
+x8335                                               1 	(obj:0)
+x8333                                               4 	(obj:0)
+x8330                                               1 	(obj:0)
+x8329                                               1 	(obj:0)
+x8328                                               1 	(obj:0)
+x8327                                               1 	(obj:0)
+x8326                                               1 	(obj:0)
+x8325                                               1 	(obj:0)
+x8324                                               1 	(obj:0)
+x8323                                               1 	(obj:0)
+x8322                                               1 	(obj:0)
+x8321                                               1 	(obj:0)
+x8320                                               1 	(obj:0)
+x8319                                               1 	(obj:0)
+x8318                                               1 	(obj:0)
+x8317                                         1000000 	(obj:0)
+x8369                                               1 	(obj:0)
+x7498                                              11 	(obj:0)
+x7502                                              44 	(obj:0)
+x7505                                               4 	(obj:0)
+x7508                                             128 	(obj:0)
+x7511                                              47 	(obj:0)
+x7514                                               7 	(obj:0)
+x7520                                              32 	(obj:0)
+x7522                                              32 	(obj:0)
+x7526                                             128 	(obj:0)
+x7529                                4.99999999999999 	(obj:0)
+x7531                                              25 	(obj:0)
+x7535                                             128 	(obj:0)
+x7537                                              24 	(obj:0)
+x7540                                              20 	(obj:0)
+x7544                                              36 	(obj:0)
+x7550                                               9 	(obj:0)
+x7552                                              13 	(obj:0)
+x7556                                              15 	(obj:0)
+x7557                                               1 	(obj:0)
+x7560                                              13 	(obj:0)
+x7562                                              10 	(obj:0)
+x7565                                               7 	(obj:0)
+x7569                                             128 	(obj:0)
+x7572                                              27 	(obj:0)
+x7575                                              12 	(obj:0)
+x7578                                             128 	(obj:0)
+x7580                                              32 	(obj:0)
+x7584                                              27 	(obj:0)
+x7587                                              15 	(obj:0)
+x7589                                              32 	(obj:0)
+x7593                                             128 	(obj:0)
+x7595                                              16 	(obj:0)
+x7598                                              16 	(obj:0)
+x7605                                               9 	(obj:0)
+x7608                                             128 	(obj:0)
+x7610                                              20 	(obj:0)
+x7617                                              20 	(obj:0)
+x7620                                             128 	(obj:0)
+x7622                                              32 	(obj:0)
+x7629                                             128 	(obj:0)
+x7632                                             128 	(obj:0)
+x7635                                              12 	(obj:0)
+x7638                                             128 	(obj:0)
+x7641                                              32 	(obj:0)
+x7643                                              19 	(obj:0)
+x7647                                              34 	(obj:0)
+x7650                                              15 	(obj:0)
+x7652                                              32 	(obj:0)
+x7656                                              12 	(obj:0)
+x7658                                              16 	(obj:0)
+x7662                                              16 	(obj:0)
+x7665                                             128 	(obj:0)
+x7667                                              20 	(obj:0)
+x7671                                               6 	(obj:0)
+x7674                                               8 	(obj:0)
+x7677                                              13 	(obj:0)
+x7679                                              12 	(obj:0)
+x7682                                              18 	(obj:0)
+x7686                                              20 	(obj:0)
+x7689                                              27 	(obj:0)
+x7692                                               3 	(obj:0)
+x7695                                              13 	(obj:0)
+x7698                                             128 	(obj:0)
+x7700                                              11 	(obj:0)
+x7704                                              28 	(obj:0)
+x7707                                               5 	(obj:0)
+x7709                                              12 	(obj:0)
+x7713                                              12 	(obj:0)
+x7715                                              32 	(obj:0)
+x7718                                              32 	(obj:0)
+x7722                                              16 	(obj:0)
+x7725                                               9 	(obj:0)
+x7727                                              20 	(obj:0)
+x7731                                              11 	(obj:0)
+x7734                                              29 	(obj:0)
+x7736                                              32 	(obj:0)
+x7739                                              18 	(obj:0)
+x7743                                              47 	(obj:0)
+x7749                                              33 	(obj:0)
+x7752                                             128 	(obj:0)
+x7755                                               7 	(obj:0)
+x7758                                              11 	(obj:0)
+x7761                                              27 	(obj:0)
+x7764                                             128 	(obj:0)
+x7767                                              12 	(obj:0)
+x7769                                              19 	(obj:0)
+x7772                                              32 	(obj:0)
+x7775                                              32 	(obj:0)
+x7782                                              16 	(obj:0)
+x7787                                              20 	(obj:0)
+x7791                                              11 	(obj:0)
+x7794                                              17 	(obj:0)
+x7799                                              17 	(obj:0)
+x7803                                              31 	(obj:0)
+x7809                                             128 	(obj:0)
+x7812                                              27 	(obj:0)
+x7815                                             128 	(obj:0)
+x7821                                              34 	(obj:0)
+x7823                                              13 	(obj:0)
+x7827                                             128 	(obj:0)
+x7829                                              25 	(obj:0)
+x7832                                               2 	(obj:0)
+x7835                                              16 	(obj:0)
+x7839                                              16 	(obj:0)
+x7842                                               9 	(obj:0)
+x7847                                              13 	(obj:0)
+x7851                                              11 	(obj:0)
+x7854                                              13 	(obj:0)
+x7856                                              12 	(obj:0)
+x7859                                              18 	(obj:0)
+x7863                                              34 	(obj:0)
+x7869                                              27 	(obj:0)
+x7872                                              27 	(obj:0)
+x7881                                              32 	(obj:0)
+x7883                                              22 	(obj:0)
+x7887                                              28 	(obj:0)
+x7890                                              12 	(obj:0)
+x7892                                              12 	(obj:0)
+x7896                                              12 	(obj:0)
+x7898                                              16 	(obj:0)
+x7902                                             128 	(obj:0)
+x7905                                             128 	(obj:0)
+x7907                                              20 	(obj:0)
+x7914                                              23 	(obj:0)
+x7916                                              23 	(obj:0)
+x7920                                              30 	(obj:0)
+x7926                                              24 	(obj:0)
+x7929                                              15 	(obj:0)
+x7932                                               7 	(obj:0)
+x7935                                               4 	(obj:0)
+x7938                                              34 	(obj:0)
+x7940                                              30 	(obj:0)
+x7943                                              10 	(obj:0)
+x7947                                             128 	(obj:0)
+x7953                                              16 	(obj:0)
+x7956                                              10 	(obj:0)
+x7959                                               9 	(obj:0)
+x7961                                               6 	(obj:0)
+x7965                                              11 	(obj:0)
+x7970                                              17 	(obj:0)
+x7973                                              31 	(obj:0)
+x7977                                              26 	(obj:0)
+x7983                                              28 	(obj:0)
+x7986                                               7 	(obj:0)
+x7989                                              13 	(obj:0)
+x7992                                              29 	(obj:0)
+x7994                                              32 	(obj:0)
+x7998                                             128 	(obj:0)
+x8001                                              12 	(obj:0)
+x8003                                              12 	(obj:0)
+x8007                                              12 	(obj:0)
+x8012                                              11 	(obj:0)
+x8016                                              16 	(obj:0)
+x8019                                               9 	(obj:0)
+x8024                                              13 	(obj:0)
+x8028                                             128 	(obj:0)
+x8031                                              24 	(obj:0)
+x8034                                              13 	(obj:0)
+x8036                                              16 	(obj:0)
+x8039                                              11 	(obj:0)
+x8043                                              47 	(obj:0)
+x8046                                              16 	(obj:0)
+x8049                                             128 	(obj:0)
+x8052                                             128 	(obj:0)
+x8055                                              29 	(obj:0)
+x8058                                              10 	(obj:0)
+x8060                                              31 	(obj:0)
+x8064                                              12 	(obj:0)
+x8070                                              16 	(obj:0)
+x8073                                              16 	(obj:0)
+x8076                                               9 	(obj:0)
+x8078                                              32 	(obj:0)
+x8082                                             128 	(obj:0)
+x8087                                              14 	(obj:0)
+x8091                                              64 	(obj:0)
+x8094                                               9 	(obj:0)
+x8097                                              24 	(obj:0)
+x8100                                             128 	(obj:0)
+x8103                                              14 	(obj:0)
+x8109                                             128 	(obj:0)
+x8111                                              32 	(obj:0)
+x8115                                              17 	(obj:0)
+x8117                                              18 	(obj:0)
+x8121                                              13 	(obj:0)
+x8123                                              16 	(obj:0)
+x8126                                              16 	(obj:0)
+x8136                                               9 	(obj:0)
+x8139                                              11 	(obj:0)
+x8142                                              12 	(obj:0)
+x8145                                              13 	(obj:0)
+x8147                                              10 	(obj:0)
+x8154                                              38 	(obj:0)
+x8160                                              24 	(obj:0)
+x8163                                              17 	(obj:0)
+x8171                                              12 	(obj:0)
+x8175                                              27 	(obj:0)
+x8178                                              15 	(obj:0)
+x8181                                              12 	(obj:0)
+x8186                                              16 	(obj:0)
+x8189                                              13 	(obj:0)
+x8196                                              24 	(obj:0)
+x8199                                              13 	(obj:0)
+x8201                                              12 	(obj:0)
+x8208                                              49 	(obj:0)
+x8214                                             128 	(obj:0)
+x8217                                              27 	(obj:0)
+x8220                                              13 	(obj:0)
+x8223                                              32 	(obj:0)
+x8225                                              32 	(obj:0)
+x8229                                              32 	(obj:0)
+x8232                                             128 	(obj:0)
+x8234                                              12 	(obj:0)
+x8238                                              15 	(obj:0)
+x8240                                              16 	(obj:0)
+x8243                                              16 	(obj:0)
+x8253                                             128 	(obj:0)
+x8259                                              31 	(obj:0)
+x8262                                              15 	(obj:0)
+x8264                                              32 	(obj:0)
+x8268                                              41 	(obj:0)
+x8271                                               9 	(obj:0)
+x8274                                              27 	(obj:0)
+x8277                                              21 	(obj:0)
+x8280                                             128 	(obj:0)
+x8283                                              34 	(obj:0)
+x8285                                              32 	(obj:0)
+x8289                                             128 	(obj:0)
+x8292                                               8 	(obj:0)
+x8295                                             128 	(obj:0)
+x8297                                              32 	(obj:0)
+x8300                                              16 	(obj:0)
+x8304                                              16 	(obj:0)
+x8307                                              10 	(obj:0)
+x8310                                              16 	(obj:0)
+x8312                                              20 	(obj:0)
+x8316                                               6 	(obj:0)
+x7443                                             128 	(obj:0)
+x7465                                             128 	(obj:0)
+x7453                                             128 	(obj:0)
+x7467                                             128 	(obj:0)
+x7447                                              32 	(obj:0)
+x7469                                              32 	(obj:0)
+x7455                                             128 	(obj:0)
+x7471                                             128 	(obj:0)
+x7441                                             128 	(obj:0)
+x7473                                              32 	(obj:0)
+x7457                                             128 	(obj:0)
+x7475                                              32 	(obj:0)
+x7449                                             128 	(obj:0)
+x7477                                             128 	(obj:0)
+x7459                                             128 	(obj:0)
+x7479                                             128 	(obj:0)
+x7445                                              32 	(obj:0)
+x7481                                             128 	(obj:0)
+x7461                                             128 	(obj:0)
+x7483                                              32 	(obj:0)
+x7451                                             128 	(obj:0)
+x7485                                             128 	(obj:0)
+x7463                                              32 	(obj:0)
+x7487                                               1 	(obj:0)
+x7490                                              32 	(obj:0)
+x7493                                              13 	(obj:0)
+x7495                                              16 	(obj:0)
+
+Statistics
+==========
+
+Master Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3661.63
+  solving          :    3661.63
+  presolving       :       0.00 (included in solving)
+  reading          :       0.00
+  copying          :       0.07 (9 #copies) (minimal 0.01, maximal 0.01, average 0.01)
+Original Problem   :
+  Problem name     : master_msc98-ip
+  Variables        : 0 (0 binary, 0 integer, 0 implicit integer, 0 continuous)
+  Constraints      : 5342 initial, 5342 maximal
+  Objective        : minimize, 0 non-zeros (abs.min = 1e+20, abs.max = -1e+20)
+Presolved Problem  :
+  Problem name     : t_master_msc98-ip
+  Variables        : 240 (0 binary, 0 integer, 0 implicit integer, 240 continuous)
+  Constraints      : 5342 initial, 5343 maximal
+  Objective        : minimize, 147 non-zeros (abs.min = 1.85105e+07, abs.max = 2.89014e+07)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  roundbound       :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.00       0.00      1          0          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  linear           :       0.00       0.00      2          0          0          0          0          0          0          0          0          0
+  root node        :          -          -      -          0          -          -          0          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  masterbranch     :          0+         1          0          0          0          0          0          0          0          0          0          0          0          0          0
+  integralorig     :          0          0          0          0          0          0          0         53          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          0          0          0          3          0          0          0          0          0          0          0
+  linear           :       5342       5342          0          1          0          0          0          2          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  masterbranch     :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integralorig     :      20.49       0.00       0.00       0.00       0.00       0.00       0.00      20.49       0.00       0.00
+  integral         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          1          0          0          0
+  genvbounds       :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          0          0          0          0
+  redcost          :          0          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :          0          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.00       0.00       0.00       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.00       0.00       0.00       0.00       0.00       0.00
+  pseudoobj        :       0.00       0.00       0.00       0.00       0.00       0.00
+  redcost          :       0.00       0.00       0.00       0.00       0.00       0.00
+  rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
+  vbounds          :       0.00       0.00       0.00       0.00       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     0          -          -          0          -          -    (maximal pool size: 0)
+  basis            :       0.00       0.00          0          0          0          0          0          0
+  master           :       0.00       0.00          0          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.01          -         66         61
+  gcg              :    3640.17       0.00         72        240
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  generic          :       0.00       0.00          0          0          0          0          0          0          0          0
+  orig             :       0.00       0.00          0          0          0          0          0          0          0          0
+  relpsprob        :       0.00       0.00          0          0          0          0          0          0          0          0
+  ryanfoster       :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       0.00       0.00          0          0          0
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  greedycolsel     :       0.00       0.00          1          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mastercoefdiving :       0.00       0.00          0          0          0
+  masterfracdiving :       0.00       0.00          0          0          0
+  masterlinesdiving:       0.00       0.00          0          0          0
+  mastervecldiving :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.00       0.00          0          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.00       0.00          0          0          0
+  relaxcolsel      :       0.00       0.00          0          0          0
+  rens             :       0.00       0.00          0          0          0
+  restmaster       :       0.10       0.00          1          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          0          0          0
+  setcover         :       0.00       0.00          0          0          0
+  shiftandpropagate:       0.00       0.00          0          0          0
+  shifting         :       0.00       0.00          0          0          0
+  simplerounding   :      20.45       0.00         51          1          1
+  twoopt           :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          0          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.60         88       2360      29.14    3952.47       0.01          7
+  dual LP          :       0.17        102         29      29.00     174.87       0.16        101
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:       0.00          0          0       0.00          -
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+B&B Tree           :
+  number of runs   :          1
+  nodes            :          1 (0 internal, 1 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          0
+  objective leaves :          0
+  nodes (total)    :          1 (0 internal, 1 leaves)
+  nodes left       :          1
+  max depth        :          0
+  max depth (total):          0
+  backtracks       :          0 (0.0%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          0 (0 domain reductions, 0 cutoffs)
+  avg switch length:       1.00
+  switching time   :       0.00
+Root Node          :
+  First LP value   :          -
+  First LP Iters   :          0
+  First LP Time    :       0.00
+  Final Dual Bound : +1.84743570045507e+07
+  Final Root Iters :       2389
+  Root LP Estimate :                     -
+Solution           :
+  Solutions found  :          2 (2 improvements)
+  First Solution   : +2.80515620049427e+07   (in run 1, after 1 nodes, 0.01 seconds, depth 0, found by <relaxation>)
+  Gap First Sol.   :      52.98 %
+  Gap Last Sol.    :      51.84 %
+  Primal Bound     : +2.80515620049427e+07   (in run 1, after 1 nodes, 268.93 seconds, depth 0, found by <simplerounding>)
+  Dual Bound       : +1.84743570045507e+07
+  Gap              :      51.84 %
+  Avg. Gap         :      34.15 % (125028.87 primal-dual integral)
+Pricing Solver     : #HeurFarkas  #OptFarkas  #HeurRedcost #OptRedcost Time: HeurFarkas  OptFarkas  HeurRedcost OptRedcost
+  knapsack         :           0           0             0           0             0.00       0.00         0.00       0.00 
+  mip              :           0           0          1652         118             0.00       0.00      2514.88    1070.74 
+
+Original Program statistics:
+SCIP Status        : solving was interrupted [time limit reached]
+Total Time         :    3672.79
+  solving          :    3672.58
+  presolving       :       0.68 (included in solving)
+  reading          :       0.21
+  copying          :       0.00 (0 times copied the problem)
+Original Problem   :
+  Problem name     : msc98-ip
+  Variables        : 21143 (20237 binary, 53 integer, 0 implicit integer, 853 continuous)
+  Constraints      : 15850 initial, 15850 maximal
+  Objective        : minimize, 7440 non-zeros (abs.min = 1.04154e-06, abs.max = 2.33453e+06)
+Presolved Problem  :
+  Problem name     : t_msc98-ip
+  Variables        : 12752 (11940 binary, 0 integer, 0 implicit integer, 812 continuous)
+  Constraints      : 14998 initial, 14999 maximal
+  Objective        : minimize, 5343 non-zeros (abs.min = 1.06042e-06, abs.max = 2.33453e+06)
+Presolvers         :   ExecTime  SetupTime  Calls  FixedVars   AggrVars   ChgTypes  ChgBounds   AddHoles    DelCons    AddCons   ChgSides   ChgCoefs
+  boundshift       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  convertinttobin  :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  domcol           :       0.02       0.00      1          0          0          0          0          0          0          0          0          0
+  implics          :       0.00       0.00      4          0          0          0          0          0          0          0          0          0
+  inttobinary      :       0.00       0.00      5          0          0          0          0          0          0          0          0          0
+  trivial          :       0.00       0.00      8          0          0          0          0          0          0          0          0          0
+  dualfix          :       0.01       0.00      8       7906          0          0          0          0          0          0          0          0
+  genvbounds       :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  probing          :       0.45       0.00      1          5          0          0          0          0          0          0          0          0
+  pseudoobj        :       0.00       0.00      0          0          0          0          0          0          0          0          0          0
+  vbounds          :       0.00       0.00      1          2          2          0          0          0          0          0          0          0
+  varbound         :       0.00       0.00      5          0          0          0          0          0          0          0          0          0
+  knapsack         :       0.01       0.00      6          0          0          0          0          0         46         13          9         33
+  setppc           :       0.01       0.00      6          0          0          0          0          0        146          0          0          0
+  linear           :       0.12       0.01     11        117        359          0        224          0        673          0        139        247
+  logicor          :       0.02       0.00      6          0          0          0          0          0          0          0          0        155
+  root node        :          -          -      -          2          -          -          2          -          -          -          -          -
+Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #EnfoRelax  #EnfoPS    #Check   #ResProp    Cutoffs    DomReds       Cuts    Applied      Conss   Children
+  origbranch       :          0+         1          0          0          0          0          0          0          0          0          0          0          0          0          0
+  integral         :          0          0          0          0          0          0          0         13          0          0          0          0          0          0          0
+  decomp           :          0          0          0          0          0          0          0         12          0          0          0          0          0          0          0
+  varbound         :        812        812          0       1260          0          0          0          5          0          0          0          0          0          0          0
+  knapsack         :       1217       1217          0       1260          0          0          0          3          0          0          0          0          0          0          0
+  setppc           :       1679       1679          0       1260          0          0          0          1          0          6          0          0          0          0          0
+  linear           :       6898       6898          0       1254          0          0          0          1          0          3          0          0          0          0          0
+  logicor          :       4392       4392          0        226          0          0          0          1          0          0          0          0          0          0          0
+Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
+  origbranch       :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  integral         :       0.01       0.00       0.00       0.00       0.00       0.00       0.00       0.01       0.00       0.00
+  decomp           :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  varbound         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+  knapsack         :       0.17       0.00       0.00       0.17       0.00       0.00       0.00       0.00       0.00       0.00
+  setppc           :       0.02       0.00       0.00       0.02       0.00       0.00       0.00       0.00       0.00       0.00
+  linear           :       0.03       0.01       0.01       0.01       0.00       0.00       0.00       0.00       0.00       0.00
+  logicor          :       0.01       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
+Propagators        : #Propagate   #ResProp    Cutoffs    DomReds
+  dualfix          :          2          0          0          2
+  genvbounds       :          0          0          0          0
+  obbt             :          0          0          0          0
+  probing          :          0          0          0          0
+  pseudoobj        :          3          0          0          0
+  redcost          :          1          0          0          0
+  rootredcost      :          0          0          0          0
+  vbounds          :        588          0          0          0
+Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    SB-Prop
+  dualfix          :       0.01       0.00       0.01       0.00       0.00       0.00
+  genvbounds       :       0.00       0.00       0.00       0.00       0.00       0.00
+  obbt             :       0.00       0.00       0.00       0.00       0.00       0.00
+  probing          :       0.45       0.00       0.45       0.00       0.00       0.00
+  pseudoobj        :       0.01       0.00       0.00       0.01       0.00       0.00
+  redcost          :       0.00       0.00       0.00       0.00       0.00       0.00
+  rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
+  vbounds          :       0.01       0.00       0.00       0.00       0.00       0.00
+Conflict Analysis  :       Time      Calls    Success    DomReds  Conflicts   Literals    Reconvs ReconvLits   Dualrays   Nonzeros   LP Iters   (pool size: [--,--])
+  propagation      :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  infeasible LP    :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  bound exceed. LP :       0.00          0          0          -          0        0.0          0        0.0          0        0.0          0
+  strong branching :       0.00          0          0          -          0        0.0          0        0.0          -          -          0
+  pseudo solution  :       0.00          0          0          -          0        0.0          0        0.0          -          -          -
+  applied globally :       0.00          -          -          0          0        0.0          -          -          0          -          -
+  applied locally  :          -          -          -          0          0        0.0          -          -          0          -          -
+Separators         :   ExecTime  SetupTime      Calls    Cutoffs    DomReds       Cuts    Applied      Conss
+  cut pool         :       0.00                     0          -          -          0          -          -    (maximal pool size: 0)
+  clique           :       0.00       0.00          0          0          0          0          0          0
+  closecuts        :       0.00       0.00          0          0          0          0          0          0
+  gomory           :       0.00       0.00          0          0          0          0          0          0
+  impliedbounds    :       0.00       0.00          0          0          0          0          0          0
+  intobj           :       0.00       0.00          0          0          0          0          0          0
+  mcf              :       0.00       0.00          0          0          0          0          0          0
+  oddcycle         :       0.00       0.00          0          0          0          0          0          0
+  rapidlearning    :       0.00       0.00          0          0          0          0          0          0
+  strongcg         :       0.00       0.00          0          0          0          0          0          0
+  zerohalf         :       0.00       0.00          0          0          0          0          0          0
+Pricers            :   ExecTime  SetupTime      Calls       Vars
+  problem variables:       0.00          -          0          0
+Branching Rules    :   ExecTime  SetupTime   BranchLP  BranchExt   BranchPS    Cutoffs    DomReds       Cuts      Conss   Children
+  empty            :       0.00       0.00          0          0          0          0          0          0          0          0
+Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
+  LP solutions     :       0.00          -          -          0          0
+  relax solutions  :       0.00          -          -          0          0
+  pseudo solutions :       0.00          -          -          0          0
+  strong branching :       0.00          -          -          0          0
+  actconsdiving    :       0.00       0.00          0          0          0
+  clique           :       0.00       0.00          0          0          0
+  coefdiving       :       0.00       0.00          0          0          0
+  crossover        :       0.00       0.00          0          0          0
+  dins             :       0.00       0.00          0          0          0
+  dualval          :       0.00       0.00          0          0          0
+  feaspump         :       3.59       0.00          1          1          1
+  fixandinfer      :       0.00       0.00          0          0          0
+  fracdiving       :       0.00       0.00          0          0          0
+  gcgcoefdiving    :       0.00       0.00          0          0          0
+  gcgdins          :       0.00       0.00          0          0          0
+  gcgfeaspump      :       0.00       0.00          0          0          0
+  gcgfracdiving    :       0.00       0.00          0          0          0
+  gcgguideddiving  :       0.00       0.00          0          0          0
+  gcglinesdiving   :       0.00       0.00          0          0          0
+  gcgpscostdiving  :       0.00       0.00          0          0          0
+  gcgrens          :       0.00       0.00          0          0          0
+  gcgrins          :       0.00       0.00          0          0          0
+  gcgrounding      :       0.00       0.00          0          0          0
+  gcgshifting      :       0.00       0.00          0          0          0
+  gcgsimplerounding:       0.00       0.00          0          0          0
+  gcgveclendiving  :       0.00       0.00          0          0          0
+  gcgzirounding    :       0.00       0.00          0          0          0
+  guideddiving     :       0.00       0.00          0          0          0
+  intdiving        :       0.00       0.00          0          0          0
+  intshifting      :       0.00       0.00          0          0          0
+  linesearchdiving :       0.00       0.00          0          0          0
+  localbranching   :       0.00       0.00          0          0          0
+  mutation         :       0.00       0.00          0          0          0
+  nlpdiving        :       0.00       0.00          0          0          0
+  objpscostdiving  :       0.00       0.00          0          0          0
+  octane           :       0.00       0.00          0          0          0
+  oneopt           :       0.00       0.00          0          0          0
+  proximity        :       0.00       0.00          0          0          0
+  pscostdiving     :       0.00       0.00          0          0          0
+  randrounding     :       0.00       0.00          1          0          0
+  rens             :       0.00       0.00          0          0          0
+  rins             :       0.00       0.00          0          0          0
+  rootsoldiving    :       0.00       0.00          0          0          0
+  rounding         :       0.00       0.00          1          0          0
+  shiftandpropagate:       0.07       0.00          1          0          0
+  shifting         :       0.01       0.00          1          0          0
+  simplerounding   :       0.00       0.00          1          0          0
+  subnlp           :       0.00       0.00          0          0          0
+  trivial          :       0.03       0.00          2          0          0
+  trysol           :       0.00       0.00          0          0          0
+  twoopt           :       0.00       0.00          0          0          0
+  undercover       :       0.00       0.00          0          0          0
+  vbounds          :       0.00       0.00          0          0          0
+  veclendiving     :       0.00       0.00          0          0          0
+  xpcrossover      :       0.00       0.00          0          0          0
+  xprins           :       0.00       0.00          0          0          0
+  zeroobj          :       0.00       0.00          0          0          0
+  zirounding       :       0.00       0.00          0          0          0
+  other solutions  :          -          -          -          0          -
+Diving Statistics  :      Calls      Nodes   LP Iters Backtracks  Conflicts   MinDepth   MaxDepth   AvgDepth  RoundSols  NLeafSols  MinSolDpt  MaxSolDpt  AvgSolDpt
+  actconsdiving    :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  coefdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  fracdiving       :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  guideddiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  linesearchdiving :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  pscostdiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+  veclendiving     :          0          -          -          -          -          -          -          -          -          -          -          -          -
+LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
+  primal LP        :       0.00          0          0       0.00          -       0.00          0
+  dual LP          :       6.21          2      12172   12172.00    1960.78       0.02          1
+  lex dual LP      :       0.00          0          0       0.00          -
+  barrier LP       :       0.00          0          0       0.00          -       0.00          0
+  resolve instable :       0.00          0          0       0.00          -
+  diving/probing LP:       3.43         28       7482     267.21    2178.49
+  strong branching :       0.00          0          0       0.00          -          -          -          0
+    (at root node) :          -          0          0       0.00          -
+  conflict analysis:       0.00          0          0       0.00          -
+Relaxators         :       Time      Calls
+  gcg              :    3661.98          0
+B&B Tree           :
+  number of runs   :          1
+  nodes            :          1 (0 internal, 1 leaves)
+  feasible leaves  :          0
+  infeas. leaves   :          0
+  objective leaves :          0
+  nodes (total)    :          1 (0 internal, 1 leaves)
+  nodes left       :          1
+  max depth        :          0
+  max depth (total):          0
+  backtracks       :          0 (0.0%)
+  early backtracks :          0 (0.0%)
+  nodes exc. ref.  :          0 (0.0%)
+  delayed cutoffs  :          0
+  repropagations   :          0 (0 domain reductions, 0 cutoffs)
+  avg switch length:       1.00
+  switching time   :       0.00
+Root Node          :
+  First LP value   : +1.95308977122512e+07
+  First LP Iters   :      12172 (1965.11 Iter/sec)
+  First LP Time    :       6.19
+  Final Dual Bound : +1.95308977122512e+07
+  Final Root Iters :      19654
+  Root LP Estimate :                     -
+Solution           :
+  Solutions found  :          1 (1 improvements)
+  First Solution   : +2.92458820062059e+07   (in run 1, after 1 nodes, 10.58 seconds, depth 0, found by <feaspump>)
+  Gap First Sol.   :      49.74 %
+  Gap Last Sol.    :      49.74 %
+  Primal Bound     : +2.92458820062059e+07   (in run 1, after 1 nodes, 10.58 seconds, depth 0, found by <feaspump>)
+  Dual Bound       : +1.95308977122512e+07
+  Gap              :      49.74 %
+  Avg. Gap         :          - (not evaluated)
+
+Simplex iterations :       iter
+  Master LP        :       2389
+  Pricing LP       :    2954281
+  Original LP      :      19654
+
+Detector statistics:       time     number     blocks
+  connected        :       0.00          0    
+  constype         :       0.00          0    
+  postproces       :       0.00          0    
+  consclass        :      31.12          0    
+  consname         :       0.00          0    
+  densemaste       :       0.00          0    
+  stairheur        :       0.00          0    
+  staircase        :       0.00          0    
+  random           :       0.00          0    
+  staircase_       :       0.00          0    
+  colors           :       0.00          0    
+  cutpacking       :       0.00          0    
+  compgreedi       :       0.00          0    
+  mastersetc       :       0.00          0    
+  mastersetp       :       0.00          0    
+  mastersetp       :       0.00          0    
+  hcgpartiti       :       0.00          0    
+  hrgpartiti       :       0.00          0    
+  hrcgpartit       :       0.00          0    
+  connectedb       :       0.00          0    
+  connected_       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  generalmas       :       0.00          0    
+  varclass         :       0.54          0    
+  isomorph         :       0.00          0    
+
+Decomp statistics  :
+  type             :   bordered
+  detector         :         cC
+  blocks           :         28
+  aggr. blocks     :         28
+Master statistics  :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros    bnzeros bintnzeros  min(dens)  max(dens) medi(dens) mean(dens)
+  master           :          0          0          0          0          0       5314      14919      14919          0          0      0.000      0.015      0.000      0.000
+Pricing statistics :      nvars   nbinvars   nintvars  nimplvars  ncontvars     nconss   nonzeros  intnzeros  min(dens)  max(dens) medi(dens) mean(dens)  identical
+          1        :      11686      10874          0          0        812       9341      62319      55198      0.000      0.037      0.000      0.001          1
+          2        :         39         39          0          0          0         13        114        114      0.154      0.231      0.231      0.225          1
+          3        :         40         40          0          0          0         13        118        118      0.154      0.231      0.231      0.227          1
+          4        :         39         39          0          0          0         13        114        114      0.154      0.231      0.231      0.225          1
+          5        :         39         39          0          0          0         13        114        114      0.154      0.231      0.231      0.225          1
+          6        :         40         40          0          0          0         13        118        118      0.154      0.231      0.231      0.227          1
+          7        :         39         39          0          0          0         13        114        114      0.154      0.231      0.231      0.225          1
+          8        :         40         40          0          0          0         13        117        117      0.154      0.231      0.231      0.225          1
+          9        :         41         41          0          0          0         13        121        121      0.154      0.231      0.231      0.227          1
+         10        :         40         40          0          0          0         13        117        117      0.154      0.231      0.231      0.225          1
+         11        :         41         41          0          0          0         13        121        121      0.154      0.231      0.231      0.227          1
+         12        :         40         40          0          0          0         13        117        117      0.154      0.231      0.231      0.225          1
+         13        :         41         41          0          0          0         13        121        121      0.154      0.231      0.231      0.227          1
+         14        :         40         40          0          0          0         13        117        117      0.154      0.231      0.231      0.225          1
+         15        :         40         40          0          0          0         13        118        118      0.154      0.231      0.231      0.227          1
+         16        :         40         40          0          0          0         13        118        118      0.154      0.231      0.231      0.227          1
+         17        :         39         39          0          0          0         13        114        114      0.154      0.231      0.231      0.225          1
+         18        :         38         38          0          0          0         12        108        108      0.167      0.250      0.250      0.237          1
+         19        :         41         41          0          0          0         12        120        120      0.167      0.250      0.250      0.244          1
+         20        :         37         37          0          0          0         12        104        104      0.167      0.250      0.250      0.234          1
+         21        :         40         40          0          0          0         12        116        116      0.167      0.250      0.250      0.242          1
+         22        :         40         40          0          0          0         12        116        116      0.167      0.250      0.250      0.242          1
+         23        :         41         41          0          0          0         12        120        120      0.167      0.250      0.250      0.244          1
+         24        :         40         40          0          0          0         12        116        116      0.167      0.250      0.250      0.242          1
+         25        :         37         37          0          0          0         13        108        108      0.154      0.231      0.231      0.225          1
+         26        :         38         38          0          0          0         13        112        112      0.154      0.231      0.231      0.227          1
+         27        :         37         37          0          0          0         13        108        108      0.154      0.231      0.231      0.225          1
+         28        :         39         39          0          0          0         12        114        114      0.167      0.250      0.250      0.244          1
+Decomp Scores      :
+  border area      :      0.354
+  avg. density     :      0.999
+  linking score    :      0.500
+Pricing time in colpool = 0.000339 sec
+
+GCGTIME= 3771.2
