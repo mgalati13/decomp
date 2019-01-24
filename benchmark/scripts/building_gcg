@@ -1,0 +1,27 @@
+(1) Need a newer cmake than what is installed on orgrd. I have a local one in ~/cmake/.
+
+(2) To build SCIP - in /ORDATA/SCIP/scipoptsuite-6.0.0
+ - plus I needed a patch for the build:
+ http://scip.zib.de/download/bugfixes/scip-6.0.0/scipoptsuite-6.0.0_patch01.tgz
+
+(3) GCC on orgrd is also too old, but we can point to a newer one mounted here:
+export CC=/sas3rd/dev/mva-vb015/lax/gcc/gcc-4.9.4/bin/gcc 
+export CXX=/sas3rd/dev/mva-vb015/lax/gcc/gcc-4.9.4/bin/g++ 
+export LD_LIBRARY_PATH=/sas3rd/dev/mva-vb015/lax/gcc/gcc-4.9.4/lib:/sas3rd/dev/mva-vb015/lax/gcc/gcc-4.9.4/lib64:$LD_LIBRARY_PATH
+
+(4) In cmake, point to BLISS (must be a sym-link) and HMETIS executable (must be older version 1.5):
+ /r/sanyo.unx.sas.com/vol/vol420/u42/magala/cmake/bin/bin/cmake .. -DBLISS_DIR=/LOG_DATA/bliss-0.73/bliss -DHMETIS_EXECUTABLE=/LOG_DATA/hMetis/hmetis-1.5-linux/hmetis
+
+(5) Added a wrapper to get GCGTIME= in gcg/src/main.c
+  
+(6) Added a message in gcg/src/dec_hrgpartition.cpp to print out the hmetiscall info (for debugging).
+
+(7) For some reason, even though HMETIS was included in cmake, the GCG Makefile has it set to false. 
+So, I changed it to true.
+
+(7) make 
+
+
+
+
+
